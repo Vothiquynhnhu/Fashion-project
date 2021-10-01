@@ -20,11 +20,18 @@ namespace Web_Shoes.Controllers
         private readonly SignInManager<AppUser> _SignInManager;
         private readonly UserManager<AppUser> _UserManager;
 
+
+        private int PriceCoupon = 0;
+
+        private string MessageForCoupon = "";
+        private bool AddCouponcheck = false;
+
         public CartController(ApplicationDbContext context, UserManager<AppUser> UserManager, SignInManager<AppUser> SignInManager)
         {
             _context = context;
             _UserManager = UserManager;
             _SignInManager = SignInManager;
+
         }
 
 
@@ -38,6 +45,24 @@ namespace Web_Shoes.Controllers
 
             string namePc = Environment.MachineName;
             bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+
+
+
+            var queryUserInCart = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
+           
+
+            if (queryUserInCart == null)
+            {
+                ViewBag.PriceCoupon = 0;
+            }
+            else
+            {
+                ViewBag.PriceCoupon = queryUserInCart.cart_Discount;
+            }
+
+
+
+
 
             if (checkLogin)
             {
@@ -178,12 +203,34 @@ namespace Web_Shoes.Controllers
         }
 
         //[Route("/cart/paid")]
-        [HttpGet]
-        public IActionResult AddAoupon(string coupon)
+        [HttpPost]
+        public IActionResult AddCoupon()
         {
             try
             {
-                string haha = "";
+                string namePc = Environment.MachineName;
+                bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var userName = User.FindFirstValue(ClaimTypes.Name);
+
+                string coupon = Request.Form["Coupon"];
+
+                var queryCoupon = _context.Coupons.FirstOrDefault(a => a.couponCode == coupon);
+
+                var queryUserInCart = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
+                if (queryCoupon != null)
+                {
+                    queryUserInCart.cart_Discount = queryCoupon.couponPrice;
+                }
+                else
+                {
+                    queryUserInCart.cart_Discount = 0;
+                }
+                
+                
+
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch 

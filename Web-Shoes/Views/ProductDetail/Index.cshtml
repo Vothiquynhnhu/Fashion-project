@@ -49,9 +49,9 @@
                 </div>
                 <div class="span5">
                     <address>
-                        <!--<strong>Brand:</strong> <span>--> <!---->
-                        </span><br>
-                        <strong>Product Code:</strong> <span>Product 14</span><br>
+                        <strong>Brand:</strong> <span>@ViewBag.Brand</span>
+                        <br>
+                        <strong>Product Code:</strong> <span>@ViewBag.Code</span><br>
                         <strong>Reward Points:</strong> <span>15</span><br>
                         @*<strong>Availability:</strong> <span>Out Of Stock</span><br>*@
                     </address>
@@ -63,18 +63,18 @@
 
                     <!--<form class="form-inline" action="Productdetailadd" >-->
                     @*<label class="checkbox">
-                            <input type="checkbox" value=""> Option one is this and that
-                        </label>
-                        <br />
-                        <label class="checkbox">
-                            <input type="checkbox" value=""> Be sure to include why it's great
-                        </label>*@
+            <input type="checkbox" value=""> Option one is this and that
+        </label>
+        <br />
+        <label class="checkbox">
+            <input type="checkbox" value=""> Be sure to include why it's great
+        </label>*@
                     <!--<input type="text" name="productId" value="@ViewBag.Id" hidden />
-                        <p>&nbsp;</p>
-                        <label>Qty:</label>
-                        <input type="text" class="span1" placeholder="1">
-                        <button class="btn btn-inverse" type="submit">Add to cart</button>
-                    </form>-->
+        <p>&nbsp;</p>
+        <label>Qty:</label>
+        <input type="text" class="span1" placeholder="1">
+        <button class="btn btn-inverse" type="submit">Add to cart</button>
+    </form>-->
 
 
                     <div>
@@ -114,14 +114,33 @@
 
 
                     </div>
+
                     <br />
+                    <div>
 
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button type="button" class="quantity-left-minus btn btn-danger btn-number " data-type="minus" data-field="" onclick="ButtonMinus()">
+                                    <span class="glyphicon glyphicon-minus">-</span>
+                                </button>
+                            </span>
+                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                            <span class="input-group-btn">
+                                <button type="button" class="quantity-right-plus btn btn-success btn-number " data-type="plus" data-field="" onclick="ButtonPlus()">
+                                    <span class="glyphicon glyphicon-plus">+</span>
+                                </button>
+                            </span>
+                        </div>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                        <span id="messageAddTocart"></span>
+                    </div>
+                    <br />
                     <div class="col-sm-8 text-center">
-
-
-
-                        <p class="addtocart"><a href="" class="btn btn-inverse btn-addtocart" id="addtocartbutton" onclick="addtocart()"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
-
+                        <p class="addtocart"><a href="#" class="btn btn-inverse btn-addtocart" id="addtocartbutton" onclick="addtocart()"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
                     </div>
 
                 </div>
@@ -383,28 +402,6 @@
 
 
 
-        //var sizeS = document.getElementById('size_7');
-        //if (sizeS != null) {
-        //    sizeS.style = 'background-color: #CCCCCC;';
-        //}
-
-        //var sizeM = document.getElementById('size_7');
-        //if (sizeM != null) {
-        //    sizeM.style = 'background-color: #CCCCCC;';
-        //}
-
-        //var sizeL = document.getElementById('size_7');
-        //if (sizeL != null) {
-        //    sizeL.style = 'background-color: #CCCCCC;';
-        //sizeL
-
-        //var sizeXL = document.getElementById('size_7');
-        //if (sizeL != null) {
-        //    sizeS.style = 'background-color: #CCCCCC;';
-        //}
-
-
-
         var sizechoose = document.getElementById(sizeId);
         if (sizechoose != null) {
             sizechoose.style = 'background-color:DodgerBlue;';
@@ -419,10 +416,47 @@
     }
     function addtocart() {
 
-        /*amount();*/
+        amount();
+        var a = document.getElementById('messageAddTocart');
 
-        var a = document.querySelector("a#addtocartbutton");
-        a.href = "/productdetailadd?productid=@ViewBag.Id&quantity=" + ProductAmount + "&color=" + ProductColor + "&size=" + ProductSize;
+        if (ProductAmount == null) {
+            a.innerHTML = "<b style='color:red'> Please input quantity </b>";
+            window.stop();
+        }
+
+        if (ProductSize == null) {
+            a.innerHTML = "<b style='color:red'> Please input size </b>";
+            window.stop();
+        }
+
+        if (ProductColor == null) {
+            a.innerHTML = "<b style='color:red'> Please input color </b>";
+            window.stop();
+        }
+
+        if (ProductAmount != null && ProductSize != null && ProductColor != null ) {
+            var a = document.querySelector("a#addtocartbutton");
+            a.href = "/productdetailadd?productid=@ViewBag.Id&quantity=" + ProductAmount + "&color=" + ProductColor + "&size=" + ProductSize;
+        }
+
 
     }
+
+    function ButtonMinus() {
+        var quantity = document.getElementById('quantity');
+        var value = quantity.value;
+        if (value >0) {
+            quantity.value = parseInt(value) - 1;
+        }
+
+
+    }
+
+    function ButtonPlus() {
+        var quantity = document.getElementById('quantity');
+        var value = quantity.value;
+        quantity.value = parseInt(value) + 1;
+    }
+
+
 </script>

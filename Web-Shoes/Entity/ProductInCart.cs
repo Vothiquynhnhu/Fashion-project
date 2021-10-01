@@ -19,5 +19,7 @@ namespace Web_Shoes.Entity
 
         public string pic_color { get; set; }
 
+        
+
     }
 }

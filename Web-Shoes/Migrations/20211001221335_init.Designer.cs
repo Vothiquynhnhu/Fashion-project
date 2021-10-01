@@ -10,7 +10,7 @@ using Web_Shoes.Data;
 namespace Web_Shoes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211001140939_init")]
+    [Migration("20211001221335_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -352,7 +352,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 10, 1, 21, 9, 38, 668, DateTimeKind.Local).AddTicks(3211),
+                            bill_DatetimeOrder = new DateTime(2021, 10, 2, 5, 13, 34, 556, DateTimeKind.Local).AddTicks(5963),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -376,7 +376,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "AFD66490-12F5-4EA7-BFF6-425624290D6D",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 10, 1, 21, 9, 38, 669, DateTimeKind.Local).AddTicks(2925),
+                            bill_DatetimeOrder = new DateTime(2021, 10, 2, 5, 13, 34, 557, DateTimeKind.Local).AddTicks(6429),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -402,6 +402,9 @@ namespace Web_Shoes.Migrations
                     b.Property<string>("cart_Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("cart_Discount")
+                        .HasColumnType("int");
+
                     b.Property<string>("cart_UserID")
                         .HasColumnType("nvarchar(450)");
 
@@ -415,11 +418,13 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             cart_Id = "72309286-ECBB-4D20-AD95-2819D31E3400",
+                            cart_Discount = 0,
                             cart_UserID = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff"
                         },
                         new
                         {
                             cart_Id = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
+                            cart_Discount = 0,
                             cart_UserID = "DE544998-A3CC-4E12-ABB4-0642E57BD222"
                         });
                 });
@@ -587,13 +592,13 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "5e4af3cf-ce8a-4fc9-b8ca-0cae6d2118ba",
+                            couponId = "907f2c7b-6a99-48c2-be73-3cbc95261595",
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "bb237551-3d98-4b06-a86e-37d3b8e476b0",
+                            couponId = "139f65f9-0879-444c-b4a1-d073c21f84d1",
                             couponCode = "code50",
                             couponPrice = 50
                         });
@@ -694,6 +699,9 @@ namespace Web_Shoes.Migrations
                     b.Property<int>("picd_ProductId")
                         .HasColumnType("int");
 
+                    b.Property<string>("picd_Discount")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("picd_amount")
                         .HasColumnType("int");
 
@@ -788,6 +796,9 @@ namespace Web_Shoes.Migrations
                     b.Property<int>("pd_Price")
                         .HasColumnType("int");
 
+                    b.Property<string>("pd_ProductCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("pd_Rate")
                         .HasColumnType("int");
 
@@ -880,6 +891,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX1",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -922,6 +934,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX2",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -964,6 +977,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX3",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1006,6 +1020,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX4",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1048,6 +1063,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX5",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1090,6 +1106,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX6",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1132,6 +1149,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX7",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1174,6 +1192,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX8",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1216,6 +1235,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX9",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1258,6 +1278,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX10",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1300,6 +1321,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX11",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1342,6 +1364,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX12",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1384,6 +1407,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX13",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1426,6 +1450,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX14",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1468,6 +1493,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX15",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1510,6 +1536,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX16",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1552,6 +1579,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX17",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1594,6 +1622,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX18",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1636,6 +1665,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX20",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1678,6 +1708,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX21",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1720,6 +1751,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX22",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1762,6 +1794,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX23",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1804,6 +1837,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX24",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1846,6 +1880,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX25",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1888,6 +1923,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX26",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1930,6 +1966,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX27",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1972,6 +2009,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX28",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2014,6 +2052,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX29",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2056,6 +2095,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX30",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2098,6 +2138,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX31",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2140,6 +2181,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX32",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2182,6 +2224,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX33",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2224,6 +2267,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX34",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2266,6 +2310,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX35",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2308,6 +2353,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX36",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2350,6 +2396,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX37",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2392,6 +2439,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX38",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2434,6 +2482,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 100,
+                            pd_ProductCode = "AX39",
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -2873,7 +2922,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "7a3408d4-4ad0-42d6-9792-4d2120d1d729",
+                            subReview_Id = "cd43b6e2-f6c3-4a38-a9b4-401465a941bf",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2882,7 +2931,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "df487960-2e41-4e27-9255-08eaf5b1b3d3",
+                            subReview_Id = "5238dba0-7179-4ffa-a6fe-c2802fccdf7f",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2891,7 +2940,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "c8dd315a-8bee-4931-bf15-54110dcc8d35",
+                            subReview_Id = "7f9d1665-e7c4-401a-a662-406954ccee86",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2918,17 +2967,17 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "7a3408d4-4ad0-42d6-9792-4d2120d1d729"
+                            SRiR_SubReviewId = "cd43b6e2-f6c3-4a38-a9b4-401465a941bf"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "df487960-2e41-4e27-9255-08eaf5b1b3d3"
+                            SRiR_SubReviewId = "5238dba0-7179-4ffa-a6fe-c2802fccdf7f"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "c8dd315a-8bee-4931-bf15-54110dcc8d35"
+                            SRiR_SubReviewId = "7f9d1665-e7c4-401a-a662-406954ccee86"
                         });
                 });
 
@@ -2994,14 +3043,14 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "63ce6a8f-0e39-4dda-8cf5-ff6e9152df4c",
+                            ConcurrencyStamp = "1744813e-3c67-4ca4-a99c-59cdb07bdf58",
                             Name = "staff",
                             Description = "Staff"
                         },
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "26da4b3a-edde-43b7-be01-d68be7f2ad9e",
+                            ConcurrencyStamp = "df6981be-f399-4d44-b927-eeaa82498ec8",
                             Name = "admin",
                             Description = "admin"
                         });
@@ -3051,15 +3100,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e78b664c-fc49-4179-b27a-bf0e10588c7b",
+                            ConcurrencyStamp = "90be5365-9f39-48d8-a1c0-c4f0d31eb310",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECzDAk2mfEKEOnWmQMWCFBGd3I9WYZXncirHiHE7mwvn83rB1zR5MdqMM5nzoaFWZg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJg12BBB/295LQp2pW4FSyItFGh+qzKsGSCdCH+n0M7WoaGJ19wxAU/J2hXdaMcoPA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aeb1d93e-24b4-490d-8b3d-561f7fddadab",
+                            SecurityStamp = "0a02b74d-1c2e-44cf-a7b4-77f7243a6ba5",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -3070,15 +3119,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5e9ae30b-8d57-44ac-929c-7fc3aaf2d30a",
+                            ConcurrencyStamp = "95e0ec0e-5269-4fdb-a06c-66651c91b66f",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFJYAm/tQYqt5sk5I/QmbC0Kz7L0rMswoxLK4krYv7jEADeV5XfU3+GbnZW14WkTdA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENgwUF3Lalb3JKjfOnnYCyFRMek30okUcgKZ0/ymk2Z5xsRYwbKFFLNuLVTqCYD6Tg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "10de0a5a-8572-4b69-8138-ed024792bcf9",
+                            SecurityStamp = "08f2fb5c-086d-47c1-8624-914cf8bbbf53",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),

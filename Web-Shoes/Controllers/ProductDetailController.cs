@@ -66,8 +66,8 @@ namespace Web_Shoes.Controllers
             ViewBag.Size13_5 = productDetailQuery.pd_Size13_5;
             ViewBag.Size14 = productDetailQuery.pd_Size14;
             ViewBag.Size14_5 = productDetailQuery.pd_Size14_5;
-
-
+            ViewBag.Code = productDetailQuery.pd_ProductCode;
+            ViewBag.Brand = productDetailQuery.pd_Brand;
 
             var review = from a in _context.AppUser
                          join b in _context.Reviews on a.Id equals b.review_UserId
@@ -161,11 +161,7 @@ namespace Web_Shoes.Controllers
                 //productid = Request.Form("productId");
 
 
-               
-                // Test
-                quantity = "1";
 
-                // Test
 
 
 
@@ -183,7 +179,7 @@ namespace Web_Shoes.Controllers
                 if (checkLogin)
                 {
 
-                    //Query Proudct in User
+                    //Query Product in User
                     var queryProductUser = from a in _context.Users
                                            join b in _context.Cart on a.Id equals b.cart_UserID
                                            join c in _context.ProductInCart on b.cart_Id equals c.pic_CartId
@@ -212,14 +208,25 @@ namespace Web_Shoes.Controllers
                     else
                     {
                         // Logined
-                        //Create cart
-                        var cartCreate = new Cart()
+                        var queryCart = _context.Cart.FirstOrDefault(a=> a.cart_UserID == userId);
+                        if (queryCart == null)
                         {
-                            cart_Id = cartId,
-                            cart_UserID = userId
-                        };
+                            //Create cart
+                            var cartCreate = new Cart()
+                            {
+                                cart_Id = cartId,
+                                cart_UserID = userId
+                            };
 
-                        _context.Cart.Add(cartCreate);
+                            _context.Cart.Add(cartCreate);
+
+                        }else
+                        {
+                            cartId = queryCart.cart_Id;
+                        }
+
+                        
+
 
                         //Create ProductInCart
 
