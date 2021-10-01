@@ -158,11 +158,6 @@ namespace Web_Shoes.Controllers
 
             try
             {
-                //productid = Request.Form("productId");
-
-
-
-
 
 
                 string namePc = Environment.MachineName;
@@ -297,17 +292,30 @@ namespace Web_Shoes.Controllers
                         /// Create Device in DB
                         /// 
 
-
                         var deviceQueryre = _context.Devices.FirstOrDefault(a => a.deviceName == namePc);
 
-                        //Create cart
-                        var CartsDevice = new CartsDevice()
-                        {
-                            cartd_Id = cartId,
-                            cartd_DeviceId = deviceQueryre.deviceId
-                        };
+                        var queryCart = _context.CartsDevice.FirstOrDefault(a => a.cartd_DeviceId == deviceQueryre.deviceId);
 
-                        _context.CartsDevice.Add(CartsDevice);
+                        if (queryCart ==null)
+                        {
+                            
+
+                            //Create cart
+                            var CartsDevice = new CartsDevice()
+                            {
+                                cartd_Id = cartId,
+                                cartd_DeviceId = deviceQueryre.deviceId
+                            };
+
+                            _context.CartsDevice.Add(CartsDevice);
+                        }else
+                        {
+                            cartId = queryCart.cartd_Id;
+                        }
+
+                        
+
+                        
 
                         var ProductInCartDevices = new ProductInCartDevices()
                         {

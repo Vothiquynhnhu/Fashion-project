@@ -48,17 +48,6 @@ namespace Web_Shoes.Controllers
 
 
 
-            var queryUserInCart = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
-           
-
-            if (queryUserInCart == null)
-            {
-                ViewBag.PriceCoupon = 0;
-            }
-            else
-            {
-                ViewBag.PriceCoupon = queryUserInCart.cart_Discount;
-            }
 
 
 
@@ -66,6 +55,19 @@ namespace Web_Shoes.Controllers
 
             if (checkLogin)
             {
+
+
+                var queryUserInCart = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
+
+
+                if (queryUserInCart == null)
+                {
+                    ViewBag.PriceCoupon = 0;
+                }
+                else
+                {
+                    ViewBag.PriceCoupon = queryUserInCart.cart_Discount;
+                }
                 //login
                 var query = from a in _context.Products
                             join b in _context.ProductInCart on a.pd_Id equals b.pic_ProductId
@@ -93,6 +95,20 @@ namespace Web_Shoes.Controllers
             }
             else
             {
+
+                var queryDevice = _context.Devices.FirstOrDefault(a=> a.deviceName == namePc);
+
+                var queryUserInCart = _context.CartsDevice.FirstOrDefault(a => a.cartd_DeviceId == queryDevice.deviceId);
+
+
+                if (queryUserInCart == null)
+                {
+                    ViewBag.PriceCoupon = 0;
+                }
+                else
+                {
+                    ViewBag.PriceCoupon = queryUserInCart.cartd_Discount;
+                }
                 //No login
                 var query = from a in _context.Products
                             join b in _context.ProductInCartDevices on a.pd_Id equals b.picd_ProductId
@@ -217,16 +233,33 @@ namespace Web_Shoes.Controllers
                 string coupon = Request.Form["Coupon"];
 
                 var queryCoupon = _context.Coupons.FirstOrDefault(a => a.couponCode == coupon);
-
-                var queryUserInCart = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
-                if (queryCoupon != null)
+                if (checkLogin)
                 {
-                    queryUserInCart.cart_Discount = queryCoupon.couponPrice;
+                    var queryUserInCart = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
+                    if (queryCoupon != null)
+                    {
+                        queryUserInCart.cart_Discount = queryCoupon.couponPrice;
+                    }
+                    else
+                    {
+                        queryUserInCart.cart_Discount = 0;
+                    }
                 }
                 else
                 {
-                    queryUserInCart.cart_Discount = 0;
+                    var queryDevice = _context.Devices.FirstOrDefault(a=> a.deviceName == namePc);
+
+                    var queryUserInCart = _context.CartsDevice.FirstOrDefault(a => a.cartd_DeviceId == queryDevice.deviceId);
+                    if (queryCoupon != null)
+                    {
+                        queryUserInCart.cartd_Discount = queryCoupon.couponPrice;
+                    }
+                    else
+                    {
+                        queryUserInCart.cartd_Discount = 0;
+                    }
                 }
+                
                 
                 
 
