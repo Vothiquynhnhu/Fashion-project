@@ -94,12 +94,12 @@ namespace Web_Shoes.Controllers
                 return View(productInCartModelQuery);
 
             }
-            
 
 
 
 
-            
+
+
         }
 
 
@@ -109,7 +109,7 @@ namespace Web_Shoes.Controllers
         public IActionResult RemoveProduct(int productid, int quantity)
         {
 
-           
+
 
             try
             {
@@ -167,14 +167,30 @@ namespace Web_Shoes.Controllers
 
 
 
-                return Redirect("/checkout?reduceprice="+ ReducePrice);
+                return Redirect("/checkout?reduceprice=" + ReducePrice);
+            }
+            catch
+            {
+
+                return RedirectToAction(nameof(Index));
+            }
+
+        }
+
+        //[Route("/cart/paid")]
+        [HttpGet]
+        public IActionResult AddAoupon(string coupon)
+        {
+            try
+            {
+                string haha = "";
+                return RedirectToAction(nameof(Index));
             }
             catch 
             {
 
                 return RedirectToAction(nameof(Index));
             }
-            
         }
     }
 }

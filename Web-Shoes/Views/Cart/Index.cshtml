@@ -58,16 +58,23 @@
                     </tr>
                 </tbody>
             </table>
-            <h4>What would you like to do next?</h4>
-            <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
-            <label class="radio">
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                Use Coupon Code
-            </label>
-            <label class="radio">
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                Estimate Shipping &amp; Taxes
-            </label>
+
+
+            <h4>Coupon:</h4>
+            
+            <form asp-action="AddAoupon"  method="post">
+                <table>
+                    <tr>
+                        <td><strong>Coupon:</strong></td>
+                        <td><input type="text" name="coupon" value=""class="form-control" /></td>
+                        <td><input type="submit"  value="Add coupon" class="btn btn-secondary"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"> <strong id="messageCoupon">a </strong> </td>
+                    </tr>
+                </table>
+            </form>
+
             <hr>
             <p class="cart-total right">
                 <strong>Sub-Total</strong>:	$100.00<br>
