@@ -1,0 +1,175 @@
+﻿@model Web_Shoes.Entity.Products
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Users:</h2>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+        <hr />
+        <div class="row">
+            <div class="col-lg-12 ">
+
+                <h1>Details</h1>
+
+                <div>
+                    <h4>Products</h4>
+                    <hr />
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Name)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Name)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Description)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Description)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Price)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Price)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_ReducePrice)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_ReducePrice)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Img1)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Img1)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Img2)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Img2)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Img3)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Img3)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Img4)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Img4)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Rate)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Rate)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_MenuFacturer)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_MenuFacturer)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_ShortDescription)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_ShortDescription)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Size)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Size)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Brand)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Brand)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Style)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Style)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Color)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Color)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Material)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Material)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pd_Technologies)
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.pd_Technologies)
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.pd_Id">Edit</a> |
+                    <a asp-action="Index">Back to List</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>

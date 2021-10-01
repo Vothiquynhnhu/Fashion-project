@@ -1,0 +1,25 @@
+﻿<div id="top-bar" class="container">
+    <div class="row">
+        <div class="span4">
+           
+
+            <form asp-controller="AllProducts" asp-action="Search" class="search-wrap" method="post" >
+                <div class="form-group">
+                    <input type="search" class="form-control search" placeholder="Search" name="search" >
+                    <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="span8">
+            <div class="account pull-right">
+                <ul class="user-menu">
+                    @*<li><a href="#">My Account</a></li>*@
+                    <li><a href="/cart">Your Cart</a></li>
+                    <li><a href="/checkout">Checkout</a></li>
+                    @*<li><a href="/Login">Login</a></li>*@
+                    <partial name="_LoginPartial" />
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
