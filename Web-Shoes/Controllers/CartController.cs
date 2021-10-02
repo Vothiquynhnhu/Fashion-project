@@ -47,12 +47,6 @@ namespace Web_Shoes.Controllers
             bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
 
 
-
-
-
-
-
-
             if (checkLogin)
             {
 
@@ -96,52 +90,76 @@ namespace Web_Shoes.Controllers
             else
             {
 
-                var queryDevice = _context.Devices.FirstOrDefault(a=> a.deviceName == namePc);
+                var queryDevice = _context.Devices.FirstOrDefault(a => a.deviceName == namePc);
 
-                var queryUserInCart = _context.CartsDevice.FirstOrDefault(a => a.cartd_DeviceId == queryDevice.deviceId);
-
-
-                if (queryUserInCart == null)
+                if (queryDevice != null)
                 {
-                    ViewBag.PriceCoupon = 0;
+                    var queryUserInCart = _context.CartsDevice.FirstOrDefault(a => a.cartd_DeviceId == queryDevice.deviceId);
+
+
+                    if (queryUserInCart == null)
+                    {
+                        ViewBag.PriceCoupon = 0;
+                    }
+                    else
+                    {
+                        ViewBag.PriceCoupon = queryUserInCart.cartd_Discount;
+                    }
+                    //No login
+                    var query = from a in _context.Products
+                                join b in _context.ProductInCartDevices on a.pd_Id equals b.picd_ProductId
+                                join c in _context.CartsDevice on b.picd_CartId equals c.cartd_Id
+                                join d in _context.Devices on c.cartd_DeviceId equals d.deviceId
+                                select new { a, b, c, d };
+
+                    query = query.Where(x => x.d.deviceName == namePc);
+
+                    var productInCartModelQuery = query
+                        .Select(x => new ProductInCartModel()
+                        {
+                            ProductId = x.a.pd_Id,
+                            ProductName = x.a.pd_Name,
+                            ProductPrice = x.a.pd_Price,
+                            ProductImg1 = x.a.pd_Img1,
+                            Quantity = x.b.picd_amount,
+                            UserId = x.d.deviceId,
+                            Color = x.b.picd_color,
+                            Size = x.b.picd_size
+
+                        });
+
+                    return View(productInCartModelQuery);
                 }
                 else
                 {
-                    ViewBag.PriceCoupon = queryUserInCart.cartd_Discount;
+
+
+                    //var productInCartModelQuery = query
+                    //     .Select(x => new ProductInCartModel()
+                    //     {
+                    //         ProductId = x.a.pd_Id,
+                    //         ProductName = x.a.pd_Name,
+                    //         ProductPrice = x.a.pd_Price,
+                    //         ProductImg1 = x.a.pd_Img1,
+                    //         Quantity = x.b.picd_amount,
+                    //         UserId = x.d.deviceId,
+                    //         Color = x.b.picd_color,
+                    //         Size = x.b.picd_size
+
+                    //     });
+
+
+                    ProductInCartModel productInCartModelQuery = null;
+
+                    return View(productInCartModelQuery);
                 }
-                //No login
-                var query = from a in _context.Products
-                            join b in _context.ProductInCartDevices on a.pd_Id equals b.picd_ProductId
-                            join c in _context.CartsDevice on b.picd_CartId equals c.cartd_Id
-                            join d in _context.Devices on c.cartd_DeviceId equals d.deviceId
-                            select new { a, b, c, d };
-
-                query = query.Where(x => x.d.deviceName == namePc);
-
-                var productInCartModelQuery = query
-                    .Select(x => new ProductInCartModel()
-                    {
-                        ProductId = x.a.pd_Id,
-                        ProductName = x.a.pd_Name,
-                        ProductPrice = x.a.pd_Price,
-                        ProductImg1 = x.a.pd_Img1,
-                        Quantity = x.b.picd_amount,
-                        UserId = x.d.deviceId,
-                        Color = x.b.picd_color,
-                        Size = x.b.picd_size
-
-                    });
-
-                return View(productInCartModelQuery);
+                
+                
 
             }
-
-
-
-
-
-
         }
+
+
 
 
 

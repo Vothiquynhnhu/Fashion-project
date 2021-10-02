@@ -14,8 +14,11 @@ namespace Web_Shoes.Configurations
         {
             builder.ToTable("ReviewInproduct");
             builder.HasKey(t => new { t.rip_ProductId, t.rip_ReviewId });
+
+
             builder.HasOne(t => t.ProductsRIP).WithMany(ur => ur.ReviewInproductP)
      .HasForeignKey(pc => pc.rip_ProductId);
+
             builder.HasOne(t => t.ReviewsRIP).WithMany(ur => ur.ReviewInproductR)
      .HasForeignKey(pc => pc.rip_ReviewId);
         }

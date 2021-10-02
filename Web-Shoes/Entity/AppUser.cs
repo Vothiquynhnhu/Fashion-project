@@ -28,7 +28,7 @@ namespace Web_Shoes.Entity
         public List<Reviews> ReviewsU { get; set; }
         public List<Cart> CartU { get; set; }
 
-
+        public List<UserInDevice> UserInDevicesU { set; get; }
 
 
 

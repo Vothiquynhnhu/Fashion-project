@@ -20,6 +20,8 @@ namespace Web_Shoes.Entity
         public string deviceAddress2 { set; get; }
         public List<CartsDevice> CartsDeviceD { get; set; }
 
+        public List<UserInDevice> UserInDevicesD { set; get; }
+
 
 
     }

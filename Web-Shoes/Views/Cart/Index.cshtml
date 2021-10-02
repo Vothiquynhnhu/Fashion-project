@@ -27,44 +27,49 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            
-                            <td>
-                                <div class="one-eight text-center">
-                                    <div class="display-tc">
-                                        <a href="/cart/remove?productid=@item.ProductId" class="closed"> X</a>
+
+                    
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    <div class="one-eight text-center">
+                                        <div class="display-tc">
+                                            <a href="/cart/remove?productid=@item.ProductId" class="closed"> X</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td><a href="/productdetail?id=@item.ProductId"><img alt="" src="@item.ProductImg1"></a></td>
-                            <td>@item.ProductName</td>
-                            <td>@item.Color</td>
-                            <td>@item.Size</td>
-                            <td><input type="text" placeholder="@item.Quantity" class="input-mini"></td>
-                            <td>$@item.ProductPrice</td>
-                            @{ 
-                                int ProductQuantity = item.Quantity;
-                                int ProductPrice = item.ProductPrice;
-                                ProductPriceSum = ProductQuantity * ProductPrice;
-                                sumprice= sumprice + ProductPriceSum;
-                            }
-                            <td>$@ProductPriceSum</td>
-                        </tr>
+                                </td>
+                                <td><a href="/productdetail?id=@item.ProductId"><img alt="" src="@item.ProductImg1"></a></td>
+                                <td>@item.ProductName</td>
+                                <td>@item.Color</td>
+                                <td>@item.Size</td>
+                                <td><input type="text" placeholder="@item.Quantity" class="input-mini"></td>
+                                <td>$@item.ProductPrice</td>
+                                @{
+                                    int ProductQuantity = item.Quantity;
+                                    int ProductPrice = item.ProductPrice;
+                                    ProductPriceSum = ProductQuantity * ProductPrice;
+                                    sumprice = sumprice + ProductPriceSum;
                                 }
+                                <td>$@ProductPriceSum</td>
+                            </tr>
+                        }
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td><strong>$@sumprice</strong></td>
+                        </tr>
+                    
 
 
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td><strong>$@sumprice</strong></td>
-                </tr>
+
+
                 </tbody>
             </table>
 

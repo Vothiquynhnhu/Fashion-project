@@ -350,7 +350,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 10, 2, 5, 29, 55, 748, DateTimeKind.Local).AddTicks(3151),
+                            bill_DatetimeOrder = new DateTime(2021, 10, 3, 2, 2, 11, 92, DateTimeKind.Local).AddTicks(6486),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -374,7 +374,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "AFD66490-12F5-4EA7-BFF6-425624290D6D",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 10, 2, 5, 29, 55, 749, DateTimeKind.Local).AddTicks(3242),
+                            bill_DatetimeOrder = new DateTime(2021, 10, 3, 2, 2, 11, 93, DateTimeKind.Local).AddTicks(5383),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -593,13 +593,13 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "7f2c5719-2390-4e03-b2f3-981a14c82e30",
+                            couponId = "55491aa4-7d47-4e9c-8bd6-1d4cf300e388",
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "c359ab8b-61a7-4e28-a0fb-0e9917f6d6b6",
+                            couponId = "447b6369-032c-411a-ba03-1a68f8047f16",
                             couponCode = "code50",
                             couponPrice = 50
                         });
@@ -2923,7 +2923,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "1f081a9d-f9c4-4a69-841f-441ca8cdd422",
+                            subReview_Id = "ce4f14b6-035b-4690-b374-0d30297daf0f",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2932,7 +2932,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "8f924c25-1f64-41c3-a441-89eaad31d802",
+                            subReview_Id = "c1b91d02-7149-4899-ac76-48733e6d5f59",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2941,7 +2941,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "c543368a-5820-4d32-b4fa-2f75af42bc18",
+                            subReview_Id = "bda0568f-4b72-46e2-adfe-1d661a6c1711",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2968,18 +2968,33 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "1f081a9d-f9c4-4a69-841f-441ca8cdd422"
+                            SRiR_SubReviewId = "ce4f14b6-035b-4690-b374-0d30297daf0f"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "8f924c25-1f64-41c3-a441-89eaad31d802"
+                            SRiR_SubReviewId = "c1b91d02-7149-4899-ac76-48733e6d5f59"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "c543368a-5820-4d32-b4fa-2f75af42bc18"
+                            SRiR_SubReviewId = "bda0568f-4b72-46e2-adfe-1d661a6c1711"
                         });
+                });
+
+            modelBuilder.Entity("Web_Shoes.Entity.UserInDevice", b =>
+                {
+                    b.Property<string>("UiD_DeviceId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UiD_UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UiD_DeviceId", "UiD_UserId");
+
+                    b.HasIndex("UiD_UserId");
+
+                    b.ToTable("UserInDevice");
                 });
 
             modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
@@ -3006,31 +3021,6 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Models.UserInRoleModel", b =>
-                {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NameRole")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("UserInRoleModel");
-                });
-
             modelBuilder.Entity("Web_Shoes.Entity.AppRole", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityRole");
@@ -3044,14 +3034,14 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "71a7ca50-b2ee-4bad-99d4-dbb092aabf5c",
+                            ConcurrencyStamp = "d2b0fd6a-31af-489d-9eb5-0051d36c7ef8",
                             Name = "staff",
                             Description = "Staff"
                         },
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "e739ce27-1a29-41b1-99bd-ae9f177bfcc2",
+                            ConcurrencyStamp = "68433567-76d3-466d-80e0-9986dade87ad",
                             Name = "admin",
                             Description = "admin"
                         });
@@ -3101,15 +3091,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e120938a-1625-4e11-965b-5b7e3d905e50",
+                            ConcurrencyStamp = "8243f801-6c59-49ad-84ba-23739845e0af",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOUKI+i+16aZJP93IZYWdfBQpPXI6u5kgd4PpMXnsXuSDbSHFp3b606U/+xN8o5r6A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECsyHc1hhfvqqlFoEGC5kt2fnA+NZmFR0F5SmfvDS8lB9aae3VT/ZmH+kFDet+/dIg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "986fba78-9f71-47ee-8fc4-03e74723ba74",
+                            SecurityStamp = "d31df789-836a-4312-b9b6-53d67147aa4a",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -3120,15 +3110,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "36a72616-051f-43d2-8738-60457dab413a",
+                            ConcurrencyStamp = "35fdb224-9175-4374-af38-fd5e25ec68e6",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKOY3ei6+DAAkiU6i7HRQ0SS3cL804e8qWv5SMQVysA1DMFWK/gU37Nyrn/eiYfQ9w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJO3RsFbvfgq+uwIjvsN5fOx97Mpq50eeWD1tajC51vDU58EJ5gggKy0P7x0avsL6w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c33c2a04-dae1-4396-b1fa-7644eaf18c8a",
+                            SecurityStamp = "2f66c31d-58b9-4ad0-9970-039ad4aecba9",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -3347,6 +3337,25 @@ namespace Web_Shoes.Migrations
                     b.Navigation("SubReview");
                 });
 
+            modelBuilder.Entity("Web_Shoes.Entity.UserInDevice", b =>
+                {
+                    b.HasOne("Web_Shoes.Entity.Device", "Device")
+                        .WithMany("UserInDevicesD")
+                        .HasForeignKey("UiD_DeviceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUser")
+                        .WithMany("UserInDevicesU")
+                        .HasForeignKey("UiD_UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Device");
+                });
+
             modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
                 {
                     b.HasOne("Web_Shoes.Entity.AppUser", "UserW")
@@ -3374,6 +3383,8 @@ namespace Web_Shoes.Migrations
             modelBuilder.Entity("Web_Shoes.Entity.Device", b =>
                 {
                     b.Navigation("CartsDeviceD");
+
+                    b.Navigation("UserInDevicesD");
                 });
 
             modelBuilder.Entity("Web_Shoes.Entity.Products", b =>
@@ -3415,6 +3426,8 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ReviewsU");
 
                     b.Navigation("SubReviewSR");
+
+                    b.Navigation("UserInDevicesU");
 
                     b.Navigation("WishlistsU");
                 });

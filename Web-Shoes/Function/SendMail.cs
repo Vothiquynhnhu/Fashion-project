@@ -13,7 +13,7 @@ namespace Web_Shoes.Function
         String noidung = @"<h1>Xin chào XuanThuLab</h1><p>Đây là mail gửi sử dụng gmail</p>";
 
         string smtpacount = "bookshare005@gmail.com";
-        string smtppassword = "riseofBao";
+        string smtppassword = "riseofbao";
         public SendMail(string _mailnhan, string _chude, string _noidung)
         {
             mailnhan = _mailnhan;
