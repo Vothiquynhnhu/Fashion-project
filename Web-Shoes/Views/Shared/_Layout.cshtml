@@ -1,49 +1,40 @@
-﻿<html lang="en">
-
-<!-- Header Partial-->
-<partial name="_HeaderPartial" />
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--HeaderPartial-->
+<partial name="./_Partial/_HeaderFartial.cshtml" />
 
 <body>
-    <!-- MenuTopPartial-->
-    <partial name="_MenuTopPartial" />
+    <!-- Top bar Start -->
+    <!--TopBarPartial-->
+    <partial name="./_Partial/_TopBarPartial.cshtml" />
+    <!-- Top bar End -->
+
+    <!-- Nav Bar Start -->
+    <!-- NavBarPartial-->
+    <partial name="./_Partial/_NavbarPatial.cshtml" />
+    <!-- Nav Bar End -->
+
+    <!-- Bottom Bar Start -->
+    <!-- BottomBarPartial-->
+    <partial name="./_Partial/_BottomBarPartial.cshtml" />
+    <!-- Bottom Bar End -->
+
+    <!-- Main Slider Start -->
+    @RenderBody()
+    <!-- Footer Start -->
+    <partial name="./_Partial/_FooterPartial.cshtml" />
 
 
-    <div id="wrapper" class="container">
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-        <!-- MeunuPartial-->
-        <partial name="_MenuPartial" />
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/slick/slick.min.js"></script>
 
-
-        <!-- BodyContent-->
-        @RenderBody()
-
-
-
-        <!-- FooterPartial-->
-        <partial name="_FooterPartial" />
-
-
-
-        @await RenderSectionAsync("Scripts", required: false)
-    </div>
-
-
-
-    <script src="~/themes/js/common.js"></script>
-    <script src="~/themes/js/jquery.flexslider-min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $(document).ready(function () {
-                $('.flexslider').flexslider({
-                    animation: "fade",
-                    slideshowSpeed: 4000,
-                    animationSpeed: 600,
-                    controlNav: false,
-                    directionNav: true,
-                    controlsContainer: ".flex-container" // the container that holds the flexslider
-                });
-            });
-        });
-    </script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 </html>

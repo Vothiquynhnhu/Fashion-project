@@ -2,171 +2,261 @@
 @{
     ViewData["Title"] = "Home Page";
 
-    int i = 1;
+    int productSlie1A = 1;
+    int productSlie1B = 1;
 }
 
-
-<!-- Boddy -->
-<aside id="colorlib-hero">
+<section class="homepage-slider" id="home-slider">
     <div class="flexslider">
         <ul class="slides">
-            <li style="background-image:url(images/img_bg_1.jpg)">
-                <div class="overlay"></div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 text-center slider-text">
-                            <div class="slider-text-inner">
-                                <div class="desc">
-                                    <h1 class="head-1">Men's</h1>
-                                    <h2 class="head-2">Shoes</h2>
-                                    <h2 class="head-3">Collection</h2>
-                                    <p class="category"><span>New trending shoes</span></p>
-                                    <p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <li>
+                <img src="themes/images/carousel/banner-1.jpg" alt="" />
             </li>
-            <li style="background-image: url(images/img_bg_2.jpg); ">
-                <div class="overlay"></div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 text-center slider-text">
-                            <div class="slider-text-inner">
-                                <div class="desc">
-                                    <h1 class="head-1">Huge</h1>
-                                    <h2 class="head-2">Sale</h2>
-                                    <h2 class="head-3"><strong class="font-weight-bold">50%</strong> Off</h2>
-                                    <p class="category"><span>Big sale sandals</span></p>
-                                    <p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="background-image: url(images/img_bg_3.jpg); ">
-                <div class="overlay"></div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3 text-center slider-text">
-                            <div class="slider-text-inner">
-                                <div class="desc">
-                                    <h1 class="head-1">New</h1>
-                                    <h2 class="head-2">Arrival</h2>
-                                    <h2 class="head-3">up to <strong class="font-weight-bold">30%</strong> off</h2>
-                                    <p class="category"><span>New stylish shoes for men</span></p>
-                                    <p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <li>
+                <img src="themes/images/carousel/banner-2.jpg" alt="" />
+                <div class="intro">
+                    <h1>Mid season sale</h1>
+                    <p><span>Up to 50% Off</span></p>
+                    <p><span>On selected items online and in stores</span></p>
                 </div>
             </li>
         </ul>
     </div>
-</aside>
-<div class="colorlib-intro">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h2 class="intro">It started with a simple idea: Create quality, well-designed products that I wanted myself.</h2>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="colorlib-product">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6 text-center">
-                <div class="featured">
-                    <a href="#" class="featured-img" style="background-image: url(images/men.jpg);"></a>
-                    <div class="desc">
-                        <h2><a href="#">Shop Men's Collection</a></h2>
+</section>
+<section class="header_text">
+    We stand for top quality templates. Our genuine developers always optimized bootstrap commercial templates.
+    <br />Don't miss to use our cheap abd best bootstrap templates.
+</section>
+
+
+
+
+<section class="main-content">
+    <div class="row">
+        <div class="span12">
+            <div class="row">
+                <div class="span12">
+                    <h4 class="title">
+                        <span class="pull-left"><span class="text"><span class="line">Feature <strong>Products</strong></span></span></span>
+                        <span class="pull-right">
+                            <a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
+                        </span>
+                    </h4>
+                    <div id="myCarousel" class="myCarousel carousel slide">
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <ul class="thumbnails">
+                                    @foreach (var item in Model)
+                                    {
+                                        if (productSlie1A <=4)
+                                        {
+                                            <li class="span3">
+                                                <div class="product-box">
+                                                    <span class="sale_tag"></span>
+                                                    <p><a href="/productdetail?id=@item.pd_Id"><img src="@item.pd_Img1" alt="" /></a></p>
+                                                    <a href="/productdetail?id=@item.pd_Id" class="title">@item.pd_Name</a><br />
+                                                    <a href="/productdetail?id=@item.pd_Id" class="category">@item.pd_Style</a>
+                                                    <p class="price">$@item.pd_Price</p>
+                                                </div>
+                                            </li>
+                                            productSlie1A++;
+                                        }
+                                        if (productSlie1A > 4)
+                                        {
+                                            productSlie1A = 1;
+                                            break;
+                                        }
+
+                                    }
+
+
+
+                                </ul>
+                            </div>
+
+
+                            <div class="item">
+                                <ul class="thumbnails">
+
+                                    @foreach (var item in Model)
+                                    {
+                                        if (productSlie1A >= 5)
+                                        {
+                                            <li class="span3">
+                                                <div class="product-box">
+                                                    <span class="sale_tag"></span>
+                                                    <p><a href="/productdetail?id=@item.pd_Id"><img src="@item.pd_Img1" alt="" /></a></p>
+                                                    <a href="/productdetail?id=@item.pd_Id" class="title">Ut wisi enim ad</a><br />
+                                                    <a href="/productdetail?id=@item.pd_Id" class="category">@item.pd_Style</a>
+                                                    <p class="price">$@item.pd_Price</p>
+                                                </div>
+                                            </li>
+                                            productSlie1A++;
+                                        }
+                                        else
+                                        {
+                                            productSlie1A++;
+                                        }
+
+                                        if (productSlie1A == 9)
+                                        {
+                                            productSlie1A = 1;
+                                            break;
+                                        }
+
+                                    }
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 text-center">
-                <div class="featured">
-                    <a href="#" class="featured-img" style="background-image: url(images/women.jpg);"></a>
-                    <div class="desc">
-                        <h2><a href="#">Shop Women's Collection</a></h2>
+
+
+            <br />
+
+
+            <div class="row">
+                <div class="span12">
+                    <h4 class="title">
+                        <span class="pull-left"><span class="text"><span class="line">Latest <strong>Products</strong></span></span></span>
+                        <span class="pull-right">
+                            <a class="left button" href="#myCarousel-2" data-slide="prev"></a><a class="right button" href="#myCarousel-2" data-slide="next"></a>
+                        </span>
+                    </h4>
+                    <div id="myCarousel-2" class="myCarousel carousel slide">
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <ul class="thumbnails">
+
+
+                                    @foreach (var item in Model)
+                                    {
+                                        if (productSlie1A >= 9)
+                                        {
+                                            <li class="span3">
+                                                <div class="product-box">
+                                                    <span class="sale_tag"></span>
+                                                    <p><a href="/productdetail?id=@item.pd_Id"><img src="@item.pd_Img1" alt="" /></a></p>
+                                                    <a href="/productdetail?id=@item.pd_Id" class="title">@item.pd_Name</a><br />
+                                                    <a href="/productdetail?id=@item.pd_Id" class="category">@item.pd_Style</a>
+                                                    <p class="price">$@item.pd_Price</p>
+                                                </div>
+                                            </li>
+                                            productSlie1A++;
+                                        }
+                                        else
+                                        {
+                                            productSlie1A++;
+                                        }
+                                        if (productSlie1A == 12)
+                                        {
+                                            productSlie1A = 1;
+                                            break;
+                                        }
+
+                                    }
+
+                                </ul>
+                            </div>
+
+                            <div class="item">
+                                <ul class="thumbnails">
+
+                                    @foreach (var item in Model)
+                                    {
+                                        if (productSlie1A >= 13)
+                                        {
+                                            <li class="span3">
+                                                <div class="product-box">
+                                                    <span class="sale_tag"></span>
+                                                    <p><a href="/productdetail?id=@item.pd_Id"><img src="@item.pd_Img1" alt="" /></a></p>
+                                                    <a href="/productdetail?id=@item.pd_Id" class="title">Ut wisi enim ad</a><br />
+                                                    <a href="/productdetail?id=@item.pd_Id" class="category">@item.pd_Style</a>
+                                                    <p class="price">$@item.pd_Price</p>
+                                                </div>
+                                            </li>
+                                            productSlie1A++;
+                                        }
+                                        else
+                                        {
+                                            productSlie1A++;
+                                        }
+
+                                        if (productSlie1A == 17)
+                                        {
+                                            productSlie1A = 1;
+                                            break;
+                                        }
+
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row feature_box">
+                <div class="span4">
+                    <div class="service">
+                        <div class="responsive">
+                            <img src="themes/images/feature_img_2.png" alt="" />
+                            <h4>MODERN <strong>DESIGN</strong></h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="service">
+                        <div class="customize">
+                            <img src="themes/images/feature_img_1.png" alt="" />
+                            <h4>FREE <strong>SHIPPING</strong></h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="service">
+                        <div class="support">
+                            <img src="themes/images/feature_img_3.png" alt="" />
+                            <h4>24/7 LIVE <strong>SUPPORT</strong></h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="colorlib-product">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
-                <h2>Best Sellers</h2>
-            </div>
+
+
+
+<section class="our_client">
+    <h4 class="title"><span class="text">Manufactures</span></h4>
+    <div class="row">
+        <div class="span2">
+            <a href="#"><img alt="" src="themes/images/clients/14.png"></a>
         </div>
-
-
-        @*Product*@
-    <div class="row row-pb-md">
-
-        @foreach (var item in Model)
-        {
-            <div class="col-lg-3 mb-4 text-center">
-                <div class="product-entry border">
-                    <a href="/productdetail?id=@item.pd_Id" class="prod-img">
-                        <img src="@item.pd_Img1" class="img-fluid" alt="@item.pd_Name">
-                    </a>
-                    <div class="desc">
-                        <h2><a href="/productdetail?id=@item.pd_Id" id="">@item.pd_Name</a></h2>
-                        <span class="price">$ @item.pd_Price</span>
-                    </div>
-                </div>
-            </div>
-
-            i++;
-
-            if (i == 5)
-            {
-                <div class="w-100"></div>
-                i = 1;
-            }
-        }
-        <div class="w-100"></div>
-    </div>
-        @*Product*@
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p><a href="/allproduct" class="btn btn-primary btn-lg">Shop All Products</a></p>
-            </div>
+        <div class="span2">
+            <a href="#"><img alt="" src="themes/images/clients/35.png"></a>
+        </div>
+        <div class="span2">
+            <a href="#"><img alt="" src="themes/images/clients/1.png"></a>
+        </div>
+        <div class="span2">
+            <a href="#"><img alt="" src="themes/images/clients/2.png"></a>
+        </div>
+        <div class="span2">
+            <a href="#"><img alt="" src="themes/images/clients/3.png"></a>
+        </div>
+        <div class="span2">
+            <a href="#"><img alt="" src="themes/images/clients/4.png"></a>
         </div>
     </div>
-</div>
-
-<div class="colorlib-partner">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
-                <h2>Trusted Partners</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col partner-col text-center">
-                <img src="images/brand-1.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-            </div>
-            <div class="col partner-col text-center">
-                <img src="images/brand-2.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-            </div>
-            <div class="col partner-col text-center">
-                <img src="images/brand-3.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-            </div>
-            <div class="col partner-col text-center">
-                <img src="images/brand-4.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-            </div>
-            <div class="col partner-col text-center">
-                <img src="images/brand-5.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-            </div>
-        </div>
-    </div>
-</div>
+</section>
