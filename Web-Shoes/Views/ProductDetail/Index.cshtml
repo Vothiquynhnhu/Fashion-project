@@ -7,408 +7,524 @@
     ViewData["DescriptionMeta"] = ViewBag.Description;
 }
 
+<!-- Product Detail Start -->
+<div class="product-detail">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="product-detail-top">
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <div class="product-slider-single normal-slider">
+                                @{
+                                    if (ViewBag.Img1 != "")
+                                    {
+                                        <img src="@ViewBag.Img1" alt="Product Image" id="MainSlider">
+                                    }
 
-<link href="~/css/commentProductDetail.css" rel="stylesheet" />
+                                    if (ViewBag.Img2 != "")
+                                    {
+                                        <img src="@ViewBag.Img2" alt="Product Image">
+                                    }
 
-<section class="main-content">
-    <div class="row">
-        <div class="span9">
-            <div class="row">
-                <div class="span4">
-                    <a href="@ViewBag.Img1" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="@ViewBag.Img1" id="mainProductImg"></a>
-                    <ul class="thumbnails small">
-                        @if (ViewBag.Img1 != "")
-                        {
-                            <li class="span1">
-                                <a href="@ViewBag.Img1" class="thumbnail" data-fancybox-group="group1" title="Description 2"><img src="@ViewBag.Img1" alt=""></a>
-                            </li>
-                        }
-                        @if (ViewBag.Img2 != "")
-                        {
-                            <li class="span1">
-                                <a href="@ViewBag.Img2" class="thumbnail" data-fancybox-group="group1" title="Description 3"><img src="@ViewBag.Img2" alt=""></a>
-                            </li>
-                        }
-                        @if (ViewBag.Img3 != "")
-                        {
-                            <li class="span1">
-                                <a href="@ViewBag.Img3" class="thumbnail" data-fancybox-group="group1" title="Description 4"><img src="@ViewBag.Img3" alt=""></a>
-                            </li>
-                        }
-                        @if (ViewBag.Img4 != "")
-                        {
-                            <li class="span1">
-                                <a href="@ViewBag.Img4" class="thumbnail" data-fancybox-group="group1" title="Description 5"><img src="@ViewBag.Img4" alt=""></a>
-                            </li>
-                        }
+                                    if (ViewBag.Img3 != "")
+                                    {
+                                        <img src="@ViewBag.Img3" alt="Product Image">
+                                    }
+
+                                    if (ViewBag.Img4 != "")
+                                    {
+                                        <img src="@ViewBag.Img4" alt="Product Image">
+                                    }
+                                    
+                                }
 
 
+                            </div>
+                            <div class="product-slider-single-nav normal-slider">
+                                @{
+                                    if (ViewBag.Img1 != "")
+                                    {
+                                        <div class="slider-nav-img"><img src="@ViewBag.Img1" alt="Product Image"></div>
+                                    }
+
+                                    if (ViewBag.Img2 != "")
+                                    {
+                                        <div class="slider-nav-img"><img src="@ViewBag.Img2" alt="Product Image"></div>
+                                    }
+
+                                    if (ViewBag.Img3 != "")
+                                    {
+                                        <div class="slider-nav-img"><img src="@ViewBag.Img3" alt="Product Image"></div>
+                                    }
+
+                                    if (ViewBag.Img4 != "")
+                                    {
+                                        <div class="slider-nav-img"><img src="@ViewBag.Img4" alt="Product Image"></div>
+                                    }
+
+                                }
+
+                                
 
 
-                    </ul>
-                </div>
-                <div class="span5">
-                    <address>
-                        <!--<strong>Brand:</strong> <span>--> <!---->
-                        <!--</span><br>
-                        <strong>Product Code:</strong> <span>Product 14</span><br>-->
-                        <strong>Reward Points:</strong> <span>15</span><br>
-                        @*<strong>Availability:</strong> <span>Out Of Stock</span><br>*@
-                    </address>
-                    <h4><strong>Price: $@ViewBag.Price</strong></h4>
-                </div>
-                <div class="span5">
-
-
-
-                    <!--<form class="form-inline" action="Productdetailadd" >-->
-                    @*<label class="checkbox">
-                            <input type="checkbox" value=""> Option one is this and that
-                        </label>
-                        <br />
-                        <label class="checkbox">
-                            <input type="checkbox" value=""> Be sure to include why it's great
-                        </label>*@
-                    <!--<input type="text" name="productId" value="@ViewBag.Id" hidden />
-                        <p>&nbsp;</p>
-                        <label>Qty:</label>
-                        <input type="text" class="span1" placeholder="1">
-                        <button class="btn btn-inverse" type="submit">Add to cart</button>
-                    </form>-->
-
-
-                    <div>
-
-                        <h4><strong>Size:</strong></h4>
-                        <a href="#" class="btn btn-dark" id="size_S" onclick="size('S','size_S')">S</a>
-                        <a href="#" class="btn btn-dark" id="size_M" onclick="size('M','size_M')">M</a>
-                        <a href="#" class="btn btn-dark" id="size_L" onclick="size('L','size_L')">L</a>
-                        <a href="#" class="btn btn-dark" id="size_XL" onclick="size('XL','size_XL')">XL</a>
-                    </div>
-                    <br />
-                    <div>
-                        <h4><strong>Color:</strong></h4>
-                        <br />
-
-                        @if (ViewBag.Img1 != "")
-                        {
-                            <a href="#" class="btn " style="background-color: red;" id="color_Blue" onclick="color('Blue','@ViewBag.Img1')">Blue</a>
-                        }
-
-                        @if (ViewBag.Img2 != "")
-                        {
-                            <a href="#" class="btn " style="background-color: red;" id="color_Green" onclick="color('Green','@ViewBag.Img2')">Green</a>
-                        }
-
-                        @if (ViewBag.Img3 != "")
-                        {
-                            <a href="#" class="btn " style="background-color: red;" id="color_Red" onclick="color('Red','@ViewBag.Img3')">Red</a>
-                        }
-
-                        @if (ViewBag.Img4 != "")
-                        {
-                            <a href="#" class="btn " style="background-color: red;" id="color_Yellow" onclick="color('Yellow','@ViewBag.Img4')">Yellow</a>
-                        }
-
-
-
-
-                    </div>
-                    <br />
-
-                    <div class="col-sm-8 text-center">
-
-
-
-                        <p class="addtocart"><a href="" class="btn btn-inverse btn-addtocart" id="addtocartbutton" onclick="addtocart()"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="span9">
-                    <ul class="nav nav-tabs" id="myTab">
-                        <li class="active"><a href="#home">Description</a></li>
-                        <li class=""><a href="#profile">Additional Information</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="home">@ViewBag.Description</div>
-                        <div class="tab-pane" id="profile">
-                            <table class="table table-striped shop_attributes">
-                                <tbody>
-                                    <tr class="">
-                                        <th>Size</th>
-                                        <td>Large, Medium, Small, X-Large</td>
-                                    </tr>
-                                    <tr class="alt">
-                                        <th>Colour</th>
-                                        <td>Orange, Yellow</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <hr />
-                <br />
-                <br />
-
-
-                <div class="span9">
-                    <div class="col-md-8">
-                        <div class="page-header">
-                            <h1><small class="pull-right">@ViewBag.CountReview comments</small> Comments </h1>
-                        </div>
-                        <div class="comments-list">
-                            @foreach (var item in Model)
-                            {
-                                <div class="media">
-                                    <p class="pull-right"><small>5 days ago</small></p>
-                                    <a class="media-left" href="#">
-                                        <img src="https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png" height="40px" width="40px">
-                                    </a>
-                                    <div class="media-body">
-
-                                        <h4 class="media-heading user_name">@item.review_UserName</h4>
-                                        @item.review_Comment
-
-                                        @*<p><small><a href="">Like</a> - <a href="">Share</a></small></p>*@
+                        <div class="col-md-7">
+                            <div class="product-content">
+                                <div class="title"><h2>@ViewBag.NameProduct</h2></div>
+                                <div class="ratting">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="price">
+                                    <h4>Price:</h4>
+                                    <p>$@ViewBag.Price <span>$149</span></p>
+                                </div>
+                                <div class="quantity">
+                                    <h4>Quantity:</h4>
+                                    <div class="qty">
+                                        <button class="btn-minus"><i class="fa fa-minus"></i></button>
+                                        <input type="text" value="1" id="quantity">
+                                        <button class="btn-plus"><i class="fa fa-plus"></i></button>
                                     </div>
                                 </div>
-                            }
+                                <div class="p-size">
+                                    <h4>Size:</h4>
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" class="btn" onclick="size('S')">S</button>
+                                        <button type="button" class="btn" onclick="size('M')">M</button>
+                                        <button type="button" class="btn" onclick="size('L')">L</button>
+                                        <button type="button" class="btn" onclick="size('XL')">XL</button>
+                                    </div>
+                                </div>
+                                <div class="p-color">
+                                    <h4>Color:</h4>
+                                    <div class="btn-group btn-group-sm">
 
+                                        @{
+                                            if (ViewBag.Img1 != "")
+                                            {
+                                                <button type="button" class="btn" onclick="color('White','@ViewBag.Img1')">White</button>
+                                            }
 
-                        </div>
-                    </div>
-                </div>
-                <div class="span9">
-                    <!--Form comment-->
-                    <form asp-controller="ProductDetail" asp-action="Comment" method="post" onsubmit="return checkform(this);">
-                        <div class="form-group">
-                            <label>Your comment:</label>
-                            <input style="display:none" type="text" name="idproduct" value="@ViewBag.Id" readonly />
-                            <br />
-                            <textarea name="comment" class="form-control" rows="3" cols="12"></textarea>
-                        </div>
-                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
-                        <br />
+                                            if (ViewBag.Img2 != "")
+                                            {
+                                                <button type="button" class="btn" onclick="color('Black','@ViewBag.Img2')">Black</button>
+                                            }
 
-                        <br />
+                                            if (ViewBag.Img3 != "")
+                                            {
+                                                <button type="button" class="btn" onclick="color('Blue','@ViewBag.Img3')">Blue</button>
+                                            }
 
-                        <input type="submit" name="name" class="btn btn-default" value="Comment" />
-                    </form>
-                </div>
+                                            if (ViewBag.Img4 != "")
+                                            {
+                                                <button type="button" class="btn" onclick="color('Blue','@ViewBag.Img4')">Blue</button>
+                                            }
+                                        }
 
-                <div class="span9">
-                    <br>
-                    <h4 class="title">
-                        <span class="pull-left"><span class="text"><strong>Related</strong> Products</span></span>
-                        <span class="pull-right">
-                            <a class="left button" href="#myCarousel-1" data-slide="prev"></a><a class="right button" href="#myCarousel-1" data-slide="next"></a>
-                        </span>
-                    </h4>
-                    <div id="myCarousel-1" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="active item">
-                                <ul class="thumbnails listing-products">
-                                    <li class="span3">
-                                        <div class="product-box">
-                                            <span class="sale_tag"></span>
-                                            <a href="product_detail.html"><img alt="" src="themes/images/ladies/6.jpg"></a><br />
-                                            <a href="product_detail.html" class="title">Wuam ultrices rutrum</a><br />
-                                            <a href="#" class="category">Suspendisse aliquet</a>
-                                            <p class="price">$341</p>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <div class="product-box">
-                                            <span class="sale_tag"></span>
-                                            <a href="product_detail.html"><img alt="" src="themes/images/ladies/5.jpg"></a><br />
-                                            <a href="product_detail.html" class="title">Fusce id molestie massa</a><br />
-                                            <a href="#" class="category">Phasellus consequat</a>
-                                            <p class="price">$341</p>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <div class="product-box">
-                                            <a href="product_detail.html"><img alt="" src="themes/images/ladies/4.jpg"></a><br />
-                                            <a href="product_detail.html" class="title">Praesent tempor sem</a><br />
-                                            <a href="#" class="category">Erat gravida</a>
-                                            <p class="price">$28</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="item">
-                                <ul class="thumbnails listing-products">
-                                    <li class="span3">
-                                        <div class="product-box">
-                                            <span class="sale_tag"></span>
-                                            <a href="product_detail.html"><img alt="" src="themes/images/ladies/1.jpg"></a><br />
-                                            <a href="product_detail.html" class="title">Fusce id molestie massa</a><br />
-                                            <a href="#" class="category">Phasellus consequat</a>
-                                            <p class="price">$341</p>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <div class="product-box">
-                                            <a href="product_detail.html"><img alt="" src="themes/images/ladies/2.jpg"></a><br />
-                                            <a href="product_detail.html">Praesent tempor sem</a><br />
-                                            <a href="#" class="category">Erat gravida</a>
-                                            <p class="price">$28</p>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <div class="product-box">
-                                            <span class="sale_tag"></span>
-                                            <a href="product_detail.html"><img alt="" src="themes/images/ladies/3.jpg"></a><br />
-                                            <a href="product_detail.html" class="title">Wuam ultrices rutrum</a><br />
-                                            <a href="#" class="category">Suspendisse aliquet</a>
-                                            <p class="price">$341</p>
-                                        </div>
-                                    </li>
-                                </ul>
+                                    </div>
+                                </div>
+
+                                <div id="message">
+                                    
+                                </div>
+                                <div class="action">
+                                    <a class="btn" href="#"  onclick="addtocart()" id="addtocartbutton"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="span3 col">
-            <div class="block">
-                <ul class="nav nav-list">
-                    <li class="nav-header">SUB CATEGORIES</li>
-                    <li><a href="products.html">Nullam semper elementum</a></li>
-                    <li class="active"><a href="products.html">Phasellus ultricies</a></li>
-                    <li><a href="products.html">Donec laoreet dui</a></li>
-                    <li><a href="products.html">Nullam semper elementum</a></li>
-                    <li><a href="products.html">Phasellus ultricies</a></li>
-                    <li><a href="products.html">Donec laoreet dui</a></li>
-                </ul>
-                <br />
-                <ul class="nav nav-list below">
-                    <li class="nav-header">MANUFACTURES</li>
-                    <li><a href="products.html">Adidas</a></li>
-                    <li><a href="products.html">Nike</a></li>
-                    <li><a href="products.html">Dunlop</a></li>
-                    <li><a href="products.html">Yamaha</a></li>
-                </ul>
-            </div>
-            <div class="block">
-                <h4 class="title">
-                    <span class="pull-left"><span class="text">Randomize</span></span>
-                    <span class="pull-right">
-                        <a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
-                    </span>
-                </h4>
-                <div id="myCarousel" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="active item">
-                            <ul class="thumbnails listing-products">
-                                <li class="span3">
-                                    <div class="product-box">
-                                        <span class="sale_tag"></span>
-                                        <a href="product_detail.html"><img alt="" src="themes/images/ladies/7.jpg"></a><br />
-                                        <a href="product_detail.html" class="title">Fusce id molestie massa</a><br />
-                                        <a href="#" class="category">Suspendisse aliquet</a>
-                                        <p class="price">$261</p>
+
+                <div class="row product-detail-bottom">
+                    <div class="col-lg-12">
+                        <ul class="nav nav-pills nav-justified">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" href="#description">Description</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#specification">Specification</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#reviews">Reviews (1)</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="description" class="container tab-pane active">
+                                <h4>Product description</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo.
+                                </p>
+                            </div>
+                            <div id="specification" class="container tab-pane fade">
+                                <h4>Product specification</h4>
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                </ul>
+                            </div>
+                            <div id="reviews" class="container tab-pane fade">
+                                <div class="reviews-submitted">
+                                    <div class="reviewer">Phasellus Gravida - <span>01 Jan 2020</span></div>
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
                                     </div>
-                                </li>
-                            </ul>
+                                    <p>
+                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                                    </p>
+                                </div>
+                                <div class="reviews-submit">
+                                    <h4>Give your Review:</h4>
+                                    <div class="ratting">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="row form">
+                                        <div class="col-sm-6">
+                                            <input type="text" placeholder="Name">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="email" placeholder="Email">
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <textarea placeholder="Review"></textarea>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <button>Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="item">
-                            <ul class="thumbnails listing-products">
-                                <li class="span3">
-                                    <div class="product-box">
-                                        <a href="product_detail.html"><img alt="" src="themes/images/ladies/8.jpg"></a><br />
-                                        <a href="product_detail.html" class="title">Tempor sem sodales</a><br />
-                                        <a href="#" class="category">Urna nec lectus mollis</a>
-                                        <p class="price">$134</p>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="section-header">
+                        <h1>Related Products</h1>
+                    </div>
+
+                    <div class="row align-items-center product-slider product-slider-3">
+                        <div class="col-lg-3">
+                            <div class="product-item">
+                                <div class="product-title">
+                                    <a href="#">Product Name</a>
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
                                     </div>
-                                </li>
-                            </ul>
+                                </div>
+                                <div class="product-image">
+                                    <a href="product-detail.html">
+                                        <img src="img/product-10.jpg" alt="Product Image">
+                                    </a>
+                                    <div class="product-action">
+                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-price">
+                                    <h3><span>$</span>99</h3>
+                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="product-item">
+                                <div class="product-title">
+                                    <a href="#">Product Name</a>
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="product-image">
+                                    <a href="product-detail.html">
+                                        <img src="img/product-8.jpg" alt="Product Image">
+                                    </a>
+                                    <div class="product-action">
+                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-price">
+                                    <h3><span>$</span>99</h3>
+                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="product-item">
+                                <div class="product-title">
+                                    <a href="#">Product Name</a>
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="product-image">
+                                    <a href="product-detail.html">
+                                        <img src="img/product-6.jpg" alt="Product Image">
+                                    </a>
+                                    <div class="product-action">
+                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-price">
+                                    <h3><span>$</span>99</h3>
+                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="product-item">
+                                <div class="product-title">
+                                    <a href="#">Product Name</a>
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="product-image">
+                                    <a href="product-detail.html">
+                                        <img src="img/product-4.jpg" alt="Product Image">
+                                    </a>
+                                    <div class="product-action">
+                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-price">
+                                    <h3><span>$</span>99</h3>
+                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="product-item">
+                                <div class="product-title">
+                                    <a href="#">Product Name</a>
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="product-image">
+                                    <a href="product-detail.html">
+                                        <img src="img/product-2.jpg" alt="Product Image">
+                                    </a>
+                                    <div class="product-action">
+                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-price">
+                                    <h3><span>$</span>99</h3>
+                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="block">
-                <h4 class="title"><strong>Best</strong> Seller</h4>
-                <ul class="small-product">
-                    <li>
-                        <a href="#" title="Praesent tempor sem sodales">
-                            <img src="themes/images/ladies/1.jpg" alt="Praesent tempor sem sodales">
-                        </a>
-                        <a href="#">Praesent tempor sem</a>
-                    </li>
-                    <li>
-                        <a href="#" title="Luctus quam ultrices rutrum">
-                            <img src="themes/images/ladies/2.jpg" alt="Luctus quam ultrices rutrum">
-                        </a>
-                        <a href="#">Luctus quam ultrices rutrum</a>
-                    </li>
-                    <li>
-                        <a href="#" title="Fusce id molestie massa">
-                            <img src="themes/images/ladies/3.jpg" alt="Fusce id molestie massa">
-                        </a>
-                        <a href="#">Fusce id molestie massa</a>
-                    </li>
-                </ul>
+
+            <!-- Side Bar Start -->
+            <div class="col-lg-4 sidebar">
+                <div class="sidebar-widget category">
+                    <h2 class="title">Category</h2>
+                    <nav class="navbar bg-light">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies Clothes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women Clothes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accessories</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="sidebar-widget widget-slider">
+                    <div class="sidebar-slider normal-slider">
+                        <div class="product-item">
+                            <div class="product-title">
+                                <a href="#">Product Name</a>
+                                <div class="ratting">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="product-image">
+                                <a href="product-detail.html">
+                                    <img src="img/product-7.jpg" alt="Product Image">
+                                </a>
+                                <div class="product-action">
+                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <h3><span>$</span>99</h3>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-title">
+                                <a href="#">Product Name</a>
+                                <div class="ratting">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="product-image">
+                                <a href="product-detail.html">
+                                    <img src="img/product-8.jpg" alt="Product Image">
+                                </a>
+                                <div class="product-action">
+                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <h3><span>$</span>99</h3>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-title">
+                                <a href="#">Product Name</a>
+                                <div class="ratting">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="product-image">
+                                <a href="product-detail.html">
+                                    <img src="img/product-9.jpg" alt="Product Image">
+                                </a>
+                                <div class="product-action">
+                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <h3><span>$</span>99</h3>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget brands">
+                    <h2 class="title">Our Brands</h2>
+                    <ul>
+                        <li><a href="#">Nulla </a><span>(45)</span></li>
+                        <li><a href="#">Curabitur </a><span>(34)</span></li>
+                        <li><a href="#">Nunc </a><span>(67)</span></li>
+                        <li><a href="#">Ullamcorper</a><span>(74)</span></li>
+                        <li><a href="#">Fusce </a><span>(89)</span></li>
+                        <li><a href="#">Sagittis</a><span>(28)</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget tag">
+                    <h2 class="title">Tags Cloud</h2>
+                    <a href="#">Lorem ipsum</a>
+                    <a href="#">Vivamus</a>
+                    <a href="#">Phasellus</a>
+                    <a href="#">pulvinar</a>
+                    <a href="#">Curabitur</a>
+                    <a href="#">Fusce</a>
+                    <a href="#">Sem quis</a>
+                    <a href="#">Mollis metus</a>
+                    <a href="#">Sit amet</a>
+                    <a href="#">Vel posuere</a>
+                    <a href="#">orci luctus</a>
+                    <a href="#">Nam lorem</a>
+                </div>
             </div>
+            <!-- Side Bar End -->
         </div>
     </div>
-</section>
-
-<script src="~/js/productDetailPage.js"></script>
+</div>
+<!-- Product Detail End -->
 
 
 
 <script>
 
     var ProductAmount = "1";
-    var ProductColor;
-    var ProductSize;
+    var ProductColor = "";
+    var ProductSize = "";
 
     function color(color,img) {
         ProductColor = color;
 
-        var ProductImg = document.getElementById('mainProductImg');
+        var ProductImg = document.getElementById('MainSlider');
         ProductImg.src = img;
     }
 
-    function size(size,sizeId) {
+    function size(size) {
         ProductSize = size;
 
-
-
-
-        //var sizeS = document.getElementById('size_7');
-        //if (sizeS != null) {
-        //    sizeS.style = 'background-color: #CCCCCC;';
-        //}
-
-        //var sizeM = document.getElementById('size_7');
-        //if (sizeM != null) {
-        //    sizeM.style = 'background-color: #CCCCCC;';
-        //}
-
-        //var sizeL = document.getElementById('size_7');
-        //if (sizeL != null) {
-        //    sizeL.style = 'background-color: #CCCCCC;';
-        //sizeL
-
-        //var sizeXL = document.getElementById('size_7');
-        //if (sizeL != null) {
-        //    sizeS.style = 'background-color: #CCCCCC;';
-        //}
-
-
-
-        var sizechoose = document.getElementById(sizeId);
-        if (sizechoose != null) {
-            sizechoose.style = 'background-color:DodgerBlue;';
-        }
     }
 
     function amount() {
@@ -419,10 +535,26 @@
     }
     function addtocart() {
 
-        /*amount();*/
+        amount();
 
-        var a = document.querySelector("a#addtocartbutton");
-        a.href = "/productdetailadd?productid=@ViewBag.Id&quantity=" + ProductAmount + "&color=" + ProductColor + "&size=" + ProductSize;
+        var message = document.getElementById('message');
+        if (ProductColor == "") {
+            message.innerHTML = "<b class='text-danger'> Input Color please! </b>";
+            
+        }
+        else {
+            if (ProductSize == "") {
+                message.innerHTML = "<b class='text-danger'>Input Size please!</b>";
+               
+            }
+            else
+            {
+                var a = document.querySelector("body > div.product-detail > div > div > div.col-lg-8 > div.product-detail-top > div > div.col-md-7 > div > div.action > a");
+                a.href = "/productdetailadd?productid=@ViewBag.Id&quantity=" + ProductAmount + "&color=" + ProductColor + "&size=" + ProductSize;
+                a.click();
+            }
+        }
+        window.stop();
 
     }
 </script>

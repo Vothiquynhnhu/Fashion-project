@@ -158,17 +158,6 @@ namespace Web_Shoes.Controllers
 
             try
             {
-                //productid = Request.Form("productId");
-
-
-               
-                // Test
-                quantity = "1";
-
-                // Test
-
-
-
                 string namePc = Environment.MachineName;
                 bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
 
