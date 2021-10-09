@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Web_Shoes.Entity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+
+    @*<div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+        <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Login</a>
+            <a href="#" class="dropdown-item">Register</a>
+        </div>
+    </div>*@
+
+    <li>
+        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="text-light">Hello @User.Identity.Name!</a>
+    </li>
+    <li>
+        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button type="submit" class=" btn btn-link ">Logout</button>
+        </form>
+    </li>
+}
+else
+{
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+        <div class="dropdown-menu">
+            <a href="/login" class="dropdown-item">Login</a>
+            <a href="/register" class="dropdown-item">Register</a>
+        </div>
+    </div>
+}
+

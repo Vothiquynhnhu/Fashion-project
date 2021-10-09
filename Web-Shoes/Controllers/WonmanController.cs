@@ -19,7 +19,7 @@ namespace Web_Shoes.Controllers
         }
 
 
-        [Route("/wonman")]
+        [Route("/women")]
         [HttpGet]
         public IActionResult Index()
         {
