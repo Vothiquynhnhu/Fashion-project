@@ -79,7 +79,7 @@ namespace Web_Shoes.Controllers
                             join b in _context.SubReview on a.Id equals b.subReview_UserId
                             join c in _context.SubReviewInReview on b.subReview_Id equals c.SRiR_SubReviewId
                             join d in _context.Reviews on c.SRiR_ReviewId equals d.review_id
-                            select new {a,b,c,d };
+                            select new { a, b, c, d };
 
 
             review = review.Where(x => x.d.pd_Id == id && x.b.review_HideStatus == false);
@@ -98,7 +98,7 @@ namespace Web_Shoes.Controllers
                 //// table SubReview
                 //Subreview = 
 
-                
+
             });
 
             SubReview = SubReview.Where(x => x.b.subReview_HideStatus == false);
@@ -153,7 +153,7 @@ namespace Web_Shoes.Controllers
 
         [Route("/productdetailadd")]
         [HttpGet("{productid}&{quantity}&{color}&{size}")]
-        public async Task<IActionResult> Productdetailadd(int productid, string quantity,string color,string size)
+        public async Task<IActionResult> Productdetailadd(int productid, string quantity, string color, string size)
         {
 
             try
@@ -167,7 +167,7 @@ namespace Web_Shoes.Controllers
                 int quantityProduct = Int16.Parse(quantity);
 
                 string cartId = Guid.NewGuid().ToString();
-                
+
 
                 if (checkLogin)
                 {
@@ -224,12 +224,14 @@ namespace Web_Shoes.Controllers
                         _context.ProductInCart.Add(ProductInCartCreate);
 
                         await _context.SaveChangesAsync();
-                    }    
+                    }
 
 
-                    
-                }else
+
+                }
+                else
                 {
+                    /// No logined
                     //Query Proudct in Device
                     var queryProductDevice = from a in _context.Devices
                                              join b in _context.CartsDevice on a.deviceId equals b.cartd_DeviceId
@@ -258,7 +260,7 @@ namespace Web_Shoes.Controllers
                     }
                     else
                     {
-                        /// No logined
+                        
                         /// Create Device in DB
                         var deviceQuery = _context.Devices.FirstOrDefault(a => a.deviceName == namePc);
 
@@ -305,9 +307,9 @@ namespace Web_Shoes.Controllers
                         await _context.SaveChangesAsync();
                     }
                 }
-                        
 
-                
+
+
 
 
                 return Redirect("/cart");
@@ -329,7 +331,7 @@ namespace Web_Shoes.Controllers
         [HttpPost]
         public async Task<IActionResult> Comment()
         {
-            
+
             try
             {
 
@@ -354,7 +356,7 @@ namespace Web_Shoes.Controllers
 
 
 
-                    
+
 
                     int idProductInt = Int32.Parse(idproduct);
 
@@ -371,7 +373,7 @@ namespace Web_Shoes.Controllers
                     await _context.SaveChangesAsync();
                 }
 
-                
+
 
                 return Redirect("/productdetail?id=" + idproduct);
             }
@@ -412,7 +414,7 @@ namespace Web_Shoes.Controllers
 
 
 
-                    
+
                     string idCommentMain = Request.Form["idcommentmain"];
 
                     int idProductInt = Int32.Parse(idproduct);
@@ -429,7 +431,7 @@ namespace Web_Shoes.Controllers
 
                     await _context.SaveChangesAsync();
                 }
-               
+
 
                 return Redirect("/productdetail?id=" + idproduct);
             }
@@ -440,7 +442,6 @@ namespace Web_Shoes.Controllers
             }
 
         }
-
-
+        
     }
 }

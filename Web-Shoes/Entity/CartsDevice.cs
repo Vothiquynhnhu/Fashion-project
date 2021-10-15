@@ -11,6 +11,7 @@ namespace Web_Shoes.Entity
         public string cartd_Id { get; set; }
         public string cartd_DeviceId { get; set; }
         public List<ProductInCartDevices> ProductInCartDevicesCD { get; set; }
+        public int cartd_Discount { set; get; }
 
     }
 }

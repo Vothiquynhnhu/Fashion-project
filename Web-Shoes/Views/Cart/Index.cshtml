@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     int sumprice = 0;
+    int total = 0;
 }
 
 <!-- Cart Start -->
@@ -29,6 +30,8 @@
                             <tbody class="align-middle">
                                 @foreach (var item in Model)
                                 {
+                                    sumprice += item.Quantity * item.ProductPrice;
+                                    total += sumprice;
                                     <tr>
                                         <td>
                                             <div class="img">
@@ -36,7 +39,7 @@
                                                 <p>@item.ProductName</p>
                                             </div>
                                         </td>
-                                        <td>$99</td>
+                                        <td>$@item.ProductPrice</td>
                                         <td>@item.Color</td>
                                         <td>@item.Size</td>
                                         <td>
@@ -46,11 +49,14 @@
 
                                             </div>
                                         </td>
-                                        <td>$@item.ProductPrice</td>
+                                        <td>$@sumprice</td>
                                         <td>
                                             <a href="/cart/remove?productid=@item.ProductId" class="fa fa-trash"></a>
                                         </td>
                                     </tr>
+                                    sumprice = 0;
+
+
                                 }
 
 
@@ -65,17 +71,28 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="coupon">
-                                <input type="text" placeholder="Coupon Code">
-                                <button>Apply Code</button>
+                                <form asp-action="AddCoupon" method="get">
+                                    <input type="text" placeholder="Coupon Code" name="codecoupon">
+                                    <button>Apply Code</button>
+                                </form>
+                                
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="cart-summary">
                                 <div class="cart-content">
                                     <h1>Cart Summary</h1>
-                                    <p>Sub Total<span>$99</span></p>
+                                    <p>Sub Total<span>$@total</span></p>
+                                    <p>Discount<span>$@ViewBag.Discount</span></p>
                                     <p>Shipping Cost<span>$1</span></p>
-                                    <h2>Grand Total<span>$100</span></h2>
+
+                                    @{ 
+                                        int shiping = 1;
+                                        int discount = ViewBag.Discount;
+                                        total = total - discount - shiping;
+                                    }
+
+                                    <h2>Total<span>$@total</span></h2>
                                 </div>
                                 <div class="cart-btn">
                                     

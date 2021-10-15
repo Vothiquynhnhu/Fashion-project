@@ -350,7 +350,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 10, 1, 21, 9, 38, 668, DateTimeKind.Local).AddTicks(3211),
+                            bill_DatetimeOrder = new DateTime(2021, 10, 15, 16, 29, 28, 859, DateTimeKind.Local).AddTicks(6237),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -374,7 +374,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "AFD66490-12F5-4EA7-BFF6-425624290D6D",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 10, 1, 21, 9, 38, 669, DateTimeKind.Local).AddTicks(2925),
+                            bill_DatetimeOrder = new DateTime(2021, 10, 15, 16, 29, 28, 860, DateTimeKind.Local).AddTicks(6248),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -400,6 +400,9 @@ namespace Web_Shoes.Migrations
                     b.Property<string>("cart_Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("cart_Discount")
+                        .HasColumnType("int");
+
                     b.Property<string>("cart_UserID")
                         .HasColumnType("nvarchar(450)");
 
@@ -413,11 +416,13 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             cart_Id = "72309286-ECBB-4D20-AD95-2819D31E3400",
+                            cart_Discount = 0,
                             cart_UserID = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff"
                         },
                         new
                         {
                             cart_Id = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
+                            cart_Discount = 0,
                             cart_UserID = "DE544998-A3CC-4E12-ABB4-0642E57BD222"
                         });
                 });
@@ -429,6 +434,9 @@ namespace Web_Shoes.Migrations
 
                     b.Property<string>("cartd_DeviceId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("cartd_Discount")
+                        .HasColumnType("int");
 
                     b.HasKey("cartd_Id");
 
@@ -585,13 +593,13 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "5e4af3cf-ce8a-4fc9-b8ca-0cae6d2118ba",
+                            couponId = "83f8aebd-4e91-411e-8b3b-cd3284505257",
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "bb237551-3d98-4b06-a86e-37d3b8e476b0",
+                            couponId = "545c57ba-90e5-4652-a0b4-3530c041c51d",
                             couponCode = "code50",
                             couponPrice = 50
                         });
@@ -2871,7 +2879,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "7a3408d4-4ad0-42d6-9792-4d2120d1d729",
+                            subReview_Id = "5daf839a-51bb-41b9-b66c-d6a20cb0f8d0",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2880,7 +2888,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "df487960-2e41-4e27-9255-08eaf5b1b3d3",
+                            subReview_Id = "aa33aabd-e274-4afc-9d0d-d229a4f0d176",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2889,7 +2897,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "c8dd315a-8bee-4931-bf15-54110dcc8d35",
+                            subReview_Id = "1720e115-8249-4707-990d-a66cd3ccde21",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2916,17 +2924,17 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "7a3408d4-4ad0-42d6-9792-4d2120d1d729"
+                            SRiR_SubReviewId = "5daf839a-51bb-41b9-b66c-d6a20cb0f8d0"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "df487960-2e41-4e27-9255-08eaf5b1b3d3"
+                            SRiR_SubReviewId = "aa33aabd-e274-4afc-9d0d-d229a4f0d176"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "c8dd315a-8bee-4931-bf15-54110dcc8d35"
+                            SRiR_SubReviewId = "1720e115-8249-4707-990d-a66cd3ccde21"
                         });
                 });
 
@@ -2992,14 +3000,14 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "63ce6a8f-0e39-4dda-8cf5-ff6e9152df4c",
+                            ConcurrencyStamp = "564f038d-4454-4534-b3b7-3ec5e5561c1b",
                             Name = "staff",
                             Description = "Staff"
                         },
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "26da4b3a-edde-43b7-be01-d68be7f2ad9e",
+                            ConcurrencyStamp = "f8251eb2-1b64-41c7-8c53-bc2bbc779976",
                             Name = "admin",
                             Description = "admin"
                         });
@@ -3049,34 +3057,42 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e78b664c-fc49-4179-b27a-bf0e10588c7b",
+                            ConcurrencyStamp = "c209df1e-b6a7-4a71-9185-0d092b20a774",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECzDAk2mfEKEOnWmQMWCFBGd3I9WYZXncirHiHE7mwvn83rB1zR5MdqMM5nzoaFWZg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJHSVZD6xCHiIMF6lAz4nP7QTUWI015AMGJIxTSD7lJCoenZfg9L8eVVvoOHRzNecw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aeb1d93e-24b4-490d-8b3d-561f7fddadab",
+                            SecurityStamp = "d92913ae-df63-4ad6-8967-50f8acde0f9f",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "admin",
-                            LastName = "admin"
+                            LastName = "admin",
+                            bill_Address1 = "HCM 1",
+                            bill_Address2 = "HCM 2",
+                            bill_City = "HCM",
+                            bill_CompanyName = "0123456789",
+                            bill_Country = "Viet Nam",
+                            bill_PhoneNumber = "0112223344",
+                            bill_PostalCode = "700000",
+                            bill_State = "700000"
                         },
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5e9ae30b-8d57-44ac-929c-7fc3aaf2d30a",
+                            ConcurrencyStamp = "9015f611-c60b-4dc4-82c2-0e384086f6d2",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFJYAm/tQYqt5sk5I/QmbC0Kz7L0rMswoxLK4krYv7jEADeV5XfU3+GbnZW14WkTdA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECpuMFmV8sB4J1DNaoNwMXWOgVDelXgoaM9RIoS8y4idzoPgcF4l6uzs3lFzr2O+hg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "10de0a5a-8572-4b69-8138-ed024792bcf9",
+                            SecurityStamp = "deafc689-c7b8-4423-83da-df7748391209",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),

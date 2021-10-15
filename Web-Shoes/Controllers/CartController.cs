@@ -39,9 +39,23 @@ namespace Web_Shoes.Controllers
             string namePc = Environment.MachineName;
             bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
 
+
             if (checkLogin)
             {
                 //login
+                //Check Discount 
+                var queryCart = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
+                if (queryCart.cart_Discount != 0 || queryCart != null)
+                {
+                    ViewBag.Discount = queryCart.cart_Discount;
+                }
+                else
+                {
+                    ViewBag.Discount = 0;
+                }
+
+
+                //Query multiple cart
                 var query = from a in _context.Products
                             join b in _context.ProductInCart on a.pd_Id equals b.pic_ProductId
                             join c in _context.Cart on b.pic_CartId equals c.cart_Id
@@ -69,6 +83,24 @@ namespace Web_Shoes.Controllers
             else
             {
                 //No login
+                //Get id of device
+                var queryDevice = _context.Devices.FirstOrDefault(a => a.deviceName == namePc);
+
+                
+                //Check Discount 
+                var queryCart = _context.CartsDevice.FirstOrDefault(a => a.cartd_DeviceId == queryDevice.deviceId);
+                if (queryCart.cartd_Discount != 0 || queryCart != null)
+                {
+                    ViewBag.Discount = queryCart.cartd_Discount;
+                }
+                else
+                {
+                    ViewBag.Discount = 0;
+                }
+
+
+
+                //Query multiple cart
                 var query = from a in _context.Products
                             join b in _context.ProductInCartDevices on a.pd_Id equals b.picd_ProductId
                             join c in _context.CartsDevice on b.picd_CartId equals c.cartd_Id
@@ -94,12 +126,12 @@ namespace Web_Shoes.Controllers
                 return View(productInCartModelQuery);
 
             }
-            
 
 
 
 
-            
+
+
         }
 
 
@@ -109,13 +141,15 @@ namespace Web_Shoes.Controllers
         public IActionResult RemoveProduct(int productid, int quantity)
         {
 
-           
+
 
             try
             {
 
                 string namePc = Environment.MachineName;
-                bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+                bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault(); 
+
+                 var xem = User.FindFirstValue(ClaimTypes.Email);
 
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var userName = User.FindFirstValue(ClaimTypes.Name);
@@ -167,14 +201,82 @@ namespace Web_Shoes.Controllers
 
 
 
-                return Redirect("/checkout?reduceprice="+ ReducePrice);
+                return Redirect("/checkout?reduceprice=" + ReducePrice);
             }
-            catch 
+            catch
             {
 
                 return RedirectToAction(nameof(Index));
             }
-            
+
+        }
+
+        [Route("/coupon")]
+        [HttpGet]
+        public IActionResult AddCoupon()
+        {
+
+            try
+            {
+                string namePc = Environment.MachineName;
+                bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var userName = User.FindFirstValue(ClaimTypes.Name);
+                string codeCoupon = Request.Query["codecoupon"];
+
+                if (checkLogin)
+                {
+                    //Logined
+                    //Check Coupon
+
+                    var queryCoupon = _context.Coupons.FirstOrDefault(a => a.couponCode == codeCoupon);
+                    var queryCartUser = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
+                    if (queryCoupon != null)
+                    {
+                        
+                        queryCartUser.cart_Discount = queryCoupon.couponPrice;
+                        
+                    }
+                    else
+                    {
+                        queryCartUser.cart_Discount = 0;
+                    }
+                    _context.SaveChanges();
+
+                }
+                else
+                {
+                    //Not login
+                    //Get id divice
+                    var queryDevice = _context.Devices.FirstOrDefault(a => a.deviceName == namePc);
+
+                    //Check Coupon
+                    var queryCoupon = _context.Coupons.FirstOrDefault(a => a.couponCode == codeCoupon);
+
+                    var queryCartDevice = _context.CartsDevice.FirstOrDefault(a => a.cartd_DeviceId == queryDevice.deviceId);
+                    if (queryCoupon != null)
+                    {
+                        
+                        queryCartDevice.cartd_Discount = queryCoupon.couponPrice;
+                        
+                    }
+                    else
+                    {
+                        queryCartDevice.cartd_Discount = 0;
+                    }
+                    _context.SaveChanges();
+
+                }
+
+                
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+
+                return RedirectToAction(nameof(Index));
+            }
         }
     }
 }

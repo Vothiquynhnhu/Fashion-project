@@ -12,5 +12,7 @@ namespace Web_Shoes.Entity
         public string cart_UserID { set; get; }
         public List<ProductInCart> ProductInCartC { get; set; }
 
+        public int cart_Discount { set; get; }
+
     }
 }

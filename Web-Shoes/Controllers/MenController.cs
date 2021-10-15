@@ -46,6 +46,17 @@ namespace Web_Shoes.Controllers
             return View(productModelQuery);
         }
 
+        [Route("/search")]
+        [HttpPost]
+        public IActionResult Search()
+        {
+            string search = Request.Form["search"];
+
+            var searchQuery = _context.Products.Where(a => a.pd_Name.Contains(search) || a.pd_Description.Contains(search) || a.pd_Price.ToString() == search);
+
+            return View(searchQuery);
+        }
+
 
     }
 }

@@ -27,79 +27,92 @@ namespace Web_Shoes.Controllers
 
         [Route("/checkout")]
         [HttpGet("{reduceprice}")]
-        public IActionResult Index(string reduceprice = "0")
+        public IActionResult Index()
         {
             try
             {
+                string namePc = Environment.MachineName;
+                bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
 
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
                 var userName = User.FindFirstValue(ClaimTypes.Name);
 
-
-                var query = from a in _context.Products
-                            join b in _context.ProductInCart on a.pd_Id equals b.pic_ProductId
-                            join c in _context.Cart on b.pic_CartId equals c.cart_Id
-                            join d in _context.AppUser on c.cart_UserID equals d.Id
-                            select new { a, b, c, d };
-
-
-                query = query.Where(x => x.d.Id == userId);
-
+                if (checkLogin)
+                {
+                    //login
+                    var query = from a in _context.Products
+                                join b in _context.ProductInCart on a.pd_Id equals b.pic_ProductId
+                                join c in _context.Cart on b.pic_CartId equals c.cart_Id
+                                join d in _context.AppUser on c.cart_UserID equals d.Id
+                                select new { a, b, c, d };
 
 
-                var productInCartModelQuery = query
-                    .Select(x => new ProductInCartModel()
+                    query = query.Where(x => x.d.Id == userId);
+
+
+                    // Check Discount
+                    var querydiscount = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
+                    ViewBag.Discount = querydiscount.cart_Discount;
+
+                    var productInCartModelQuery = query
+                        .Select(x => new ProductInCartModel()
+                        {
+                            ProductId = x.a.pd_Id,
+                            ProductName = x.a.pd_Name,
+                            ProductPrice = x.a.pd_Price,
+                            ProductImg1 = x.a.pd_Img1,
+                            Quantity = x.b.pic_amount,
+                            UserId = x.d.Id,
+                            Color = x.b.pic_color,
+                            Size = x.b.pic_size
+
+                        });
+
+
+                    var cartDetail = query.Select(a => new CheckOutModel()
                     {
-                        ProductId = x.a.pd_Id,
-                        ProductName = x.a.pd_Name,
-                        ProductPrice = x.a.pd_Price,
-                        ProductImg1 = x.a.pd_Img1,
-                        Quantity = x.b.pic_amount,
-                        UserId = x.d.Id,
-                        Color = x.b.pic_color,
-                        Size = x.b.pic_size
-
+                        checkout_ProductName = a.a.pd_Name,
+                        checkout_Quantity = a.b.pic_amount,
+                        checkout_Price = a.a.pd_Price
                     });
 
-
-                var cartDetail = query.Select(a => new CheckOutModel()
-                {
-                    checkout_ProductName = a.a.pd_Name,
-                    checkout_Quantity = a.b.pic_amount,
-                    checkout_Price = a.a.pd_Price
-                });
-
-                var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == "ship");
+                    var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == "ship");
 
 
-                
-                ViewBag.Discount = reduceprice;
 
-                int reTotal = 0;
-                foreach (var item in cartDetail)
-                {
-                    reTotal += item.checkout_Price;
-                }
-
-                ViewBag.Retotal = reTotal;
-                ViewBag.Ship = 0;
-                int ship = 0;
-
-                if (shipingQuery!= null)
-                {
                     
-                    string a = shipingQuery.ship_Price.ToString();
-                    ship = Int32.Parse(a);
-                    ViewBag.Ship = ship;
+
+                    int reTotal = 0;
+                    foreach (var item in cartDetail)
+                    {
+                        reTotal += item.checkout_Price;
+                    }
+
+                    ViewBag.Retotal = reTotal;
+                    ViewBag.Ship = 0;
+                    int ship = 0;
+
+                    if (shipingQuery != null)
+                    {
+
+                        string a = shipingQuery.ship_Price.ToString();
+                        ship = Int32.Parse(a);
+                        ViewBag.Ship = ship;
+                    }
+
+                    
+                    ViewBag.Total = reTotal + ship - querydiscount.cart_Discount;
+                    return View(cartDetail);
+                }
+                else
+                {
+                    //Not login
+
+                    return View();
                 }
 
+
                 
-
-                int discount = Int32.Parse(reduceprice);
-                ViewBag.Total = reTotal + ship - discount;
-
-                return View(cartDetail);
             }
             catch 
             {

@@ -1675,7 +1675,16 @@ namespace Web_Shoes.Data.DataSeeding
                 SecurityStamp = Guid.NewGuid().ToString(),
                 FirstName = "admin",
                 LastName = "admin",
-                DoB = new DateTime(2020, 01, 02)
+                DoB = new DateTime(2020, 01, 02),
+                bill_City = "HCM",
+                bill_Address1 = "HCM 1",
+                bill_Address2 = "HCM 2",
+                bill_Country = "Viet Nam",
+                bill_CompanyName = "0123456789",
+                bill_PhoneNumber = "0112223344",
+                bill_PostalCode = "700000",
+                bill_State = "700000"
+                
 
             },
             new AppUser

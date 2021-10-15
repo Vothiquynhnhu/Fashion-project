@@ -4,237 +4,241 @@
     ViewData["Title"] = "Checkout";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-
+    int subTotal = 0;
+    int discount = 0;
+    int Total = 0;
 }
 
-<section class="main-content">
-    <div class="row">
-        <div class="span12">
-            <div class="accordion" id="accordion2">
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Checkout Options</a>
-                    </div>
-                    <div id="collapseOne" class="accordion-body in collapse">
-                        <div class="accordion-inner">
-                            <div class="row-fluid">
-                                <div class="span6">
-                                    <h4> Total product:</h4>
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Product Name</th>
-                                                <th scope="col">Quantity</th>
-                                                <th scope="col">Price</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (var item in Model)
-                                            {
-                                                <tr>
-                                                    <td>@item.checkout_ProductName</td>
-                                                    <td>@item.checkout_Quantity</td>
-                                                    @{
-                                                        int ProductQuantity = item.checkout_Quantity;
-                                                        int ProductPrice = item.checkout_Price;
-                                                        int sum = ProductQuantity * ProductPrice;
-                                                    }
-                                                    <td>@sum</td>
-                                                </tr>
-                                            }
-
-                                        </tbody>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Shiping</th>
-                                                <th scope="col"></th>
-                                                <th scope="col"></th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>@ViewBag.Ship</td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Discount</th>
-                                                <th scope="col"></th>
-                                                <th scope="col"></th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>@ViewBag.Discount</td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Total</th>
-                                                <th scope="col"></th>
-                                                <th scope="col"></th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>@ViewBag.Total</td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-
-
-                                    </table>
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-wrap">
+    <div class="container-fluid">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Products</a></li>
+            <li class="breadcrumb-item active">Checkout</li>
+        </ul>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Checkout Start -->
+<div class="checkout">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="checkout-inner">
+                    <form asp-action="AddToBill" method="get">
+                        <div class="billing-address">
+                            <h2>Billing Address</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>First Name</label>
+                                    <input class="form-control" type="text" placeholder="First Name" name="FirstName">
                                 </div>
-                                <div class="span6">
+                                <div class="col-md-6">
+                                    <label>Last Name"</label>
+                                    <input class="form-control" type="text" placeholder="Last Name" name="LastName">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>E-mail</label>
+                                    <input class="form-control" type="text" placeholder="E-mail" name="Email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Mobile No</label>
+                                    <input class="form-control" type="text" placeholder="Mobile No" name="Phone">
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Address</label>
+                                    <input class="form-control" type="text" placeholder="Address" name="Address1">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Country</label>
+                                    <select class="custom-select" name="Country">
+                                        <option selected>United States</option>
+                                        <option>Afghanistan</option>
+                                        <option>Albania</option>
+                                        <option>Algeria</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>City</label>
+                                    <input class="form-control" type="text" placeholder="City" name="City">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>State</label>
+                                    <input class="form-control" type="text" placeholder="State" name="State">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>ZIP Code</label>
+                                    <input class="form-control" type="text" placeholder="ZIP Code" name="Postal">
+                                </div>
+                                @*<div class="col-md-12">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="newaccount">
+                        <label class="custom-control-label" for="newaccount">Create an account</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="shipto">
+                        <label class="custom-control-label" for="shipto">Ship to different address</label>
+                    </div>
+                </div>*@
+                            </div>
+                        </div>
 
+                        <div class="shipping-address">
+                            <h2>Shipping Address</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>First Name</label>
+                                    <input class="form-control" type="text" placeholder="First Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Last Name"</label>
+                                    <input class="form-control" type="text" placeholder="Last Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>E-mail</label>
+                                    <input class="form-control" type="text" placeholder="E-mail">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Mobile No</label>
+                                    <input class="form-control" type="text" placeholder="Mobile No">
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Address</label>
+                                    <input class="form-control" type="text" placeholder="Address">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Country</label>
+                                    <select class="custom-select">
+                                        <option selected>United States</option>
+                                        <option>Afghanistan</option>
+                                        <option>Albania</option>
+                                        <option>Algeria</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>City</label>
+                                    <input class="form-control" type="text" placeholder="City">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>State</label>
+                                    <input class="form-control" type="text" placeholder="State">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>ZIP Code</label>
+                                    <input class="form-control" type="text" placeholder="ZIP Code">
+                                </div>
+                                <div>
+                                    <input type="submit" value="submit" id="submitcheckout" hidden/>
                                 </div>
                             </div>
+                        </div>
+                    </form>
+                        
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="checkout-inner">
+                    <div class="checkout-summary">
+                        <h1>Cart Total</h1>
+
+                        @{
+
+                            foreach (var item in Model)
+                            {
+                                subTotal += item.checkout_Price;
+                                <p>@item.checkout_ProductName<span>$@item.checkout_Price</span></p>
+                            }
+                            
+
+                            discount = ViewBag.Discount;
+                            Total = subTotal + 1 - discount;
+
+                        }
+
+                        <p class="sub-total">Sub Total<span>$@subTotal</span></p>
+                        <p class="ship-cost">Discount<span>$@ViewBag.Discount</span></p>
+                        <p class="ship-cost">Shipping Cost<span>$1</span></p>
+                        <h2>Grand Total<span>$@Total</span></h2>
+                    </div>
+
+                    <div class="checkout-payment">
+                        <div class="payment-methods">
+                            <h1>Payment Methods</h1>
+                            @*<div class="payment-method">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="payment-1" name="payment">
+                                    <label class="custom-control-label" for="payment-1">Paypal</label>
+                                </div>
+                                <div class="payment-content" id="payment-1-show">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt orci ac eros volutpat maximus lacinia quis diam.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="payment-method">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="payment-2" name="payment">
+                                    <label class="custom-control-label" for="payment-2">Payoneer</label>
+                                </div>
+                                <div class="payment-content" id="payment-2-show">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt orci ac eros volutpat maximus lacinia quis diam.
+                                    </p>
+                                </div>
+                            </div>*@
+                            <div class="payment-method">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="payment-3" name="payment">
+                                    <label class="custom-control-label" for="payment-3">Check Payment</label>
+                                </div>
+                                <div class="payment-content" id="payment-3-show">
+                                    <p>
+                                        You have selected the payment method "Check Payment"
+                                    </p>
+                                </div>
+                            </div>
+                            @*<div class="payment-method">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="payment-4" name="payment">
+                                    <label class="custom-control-label" for="payment-4">Direct Bank Transfer</label>
+                                </div>
+                                <div class="payment-content" id="payment-4-show">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt orci ac eros volutpat maximus lacinia quis diam.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="payment-method">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="payment-5" name="payment">
+                                    <label class="custom-control-label" for="payment-5">Cash on Delivery</label>
+                                </div>
+                                <div class="payment-content" id="payment-5-show">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt orci ac eros volutpat maximus lacinia quis diam.
+                                    </p>
+                                </div>
+                            </div>*@
+                        </div>
+                        <div class="checkout-btn">
+                            <button onclick="PressSubmitCheckout()">Place Order</button>
                         </div>
                     </div>
                 </div>
-                <form asp-action="AddToBill" method="get">
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Account &amp; Billing Details</a>
-                        </div>
-                        <div id="collapseTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <div class="row-fluid">
-                                    <div class="span6">
-                                        <h4>Your Personal Details</h4>
-
-                                        <div class="control-group">
-                                            <label class="control-label">First Name</label>
-                                            <div class="controls">
-                                                <input type="text" placeholder="" class="input-xlarge" name="FirstName">
-                                            </div>
-                                        </div>
-                                        
-
-                                        <div class="control-group">
-                                            <label class="control-label">Last Name</label>
-                                            <div class="controls">
-                                                <input type="text" placeholder="" class="input-xlarge" name="LastName">
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label">Email Address</label>
-                                            <div class="controls">
-                                                <input type="text" placeholder="" class="input-xlarge" name="Email">
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label">Telephone</label>
-                                            <div class="controls">
-                                                <input type="text" placeholder="" class="input-xlarge" name="Phone">
-                                            </div>
-                                        </div>
-                                        @*<div class="control-group">
-                                <label class="control-label">Fax</label>
-                                <div class="controls">
-                                    <input type="text" placeholder="" class="input-xlarge">
-                                </div>
-                            </div>*@
-                                    </div>
-                                    <div class="span6">
-                                        <h4>Your Address</h4>
-                                        <div class="control-group">
-                                            <label class="control-label">Company</label>
-                                            <div class="controls">
-                                                <input type="text" placeholder="" class="input-xlarge" name="CompanyName">
-                                            </div>
-                                        </div>
-                                        @*<div class="control-group">
-                                <label class="control-label">Company ID:</label>
-                                <div class="controls">
-                                    <input type="text" placeholder="" class="input-xlarge">
-                                </div>
-                            </div>*@
-                                        <div class="control-group">
-                                            <label class="control-label"><span class="required">*</span> Address 1:</label>
-                                            <div class="controls">
-                                                <input type="text" placeholder="" class="input-xlarge" name="Address1">
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label">Address 2:</label>
-                                            <div class="controls">
-                                                <input type="text" placeholder="" class="input-xlarge" name="Address2">
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label"><span class="required">*</span> City:</label>
-                                            <div class="controls">
-                                                <input type="text" placeholder="" class="input-xlarge" name="City">
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label"><span class="required">*</span> Post Code:</label>
-                                            <div class="controls">
-                                                <input type="text" placeholder="" class="input-xlarge" name="Postal">
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label"><span class="required">*</span> Country:</label>
-                                            <div class="controls">
-                                                <select class="input-xlarge" name="Country">
-                                                    <option value="1">Afghanistan</option>
-                                                    <option value="2">Albania</option>
-                                                    <option value="3">Algeria</option>
-                                                    <option value="4">American Samoa</option>
-                                                    <option value="5">Andorra</option>
-                                                    <option value="6">Angola</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label"><span class="required">*</span> Region / State:</label>
-                                            <div class="controls">
-                                                <select class="input-xlarge" name="State">
-                                                    <option value=""> --- Please Select --- </option>
-                                                    <option value="3513">Aberdeen</option>
-                                                    <option value="3514">Aberdeenshire</option>
-                                                    <option value="3515">Anglesey</option>
-                                                    <option value="3516">Angus</option>
-                                                    <option value="3517">Argyll and Bute</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">Confirm Order</a>
-                        </div>
-                        <div id="collapseThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <div class="row-fluid">
-                                    <div class="control-group">
-                                        <label for="textarea" class="control-label">Comments</label>
-                                        <div class="controls">
-                                            <textarea rows="3" id="textarea" class="span12" name="comments"></textarea>
-                                        </div>
-                                    </div>
-                                    @*<button class="btn btn-inverse pull-right">Confirm order</button>*@
-                                    <input type="submit"  value="Place Order" class="btn btn-inverse pull-right" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
-</section>	
+</div>
+<!-- Checkout End -->
+
+<script>
+
+    function PressSubmitCheckout() {
+        var buttoon = document.getElementById("submitcheckout");
+        buttoon.click();
+    }
+</script>
