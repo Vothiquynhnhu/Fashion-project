@@ -10,7 +10,7 @@ using Web_Shoes.Data;
 namespace Web_Shoes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211015092929_init")]
+    [Migration("20211018041518_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -352,7 +352,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 10, 15, 16, 29, 28, 859, DateTimeKind.Local).AddTicks(6237),
+                            bill_DatetimeOrder = new DateTime(2021, 10, 18, 11, 15, 17, 536, DateTimeKind.Local).AddTicks(6893),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -376,7 +376,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "AFD66490-12F5-4EA7-BFF6-425624290D6D",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 10, 15, 16, 29, 28, 860, DateTimeKind.Local).AddTicks(6248),
+                            bill_DatetimeOrder = new DateTime(2021, 10, 18, 11, 15, 17, 537, DateTimeKind.Local).AddTicks(6742),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -595,13 +595,13 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "83f8aebd-4e91-411e-8b3b-cd3284505257",
+                            couponId = "6c869586-03ea-4dcc-b3a7-5af6546b3560",
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "545c57ba-90e5-4652-a0b4-3530c041c51d",
+                            couponId = "78c145a9-aa4f-42a7-99b2-7c3b94e99592",
                             couponCode = "code50",
                             couponPrice = 50
                         });
@@ -2881,7 +2881,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "5daf839a-51bb-41b9-b66c-d6a20cb0f8d0",
+                            subReview_Id = "b52dc9e4-d583-419b-ac75-702b3155441f",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2890,7 +2890,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "aa33aabd-e274-4afc-9d0d-d229a4f0d176",
+                            subReview_Id = "340b1902-5baa-4b81-965c-be6c605ab4a3",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2899,7 +2899,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "1720e115-8249-4707-990d-a66cd3ccde21",
+                            subReview_Id = "761ab952-b7c9-4155-b4b1-831c9525fa5f",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2926,17 +2926,17 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "5daf839a-51bb-41b9-b66c-d6a20cb0f8d0"
+                            SRiR_SubReviewId = "b52dc9e4-d583-419b-ac75-702b3155441f"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "aa33aabd-e274-4afc-9d0d-d229a4f0d176"
+                            SRiR_SubReviewId = "340b1902-5baa-4b81-965c-be6c605ab4a3"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "1720e115-8249-4707-990d-a66cd3ccde21"
+                            SRiR_SubReviewId = "761ab952-b7c9-4155-b4b1-831c9525fa5f"
                         });
                 });
 
@@ -3002,14 +3002,14 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "564f038d-4454-4534-b3b7-3ec5e5561c1b",
+                            ConcurrencyStamp = "b059e0ce-1733-4561-b130-fba5f4c2a4b5",
                             Name = "staff",
                             Description = "Staff"
                         },
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "f8251eb2-1b64-41c7-8c53-bc2bbc779976",
+                            ConcurrencyStamp = "03e2fb62-4374-4865-b271-a0d0766c4383",
                             Name = "admin",
                             Description = "admin"
                         });
@@ -3059,15 +3059,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c209df1e-b6a7-4a71-9185-0d092b20a774",
+                            ConcurrencyStamp = "acc09ffa-312b-4c41-869c-8302663187a0",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJHSVZD6xCHiIMF6lAz4nP7QTUWI015AMGJIxTSD7lJCoenZfg9L8eVVvoOHRzNecw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKrxohLHGA/tstu2n3qsGSijFJB22PiH33GtPxcbnJyLSGmQaS555mLNmFsgS7f8VA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d92913ae-df63-4ad6-8967-50f8acde0f9f",
+                            SecurityStamp = "e47e6bbc-dadf-4c6b-85f3-bdf197c17635",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -3086,15 +3086,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9015f611-c60b-4dc4-82c2-0e384086f6d2",
+                            ConcurrencyStamp = "88cb9cd1-9002-4906-b72e-6086fd5431a0",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECpuMFmV8sB4J1DNaoNwMXWOgVDelXgoaM9RIoS8y4idzoPgcF4l6uzs3lFzr2O+hg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBx2Psyp4BLbc924dGUJJ0uPLUqCtg+34P+JWfMQN5Rh42NpQJHiFhW63ijrEhr5JA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "deafc689-c7b8-4423-83da-df7748391209",
+                            SecurityStamp = "99549714-f4b8-4e23-ac8d-6f66b498b857",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),

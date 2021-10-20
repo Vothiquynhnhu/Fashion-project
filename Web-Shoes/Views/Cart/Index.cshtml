@@ -90,12 +90,17 @@
                                         int shiping = 1;
                                         int discount = ViewBag.Discount;
                                         total = total - discount - shiping;
+
+                                        if (total <0)
+                                        {
+                                            total = 0;
+                                        }
                                     }
 
                                     <h2>Total<span>$@total</span></h2>
                                 </div>
                                 <div class="cart-btn">
-                                    
+                                    <a href="/" class="btn">Continue buy</a>
                                     <a href="/checkout" class="btn">Checkout</a>
                                 </div>
                             </div>

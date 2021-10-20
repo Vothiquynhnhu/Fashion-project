@@ -662,8 +662,8 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "couponId", "couponCode", "couponPrice" },
                 values: new object[,]
                 {
-                    { "83f8aebd-4e91-411e-8b3b-cd3284505257", "code10", 10 },
-                    { "545c57ba-90e5-4652-a0b4-3530c041c51d", "code50", 50 }
+                    { "6c869586-03ea-4dcc-b3a7-5af6546b3560", "code10", 10 },
+                    { "78c145a9-aa4f-42a7-99b2-7c3b94e99592", "code50", 50 }
                 });
 
             migrationBuilder.InsertData(
@@ -723,8 +723,8 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Discriminator", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "360E601E-92F2-4F08-832B-604A21293258", "f8251eb2-1b64-41c7-8c53-bc2bbc779976", "admin", "AppRole", "admin", null },
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "564f038d-4454-4534-b3b7-3ec5e5561c1b", "Staff", "AppRole", "staff", null }
+                    { "360E601E-92F2-4F08-832B-604A21293258", "03e2fb62-4374-4865-b271-a0d0766c4383", "admin", "AppRole", "admin", null },
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "b059e0ce-1733-4561-b130-fba5f4c2a4b5", "Staff", "AppRole", "staff", null }
                 });
 
             migrationBuilder.InsertData(
@@ -737,8 +737,8 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "DoB", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "bill_Address1", "bill_Address2", "bill_City", "bill_CompanyName", "bill_Country", "bill_PhoneNumber", "bill_PostalCode", "bill_State" },
                 values: new object[,]
                 {
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "9015f611-c60b-4dc4-82c2-0e384086f6d2", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAECpuMFmV8sB4J1DNaoNwMXWOgVDelXgoaM9RIoS8y4idzoPgcF4l6uzs3lFzr2O+hg==", null, false, "deafc689-c7b8-4423-83da-df7748391209", false, "Staff", null, null, null, null, null, null, null, null },
-                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "c209df1e-b6a7-4a71-9185-0d092b20a774", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEJHSVZD6xCHiIMF6lAz4nP7QTUWI015AMGJIxTSD7lJCoenZfg9L8eVVvoOHRzNecw==", null, false, "d92913ae-df63-4ad6-8967-50f8acde0f9f", false, "Admin", "HCM 1", "HCM 2", "HCM", "0123456789", "Viet Nam", "0112223344", "700000", "700000" }
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "88cb9cd1-9002-4906-b72e-6086fd5431a0", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAEBx2Psyp4BLbc924dGUJJ0uPLUqCtg+34P+JWfMQN5Rh42NpQJHiFhW63ijrEhr5JA==", null, false, "99549714-f4b8-4e23-ac8d-6f66b498b857", false, "Staff", null, null, null, null, null, null, null, null },
+                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "acc09ffa-312b-4c41-869c-8302663187a0", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEKrxohLHGA/tstu2n3qsGSijFJB22PiH33GtPxcbnJyLSGmQaS555mLNmFsgS7f8VA==", null, false, "e47e6bbc-dadf-4c6b-85f3-bdf197c17635", false, "Admin", "HCM 1", "HCM 2", "HCM", "0123456789", "Viet Nam", "0112223344", "700000", "700000" }
                 });
 
             migrationBuilder.InsertData(
@@ -746,8 +746,8 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "bill_Id", "bill_Cancelled", "bill_Confirmation", "bill_DatetimeOrder", "bill_Delivered", "bill_Delivering", "bill_Discount", "bill_HideStatus", "bill_Note", "bill_PaidTotal", "bill_PaymentMethod", "bill_ProductColorlist", "bill_ProductIdlist", "bill_ProductNamelist", "bill_ProductPricelist", "bill_ProductSizelist", "bill_Quantity", "bill_Shipping", "bill_UserId", "bill_WaitForConfirmation", "bill_WaitPickup" },
                 values: new object[,]
                 {
-                    { "AFD66490-12F5-4EA7-BFF6-425624290D6D", false, true, new DateTime(2021, 10, 15, 16, 29, 28, 860, DateTimeKind.Local).AddTicks(6248), false, false, 0, false, "", 2100, "Check Payment", "Blue|Red|Black|Green", "5|6|7|8", "product 5|product 6| product 7| product 8", "550|450|350|640", "7|8|9|14", "1|1|2|2", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false },
-                    { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2021, 10, 15, 16, 29, 28, 859, DateTimeKind.Local).AddTicks(6237), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green", "1|2|3|4", "product 1|product 2| product 3| product 4", "550|450|350|640", "7|8|9|14", "1|1|2|1", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false }
+                    { "AFD66490-12F5-4EA7-BFF6-425624290D6D", false, true, new DateTime(2021, 10, 18, 11, 15, 17, 537, DateTimeKind.Local).AddTicks(6742), false, false, 0, false, "", 2100, "Check Payment", "Blue|Red|Black|Green", "5|6|7|8", "product 5|product 6| product 7| product 8", "550|450|350|640", "7|8|9|14", "1|1|2|2", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false },
+                    { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2021, 10, 18, 11, 15, 17, 536, DateTimeKind.Local).AddTicks(6893), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green", "1|2|3|4", "product 1|product 2| product 3| product 4", "550|450|350|640", "7|8|9|14", "1|1|2|1", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false }
                 });
 
             migrationBuilder.InsertData(
@@ -839,9 +839,9 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "subReview_Id", "subReview_Commnet", "subReview_DateCommnet", "subReview_HideStatus", "subReview_UserId", "subreview_SubReviewType" },
                 values: new object[,]
                 {
-                    { "aa33aabd-e274-4afc-9d0d-d229a4f0d176", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" },
-                    { "1720e115-8249-4707-990d-a66cd3ccde21", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
-                    { "5daf839a-51bb-41b9-b66c-d6a20cb0f8d0", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" }
+                    { "340b1902-5baa-4b81-965c-be6c605ab4a3", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" },
+                    { "761ab952-b7c9-4155-b4b1-831c9525fa5f", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
+                    { "b52dc9e4-d583-419b-ac75-702b3155441f", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" }
                 });
 
             migrationBuilder.InsertData(
@@ -888,9 +888,9 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "SRiR_ReviewId", "SRiR_SubReviewId" },
                 values: new object[,]
                 {
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "5daf839a-51bb-41b9-b66c-d6a20cb0f8d0" },
-                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "1720e115-8249-4707-990d-a66cd3ccde21" },
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "aa33aabd-e274-4afc-9d0d-d229a4f0d176" }
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "b52dc9e4-d583-419b-ac75-702b3155441f" },
+                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "761ab952-b7c9-4155-b4b1-831c9525fa5f" },
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "340b1902-5baa-4b81-965c-be6c605ab4a3" }
                 });
 
             migrationBuilder.CreateIndex(
