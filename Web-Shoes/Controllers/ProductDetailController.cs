@@ -171,6 +171,26 @@ namespace Web_Shoes.Controllers
 
                 if (checkLogin)
                 {
+
+                    //Check cart exist 
+                    var queryCartExist = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
+
+                    if (queryCartExist == null)
+                    {
+                        //Create cart
+                        var cartCreate = new Cart()
+                        {
+                            cart_Id = cartId,
+                            cart_UserID = userId
+                        };
+
+                        _context.Cart.Add(cartCreate);
+                    }
+                    else
+                    {
+                        cartId = queryCartExist.cart_Id;
+                    }
+
                     // Logined
                     //Query Proudct in User
                     var queryProductUser = from a in _context.Users
@@ -200,24 +220,7 @@ namespace Web_Shoes.Controllers
                     }
                     else
                     {
-                        //Check cart exist 
-                        var queryCartExist = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
-
-                        if (queryCartExist != null)
-                        {
-                            //Create cart
-                            var cartCreate = new Cart()
-                            {
-                                cart_Id = cartId,
-                                cart_UserID = userId
-                            };
-
-                            _context.Cart.Add(cartCreate);
-                        }
-                        else
-                        {
-                            cartId = queryCartExist.cart_Id;
-                        }
+                        
                         
 
 

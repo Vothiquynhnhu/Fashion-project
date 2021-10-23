@@ -170,7 +170,6 @@ namespace Web_Shoes.Controllers
                         UserId = x.d.Id,
                         Color = x.b.pic_color,
                         Size = x.b.pic_size
-
                     });
 
 
@@ -184,25 +183,24 @@ namespace Web_Shoes.Controllers
                     checkout_ProductColor = a.b.pic_color,
                     checkout_Productize = a.b.pic_size,
                     checkout_ProductId = a.b.pic_ProductId
-                    
-
                 });
 
-                var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == "ship");
+                
 
 
                 int reTotal = 0;
                 foreach (var item in cartDetail)
                 {
-                    reTotal += item.checkout_Price;
+                    reTotal += item.checkout_Price * item.checkout_Quantity;
                 }
 
 
+                // Query Price of ship
+                var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == "ship");
                 int ship = 0;
 
                 if (shipingQuery != null)
                 {
-
                     string a = shipingQuery.ship_Price.ToString();
                     ship = Int32.Parse(a);
                     ViewBag.Ship = ship;
@@ -238,8 +236,29 @@ namespace Web_Shoes.Controllers
                     bill_Shipping = ship,
                     bill_PaidTotal = reTotal + ship - queryDiscount.cart_Discount,
                     bill_ProductNamelist = productNameList,
+                    bill_ProductColorlist = productColorList,
+                    bill_ProductSizelist = productSizeList,
+                    bill_Quantity = productQuatityList,
+                    bill_ProductPricelist = productPriceList,
+                    bill_PaymentMethod = "Check Payment"
+
 
                 };
+
+                // Check Add information
+                var queryUser = _context.AppUser.FirstOrDefault(a => a.Id == userId);
+
+                queryUser.FirstName = firstName;
+                queryUser.LastName = lastName;
+                queryUser.Email = email;
+                queryUser.bill_Country = country;
+                queryUser.bill_Address1 = address1;
+                queryUser.bill_City = city;
+                queryUser.bill_PostalCode = postal;
+                queryUser.bill_State = state;
+                queryUser.PhoneNumber = phone;
+
+
 
                 /// Add
                 _context.Bills.Add(bill);
@@ -248,11 +267,15 @@ namespace Web_Shoes.Controllers
                 /// Remove
                 var CartQuery = _context.Cart.FirstOrDefault(x => x.cart_UserID == userId);
 
+                if (CartQuery != null)
+                {
+                    var ProductInCartQueryDelete = _context.ProductInCart.Where(a => a.pic_CartId == CartQuery.cart_Id);
+
+                    _context.ProductInCart.RemoveRange(ProductInCartQueryDelete);
+                }
 
 
-                var ProductInCartQueryDelete = _context.ProductInCart.Where(a => a.pic_CartId == CartQuery.cart_Id);
-
-                _context.ProductInCart.RemoveRange(ProductInCartQueryDelete);
+                
 
 
                 await _context.SaveChangesAsync();

@@ -2356,7 +2356,7 @@ namespace Web_Shoes.Data.DataSeeding
                 {
                     ship_Id = shipId,
                     ship_Name ="Ship",
-                    ship_Price = 5
+                    ship_Price = 1
                 });
 
 
