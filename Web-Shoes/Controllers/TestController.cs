@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +14,13 @@ namespace Web_Shoes.Controllers
 
         private readonly ApplicationDbContext _context;
 
+        public const string SessionKeyName = "_Name";
+        public const string SessionKeyAge = "_Age";
 
         public TestController(ApplicationDbContext context)
         {
             _context = context;
+
         }
 
 
@@ -23,9 +28,24 @@ namespace Web_Shoes.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            //string search = Request.Form["search"];
 
-            string namePc = Environment.MachineName;
+
+            // Requires: using Microsoft.AspNetCore.Http;
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString(SessionKeyName)))
+            {
+                HttpContext.Session.SetString(SessionKeyName, "The Doctor");
+                HttpContext.Session.SetInt32(SessionKeyAge, 773);
+            }
+
+            var name = HttpContext.Session.GetString(SessionKeyName);
+            var age = HttpContext.Session.GetInt32(SessionKeyAge);
+
+
+
+
+
+
+            ViewBag.test = name.ToString();
 
             return View();
         }

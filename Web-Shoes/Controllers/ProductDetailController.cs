@@ -153,7 +153,7 @@ namespace Web_Shoes.Controllers
 
         [Route("/productdetailadd")]
         [HttpGet("{productid}&{quantity}&{color}&{size}")]
-        public async Task<IActionResult> Productdetailadd(int productid, string quantity, string color, string size)
+        public IActionResult Productdetailadd(int productid, string quantity, string color, string size)
         {
 
                 string namePc = Environment.MachineName;
@@ -196,14 +196,16 @@ namespace Web_Shoes.Controllers
                                            join c in _context.ProductInCart on b.cart_Id equals c.pic_CartId
                                            select new { a, b, c, };
 
+
+
+
+                    //check the same product
                     queryProductUser = queryProductUser.Where(a => a.a.Id == userId
                     && a.c.pic_ProductId == productid
                     && a.c.pic_size == size
                     && a.c.pic_color == color
                     );
 
-
-                    //check the same product
                     if (queryProductUser.Count() != 0)
                     {
                         string QueryCartId = "";
@@ -230,6 +232,7 @@ namespace Web_Shoes.Controllers
                         };
                          _context.ProductInCart.Add(ProductInCartCreate);
                     }
+
                 }
                 else
                 {
@@ -312,7 +315,7 @@ namespace Web_Shoes.Controllers
 
                 
 
-                 await _context.SaveChangesAsync();
+                 _context.SaveChanges();
 
                 return Redirect("/cart");
             
