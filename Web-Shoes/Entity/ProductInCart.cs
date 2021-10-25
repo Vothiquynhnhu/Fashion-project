@@ -7,6 +7,8 @@ namespace Web_Shoes.Entity
 {
     public class ProductInCart
     {
+
+        public string pic_Id { get; set; }
         public Products ProductsPICart { get; set; }
 
         public string pic_CartId { get; set; }

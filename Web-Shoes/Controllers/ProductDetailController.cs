@@ -156,8 +156,6 @@ namespace Web_Shoes.Controllers
         public async Task<IActionResult> Productdetailadd(int productid, string quantity, string color, string size)
         {
 
-            try
-            {
                 string namePc = Environment.MachineName;
                 bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
 
@@ -165,7 +163,7 @@ namespace Web_Shoes.Controllers
                 var userName = User.FindFirstValue(ClaimTypes.Name);
 
                 int quantityProduct = Int16.Parse(quantity);
-
+                
                 string cartId = Guid.NewGuid().ToString();
 
 
@@ -215,33 +213,23 @@ namespace Web_Shoes.Controllers
                         }
                         var productInCartQuery = _context.ProductInCart.FirstOrDefault(a => a.pic_CartId == QueryCartId && a.pic_ProductId == productid);
                         productInCartQuery.pic_amount = productInCartQuery.pic_amount + quantityProduct;
-                        _context.SaveChanges();
+                         
 
                     }
                     else
                     {
-                        
-                        
-
-
                         //Create ProductInCart
-
                         var ProductInCartCreate = new ProductInCart()
                         {
+                            pic_Id = Guid.NewGuid().ToString(),
                             pic_CartId = cartId,
                             pic_ProductId = productid,
                             pic_amount = quantityProduct,
                             pic_size = size,
                             pic_color = color
                         };
-
-                        _context.ProductInCart.Add(ProductInCartCreate);
-
-                        await _context.SaveChangesAsync();
+                         _context.ProductInCart.Add(ProductInCartCreate);
                     }
-
-
-
                 }
                 else
                 {
@@ -290,7 +278,7 @@ namespace Web_Shoes.Controllers
 
                             _context.Devices.Add(AddDevice);
 
-                            await _context.SaveChangesAsync();
+                             _context.SaveChangesAsync();
                         }
                         /// Create Device in DB
                         /// 
@@ -318,26 +306,16 @@ namespace Web_Shoes.Controllers
 
                         _context.ProductInCartDevices.Add(ProductInCartDevices);
 
-                        await _context.SaveChangesAsync();
+                         
                     }
                 }
 
+                
 
-
-
+                 await _context.SaveChangesAsync();
 
                 return Redirect("/cart");
-            }
-            catch
-            {
-
-
-                var productDetailQuery = _context.Products.FirstOrDefault(a => a.pd_Id == productid);
-
-
-
-                return View(productDetailQuery);
-            }
+            
 
         }
 

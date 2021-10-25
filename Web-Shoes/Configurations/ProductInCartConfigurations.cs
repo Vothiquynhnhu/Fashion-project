@@ -13,7 +13,7 @@ namespace Web_Shoes.Configurations
         public void Configure(EntityTypeBuilder<ProductInCart> builder)
         {
             builder.ToTable("ProductInCart");
-            builder.HasKey(t => new { t.pic_CartId, t.pic_ProductId });
+            builder.HasKey(t => new { t.pic_CartId, t.pic_ProductId ,t.pic_Id});
             builder.HasOne(t => t.ProductsPICart).WithMany(ur => ur.ProductInCartP)
      .HasForeignKey(pc => pc.pic_ProductId);
             builder.HasOne(t => t.CartPICart).WithMany(ur => ur.ProductInCartC)

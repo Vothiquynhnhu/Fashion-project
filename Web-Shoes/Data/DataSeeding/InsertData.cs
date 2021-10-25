@@ -1741,12 +1741,16 @@ namespace Web_Shoes.Data.DataSeeding
 
                 });
 
+            var IdPic1 = Guid.NewGuid().ToString();
+            var IdPic2 = Guid.NewGuid().ToString();
+            var IdPic3 = Guid.NewGuid().ToString();
 
             //Table Product In Cart
 
             builder.Entity<ProductInCart>().HasData(
                 new ProductInCart()
                 {
+                     pic_Id = IdPic1,
                      pic_CartId = IdCart2,
                      pic_ProductId =1,
                      pic_amount = 2,
@@ -1756,6 +1760,7 @@ namespace Web_Shoes.Data.DataSeeding
                 },
                 new ProductInCart()
                 {
+                    pic_Id = IdPic2,
                     pic_CartId = IdCart2,
                     pic_ProductId = 2,
                     pic_amount = 3,
@@ -1765,6 +1770,7 @@ namespace Web_Shoes.Data.DataSeeding
                 },
                 new ProductInCart()
                 {
+                    pic_Id = IdPic3,
                     pic_CartId = IdCart2,
                     pic_ProductId = 3,
                     pic_amount = 1,
