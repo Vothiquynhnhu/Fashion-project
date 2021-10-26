@@ -218,10 +218,10 @@ namespace Web_Shoes.Controllers
                 foreach (var item in cartDetail)
                 {
                     productNameList +=  item.checkout_ProductName + "|" ;
-                    productColorList += item.checkout_Quantity + "|";
+                    productColorList += item.checkout_ProductColor + "|";
                     productSizeList += item.checkout_Productize + "|";
                     productQuatityList += item.checkout_Quantity + "|";
-                    productPriceList += item.checkout_Price + "|";
+                    productPriceList += item.checkout_Price*item.checkout_Quantity + "|";
                     productIdList += item.checkout_ProductId + "|";
                 }
 
@@ -273,11 +273,6 @@ namespace Web_Shoes.Controllers
 
                     _context.ProductInCart.RemoveRange(ProductInCartQueryDelete);
                 }
-
-
-                
-
-
                 await _context.SaveChangesAsync();
             }
             else

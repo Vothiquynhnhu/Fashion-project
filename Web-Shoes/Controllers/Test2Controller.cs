@@ -4,30 +4,37 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Web_Shoes.StatisFile;
 
 namespace Web_Shoes.Controllers
 {
     public class Test2Controller : Controller
     {
-        public const string SessionKeyName = "_Name";
-        public const string SessionKeyAge = "_Age";
-
-
         [Route("/test2")]
         [HttpGet]
         public IActionResult Index()
         {
 
-            //// Requires: using Microsoft.AspNetCore.Http;
-            //if (string.IsNullOrEmpty(HttpContext.Session.GetString(SessionKeyName)))
-            //{
-                
-            //}
+            
 
-            var name = HttpContext.Session.GetString(SessionKeyName);
-            var age = HttpContext.Session.GetInt32(SessionKeyAge);
 
-            ViewBag.test = name.ToString();
+            var cartId = HttpContext.Session.GetString(KeySession.cartIdSession);
+            var cartHome = HttpContext.Session.GetInt32(KeySession.cartHomeSession);
+            var userId = HttpContext.Session.GetString(KeySession.userIdSession);
+            var userName = HttpContext.Session.GetInt32(KeySession.userNameSession);
+            var deviceId = HttpContext.Session.GetString(KeySession.deviceIdSession);
+            
+
+            ViewBag.cartId = cartId.ToString();
+            ViewBag.cartHome = cartHome.ToString();
+            
+            ViewBag.deviceId = deviceId.ToString();
+            if (userId != null)
+            {
+                ViewBag.userId = userId.ToString();
+                ViewBag.userName = userName.ToString();
+            }
+            
             return View();
         }
     }

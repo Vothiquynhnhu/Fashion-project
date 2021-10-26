@@ -42,9 +42,6 @@ namespace Web_Shoes.Controllers
 
 
 
-
-
-
             ViewBag.test = name.ToString();
 
             return View();

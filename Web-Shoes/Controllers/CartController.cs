@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using Web_Shoes.Data;
 using Web_Shoes.Entity;
 using Web_Shoes.Models;
+using Web_Shoes.StatisFile;
 
 namespace Web_Shoes.Controllers
 {
@@ -38,6 +40,39 @@ namespace Web_Shoes.Controllers
 
             string namePc = Environment.MachineName;
             bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+
+
+            int countCart = 0;
+
+            // check cart 
+            if (checkLogin)
+            {
+                var querycart = from a in _context.Cart
+                                join b in _context.ProductInCart on a.cart_Id equals b.pic_CartId
+                                select new { a, b };
+                querycart = querycart.Where(a => a.a.cart_UserID == userId);
+
+                countCart = querycart.Count();
+            }
+            else
+            {
+                var queryDevice = _context.Devices.FirstOrDefault(a => a.deviceName == namePc);
+                var querycart = _context.CartsDevice.Where(a => a.cartd_DeviceId == queryDevice.deviceId);
+
+                try
+                {
+                    countCart = querycart.Count();
+                }
+                catch (Exception)
+                {
+
+                    countCart = 0;
+                }
+            }
+
+            HttpContext.Session.SetString(KeySession.cartHomeSession, countCart.ToString());
+
+            ViewBag.cartCount = countCart;
 
 
             if (checkLogin)
