@@ -134,7 +134,7 @@
                                     
                                 </div>
                                 <div class="action">
-                                    <a class="btn" href="#"  onclick="addtocart()" id="addtocartbutton"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                    <a class="btn" href=""  onclick="addtocart()" id="addtocartbutton"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -551,7 +551,8 @@
             {
                 var a = document.querySelector("body > div.product-detail > div > div > div.col-lg-8 > div.product-detail-top > div > div.col-md-7 > div > div.action > a");
                 a.href = "/productdetailadd?productid=@ViewBag.Id&quantity=" + ProductAmount + "&color=" + ProductColor + "&size=" + ProductSize;
-                a.click();
+                //window.stop();
+                //a.click();
             }
         }
         window.stop();

@@ -20,18 +20,18 @@ namespace Web_Shoes.Controllers
         private readonly ApplicationDbContext _context;
         private readonly SignInManager<AppUser> _SignInManager;
         private readonly UserManager<AppUser> _UserManager;
-        
+
 
         string namePc = Environment.MachineName;
 
-        bool checkLogin;
+        string checkLogin;
 
         public ProductDetailController(ApplicationDbContext context, UserManager<AppUser> UserManager, SignInManager<AppUser> SignInManager)
         {
             _context = context;
             _UserManager = UserManager;
             _SignInManager = SignInManager;
-            
+
         }
 
 
@@ -44,8 +44,6 @@ namespace Web_Shoes.Controllers
             // cart 
             string countCart = HttpContext.Session.GetString(KeySession.cartHomeSession);
             ViewBag.cartCount = countCart;
-
-
 
             /// product detail 
             var productDetailQuery = _context.Products.FirstOrDefault(a => a.pd_Id == id);
@@ -62,10 +60,6 @@ namespace Web_Shoes.Controllers
             ViewBag.Rate = productDetailQuery.pd_Rate;
             ViewBag.ShortDescription = productDetailQuery.pd_ShortDescription;
             ViewBag.Description = productDetailQuery.pd_Description;
-
-
-
-
 
             var review = from a in _context.AppUser
                          join b in _context.Reviews on a.Id equals b.review_UserId
@@ -140,57 +134,51 @@ namespace Web_Shoes.Controllers
 
         [Route("/productdetailadd")]
         [HttpGet("{productid}&{quantity}&{color}&{size}")]
-        public async Task<IActionResult> Productdetailadd(int productid, string quantity, string color, string size)
+        public IActionResult Productdetailadd(int productid, string quantity, string color, string size)
         {
             try
             {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                string cartId = Guid.NewGuid().ToString();
-                checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+                var userId = HttpContext.Session.GetString(KeySession.userIdSession);
+                string cartId = HttpContext.Session.GetString(KeySession.cartIdSession);
+                checkLogin = HttpContext.Session.GetString(KeySession.CheckLoginSession);
 
                 int quantityProduct = Int16.Parse(quantity);
-                if (checkLogin)
+                if (checkLogin == "True")
                 {
 
                     // Logined
                     //Query Proudct in User
-                    var queryProductUser = from a in _context.Users
-                                           join b in _context.Cart on a.Id equals b.cart_UserID
-                                           join c in _context.ProductInCart on b.cart_Id equals c.pic_CartId
-                                           select new { a, b, c, };
 
-                    //check the same product
-                    queryProductUser = queryProductUser.Where(a => a.a.Id == userId
+
+                    var queryProductUser = from b in _context.Cart
+                                       join c in _context.ProductInCart on b.cart_Id equals c.pic_CartId
+                                       select new { b, c, };
+
+                //check the same product
+                queryProductUser = queryProductUser.Where(a => a.b.cart_Id == cartId
                     && a.c.pic_ProductId == productid
                     && a.c.pic_size == size
                     && a.c.pic_color == color
                     );
 
-                    if (queryProductUser.Count() == 0)
-                    {
-                        try
-                        {
-                            //Create ProductInCart
-                            var ProductInCartCreate = new ProductInCart()
-                            {
-                                pic_Id = Guid.NewGuid().ToString(),
-                                pic_CartId = cartId,
-                                pic_ProductId = productid,
-                                pic_amount = quantityProduct,
-                                pic_size = size,
-                                pic_color = color
-                            };
+                int count = queryProductUser.Count();
 
-                            await _context.ProductInCart.AddAsync(ProductInCartCreate);
-                        }
-                        catch 
-                        {
-
-                            throw;
-                        }
-                    }
-                    else
+                if (count == 0)
+                {
+                    //Create ProductInCart
+                    var ProductInCartCreate = new ProductInCart()
                     {
+                        pic_Id = Guid.NewGuid().ToString(),
+                        pic_CartId = cartId,
+                        pic_ProductId = productid,
+                        pic_amount = quantityProduct,
+                        pic_size = size,
+                        pic_color = color
+                    };
+                    _context.ProductInCart.Add(ProductInCartCreate);
+                }
+                else
+                {
                         try
                         {
                             string QueryCartId = "";
@@ -200,29 +188,26 @@ namespace Web_Shoes.Controllers
                             }
                             var productInCartQuery = _context.ProductInCart.FirstOrDefault(a => a.pic_CartId == QueryCartId && a.pic_ProductId == productid);
                             productInCartQuery.pic_amount = productInCartQuery.pic_amount + quantityProduct;
+
                         }
-                        catch 
+                        catch
                         {
 
                             throw;
                         }
-                        
+
                     }
 
                 }
 
-               await _context.SaveChangesAsync();
+                _context.SaveChanges();
 
                 return Redirect("/cart");
             }
-            catch 
+            catch
             {
-                return Redirect("/cart");
+                throw;
             }
-
-                
-
-
         }
 
         [Route("/productcomment")]
@@ -232,9 +217,7 @@ namespace Web_Shoes.Controllers
 
             try
             {
-
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
                 var userName = User.FindFirstValue(ClaimTypes.Name);
 
                 string reviewId = Guid.NewGuid().ToString();
@@ -251,10 +234,6 @@ namespace Web_Shoes.Controllers
                         review_HideStatus = false,
                         review_ReviewType = "Review"
                     };
-
-
-
-
 
                     int idProductInt = Int32.Parse(idproduct);
 
@@ -340,6 +319,6 @@ namespace Web_Shoes.Controllers
             }
 
         }
-        
+
     }
 }

@@ -14,10 +14,6 @@ namespace Web_Shoes.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-
-            
-
-
             var cartId = HttpContext.Session.GetString(KeySession.cartIdSession);
             var cartHome = HttpContext.Session.GetInt32(KeySession.cartHomeSession);
             var userId = HttpContext.Session.GetString(KeySession.userIdSession);
