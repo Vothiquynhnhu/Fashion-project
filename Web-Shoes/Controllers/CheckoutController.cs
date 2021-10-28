@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using Web_Shoes.Data;
 using Web_Shoes.Entity;
 using Web_Shoes.Models;
+using Web_Shoes.StatisFile;
 
 namespace Web_Shoes.Controllers
 {
@@ -17,11 +19,16 @@ namespace Web_Shoes.Controllers
         private readonly SignInManager<AppUser> _SignInManager;
         private readonly UserManager<AppUser> _UserManager;
 
+        private  string userId;
+        private string checkLogin;
+        private string deviceIdSession;
+
         public CheckoutController(ApplicationDbContext context, UserManager<AppUser> UserManager, SignInManager<AppUser> SignInManager)
         {
             _context = context;
             _UserManager = UserManager;
             _SignInManager = SignInManager;
+            
         }
 
 
@@ -31,13 +38,39 @@ namespace Web_Shoes.Controllers
         {
             try
             {
-                string namePc = Environment.MachineName;
-                bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+                userId = HttpContext.Session.GetString(KeySession.userIdSession);
+                checkLogin = HttpContext.Session.GetString(KeySession.CheckLoginSession);
+                string namePc = HttpContext.Session.GetString(KeySession.CheckLoginSession); 
+                deviceIdSession = HttpContext.Session.GetString(KeySession.deviceIdSession);
 
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                //Print Value for form
+
+                // query to form 
+
+                var queryForm = _context.AppUser.FirstOrDefault(a => a.Id == userId);
+
+                // Create viewbag
+                ViewBag.FirstName = queryForm.FirstName;
+                ViewBag.LastName = queryForm.LastName;
+                ViewBag.Email = queryForm.Email;
+                ViewBag.Phone = queryForm.PhoneNumber;
+                ViewBag.Address1 = queryForm.bill_Address1;
+                ViewBag.Country = queryForm.bill_Country;
+                ViewBag.City = queryForm.bill_Country; ;
+                ViewBag.State = queryForm.bill_City;
+                ViewBag.Postal = queryForm.bill_PostalCode;
+
+
+
+
+
+
+
+
+                // Proccess CheckOut
                 var userName = User.FindFirstValue(ClaimTypes.Name);
 
-                if (checkLogin)
+                if (checkLogin == "True")
                 {
                     //login
                     var query = from a in _context.Products
@@ -77,10 +110,6 @@ namespace Web_Shoes.Controllers
                     });
 
                     var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == "ship");
-
-
-
-                    
 
                     int reTotal = 0;
                     foreach (var item in cartDetail)
@@ -131,10 +160,8 @@ namespace Web_Shoes.Controllers
         [HttpGet("{reduceprice}")]
         public async Task<IActionResult> AddToBill()
         {
-            
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userName = User.FindFirstValue(ClaimTypes.Name);
-
             string namePc = Environment.MachineName;
             bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
 
@@ -147,6 +174,7 @@ namespace Web_Shoes.Controllers
             string postal = Request.Query["Postal"];
             string email = Request.Query["Email"];
             string phone = Request.Query["Phone"];
+            
 
             if (checkLogin)
             {
@@ -273,6 +301,25 @@ namespace Web_Shoes.Controllers
 
                     _context.ProductInCart.RemoveRange(ProductInCartQueryDelete);
                 }
+
+
+                // Form -----------------------------------------------------------------------------------
+                // Save Form
+                // query to form 
+                var queryForm = _context.AppUser.FirstOrDefault(a => a.Id == userId);
+
+                queryForm.FirstName = firstName;
+                queryForm.LastName = lastName;
+                queryForm.Email = email;
+                queryForm.PhoneNumber = phone;
+                queryForm.bill_Address1 = address1;
+                queryForm.bill_Country = country;
+                queryForm.bill_City = city;
+                queryForm.bill_PostalCode = postal;
+
+
+
+
                 await _context.SaveChangesAsync();
             }
             else
