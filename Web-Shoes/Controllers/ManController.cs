@@ -8,18 +8,18 @@ using Web_Shoes.Models;
 
 namespace Web_Shoes.Controllers
 {
-    public class MenController : Controller
+    public class ManController : Controller
     {
 
         private readonly ApplicationDbContext _context;
 
-        public MenController(ApplicationDbContext context)
+        public ManController(ApplicationDbContext context)
         {
             _context = context;
         }
 
 
-        [Route("/men")]
+        [Route("/man")]
         [HttpGet("{id}")]
         public IActionResult Index()
         {

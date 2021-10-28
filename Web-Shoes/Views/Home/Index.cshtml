@@ -19,7 +19,7 @@
                             <a class="nav-link" href="/women"><i class="fa fa-tshirt"></i>Women Clothes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/men"><i class="fa fa-tshirt"></i>Men  Clothes</a>
+                            <a class="nav-link" href="/man"><i class="fa fa-tshirt"></i>Man  Clothes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/hangbag"><i class="fa fa-mobile-alt"></i>Hangbag</a>
@@ -212,12 +212,26 @@
             @{
                 foreach (var item in Model)
                 {
+
+                    var NameProduct = item.pd_Name;
+                    var LengthNameProduct = NameProduct.Length;
+                    string NameProduct2;
+                    if (LengthNameProduct > 50)
+                    {
+                        NameProduct2 = NameProduct.Substring(0, LengthNameProduct - 26);
+                    }
+                    else
+                    {
+                        NameProduct2 = NameProduct.Substring(0, LengthNameProduct);
+                    }
+                    NameProduct2 += "...";
+
                     if (productSlie1A >= 1 && productSlie1A <= 8)
                     {
                         <div class="col-lg-3">
                             <div class="product-item">
                                 <div class="product-title">
-                                    <a href="/productdetail?id=@item.pd_Id">@item.pd_Name</a>
+                                    <a href="/productdetail?id=@item.pd_Id">@NameProduct2</a>
                                     <div class="ratting">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -282,12 +296,25 @@
             @{
                 foreach (var item in Model)
                 {
+
+                    var NameProduct = item.pd_Name;
+                    var LengthNameProduct = NameProduct.Length;
+                    string NameProduct2;
+                    if (LengthNameProduct > 50)
+                    {
+                        NameProduct2 = NameProduct.Substring(0, LengthNameProduct - 26);
+                    }
+                    else
+                    {
+                        NameProduct2 = NameProduct.Substring(0, LengthNameProduct);
+                    }
+                    NameProduct2 += "...";
                     if (productSlie1B >= 9 && productSlie1B <= 15)
                     {
                         <div class="col-lg-3">
                             <div class="product-item">
                                 <div class="product-title">
-                                    <a href="/productdetail?id=@item.pd_Id">@item.pd_Name</a>
+                                                <a href="/productdetail?id=@item.pd_Id">@NameProduct2</a>
                                     <div class="ratting">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
