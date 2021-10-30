@@ -26,40 +26,98 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="col-md-4">
+                                @*<div class="col-md-4">
                                     <div class="product-short">
                                         <form asp-action="Index" method="get">
                                             <div class="dropdown">
                                                 <select class="dropdown-toggle" onchange="myFunction(this.value)" name="sortOrder">
-                                                    <option value="value1">text1</option>
-                                                    <option value="value2">text2</option>
-                                                    <option value="value3">text3</option>
-                                                    <option value="value4">text4</option>
+                                                    <option value="All">All</option>
+                                                    <option value="BestSaler">Best saler</option>
+                                                    <option value="Popular">Popular</option>
                                                 </select>
                                             </div>
 
                                             <input type="submit" id="submitSort" hidden/>
                                         </form>
                                     </div>
-                                </div>
+                                </div>*@
                                 <div class="col-md-4">
                                     <div class="product-price-range">
                                         <form asp-action="Index" method="get">
                                             <div class="dropdown">
-                                                @*<div class="dropdown-toggle" data-toggle="dropdown">Product price range</div>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="#" class="dropdown-item">$0 to $50</a>
-                                                    <a href="#" class="dropdown-item">$51 to $100</a>
-                                                    <a href="#" class="dropdown-item">$101 to $150</a>
-                                                    <a href="#" class="dropdown-item">$151 to $200</a>
-                                                </div>*@
-
                                                 <select class="dropdown-toggle" onchange="myFunctionPrice(this.value)" name="priceOrder">
-                                                    <option value="All">All</option>
-                                                    <option value="0">$0 to $50</option>
-                                                    <option value="51">$51 to $100</option>
-                                                    <option value="101">$101 to $150</option>
-                                                    <option value="151">$151 to $200</option>
+                                                    @{
+                                                        string firstPrice;
+                                                        if (String.IsNullOrEmpty(ViewData["FirstPriceSort"].ToString()))
+                                                        {
+                                                            firstPrice = "";
+                                                        }
+                                                        else
+                                                        {
+                                                            firstPrice = ViewData["FirstPriceSort"].ToString();
+                                                        }
+
+
+                                                        if (firstPrice == "All")
+                                                        {
+                                                            <option value="All" selected> All </option>
+                                                        }
+                                                        else
+                                                        {
+
+                                                            <option value="All" selected> All </option>
+                                                            @*if (firstPrice == "")
+                                                            {
+                                                                <option value="All"> All </option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="All"> @firstPrice </option>
+                                                            }*@
+
+                                                        }
+
+                                                        if (firstPrice == "0")
+                                                        {
+                                                            <option value="0" selected> $0 to $50 </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="0"> $0 to $50 </option>
+                                                        }
+
+                                                        if (firstPrice == "51")
+                                                        {
+                                                            <option value="51" selected> $51 to $100 </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="51"> $51 to $100 </option>
+                                                        }
+
+                                                        if (firstPrice == "101")
+                                                        {
+                                                            <option value="101" selected> $101 to $150 </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="101"> $101 to $150 </option>
+                                                        }
+
+                                                        if (firstPrice == "151")
+                                                        {
+                                                            <option value="151" selected> $151 to $200 </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="151"> $151 to $200</option>
+                                                        }
+                                                    }
+
+                                                    @*<option value="0">$0 to $50</option>
+        <option value="51">$51 to $100</option>
+        <option value="101">$101 to $150</option>
+        <option value="151">$151 to $200</option>*@
                                                 </select>
 
                                             </div>

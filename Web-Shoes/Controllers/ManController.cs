@@ -24,7 +24,7 @@ namespace Web_Shoes.Controllers
 
         [Route("/man")]
         [HttpGet("{id}")]
-        public IActionResult Index(string priceOrder, string sortOrder, string currentFilter, string searchString, int? pageNumber)
+        public IActionResult Index(string priceOrder , string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
             if (searchString != null)
             {
@@ -50,51 +50,48 @@ namespace Web_Shoes.Controllers
                                        || s.a.pd_Description.Contains(searchString));
             }
 
-            if (sortOrder != "All" )
-            {
-                //switch (sortOrder)
-                //{
-                //    case "name_desc":
-                //        students = students.OrderByDescending(s => s.pd_Name);
-                //        break;
-                //    case "Date":
-                //        students = students.OrderBy(s => s.pd_Name);
-                //        break;
-                //    case "date_desc":
-                //        students = students.OrderByDescending(s => s.pd_Name);
-                //        break;
-                //    default:
-                //        students = students.OrderBy(s => s.pd_Name);
-                //        break;
-                //}
-            }
 
-            if (priceOrder != "All")
+            if (priceOrder == "All")
             {
-                switch (priceOrder)
+                ViewData["FirstPriceSort"] = "All";
+            }
+            else
+            {
+                if (priceOrder == null)
                 {
-                    case "0":
-                        query = query.Where(s => s.a.pd_Price <=50);
-                        query = query.OrderByDescending(s => s.a.pd_Price);
-                        break;
-                    case "51":
-                        query = query.Where(s => s.a.pd_Price >= 50 && s.a.pd_Price <=100);
-                        query = query.OrderBy(s => s.a.pd_Price);
-                        break;
-                    case "101":
-                        query = query.Where(s => s.a.pd_Price >= 50 && s.a.pd_Price <= 100);
-                        query = query.OrderByDescending(s => s.a.pd_Price);
-                        break;
-                    case "151":
-                        query = query.Where(s => s.a.pd_Price >= 50 && s.a.pd_Price <= 100);
-                        query = query.OrderByDescending(s => s.a.pd_Price);
-                        break;
-                    default:
-                        query = query.OrderBy(s => s.a.pd_Name);
-                        break;
+                    ViewData["FirstPriceSort"] = "";
                 }
+                else
+                {
+                    ViewData["FirstPriceSort"] = priceOrder;
+                }
+                
             }
+            
 
+            switch (priceOrder)
+            {
+                case "0":
+                    query = query.Where(s => s.a.pd_Price <=50);
+                    query = query.OrderByDescending(s => s.a.pd_Price);
+                    break;
+                case "51":
+                    query = query.Where(s => s.a.pd_Price >= 50 && s.a.pd_Price <=100);
+                    query = query.OrderBy(s => s.a.pd_Price);
+                    break;
+                case "101":
+                    query = query.Where(s => s.a.pd_Price >= 50 && s.a.pd_Price <= 100);
+                    query = query.OrderByDescending(s => s.a.pd_Price);
+                    break;
+                case "151":
+                    query = query.Where(s => s.a.pd_Price >= 50 && s.a.pd_Price <= 100);
+                    query = query.OrderByDescending(s => s.a.pd_Price);
+                    break;
+                default:
+                    query = query.OrderBy(s => s.a.pd_Name);
+                    break;
+            }
+            
             var productModelQuery = query
                 .Select(x => new ProductModel()
                 {
