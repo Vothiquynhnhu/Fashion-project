@@ -24,8 +24,19 @@ namespace Web_Shoes.Controllers
 
         [Route("/man")]
         [HttpGet("{id}")]
-        public IActionResult Index(int? pageNumber)
+        public IActionResult Index(string priceOrder, string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
             var query = from a in _context.Products
                         join b in _context.ProductsInCategories on a.pd_Id equals b.pic_productId
                         join c in _context.Categories on b.pic_CategoriesId equals c.cg_Id
@@ -33,7 +44,56 @@ namespace Web_Shoes.Controllers
 
             query = query.Where(x => x.c.cg_Name == "man");
 
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                query = query.Where(s => s.a.pd_Name.Contains(searchString)
+                                       || s.a.pd_Description.Contains(searchString));
+            }
 
+            if (sortOrder != "All" )
+            {
+                //switch (sortOrder)
+                //{
+                //    case "name_desc":
+                //        students = students.OrderByDescending(s => s.pd_Name);
+                //        break;
+                //    case "Date":
+                //        students = students.OrderBy(s => s.pd_Name);
+                //        break;
+                //    case "date_desc":
+                //        students = students.OrderByDescending(s => s.pd_Name);
+                //        break;
+                //    default:
+                //        students = students.OrderBy(s => s.pd_Name);
+                //        break;
+                //}
+            }
+
+            if (priceOrder != "All")
+            {
+                switch (priceOrder)
+                {
+                    case "0":
+                        query = query.Where(s => s.a.pd_Price <=50);
+                        query = query.OrderByDescending(s => s.a.pd_Price);
+                        break;
+                    case "51":
+                        query = query.Where(s => s.a.pd_Price >= 50 && s.a.pd_Price <=100);
+                        query = query.OrderBy(s => s.a.pd_Price);
+                        break;
+                    case "101":
+                        query = query.Where(s => s.a.pd_Price >= 50 && s.a.pd_Price <= 100);
+                        query = query.OrderByDescending(s => s.a.pd_Price);
+                        break;
+                    case "151":
+                        query = query.Where(s => s.a.pd_Price >= 50 && s.a.pd_Price <= 100);
+                        query = query.OrderByDescending(s => s.a.pd_Price);
+                        break;
+                    default:
+                        query = query.OrderBy(s => s.a.pd_Name);
+                        break;
+                }
+            }
 
             var productModelQuery = query
                 .Select(x => new ProductModel()
@@ -44,8 +104,7 @@ namespace Web_Shoes.Controllers
                     pd_Price = x.a.pd_Price
 
                 });
-            //PaginatedList<Products>.Create(students.AsNoTracking(), pageNumber ?? 1, pageSize)
-            //productModelQuery
+            
 
             int pageSize = 8;
             return View(PaginatedList<ProductModel>.Create(productModelQuery.AsNoTracking(), pageNumber ?? 1, pageSize));
