@@ -22,13 +22,15 @@ namespace Web_Shoes.Controllers
         private  string userId;
         private string checkLogin;
         private string deviceIdSession;
+        private readonly ISendMailService _sendMailService;
 
-        public CheckoutController(ApplicationDbContext context, UserManager<AppUser> UserManager, SignInManager<AppUser> SignInManager)
+        public CheckoutController(ApplicationDbContext context, UserManager<AppUser> UserManager, SignInManager<AppUser> SignInManager, ISendMailService sendMailService)
         {
             _context = context;
             _UserManager = UserManager;
             _SignInManager = SignInManager;
-            
+            _sendMailService = sendMailService;
+
         }
 
 
@@ -317,7 +319,15 @@ namespace Web_Shoes.Controllers
                 queryForm.bill_City = city;
                 queryForm.bill_PostalCode = postal;
 
+                // SendMail -----------------------------------------------------------------------------------
+                MailContent content = new MailContent
+                {
+                    To = "thaibao0225@gmail.com",
+                    Subject = "Kiểm tra thử1",
+                    Body = "<p><strong>Xin chào xuanthulab.net</strong></p>"
+                };
 
+                await _sendMailService.SendMail(content);
 
 
                 await _context.SaveChangesAsync();

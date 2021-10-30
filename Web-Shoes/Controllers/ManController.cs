@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Web_Shoes.Data;
+using Web_Shoes.Entity;
 using Web_Shoes.Models;
+using Web_Shoes.Service;
 
 namespace Web_Shoes.Controllers
 {
@@ -21,7 +24,7 @@ namespace Web_Shoes.Controllers
 
         [Route("/man")]
         [HttpGet("{id}")]
-        public IActionResult Index()
+        public IActionResult Index(int? pageNumber)
         {
             var query = from a in _context.Products
                         join b in _context.ProductsInCategories on a.pd_Id equals b.pic_productId
@@ -41,9 +44,11 @@ namespace Web_Shoes.Controllers
                     pd_Price = x.a.pd_Price
 
                 });
+            //PaginatedList<Products>.Create(students.AsNoTracking(), pageNumber ?? 1, pageSize)
+            //productModelQuery
 
-
-            return View(productModelQuery);
+            int pageSize = 8;
+            return View(PaginatedList<ProductModel>.Create(productModelQuery.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         [Route("/search")]
@@ -56,6 +61,9 @@ namespace Web_Shoes.Controllers
 
             return View(searchQuery);
         }
+
+        
+        
 
 
     }

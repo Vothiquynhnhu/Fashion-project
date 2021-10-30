@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Web_Shoes.Models.ProductModel>
+﻿
+@model Web_Shoes.Service.PaginatedList<Web_Shoes.Models.ProductModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -104,26 +105,44 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
 
                         }
 
                     }
 
                 </div>
+                @{
+                    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                }
 
                 <!-- Pagination Start -->
                 <div class="col-md-12">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                             <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                @*<a class="page-link" href="#" tabindex="-1">Previous</a>*@
+                                <a asp-action="Index"
+                                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                   class="btn btn-default @prevDisabled">
+                                    Previous
+                                </a>
                             </li>
                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
+                                @*<a class="page-link" href="#">Next</a>*@
+                                <a asp-action="Index"
+                                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                   class="btn btn-default @nextDisabled">
+                                    Next
+                                </a>
                             </li>
                         </ul>
                     </nav>
