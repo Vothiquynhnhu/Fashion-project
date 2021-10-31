@@ -1,126 +1,400 @@
 ﻿
-@model IEnumerable<Web_Shoes.Models.ProductModel>
+@model Web_Shoes.Service.PaginatedList<Web_Shoes.Models.ProductModel>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
-    int i = 1;
 }
 
-<section class="main-content">
 
-    <div class="row">
-        <div class="span9">
-            <ul class="thumbnails listing-products">
-                @foreach (var item in Model)
-                {
+<!-- Product List Start -->
+<div class="product-view">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="product-view-top">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <form asp-action="Index" method="get">
+                                        <div class="product-search">
+                                            <input type="text" placeholder="Search" name="SearchString">
+                                            <button><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                @*<div class="col-md-4">
+                                        <div class="product-short">
+                                            <form asp-action="Index" method="get">
+                                                <div class="dropdown">
+                                                    <select class="dropdown-toggle" onchange="myFunction(this.value)" name="sortOrder">
+                                                        <option value="All">All</option>
+                                                        <option value="BestSaler">Best saler</option>
+                                                        <option value="Popular">Popular</option>
+                                                    </select>
+                                                </div>
 
-                    <li class="span3">
-                        <div class="product-box">
-                            <span class="sale_tag"></span>
-                            <p><a href="/productdetail?id=@item.pd_Id"><img src="@item.pd_Img1" alt="" /></a></p>
-                            <a href="/productdetail?id=@item.pd_Id" class="title">@item.pd_Name</a><br />
-                            <a href="/productdetail?id=@item.pd_Id" class="category">@item.pd_Style</a>
-                            <p class="price">$@item.pd_Price</p>
-                        </div>
-                    </li>
-                }
+                                                <input type="submit" id="submitSort" hidden/>
+                                            </form>
+                                        </div>
+                                    </div>*@
+                                <div class="col-md-4">
+                                    <div class="product-price-range">
+                                        <form asp-action="Index" method="get">
+                                            <div class="dropdown">
+                                                <select class="dropdown-toggle" onchange="myFunctionPrice(this.value)" name="priceOrder">
+                                                    @{
+                                                        string firstPrice;
+                                                        if (String.IsNullOrEmpty(ViewData["FirstPriceSort"].ToString()))
+                                                        {
+                                                            firstPrice = "";
+                                                        }
+                                                        else
+                                                        {
+                                                            firstPrice = ViewData["FirstPriceSort"].ToString();
+                                                        }
 
 
-            </ul>
-            <hr>
-            <div class="pagination pagination-small pagination-centered">
-                <ul>
-                    <li><a href="#">Prev</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">Next</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="span3 col">
-            <div class="block">
-                <ul class="nav nav-list">
-                    <li class="nav-header">SUB CATEGORIES</li>
-                    <li><a href="products.html">Nullam semper elementum</a></li>
-                    <li class="active"><a href="products.html">Phasellus ultricies</a></li>
-                    <li><a href="products.html">Donec laoreet dui</a></li>
-                    <li><a href="products.html">Nullam semper elementum</a></li>
-                    <li><a href="products.html">Phasellus ultricies</a></li>
-                    <li><a href="products.html">Donec laoreet dui</a></li>
-                </ul>
-                <br />
-                <ul class="nav nav-list below">
-                    <li class="nav-header">MANUFACTURES</li>
-                    <li><a href="products.html">Adidas</a></li>
-                    <li><a href="products.html">Nike</a></li>
-                    <li><a href="products.html">Dunlop</a></li>
-                    <li><a href="products.html">Yamaha</a></li>
-                </ul>
-            </div>
-            <div class="block">
-                <h4 class="title">
-                    <span class="pull-left"><span class="text">Randomize</span></span>
-                    <span class="pull-right">
-                        <a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
-                    </span>
-                </h4>
-                <div id="myCarousel" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="active item">
-                            <ul class="thumbnails listing-products">
-                                <li class="span3">
-                                    <div class="product-box">
-                                        <span class="sale_tag"></span>
-                                        <img alt="" src="themes/images/ladies/1.jpg"><br />
-                                        <a href="product_detail.html" class="title">Fusce id molestie massa</a><br />
-                                        <a href="#" class="category">Suspendisse aliquet</a>
-                                        <p class="price">$261</p>
+                                                        if (firstPrice == "All")
+                                                        {
+                                                            <option value="All" selected> All </option>
+                                                        }
+                                                        else
+                                                        {
+
+                                                            <option value="All" selected> All </option>
+
+                                                        }
+
+                                                        if (firstPrice == "0")
+                                                        {
+                                                            <option value="0" selected> $0 to $50 </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="0"> $0 to $50 </option>
+                                                        }
+
+                                                        if (firstPrice == "51")
+                                                        {
+                                                            <option value="51" selected> $51 to $100 </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="51"> $51 to $100 </option>
+                                                        }
+
+                                                        if (firstPrice == "101")
+                                                        {
+                                                            <option value="101" selected> $101 to $150 </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="101"> $101 to $150 </option>
+                                                        }
+
+                                                        if (firstPrice == "151")
+                                                        {
+                                                            <option value="151" selected> $151 to $200 </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="151"> $151 to $200</option>
+                                                        }
+                                                    }
+
+
+                                                </select>
+
+                                            </div>
+                                            <input type="submit" id="submitPrice" hidden />
+                                        </form>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="item">
-                            <ul class="thumbnails listing-products">
-                                <li class="span3">
-                                    <div class="product-box">
-                                        <img alt="" src="themes/images/ladies/2.jpg"><br />
-                                        <a href="product_detail.html" class="title">Tempor sem sodales</a><br />
-                                        <a href="#" class="category">Urna nec lectus mollis</a>
-                                        <p class="price">$134</p>
-                                    </div>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+
+
+
+
+
+
+                    @{
+                        foreach (var item in Model)
+                        {
+                            var NameProduct = item.pd_Name;
+                            int EndStringLength = 18;
+
+
+
+                            if (NameProduct.Length > EndStringLength)
+                            {
+                                NameProduct = NameProduct.Substring(0, EndStringLength);
+                            }
+
+                            NameProduct += "...";
+
+
+                            <div class="col-lg-3">
+                                <div class="product-item">
+                                    <div class="product-title">
+                                        <a href="/productdetail?id=@item.pd_Id">@NameProduct</a>
+                                        <div class="ratting">
+
+                                            @{
+                                                int starFull = item.pd_Rate;
+                                                int starEmpty = 5 - starFull;
+                                                for (int i = 1; i <= starFull; i++)
+                                                {
+                                                    <i class="fa fa-star"></i>
+                                                }
+
+                                                for (int i = 1; i <= starEmpty; i++)
+                                                {
+                                                    <i class="fa fa-star-o"></i>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="product-image">
+                                        <a href="/productdetail?id=@item.pd_Id">
+                                            <img src="@item.pd_Img1" alt="Product Image">
+                                        </a>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <h3><span>$</span>@item.pd_Price</h3>
+                                        <a class="btn" href="/productdetail?id=@item.pd_Id"><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        }
+
+                    }
+
                 </div>
+                @{
+                    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                }
+
+                <!-- Pagination Start -->
+                <div class="col-md-12">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                @*<a class="page-link" href="#" tabindex="-1">Previous</a>*@
+                                <a asp-action="Index"
+                                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                   class="btn btn-default @prevDisabled">
+                                    Previous
+                                </a>
+                            </li>
+                            @if (Model.PageIndex == 1)
+                            {
+
+                            }
+                            else
+                            {
+                                <li class="page-item active">
+                                    <a asp-action="Index"
+                                       asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                       asp-route-pageNumber="@(Model.PageIndex - 1)"
+                                       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                       class="btn btn-default @prevDisabled">
+                                        @(Model.PageIndex -1)
+                                    </a>
+                                </li>
+
+                            }
+
+                            <li class="page-item active">
+                                <a asp-action="Index"
+                                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                   asp-route-pageNumber="@(Model.PageIndex)"
+                                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                   class="btn btn-default @nextDisabled">@Model.PageIndex</a>
+                            </li>
+
+                            <li class="page-item active">
+                                <a asp-action="Index"
+                                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                   class="btn btn-default @nextDisabled">
+                                    @(Model.PageIndex +1)
+                                </a>
+                            </li>
+
+
+
+                            <li class="page-item">
+                                @*<a class="page-link" href="#">Next</a>*@
+                                <a asp-action="Index"
+                                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                   class="btn btn-default @nextDisabled">
+                                    Next
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Pagination Start -->
             </div>
-            <div class="block">
-                <h4 class="title"><strong>Best</strong> Seller</h4>
-                <ul class="small-product">
-                    <li>
-                        <a href="#" title="Praesent tempor sem sodales">
-                            <img src="themes/images/ladies/3.jpg" alt="Praesent tempor sem sodales">
-                        </a>
-                        <a href="#">Praesent tempor sem</a>
-                    </li>
-                    <li>
-                        <a href="#" title="Luctus quam ultrices rutrum">
-                            <img src="themes/images/ladies/4.jpg" alt="Luctus quam ultrices rutrum">
-                        </a>
-                        <a href="#">Luctus quam ultrices rutrum</a>
-                    </li>
-                    <li>
-                        <a href="#" title="Fusce id molestie massa">
-                            <img src="themes/images/ladies/5.jpg" alt="Fusce id molestie massa">
-                        </a>
-                        <a href="#">Fusce id molestie massa</a>
-                    </li>
-                </ul>
+
+            <!-- Side Bar Start -->
+            <div class="col-lg-4 sidebar">
+                <div class="sidebar-widget category">
+                    <h2 class="title">Category</h2>
+                    <nav class="navbar bg-light">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/woman"><i class="fa fa-female"></i>Woman</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/man"><i class="fa fa-child"></i>Man</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/hangbag"><i class="fa fa-tshirt"></i>Hangbags</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="sidebar-widget widget-slider">
+                    <div class="sidebar-slider normal-slider">
+
+                        @{
+                            foreach (var item in Model)
+                            {
+                                var NameProduct = item.pd_Name;
+                                int EndStringLength = 18;
+
+
+
+                                if (NameProduct.Length > EndStringLength)
+                                {
+                                    NameProduct = NameProduct.Substring(0, EndStringLength);
+                                }
+
+                                NameProduct += "...";
+
+
+                                <div class="col-lg-3">
+                                    <div class="product-item">
+                                        <div class="product-title">
+                                            <a href="/productdetail?id=@item.pd_Id">@NameProduct</a>
+                                            <div class="ratting">
+                                                @{
+                                                    int starFull = item.pd_Rate;
+                                                    int starEmpty = 5 - starFull;
+                                                    for (int i = 1; i <= starFull; i++)
+                                                    {
+                                                        <i class="fa fa-star"></i>
+                                                    }
+
+                                                    for (int i = 1; i <= starEmpty; i++)
+                                                    {
+                                                        <i class="fa fa-star-o"></i>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="product-image">
+                                            <a href="/productdetail?id=@item.pd_Id">
+                                                <img src="@item.pd_Img1" alt="Product Image">
+                                            </a>
+
+                                        </div>
+                                        <div class="product-price">
+                                            <h3><span>$</span>@item.pd_Price</h3>
+                                            <a class="btn" href="/productdetail?id=@item.pd_Id"><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+
+                        }
+
+
+
+
+
+
+                    </div>
+                </div>
+
+                @*<div class="sidebar-widget brands">
+                        <h2 class="title">Our Brands</h2>
+                        <ul>
+                            <li><a href="#">Nulla </a><span>(45)</span></li>
+                            <li><a href="#">Curabitur </a><span>(34)</span></li>
+                            <li><a href="#">Nunc </a><span>(67)</span></li>
+                            <li><a href="#">Ullamcorper</a><span>(74)</span></li>
+                            <li><a href="#">Fusce </a><span>(89)</span></li>
+                            <li><a href="#">Sagittis</a><span>(28)</span></li>
+                        </ul>
+                    </div>*@
+
+                @*<div class="sidebar-widget tag">
+                        <h2 class="title">Tags Cloud</h2>
+                        <a href="#">Lorem ipsum</a>
+                        <a href="#">Vivamus</a>
+                        <a href="#">Phasellus</a>
+                        <a href="#">pulvinar</a>
+                        <a href="#">Curabitur</a>
+                        <a href="#">Fusce</a>
+                        <a href="#">Sem quis</a>
+                        <a href="#">Mollis metus</a>
+                        <a href="#">Sit amet</a>
+                        <a href="#">Vel posuere</a>
+                        <a href="#">orci luctus</a>
+                        <a href="#">Nam lorem</a>
+                    </div>*@
+
+
             </div>
+            <!-- Side Bar End -->
         </div>
     </div>
-</section>
+</div>
+<!-- Product List End -->
+<!-- Brand Start -->
+<div class="brand">
+    <div class="container-fluid">
+        <div class="brand-slider">
+            <div class="brand-item"><img src="img/brand-1.png" alt=""></div>
+            <div class="brand-item"><img src="img/brand-2.png" alt=""></div>
+            <div class="brand-item"><img src="img/brand-3.png" alt=""></div>
+            <div class="brand-item"><img src="img/brand-4.png" alt=""></div>
+            <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
+            <div class="brand-item"><img src="img/brand-6.png" alt=""></div>
+        </div>
+    </div>
+</div>
+<!-- Brand End -->
+
+
+<script>
+    function myFunction(val) {
+        var submit = document.getElementById("submitSort");
+        submit.click();
+        //alert("The input value has changed. The new value is: " + val);
+    }
+    function myFunctionPrice(val) {
+        var submit = document.getElementById("submitPrice");
+        submit.click();
+        //alert("The input value has changed. The new value is: " + val);
+    }
+</script>
