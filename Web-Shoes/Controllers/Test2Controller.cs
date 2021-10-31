@@ -27,53 +27,53 @@ namespace Web_Shoes.Controllers
 
         [Route("/test2")]
         [HttpGet]
-        public async Task<IActionResult> Index(
-    string sortOrder,
-    string currentFilter,
-    string searchString,
-    int? pageNumber)
-        {
-            ViewData["CurrentSort"] = sortOrder;
-            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+        //    public async Task<IActionResult> Index(
+        //string sortOrder,
+        //string currentFilter,
+        //string searchString,
+        //int? pageNumber)
+        //    {
+        //        ViewData["CurrentSort"] = sortOrder;
+        //        ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+        //        ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
 
-            if (searchString != null)
-            {
-                pageNumber = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
-            }
+        //        if (searchString != null)
+        //        {
+        //            pageNumber = 1;
+        //        }
+        //        else
+        //        {
+        //            searchString = currentFilter;
+        //        }
 
-            ViewData["CurrentFilter"] = searchString;
+        //        ViewData["CurrentFilter"] = searchString;
 
-            var students = from s in _context.Products
-                           select s;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                students = students.Where(s => s.pd_Name.Contains(searchString)
-                                       || s.pd_Description.Contains(searchString));
-            }
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    students = students.OrderByDescending(s => s.pd_Name);
-                    break;
-                case "Date":
-                    students = students.OrderBy(s => s.pd_Name);
-                    break;
-                case "date_desc":
-                    students = students.OrderByDescending(s => s.pd_Name);
-                    break;
-                default:
-                    students = students.OrderBy(s => s.pd_Name);
-                    break;
-            }
+        //        var students = from s in _context.Products
+        //                       select s;
+        //        if (!String.IsNullOrEmpty(searchString))
+        //        {
+        //            students = students.Where(s => s.pd_Name.Contains(searchString)
+        //                                   || s.pd_Description.Contains(searchString));
+        //        }
+        //        switch (sortOrder)
+        //        {
+        //            case "name_desc":
+        //                students = students.OrderByDescending(s => s.pd_Name);
+        //                break;
+        //            case "Date":
+        //                students = students.OrderBy(s => s.pd_Name);
+        //                break;
+        //            case "date_desc":
+        //                students = students.OrderByDescending(s => s.pd_Name);
+        //                break;
+        //            default:
+        //                students = students.OrderBy(s => s.pd_Name);
+        //                break;
+        //        }
 
-            int pageSize = 7;
-            return View( PaginatedList<Products>.Create(students.AsNoTracking(), pageNumber ?? 1, pageSize));
-        }
+        //        int pageSize = 7;
+        //        return View( PaginatedList<Products>.Create(students.AsNoTracking(), pageNumber ?? 1, pageSize));
+        //    }
 
 
         //[HttpGet]
@@ -98,5 +98,13 @@ namespace Web_Shoes.Controllers
 
         //    return View();
         //}
+
+        //[HttpGet]
+        public IActionResult Index()
+        {
+            
+
+            return View();
+        }
     }
 }

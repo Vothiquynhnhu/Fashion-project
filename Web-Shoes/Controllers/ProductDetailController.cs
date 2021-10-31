@@ -76,6 +76,8 @@ namespace Web_Shoes.Controllers
 
             review = review.Where(x => x.d.pd_Id == id && x.b.review_HideStatus == false);
 
+            review = review.OrderByDescending(a => a.b.review_UploadTime);
+
             var reviewQuery = review.Select(x => new ReviewModel()
             {
                 // table Review
@@ -125,9 +127,11 @@ namespace Web_Shoes.Controllers
                 itemReview.review_CountSubReview = subreviewAddList.Count();
                 reviewAdd.Add(itemReview);
             }
+
+
             var reviewQuery1 = reviewAdd.Cast<ReviewModel>().ToArray();
 
-
+            
 
             return View(reviewQuery1);
         }
@@ -221,6 +225,7 @@ namespace Web_Shoes.Controllers
                 var userName = User.FindFirstValue(ClaimTypes.Name);
 
                 string reviewId = Guid.NewGuid().ToString();
+               
 
                 string idproduct = Request.Form["idproduct"];
                 if (Request.Form["comment"] != "")
