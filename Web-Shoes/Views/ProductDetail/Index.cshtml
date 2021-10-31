@@ -74,11 +74,20 @@
                             <div class="product-content">
                                 <div class="title"><h2>@ViewBag.NameProduct</h2></div>
                                 <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                                    @{
+                                        //int starFull = ViewBag.Rate;
+                                        int starFull = 4;
+                                        int starEmpty = 5 - starFull;
+                                        for (int i = 1; i <= starFull; i++)
+                                        {
+                                            <i class="fa fa-star"></i>
+                                        }
+
+                                        for (int i = 1; i <= starEmpty; i++)
+                                        {
+                                            <i class="fa fa-star-o"></i>
+                                        }
+                                    }
                                 </div>
                                 <div class="price">
                                     <h4>Price:</h4>
