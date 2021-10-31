@@ -69,25 +69,46 @@ namespace Web_Shoes.Controllers
 
 
             //Confirm Mail
+            string IdOrder = "#1112";
             string MailTo = "thaibao0225@gmail.com";
             string Subject = "Order Confirm #111";
-            
+            string NameUser = "NameUser";
+            string Phone = "0123456789";
+            string Address = "HCM";
+            string Email = "test@gmail.com";
+            int Price = 2000;
+
+
+            //"+ Price + "
+            string productList ="";
+            foreach (var item in productsLists)
+            {
+                productList += "<tr><td>" + item.pd_Name + "</td><td>" + item.pd_Size + "</td><td>" + item.pd_Color + "</td><td>" + item.pd_Rate + "</td><td>" + item.pd_Price + "</td></tr>";
+            }
+
+
+            string contentOfProductList = "<div><table cellpadding=\"0\" cellspacing=\"0\" width=\"700\" align=\"left\" border=\"1\" ><thead><tr><th> Name </th><th> Size </th><th> Color </th><th> Amount </th><th> Price </th></tr></thead><tbody> " +
+                productList +
+                "<tr><td colspan=\"3\"></td><td>Ship:</td><td>1$</td></tr><tr>"+
+                "<td colspan=\"3\"></td><td>Discount:</td><td>5$</td></tr><tr>"+
+                "<td colspan=\"3\"></td><td>Sum Price:</td><td>2000$</td></tr>"+
+                "</tbody></table></div>";
 
             MailContent content = new MailContent
             {
                 To = MailTo,
                 Subject = Subject,
-                Body = "<div><div><center> <h2> Order confirmation #1111 </h2> </center></div><div><table class='table'><tr><th>Name:</th>" +
-                "<td>Name</td></tr><tr><th>Phone:</th><td>0123456789</td></tr><tr><th>Address:</th><td>HCM,1223.</td></tr><tr><th>Email:</th>" +
-                "<td>email@gmail.com</td></tr><tr><th>Price:</th><td>2000$</td></tr></table></div>" +
-                "<div><table cellpadding=\"0\" cellspacing=\"0\" width=\"700\" align=\"left\" border=\"1\" ><thead><tr><th scope=\"col\">Name</th><th scope=\"col\">Size</th><th scope=\"col\">Color</th>" +
-                "<th scope=\"col\">Amount</th><th scope=\"col\">Price</th></tr></thead><tbody><tr><td>Name1</td><td>Size1</td><td>Color1</td><td>Amount1</td>" +
-                "<td>Price1</td></tr><tr><td colspan=\"3\"></td><td>Ship:</td><td>1$</td></tr><tr><td colspan=\"3\"></td><tr><td colspan=\"3\"></td><td>Sum Price:</td>" +
-                "<td>2000$</td></tr></tbody></table></div>" +
+                Body = "<div><div><center> <h2> Order confirmation "+ IdOrder + "</h2> </center></div>" +
+                "<div><table class='table'><tr><th>:</th>" +
+                "<td>" + NameUser + "</td></tr><tr><th>Phone:</th><td>" + Phone + "</td></tr><tr><th>Address:</th><td>" + Address + "</td></tr><tr><th>Email:</th>" +
+                "<td>" + Email + "</td></tr><tr><th>Price:</th><td>" + Price + "$ </td></tr></table></div>" +
+                contentOfProductList +
                 "</div>" 
             };
 
             await _sendMailService.SendMail(content);
+
+
             return View();
         }
 

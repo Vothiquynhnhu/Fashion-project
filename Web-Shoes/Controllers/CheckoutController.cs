@@ -275,6 +275,61 @@ namespace Web_Shoes.Controllers
 
                 };
 
+                // Form -----------------------------------------------------------------------------------
+                // Save Form
+                // query to form 
+                var queryForm = _context.AppUser.FirstOrDefault(a => a.Id == userId);
+
+                queryForm.FirstName = firstName;
+                queryForm.LastName = lastName;
+                queryForm.Email = email;
+                queryForm.PhoneNumber = phone;
+                queryForm.bill_Address1 = address1;
+                queryForm.bill_Country = country;
+                queryForm.bill_City = city;
+                queryForm.bill_PostalCode = postal;
+
+                // SendMail -----------------------------------------------------------------------------------
+                //Confirm Mail
+                string IdOrder = "#1112";
+                string MailTo = email;
+                string Subject = "Order Confirm #111";
+                string NameUser = "NameUser";
+                string Phone = "0123456789";
+                string Address = "HCM";
+                string Email = "test@gmail.com";
+                int Price = 2000;
+
+
+                //"+ Price + "
+                string productList = "";
+                foreach (var item in cartDetail)
+                {
+                    productList += "<tr><td>" + item.checkout_ProductName + "</td><td>" + item.checkout_Price + "</td><td>" + item.checkout_ProductColor + "</td><td>" + item.checkout_Quantity + "</td><td>" + item.checkout_Price + "</td></tr>";
+                }
+
+
+                string contentOfProductList = "<div><table cellpadding=\"0\" cellspacing=\"0\" width=\"700\" align=\"left\" border=\"1\" ><thead><tr><th> Name </th><th> Size </th><th> Color </th><th> Amount </th><th> Price </th></tr></thead><tbody> " +
+                    productList +
+                    "<tr><td colspan=\"3\"></td><td>Ship:</td><td>1$</td></tr><tr>" +
+                    "<td colspan=\"3\"></td><td>Discount:</td><td>5$</td></tr><tr>" +
+                    "<td colspan=\"3\"></td><td>Sum Price:</td><td>2000$</td></tr>" +
+                    "</tbody></table></div>";
+
+                MailContent content = new MailContent
+                {
+                    To = MailTo,
+                    Subject = Subject,
+                    Body = "<div><div><center> <h2> Order confirmation " + IdOrder + "</h2> </center></div>" +
+                    "<div><table class='table'><tr><th>:</th>" +
+                    "<td>" + NameUser + "</td></tr><tr><th>Phone:</th><td>" + Phone + "</td></tr><tr><th>Address:</th><td>" + Address + "</td></tr><tr><th>Email:</th>" +
+                    "<td>" + Email + "</td></tr><tr><th>Price:</th><td>" + Price + "$ </td></tr></table></div>" +
+                     "<br />"+contentOfProductList +
+                    "</div>"
+                };
+
+                await _sendMailService.SendMail(content);
+
                 // Check Add information
                 var queryUser = _context.AppUser.FirstOrDefault(a => a.Id == userId);
 
@@ -293,7 +348,6 @@ namespace Web_Shoes.Controllers
                 /// Add
                 _context.Bills.Add(bill);
 
-
                 /// Remove
                 var CartQuery = _context.Cart.FirstOrDefault(x => x.cart_UserID == userId);
 
@@ -303,31 +357,6 @@ namespace Web_Shoes.Controllers
 
                     _context.ProductInCart.RemoveRange(ProductInCartQueryDelete);
                 }
-
-
-                // Form -----------------------------------------------------------------------------------
-                // Save Form
-                // query to form 
-                var queryForm = _context.AppUser.FirstOrDefault(a => a.Id == userId);
-
-                queryForm.FirstName = firstName;
-                queryForm.LastName = lastName;
-                queryForm.Email = email;
-                queryForm.PhoneNumber = phone;
-                queryForm.bill_Address1 = address1;
-                queryForm.bill_Country = country;
-                queryForm.bill_City = city;
-                queryForm.bill_PostalCode = postal;
-
-                // SendMail -----------------------------------------------------------------------------------
-                MailContent content = new MailContent
-                {
-                    To = "thaibao0225@gmail.com",
-                    Subject = "Kiểm tra thử1",
-                    Body = "<p><strong>Xin chào xuanthulab.net</strong></p>"
-                };
-
-                await _sendMailService.SendMail(content);
 
 
                 await _context.SaveChangesAsync();
