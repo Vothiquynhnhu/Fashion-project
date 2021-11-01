@@ -68,6 +68,7 @@ namespace Web_Shoes.Data
             builder.ApplyConfiguration(new ShippingConfigurations());
             builder.ApplyConfiguration(new SubReviewInReviewConfigurations());
             builder.ApplyConfiguration(new SubReviewConfigurations());
+            builder.ApplyConfiguration(new SubscribersConfigurations());
 
 
 
@@ -115,6 +116,8 @@ namespace Web_Shoes.Data
         public DbSet<SubReviewInReview> SubReviewInReview { set; get; }
 
         public DbSet<Web_Shoes.Models.UserInRoleModel> UserInRoleModel { get; set; }
+
+        public DbSet<Subscribers> Subscribers { set; get; }
         //public DbSet<AppUserRole> AppUserRole { set; get; }
 
     }

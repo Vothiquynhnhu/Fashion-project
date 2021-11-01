@@ -257,9 +257,10 @@ namespace Web_Shoes.Controllers
 
                 //Check discount
                 var queryDiscount = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
+                string billId = Guid.NewGuid().ToString();
                 var bill = new Bills()
                 {
-                    bill_Id = Guid.NewGuid().ToString(),
+                    bill_Id = billId,
                     bill_UserId = userId,
                     bill_ProductIdlist = productIdList,
                     bill_Discount = queryDiscount.cart_Discount,
@@ -291,14 +292,14 @@ namespace Web_Shoes.Controllers
 
                 // SendMail -----------------------------------------------------------------------------------
                 //Confirm Mail
-                string IdOrder = "#1112";
+                string IdOrder = billId;
                 string MailTo = email;
-                string Subject = "Order Confirm #111";
-                string NameUser = "NameUser";
-                string Phone = "0123456789";
-                string Address = "HCM";
-                string Email = "test@gmail.com";
-                int Price = 2000;
+                string Subject = "Order Confirm #"+ billId;
+                string NameUser = firstName;
+                string Phone = phone;
+                string Address = address1;
+                string Email = email;
+                int Price = reTotal;
 
 
                 //"+ Price + "

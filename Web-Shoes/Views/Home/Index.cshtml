@@ -277,10 +277,14 @@
                 <h1>Subscribe Our Newsletter</h1>
             </div>
             <div class="col-md-6">
-                <div class="form">
-                    <input type="email" value="Your email here">
-                    <button>Submit</button>
-                </div>
+                <form asp-controller="Home" asp-action="SubsriberAsync" method="get">
+                    <div class="form">
+                        <input type="email" placeholder="Your email here" name="Subsriber">
+                        @*<input type="submit"  value="Submit" />*@
+                        <button>Submit</button>
+                    </div>
+                </form>
+                
             </div>
         </div>
     </div>

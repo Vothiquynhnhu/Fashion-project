@@ -263,11 +263,25 @@ namespace Web_Shoes.Controllers
                 HttpContext.Session.SetString(KeySession.userNameSession, userName.ToString());
             }
             
+        }
 
+        [Route("/Home/SubsriberAsync")]
+        [HttpGet]
+        public async Task<IActionResult> SubsriberAsync(string Subsriber)
+        {
 
+            var addSubsriber = new Subscribers()
+            {
+                Subs_Id = Guid.NewGuid().ToString(),
+                Subs_Mail = Subsriber,
+                Subs_TimeUpdate = DateTime.Now
+            };
+
+            _context.Subscribers.Add(addSubsriber);
+
+            await _context.SaveChangesAsync();
             
-
-
+            return RedirectToAction(nameof(Index));
         }
 
         
