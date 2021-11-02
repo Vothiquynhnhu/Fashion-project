@@ -43,7 +43,14 @@ namespace Web_Shoes.Migrations
                 {
                     CategoriesHomeId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CategoriesHomeName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoriesHomeUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CategoriesHomeUrl1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoriesHomeUrl2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoriesHomeUrl3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoriesHomeUrl4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoriesHomeUrl5 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoriesHomeUrl6 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoriesHomeUrl7 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoriesHomeUrl8 = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -103,6 +110,23 @@ namespace Web_Shoes.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CustomerHome",
+                columns: table => new
+                {
+                    CustomerHomeId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CustomerHomeName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CustomerHome_CImg = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CustomerHome_CName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CustomerHome_CWork = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CustomerHome_CStar = table.Column<int>(type: "int", nullable: false),
+                    CustomerHome_CDesription = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CustomerHome", x => x.CustomerHomeId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Device",
                 columns: table => new
                 {
@@ -120,6 +144,26 @@ namespace Web_Shoes.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Device", x => x.deviceId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FeatureHome",
+                columns: table => new
+                {
+                    FeatureHomeId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FeatureHomeName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FeatureHomeTitle1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FeatureHomeDesription1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FeatureHomeTitle2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FeatureHomeDesription2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FeatureHomeTitle3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FeatureHomeDesription3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FeatureHomeTitle4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FeatureHomeDesription4 = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FeatureHome", x => x.FeatureHomeId);
                 });
 
             migrationBuilder.CreateTable(
@@ -208,7 +252,11 @@ namespace Web_Shoes.Migrations
                 {
                     SliderId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     SliderName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SliderUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    SliderUrl1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SliderUrl2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SliderUrl3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SliderUrl4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SliderUrl5 = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -697,18 +745,8 @@ namespace Web_Shoes.Migrations
 
             migrationBuilder.InsertData(
                 table: "CategoriesHome",
-                columns: new[] { "CategoriesHomeId", "CategoriesHomeName", "CategoriesHomeUrl" },
-                values: new object[,]
-                {
-                    { "f72eb252-f41c-4150-8f23-60ccb93cab68", "CategoriesHome8", "https://drive.google.com/uc?export=download&id=1EEMOiZF6E5sKIFGntEySd0SVvZmvFe78" },
-                    { "1bbdb6c6-a9bb-4c44-977b-8a9eb2cc93fc", "CategoriesHome7", "https://drive.google.com/uc?export=download&id=18tu3dYEqUmKx5bJL_hjSN467GO3cbaQE" },
-                    { "de218d82-7c10-4cb9-9943-47aafe77fe33", "CategoriesHome6", "https://drive.google.com/uc?export=download&id=1vOIH3t8uhGxNKF7w76kViqlmlQH1-6YU" },
-                    { "e5854b22-c67e-4f22-8949-a702a58fa7ec", "CategoriesHome1", "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f" },
-                    { "8405afd1-93c6-4602-aee0-aafa09b426c5", "CategoriesHome2", "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K" },
-                    { "df7d22ad-acc5-4171-b9d6-d69a0173bb7a", "CategoriesHome3", "https://drive.google.com/uc?export=download&id=1Gm-TZ2nqI5eUAU0O45cgeay38AS0OxiI" },
-                    { "ff4c9a3b-a086-4faf-8596-ef7f7bec7a9d", "CategoriesHome4", "https://drive.google.com/uc?export=download&id=1g4QK9WF2e9aXHpJCUXK0-1H6j6kC7r5L" },
-                    { "85b4b206-84e3-4661-b549-a9dcce91ecac", "CategoriesHome5", "https://drive.google.com/uc?export=download&id=14ybZRAMDRY_OhMcCXXzVtjeyHhnaKn5l" }
-                });
+                columns: new[] { "CategoriesHomeId", "CategoriesHomeName", "CategoriesHomeUrl1", "CategoriesHomeUrl2", "CategoriesHomeUrl3", "CategoriesHomeUrl4", "CategoriesHomeUrl5", "CategoriesHomeUrl6", "CategoriesHomeUrl7", "CategoriesHomeUrl8" },
+                values: new object[] { "b82dc1f0-bea2-432e-99ee-2031f57b2c3e", "CategoriesHome1", "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f", "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K", "https://drive.google.com/uc?export=download&id=1Gm-TZ2nqI5eUAU0O45cgeay38AS0OxiI", "https://drive.google.com/uc?export=download&id=1g4QK9WF2e9aXHpJCUXK0-1H6j6kC7r5L", "https://drive.google.com/uc?export=download&id=14ybZRAMDRY_OhMcCXXzVtjeyHhnaKn5l", "https://drive.google.com/uc?export=download&id=1vOIH3t8uhGxNKF7w76kViqlmlQH1-6YU", "https://drive.google.com/uc?export=download&id=18tu3dYEqUmKx5bJL_hjSN467GO3cbaQE", "https://drive.google.com/uc?export=download&id=1EEMOiZF6E5sKIFGntEySd0SVvZmvFe78" });
 
             migrationBuilder.InsertData(
                 table: "ContactSystems",
@@ -725,9 +763,24 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "couponId", "couponAmount", "couponCode", "couponPrice" },
                 values: new object[,]
                 {
-                    { "9a78729c-8737-48cc-bb51-d494c640716a", 20, "code10", 10 },
-                    { "f73c7a53-cc96-4ee1-92a5-6c48c09c7837", 25, "code50", 50 }
+                    { "62827f7a-2df0-42d0-851f-8e7e43e17f3f", 25, "code50", 50 },
+                    { "3d1a6506-011b-44e8-9ded-06e9b0ed96de", 20, "code10", 10 }
                 });
+
+            migrationBuilder.InsertData(
+                table: "CustomerHome",
+                columns: new[] { "CustomerHomeId", "CustomerHomeName", "CustomerHome_CDesription", "CustomerHome_CImg", "CustomerHome_CName", "CustomerHome_CStar", "CustomerHome_CWork" },
+                values: new object[,]
+                {
+                    { "0a05118d-24b6-49e7-8fcc-327bc0ff415d", "FeatureHome2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem", "https://drive.google.com/uc?export=download&id=12xlH3LvPKtXEUTRFdETM7SGvCnjU9S-c", "Customer 2", 5, "Profession" },
+                    { "c60743fb-078b-4547-98bb-d7799cb4a646", "FeatureHome1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem", "https://drive.google.com/uc?export=download&id=12BEbKPhMNT6Gl31Wgzo1XNA6kf5zCtYm", "Customer 1", 5, "Profession" },
+                    { "fa00ee2a-d40e-4c63-958e-6825ceb2fe71", "FeatureHome3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem", "https://drive.google.com/uc?export=download&id=1-VztC3V4O7HyIdetuemHMO61M5up94uD", "Customer 3", 5, "Profession" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "FeatureHome",
+                columns: new[] { "FeatureHomeId", "FeatureHomeDesription1", "FeatureHomeDesription2", "FeatureHomeDesription3", "FeatureHomeDesription4", "FeatureHomeName", "FeatureHomeTitle1", "FeatureHomeTitle2", "FeatureHomeTitle3", "FeatureHomeTitle4" },
+                values: new object[] { "8d8e744a-f535-4265-9868-152f8134b89a", "Lorem ipsum dolor sit amet consectetur elit", "Lorem ipsum dolor sit amet consectetur elit", "Lorem ipsum dolor sit amet consectetur elit", "Lorem ipsum dolor sit amet consectetur elit", "FeatureHome1", "Secure Payment", "Worldwide Delivery", "90 Days Return", "24/7 Support" });
 
             migrationBuilder.InsertData(
                 table: "Products",
@@ -755,9 +808,12 @@ namespace Web_Shoes.Migrations
                     { 37, "MARC JACOBS", "PD037", "", "Marc Jacobs’ iconic Snapshot bag has been reimagined with a vibrant tie-dye print and a matching cross-body strap. Crafted from saffiano leather, the compact style has two zipped sections and slip pockets to keep your daily essentials organised. Silver-tone metal hardware and co-ordinating ‘Double J’ hardware completes the bold style.", "https://drive.google.com/uc?export=download&id=1N4UQ_qU7D0jwof4cPG83XujEdGDh7s-p", "https://drive.google.com/uc?export=download&id=1gZFceh7UvwzamS0f-T997J00rvjnDCC_", "https://drive.google.com/uc?export=download&id=1rxWh70yUyRl4W-1GahDplUxO50FOaWk5", "https://drive.google.com/uc?export=download&id=1s0noMO6Z2IFL8jN7JfEgw54pBAqavXjn", "1", "1", "Marc Jacobs Tie Dye Snapshot Cross Body Bag - Pink Multi", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Bag", "1", false },
                     { 35, "Gucci", "PD035", "White", "Combine both style and practicality with this Gucci Fake logo bum bag. Constructed with an adjustable fabric buckle waistband, this compact has a zip compartment and is finished with the brand's signature imitation logo details embroidered on the front.", "https://drive.google.com/uc?export=download&id=12niwGccl8KfuoLkrvDEpsTZ34otlOLc-", "https://drive.google.com/uc?export=download&id=1uqem4eQawaG2OGwvBHN20_gt3yMEniCR", "https://drive.google.com/uc?export=download&id=1rTroGFVd7WnKRuPVCy4dZrOsTSBMA1rI", "https://drive.google.com/uc?export=download&id=1Qtq4NUk_dtuEOO7zDfvU6RDmb_-1Si-y", "1", "1", "GUCCI BELT BAG FAKE LOGO WHITE", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
                     { 18, "Moschino", "PD018", "", "", "https://drive.google.com/uc?export=download&id=1BqGUuj-7G4MDgK-k38SML_wLuNmsxV4t", "", "", "", "1", "1", "MOSCHINO TEE DOLLARS", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 10, "Burberry", "PD010", "", "", "https://drive.google.com/uc?export=download&id=1UUIDx-uORgXTIJsIytWO957naKtGAq3A", "https://drive.google.com/uc?export=download&id=1QLfLZv4TN2ugOZM375L9ZIwNmkdUKiy5", "https://drive.google.com/uc?export=download&id=1uajOerRRnV9eB7BS0UnIVXcfuPnscZyg", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
+                    { 11, "Burberry", "PD011", "", "", "https://drive.google.com/uc?export=download&id=1VjacENWRQeseioMaQFhcWdmOlvsIcPht", "https://drive.google.com/uc?export=download&id=1tQlJGdeQceNTTaDzkAVKyycgylDhMio8", "https://drive.google.com/uc?export=download&id=158cFi3wOuNmrPD5woibSuVT-YT_RCRpw", "https://drive.google.com/uc?export=download&id=1Sb1zUw0A3ZmvBJ_ZNkqpHpKrqYrnhk0M", "1", "1", "BURBERRY SHIRT RED", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
                     { 16, "Moschino", "PD016", "Black", "", "https://drive.google.com/uc?export=download&id=1WLz6y8DGD6FVXhV-bP_EdjwlnF1TXRUS", "https://drive.google.com/uc?export=download&id=1CcTPQpg8PlEyIX5iKI8kN4aHBsyl9FwU", "https://drive.google.com/uc?export=download&id=1bF29kqD_1ajfzX6kny82Q9SJw9rS8rt4", "", "1", "1", "MOSCHINO T-SHIRT GOLD LOGO WITH PIG", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
-                    { 1, "Off White", "PD001", "Black", "black / purple / red ,cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border", "https://drive.google.com/uc?export=download&id=1qGc4cXF4az9X2evToVj0x0Ceu2qmQYnN", "https://drive.google.com/uc?export=download&id=1iViLlxnkxISB8wMdMjka0ILlfWmvple8", "https://drive.google.com/uc?export=download&id=1EPqJakj7EBtmPHZO0gf_wo8HPgUa75Zf", "", "1", "1", "OFF-WHITE ARROWS PRINT COTTON SLIM T-SHIRT - BLACK/PURPLE/RED", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false }
+                    { 1, "Off White", "PD001", "Black", "black / purple / red ,cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border", "https://drive.google.com/uc?export=download&id=1qGc4cXF4az9X2evToVj0x0Ceu2qmQYnN", "https://drive.google.com/uc?export=download&id=1iViLlxnkxISB8wMdMjka0ILlfWmvple8", "https://drive.google.com/uc?export=download&id=1EPqJakj7EBtmPHZO0gf_wo8HPgUa75Zf", "", "1", "1", "OFF-WHITE ARROWS PRINT COTTON SLIM T-SHIRT - BLACK/PURPLE/RED", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 2, "Off White", "PD002", "Black", "", "https://drive.google.com/uc?export=download&id=1iViLlxnkxISB8wMdMjka0ILlfWmvple8", "https://drive.google.com/uc?export=download&id=1UZzX_yVVgDsemltdOZvX_943pfU6cXoO", "https://drive.google.com/uc?export=download&id=1VLOsewsM_8-8m-Ko2ZvsvDaa01_DGlMX", "", "1", "1", "OFF-WHITE ARROWS PRINT SHORT-SLEEVE T-SHIRT - BLACK/GREY SS21", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 3, "Off White", "PD003", "White/Blue", "White, cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border", "https://drive.google.com/uc?export=download&id=1EPqJakj7EBtmPHZO0gf_wo8HPgUa75Zf", "https://drive.google.com/uc?export=download&id=1fkx0O2cIJ5DrL60l7EJu0QX-xISIVmNa", "https://drive.google.com/uc?export=download&id=1TRmzvuN91iCLO1SRXtVMxJwuRQmHnpij", "", "1", "1", "OFF-WHITE ARROWS PRINT SHORT-SLEEVE T-SHIRT - WHITE/BLUE SS21", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 4, "Andrea Martin", "PD004", "Gray", "", "https://drive.google.com/uc?export=download&id=1rOilu5Z4w41A7tx3kkd9l5PSvPfMnfBT", "https://drive.google.com/uc?export=download&id=1mc_eKkp4OscemgzZBGZcCFuEWznZS-pW", "https://drive.google.com/uc?export=download&id=1YnUToorFthY05S17uSQIRnXcUBiJLVH8", "", "1", "1", "ANDREA MARTIN Grey Astronaut Mesh Shirt", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Slim 3-layer mesh top", "1", false }
                 });
 
             migrationBuilder.InsertData(
@@ -765,15 +821,12 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "pd_Id", "pd_Brand", "pd_Code", "pd_Color", "pd_Description", "pd_Img1", "pd_Img2", "pd_Img3", "pd_Img4", "pd_Material", "pd_MenuFacturer", "pd_Name", "pd_NameImg1", "pd_NameImg2", "pd_NameImg3", "pd_NameImg4", "pd_Price", "pd_Rate", "pd_ReducePrice", "pd_ShortDescription", "pd_Size", "pd_Size10", "pd_Size10_5", "pd_Size11", "pd_Size11_5", "pd_Size12", "pd_Size12_5", "pd_Size13", "pd_Size13_5", "pd_Size14", "pd_Size14_5", "pd_Size7", "pd_Size7_5", "pd_Size8", "pd_Size8_5", "pd_Size9", "pd_Size9_5", "pd_Style", "pd_Technologies", "pd_WaitForConfirmation" },
                 values: new object[,]
                 {
-                    { 2, "Off White", "PD002", "Black", "", "https://drive.google.com/uc?export=download&id=1iViLlxnkxISB8wMdMjka0ILlfWmvple8", "https://drive.google.com/uc?export=download&id=1UZzX_yVVgDsemltdOZvX_943pfU6cXoO", "https://drive.google.com/uc?export=download&id=1VLOsewsM_8-8m-Ko2ZvsvDaa01_DGlMX", "", "1", "1", "OFF-WHITE ARROWS PRINT SHORT-SLEEVE T-SHIRT - BLACK/GREY SS21", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 3, "Off White", "PD003", "White/Blue", "White, cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border", "https://drive.google.com/uc?export=download&id=1EPqJakj7EBtmPHZO0gf_wo8HPgUa75Zf", "https://drive.google.com/uc?export=download&id=1fkx0O2cIJ5DrL60l7EJu0QX-xISIVmNa", "https://drive.google.com/uc?export=download&id=1TRmzvuN91iCLO1SRXtVMxJwuRQmHnpij", "", "1", "1", "OFF-WHITE ARROWS PRINT SHORT-SLEEVE T-SHIRT - WHITE/BLUE SS21", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 4, "Andrea Martin", "PD004", "Gray", "", "https://drive.google.com/uc?export=download&id=1rOilu5Z4w41A7tx3kkd9l5PSvPfMnfBT", "https://drive.google.com/uc?export=download&id=1mc_eKkp4OscemgzZBGZcCFuEWznZS-pW", "https://drive.google.com/uc?export=download&id=1YnUToorFthY05S17uSQIRnXcUBiJLVH8", "", "1", "1", "ANDREA MARTIN Grey Astronaut Mesh Shirt", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Slim 3-layer mesh top", "1", false },
-                    { 17, "Moschino", "PD017", "", "", "https://drive.google.com/uc?export=download&id=1-QV_gSFzdfy-qRTPLgbWwTD2plYwteNk", "", "", "", "1", "1", "MOSCHINO TEE WARRIOR", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 6, "ADLV", "PD006", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "https://drive.google.com/uc?export=download&id=1e_zKMaR3x86zIuTaEWYew7cyLeT-VWni", "https://drive.google.com/uc?export=download&id=19u835hxFv_7E5ktACy9XfbPMxYifZ6G_", "https://drive.google.com/uc?export=download&id=1o4tsocSZxePog0y6NQg6aLCq-xDx5BYp", "", "1", "1", "ADLV SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 7, "Burberry", "PD007", "", "", "https://drive.google.com/uc?export=download&id=1nD8Fl62ptV1LXUZpM3cW-rECv4cXMHEn", "https://drive.google.com/uc?export=download&id=1rURWs71KvJDQ81go7rA-m0N2U7iktBJt", "", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
                     { 5, "Burberry", "PD005", "", "- The shirt is made of breathable cotton fabric, good sweat absorption, bringing comfort to the wearer. Beautiful standard shirt form, delicate seams meticulous detail to satisfy even fastidious customers.", "https://drive.google.com/uc?export=download&id=1QhQ9e5DmIcqaXPy0RBNrvIAMgbv_YWqs", "https://drive.google.com/uc?export=download&id=1JWK25M-KEkvqsxeuiNjFm4nlPEiHIoQ4", "https://drive.google.com/uc?export=download&id=1Q-KWkHbFDVa2MHEZOxmNiaBbu1IffhGv", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
+                    { 17, "Moschino", "PD017", "", "", "https://drive.google.com/uc?export=download&id=1-QV_gSFzdfy-qRTPLgbWwTD2plYwteNk", "", "", "", "1", "1", "MOSCHINO TEE WARRIOR", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 7, "Burberry", "PD007", "", "", "https://drive.google.com/uc?export=download&id=1nD8Fl62ptV1LXUZpM3cW-rECv4cXMHEn", "https://drive.google.com/uc?export=download&id=1rURWs71KvJDQ81go7rA-m0N2U7iktBJt", "", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
+                    { 6, "ADLV", "PD006", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "https://drive.google.com/uc?export=download&id=1e_zKMaR3x86zIuTaEWYew7cyLeT-VWni", "https://drive.google.com/uc?export=download&id=19u835hxFv_7E5ktACy9XfbPMxYifZ6G_", "https://drive.google.com/uc?export=download&id=1o4tsocSZxePog0y6NQg6aLCq-xDx5BYp", "", "1", "1", "ADLV SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
                     { 9, "Thom Browne", "PD009", "White", "", "https://drive.google.com/uc?export=download&id=1Ry38U-_ZzzGsnci5mqHObvi8tgoc6Trz", "https://drive.google.com/uc?export=download&id=1R_a3f_050dqsgbQLz23FQxPfVForPLkc", "https://drive.google.com/uc?export=download&id=1J5Yim8sYRqELe9Imzj4mrun7uytnQm6R", "", "1", "1", "THOM BROWN SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
-                    { 11, "Burberry", "PD011", "", "", "https://drive.google.com/uc?export=download&id=1VjacENWRQeseioMaQFhcWdmOlvsIcPht", "https://drive.google.com/uc?export=download&id=1tQlJGdeQceNTTaDzkAVKyycgylDhMio8", "https://drive.google.com/uc?export=download&id=158cFi3wOuNmrPD5woibSuVT-YT_RCRpw", "https://drive.google.com/uc?export=download&id=1Sb1zUw0A3ZmvBJ_ZNkqpHpKrqYrnhk0M", "1", "1", "BURBERRY SHIRT RED", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
+                    { 10, "Burberry", "PD010", "", "", "https://drive.google.com/uc?export=download&id=1UUIDx-uORgXTIJsIytWO957naKtGAq3A", "https://drive.google.com/uc?export=download&id=1QLfLZv4TN2ugOZM375L9ZIwNmkdUKiy5", "https://drive.google.com/uc?export=download&id=1uajOerRRnV9eB7BS0UnIVXcfuPnscZyg", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
                     { 12, "eteft", "PD012", "", "", "https://drive.google.com/uc?export=download&id=1ZKZYlg_rA6EZ7SdsVe4GbI0tP18uG67Z", "", "", "", "1", "1", "BURBERRY SHIRT LIGHT BROWN", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
                     { 13, "eteft", "PD013", "", "", "https://drive.google.com/uc?export=download&id=1OUfVp1RZhpwhZAch5daeLszb0HzccbtJ", "https://drive.google.com/uc?export=download&id=1ahvRu6z7hwYYX1I10K3Rjx6kMyH2Vi9E", "", "", "1", "1", "BURBERRY SHIRT LIGHT BROWN", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
                     { 14, "Thom Browne", "PD014", "White", "Endless styling opportunities are in store with this Thom Browne shirt. Made from breathable cotton, this piece is both cool and comfortable. Talk about no trouble. Features a button-down collar, front button closure, open front pockets, curved hemline, front logo patch and tricolor stripe detail with buttons on both sleeves", "https://drive.google.com/uc?export=download&id=1MLh7rMo4ZLlvjGL9lVwptz1RflsvvFsn", "https://drive.google.com/uc?export=download&id=1rU7uI2Wu25u8LMSBkJ9oQLYyRwbCLPOn", "https://drive.google.com/uc?export=download&id=1LjscRUDgfVKmg0PDX5oTChoiNG0kukg3", "", "1", "1", "THOM BROWNE WHITE SHORT SLEEVE SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
@@ -786,8 +839,8 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Discriminator", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "360E601E-92F2-4F08-832B-604A21293258", "daf88a0c-3ec3-406b-9229-350b74f80370", "admin", "AppRole", "admin", null },
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "76567b4a-c370-498b-ae1f-0756fd3a3857", "Staff", "AppRole", "staff", null }
+                    { "360E601E-92F2-4F08-832B-604A21293258", "4354f241-347e-4c9c-b955-6a3b3704674a", "admin", "AppRole", "admin", null },
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "8e6265ed-7262-4a12-a62e-8d8031cac7e9", "Staff", "AppRole", "staff", null }
                 });
 
             migrationBuilder.InsertData(
@@ -797,21 +850,16 @@ namespace Web_Shoes.Migrations
 
             migrationBuilder.InsertData(
                 table: "SliderHome",
-                columns: new[] { "SliderId", "SliderName", "SliderUrl" },
-                values: new object[,]
-                {
-                    { "4f1a1bee-0a70-499b-876a-ba567bff7ee0", "SliderHome2", "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv" },
-                    { "c9e5c61d-4ddd-44fc-bafc-c86b6ddc6196", "SliderHome1", "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM" },
-                    { "bd04b485-939d-481c-9a7c-9cb6cf7d0fba", "SliderHome3", "https://drive.google.com/uc?export=download&id=1q3-Sg09LDSshwDBe3WVOTlcx0QmP-0tT" }
-                });
+                columns: new[] { "SliderId", "SliderName", "SliderUrl1", "SliderUrl2", "SliderUrl3", "SliderUrl4", "SliderUrl5" },
+                values: new object[] { "c4c3c894-3ad2-47ec-b5ec-c6c090f981c7", "SliderHome1", "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM", "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv", "https://drive.google.com/uc?export=download&id=1q3-Sg09LDSshwDBe3WVOTlcx0QmP-0tT", "", "" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "DoB", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "bill_Address1", "bill_Address2", "bill_City", "bill_CompanyName", "bill_Country", "bill_PhoneNumber", "bill_PostalCode", "bill_State" },
                 values: new object[,]
                 {
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "76788af5-7440-4141-be1c-7c44aaa0e799", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAEH4ni+L9RWie047tXd39cevC3rHB2gouzWq0qkYb9Yq+f7s7lUQHSOXxvCNSlWhnDA==", null, false, "4d36cfe4-f1f9-4169-b257-329c833a40c2", false, "Staff", null, null, null, null, null, null, null, null },
-                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "66973ae2-b56a-443c-a39a-3f73b99f625f", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAENDp2ue3iLfzvcSHked+XOVdYUtthJPHo0aeOl/nYMXQFpH2aXAD0OTt3Wi5rU2H3g==", null, false, "9257e872-4b62-4311-bdd3-f689427d4ffd", false, "Admin", "HCM 1", "HCM 2", "HCM", "0123456789", "Viet Nam", "0112223344", "700000", "700000" }
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "9bad409e-05f9-487f-927d-f6766fb266c2", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAECRZvNdFA+BfsAH9HaWq4YLN7bl8AJljdjgN77upRTDmFyr9cTB5pPM78a5NjjQOpQ==", null, false, "6e4f90f1-43f5-4373-991d-bc6bd3e4068e", false, "Staff", null, null, null, null, null, null, null, null },
+                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "b81ded52-621b-49a9-8c0b-0e583b183ee7", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEIS5Jpqm3m3n7pSM9kYxzva/x96vZHVB+2lG+tRcXNgNr3ZkIUi2pdnf7Z1gynUDYg==", null, false, "bc8c48d9-3fec-4e02-8af3-6b0bc70e502f", false, "Admin", "HCM 1", "HCM 2", "HCM", "0123456789", "Viet Nam", "0112223344", "700000", "700000" }
                 });
 
             migrationBuilder.InsertData(
@@ -819,8 +867,8 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "bill_Id", "bill_Cancelled", "bill_Confirmation", "bill_DatetimeOrder", "bill_Delivered", "bill_Delivering", "bill_Discount", "bill_HideStatus", "bill_Note", "bill_PaidTotal", "bill_PaymentMethod", "bill_ProductColorlist", "bill_ProductIdlist", "bill_ProductNamelist", "bill_ProductPricelist", "bill_ProductSizelist", "bill_Quantity", "bill_Shipping", "bill_UserId", "bill_WaitForConfirmation", "bill_WaitPickup" },
                 values: new object[,]
                 {
-                    { "AFD66490-12F5-4EA7-BFF6-425624290D6D", false, true, new DateTime(2021, 11, 3, 4, 26, 33, 778, DateTimeKind.Local).AddTicks(5270), false, false, 0, false, "", 2100, "Check Payment", "Blue|Red|Black|Green", "5|6|7|8", "product 5|product 6| product 7| product 8", "550|450|350|640", "7|8|9|14", "1|1|2|2", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false },
-                    { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2021, 11, 3, 4, 26, 33, 777, DateTimeKind.Local).AddTicks(6118), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green", "1|2|3|4", "product 1|product 2| product 3| product 4", "550|450|350|640", "7|8|9|14", "1|1|2|1", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false }
+                    { "AFD66490-12F5-4EA7-BFF6-425624290D6D", false, true, new DateTime(2021, 11, 3, 6, 22, 39, 41, DateTimeKind.Local).AddTicks(2542), false, false, 0, false, "", 2100, "Check Payment", "Blue|Red|Black|Green", "5|6|7|8", "product 5|product 6| product 7| product 8", "550|450|350|640", "7|8|9|14", "1|1|2|2", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false },
+                    { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2021, 11, 3, 6, 22, 39, 40, DateTimeKind.Local).AddTicks(2920), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green", "1|2|3|4", "product 1|product 2| product 3| product 4", "550|450|350|640", "7|8|9|14", "1|1|2|1", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false }
                 });
 
             migrationBuilder.InsertData(
@@ -912,9 +960,9 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "subReview_Id", "subReview_Commnet", "subReview_DateCommnet", "subReview_HideStatus", "subReview_UserId", "subreview_SubReviewType" },
                 values: new object[,]
                 {
-                    { "a52f291b-a434-48b4-8700-f0b5e156433d", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" },
-                    { "a2a2103b-e4f8-4b27-b4f9-f10198f705fe", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
-                    { "ba94cb11-4be6-477c-9e68-44ecd17d66f0", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" }
+                    { "84c92562-43c7-4674-9a9f-f4de0e11abe9", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" },
+                    { "19785525-7796-4637-b8fe-3d3ff00d3919", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
+                    { "4e1dbd5f-dbcd-4b0b-8aa3-5973288b636f", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" }
                 });
 
             migrationBuilder.InsertData(
@@ -936,9 +984,9 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "pic_CartId", "pic_Id", "pic_ProductId", "pic_amount", "pic_color", "pic_size" },
                 values: new object[,]
                 {
-                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "e2993694-48dc-4b5a-954e-9a364772e5c9", 1, 2, "blue", "7" },
-                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "5a28722f-b407-406b-9f21-9656e8d6b5f2", 2, 3, "blue", "7.5" },
-                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "e9f59365-0f0e-42dc-86eb-e5ec0838d89a", 3, 1, "blue", "8" }
+                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "33c48124-552c-4376-886e-c426a73041a7", 1, 2, "blue", "7" },
+                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "e8c5a235-642e-4712-a5ad-54aa698ab974", 2, 3, "blue", "7.5" },
+                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "e52b0f20-fc0f-4b43-adc5-7711e6a8a80d", 3, 1, "blue", "8" }
                 });
 
             migrationBuilder.InsertData(
@@ -961,9 +1009,9 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "SRiR_ReviewId", "SRiR_SubReviewId" },
                 values: new object[,]
                 {
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "ba94cb11-4be6-477c-9e68-44ecd17d66f0" },
-                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "a2a2103b-e4f8-4b27-b4f9-f10198f705fe" },
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "a52f291b-a434-48b4-8700-f0b5e156433d" }
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "4e1dbd5f-dbcd-4b0b-8aa3-5973288b636f" },
+                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "19785525-7796-4637-b8fe-3d3ff00d3919" },
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "84c92562-43c7-4674-9a9f-f4de0e11abe9" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -1085,6 +1133,12 @@ namespace Web_Shoes.Migrations
 
             migrationBuilder.DropTable(
                 name: "Coupons");
+
+            migrationBuilder.DropTable(
+                name: "CustomerHome");
+
+            migrationBuilder.DropTable(
+                name: "FeatureHome");
 
             migrationBuilder.DropTable(
                 name: "ProductInCart");

@@ -71,19 +71,8 @@ namespace Web_Shoes.Data
             builder.ApplyConfiguration(new SubscribersConfigurations());
             builder.ApplyConfiguration(new SliderHomeConfigurations());
             builder.ApplyConfiguration(new CategoriesHomeConfigurations());
-
-
-
-
-
-
-            //builder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
-            //builder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRole").HasKey(x => new { x.UserId, x.RoleId });
-            //builder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
-            //builder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppUserRoleClaims");
-            //builder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
-
-
+            builder.ApplyConfiguration(new FeatureHomeConfigurations());
+            builder.ApplyConfiguration(new CustomerHomeConfigurations());
 
 
             builder.Seed();
@@ -124,6 +113,9 @@ namespace Web_Shoes.Data
         public DbSet<SliderHome> SliderHomes { set; get; }
 
         public DbSet<CategoriesHome> CategoriesHomes { set; get; }
+
+        public DbSet<FeatureHome> FeatureHomes { set; get; }
+        public DbSet<CustomerHome> CustomerHomes { set; get; }
         //public DbSet<AppUserRole> AppUserRole { set; get; }
 
     }

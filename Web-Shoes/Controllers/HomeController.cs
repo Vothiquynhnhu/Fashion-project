@@ -32,7 +32,76 @@ namespace Web_Shoes.Controllers
 
         public IActionResult Index()
         {
+            // Review-Home 
+            var CustomerHomeQuery = from a in _context.CustomerHomes select a;
 
+            foreach (var item in CustomerHomeQuery)
+            {
+                switch (item.CustomerHomeName)
+                {
+                    case "FeatureHome1":
+                        // code block
+                        ViewBag.CustomerName1 = item.CustomerHomeName;
+                        ViewBag.CustomerStar1 = item.CustomerHome_CStar;
+                        ViewBag.CustomerImg1 = item.CustomerHome_CImg;
+                        ViewBag.CustomerDesription1 = item.CustomerHome_CDesription;
+                        break;
+                    case "FeatureHome2":
+                        // code block
+                        ViewBag.CustomerName2 = item.CustomerHomeName;
+                        ViewBag.CustomerStar2 = item.CustomerHome_CStar;
+                        ViewBag.CustomerImg2 = item.CustomerHome_CImg;
+                        ViewBag.CustomerDesription2 = item.CustomerHome_CDesription;
+                        break;
+                    case "FeatureHome3":
+                        // code block
+                        ViewBag.CustomerName3 = item.CustomerHomeName;
+                        ViewBag.CustomerStar3 = item.CustomerHome_CStar;
+                        ViewBag.CustomerImg3 = item.CustomerHome_CImg;
+                        ViewBag.CustomerDesription3 = item.CustomerHome_CDesription;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+
+            //Feature-Home
+            var FeatureHomeQuery = _context.FeatureHomes.FirstOrDefault(a => a.FeatureHomeName == "FeatureHome1");
+            ViewBag.FeatureTitle1 = FeatureHomeQuery.FeatureHomeTitle1;
+            ViewBag.FeatureDesription1 = FeatureHomeQuery.FeatureHomeDesription1;
+            ViewBag.FeatureTitle2 = FeatureHomeQuery.FeatureHomeTitle2;
+            ViewBag.FeatureDesription2 = FeatureHomeQuery.FeatureHomeDesription2;
+            ViewBag.FeatureTitle3 = FeatureHomeQuery.FeatureHomeTitle3;
+            ViewBag.FeatureDesription3 = FeatureHomeQuery.FeatureHomeDesription3;
+            ViewBag.FeatureTitle4 = FeatureHomeQuery.FeatureHomeTitle4;
+            ViewBag.FeatureDesription4 = FeatureHomeQuery.FeatureHomeDesription4;
+
+
+
+            //Slider-Home
+            var SliderHomeQuery = _context.SliderHomes.FirstOrDefault(a => a.SliderName == "SliderHome1");
+            ViewBag.SliderHome1 = SliderHomeQuery.SliderUrl1;
+            ViewBag.SliderHome2 = SliderHomeQuery.SliderUrl2;
+            ViewBag.SliderHome3 = SliderHomeQuery.SliderUrl3;
+            ViewBag.SliderHome4 = SliderHomeQuery.SliderUrl4;
+            ViewBag.SliderHome5 = SliderHomeQuery.SliderUrl5;
+
+
+            //Categories-Home
+            var CategoriesHomeQuery = _context.CategoriesHomes.FirstOrDefault(a => a.CategoriesHomeName == "CategoriesHome1");
+            ViewBag.CategoriesHome1 = CategoriesHomeQuery.CategoriesHomeUrl1;
+            ViewBag.CategoriesHome2 = CategoriesHomeQuery.CategoriesHomeUrl2;
+            ViewBag.CategoriesHome3 = CategoriesHomeQuery.CategoriesHomeUrl3;
+            ViewBag.CategoriesHome4 = CategoriesHomeQuery.CategoriesHomeUrl4;
+            ViewBag.CategoriesHome5 = CategoriesHomeQuery.CategoriesHomeUrl5;
+            ViewBag.CategoriesHome6 = CategoriesHomeQuery.CategoriesHomeUrl6;
+            ViewBag.CategoriesHome7 = CategoriesHomeQuery.CategoriesHomeUrl7;
+            ViewBag.CategoriesHome8 = CategoriesHomeQuery.CategoriesHomeUrl8;
+
+
+
+            // Process Of Home
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userName = User.FindFirstValue(ClaimTypes.Name);
             string namePc = Environment.MachineName;

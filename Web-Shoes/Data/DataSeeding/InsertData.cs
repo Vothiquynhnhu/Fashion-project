@@ -2414,21 +2414,11 @@ namespace Web_Shoes.Data.DataSeeding
                 {
                     SliderId = Guid.NewGuid().ToString(),
                     SliderName = "SliderHome1",
-                    SliderUrl = "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM"
-                },
-
-                new SliderHome()
-                {
-                    SliderId = Guid.NewGuid().ToString(),
-                    SliderName = "SliderHome2",
-                    SliderUrl = "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv"
-                },
-
-                new SliderHome()
-                {
-                    SliderId = Guid.NewGuid().ToString(),
-                    SliderName = "SliderHome3",
-                    SliderUrl = "https://drive.google.com/uc?export=download&id=1q3-Sg09LDSshwDBe3WVOTlcx0QmP-0tT"
+                    SliderUrl1 = "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM",
+                    SliderUrl2 = "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv",
+                    SliderUrl3 = "https://drive.google.com/uc?export=download&id=1q3-Sg09LDSshwDBe3WVOTlcx0QmP-0tT",
+                    SliderUrl4 = "",
+                    SliderUrl5 = ""
                 });
 
 
@@ -2439,49 +2429,67 @@ namespace Web_Shoes.Data.DataSeeding
                 {
                     CategoriesHomeId = Guid.NewGuid().ToString(),
                     CategoriesHomeName ="CategoriesHome1",
-                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f"
-                },
-                new CategoriesHome()
+                    CategoriesHomeUrl1 = "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f",
+                    CategoriesHomeUrl2 = "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K",
+                    CategoriesHomeUrl3 = "https://drive.google.com/uc?export=download&id=1Gm-TZ2nqI5eUAU0O45cgeay38AS0OxiI",
+                    CategoriesHomeUrl4 = "https://drive.google.com/uc?export=download&id=1g4QK9WF2e9aXHpJCUXK0-1H6j6kC7r5L",
+                    CategoriesHomeUrl5 = "https://drive.google.com/uc?export=download&id=14ybZRAMDRY_OhMcCXXzVtjeyHhnaKn5l",
+                    CategoriesHomeUrl6 = "https://drive.google.com/uc?export=download&id=1vOIH3t8uhGxNKF7w76kViqlmlQH1-6YU",
+                    CategoriesHomeUrl7 = "https://drive.google.com/uc?export=download&id=18tu3dYEqUmKx5bJL_hjSN467GO3cbaQE",
+                    CategoriesHomeUrl8 = "https://drive.google.com/uc?export=download&id=1EEMOiZF6E5sKIFGntEySd0SVvZmvFe78"
+                });
+
+
+            // Table Feature-Home
+
+            builder.Entity<FeatureHome>().HasData(
+                new FeatureHome()
                 {
-                    CategoriesHomeId = Guid.NewGuid().ToString(),
-                    CategoriesHomeName = "CategoriesHome2",
-                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K"
-                },
-                new CategoriesHome()
+                    FeatureHomeId = Guid.NewGuid().ToString(),
+                    FeatureHomeName = "FeatureHome1",
+                    FeatureHomeTitle1 = "Secure Payment",
+                    FeatureHomeTitle2 = "Worldwide Delivery",
+                    FeatureHomeTitle3 = "90 Days Return",
+                    FeatureHomeTitle4 = "24/7 Support",
+                    FeatureHomeDesription1 = "Lorem ipsum dolor sit amet consectetur elit",
+                    FeatureHomeDesription2 = "Lorem ipsum dolor sit amet consectetur elit",
+                    FeatureHomeDesription3 = "Lorem ipsum dolor sit amet consectetur elit",
+                    FeatureHomeDesription4 = "Lorem ipsum dolor sit amet consectetur elit"
+                });
+
+
+            // Table Customer-Home
+
+            builder.Entity<CustomerHome>().HasData(
+                new CustomerHome()
                 {
-                    CategoriesHomeId = Guid.NewGuid().ToString(),
-                    CategoriesHomeName = "CategoriesHome3",
-                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1Gm-TZ2nqI5eUAU0O45cgeay38AS0OxiI"
+                    CustomerHomeId = Guid.NewGuid().ToString(),
+                    CustomerHomeName = "FeatureHome1",
+                    CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=12BEbKPhMNT6Gl31Wgzo1XNA6kf5zCtYm",
+                    CustomerHome_CName = "Customer 1",
+                    CustomerHome_CWork = "Profession",
+                    CustomerHome_CStar = 5,
+                    CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem"
                 },
-                new CategoriesHome()
+                new CustomerHome()
                 {
-                    CategoriesHomeId = Guid.NewGuid().ToString(),
-                    CategoriesHomeName = "CategoriesHome4",
-                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1g4QK9WF2e9aXHpJCUXK0-1H6j6kC7r5L"
+                    CustomerHomeId = Guid.NewGuid().ToString(),
+                    CustomerHomeName = "FeatureHome2",
+                    CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=12xlH3LvPKtXEUTRFdETM7SGvCnjU9S-c",
+                    CustomerHome_CName = "Customer 2",
+                    CustomerHome_CWork = "Profession",
+                    CustomerHome_CStar = 5,
+                    CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem"
                 },
-                new CategoriesHome()
+                new CustomerHome()
                 {
-                    CategoriesHomeId = Guid.NewGuid().ToString(),
-                    CategoriesHomeName = "CategoriesHome5",
-                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=14ybZRAMDRY_OhMcCXXzVtjeyHhnaKn5l"
-                },
-                new CategoriesHome()
-                {
-                    CategoriesHomeId = Guid.NewGuid().ToString(),
-                    CategoriesHomeName = "CategoriesHome6",
-                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1vOIH3t8uhGxNKF7w76kViqlmlQH1-6YU"
-                },
-                new CategoriesHome()
-                {
-                    CategoriesHomeId = Guid.NewGuid().ToString(),
-                    CategoriesHomeName = "CategoriesHome7",
-                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=18tu3dYEqUmKx5bJL_hjSN467GO3cbaQE"
-                },
-                new CategoriesHome()
-                {
-                    CategoriesHomeId = Guid.NewGuid().ToString(),
-                    CategoriesHomeName = "CategoriesHome8",
-                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1EEMOiZF6E5sKIFGntEySd0SVvZmvFe78"
+                    CustomerHomeId = Guid.NewGuid().ToString(),
+                    CustomerHomeName = "FeatureHome3",
+                    CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=1-VztC3V4O7HyIdetuemHMO61M5up94uD",
+                    CustomerHome_CName = "Customer 3",
+                    CustomerHome_CWork = "Profession",
+                    CustomerHome_CStar = 5,
+                    CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem"
                 });
 
         }

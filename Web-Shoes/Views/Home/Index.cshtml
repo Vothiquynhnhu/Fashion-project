@@ -14,7 +14,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="/woman"><i class="fa fa-tshirt"></i>Woman Clothes</a>
                         </li>
@@ -34,21 +33,21 @@
             <div class="col-md-6">
                 <div class="header-slider normal-slider">
                     <div class="header-slider-item">
-                        <img src="img/slider-1.jpg" alt="Slider Image" />
+                        <img src="@ViewBag.SliderHome1" alt="Slider Image" />
                         @*<div class="header-slider-caption">
                             <p>Some text goes here that describes the image</p>
                             <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
                         </div>*@
                     </div>
                     <div class="header-slider-item">
-                        <img src="img/slider-2.jpg" alt="Slider Image" />
+                        <img src="@ViewBag.SliderHome2" alt="Slider Image" />
                         @*<div class="header-slider-caption">
                             <p>Some text goes here that describes the image</p>
                             <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
                         </div>*@
                     </div>
                     <div class="header-slider-item">
-                        <img src="img/slider-3.jpg" alt="Slider Image" />
+                        <img src="@ViewBag.SliderHome3" alt="Slider Image" />
                         @*<div class="header-slider-caption">
                             <p>Some text goes here that describes the image</p>
                             <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
@@ -59,13 +58,13 @@
             <div class="col-md-3">
                 <div class="header-img">
                     <div class="img-item">
-                        <img src="img/category-1.jpg" />
+                        <img src="@ViewBag.CategoriesHome1" />
                         @*<a class="img-text" href="">
                             <p>Some text goes here that describes the image</p>
                         </a>*@
                     </div>
                     <div class="img-item">
-                        <img src="img/category-2.jpg" />
+                        <img src="@ViewBag.CategoriesHome2" />
                         @*<a class="img-text" href="">
                             <p>Some text goes here that describes the image</p>
                         </a>*@
@@ -97,36 +96,36 @@
             <div class="col-lg-3 col-md-6 feature-col">
                 <div class="feature-content">
                     <i class="fab fa-cc-mastercard"></i>
-                    <h2>Secure Payment</h2>
+                    <h2>@ViewBag.FeatureTitle1</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur elit
+                        @ViewBag.FeatureDesription1
                     </p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 feature-col">
                 <div class="feature-content">
                     <i class="fa fa-truck"></i>
-                    <h2>Worldwide Delivery</h2>
+                    <h2>@ViewBag.FeatureTitle2</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur elit
+                        @ViewBag.FeatureDesription2
                     </p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 feature-col">
                 <div class="feature-content">
                     <i class="fa fa-sync-alt"></i>
-                    <h2>90 Days Return</h2>
+                    <h2>@ViewBag.FeatureTitle3</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur elit
+                        @ViewBag.FeatureDesription3
                     </p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 feature-col">
                 <div class="feature-content">
                     <i class="fa fa-comments"></i>
-                    <h2>24/7 Support</h2>
+                    <h2>@ViewBag.FeatureTitle4</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur elit
+                        @ViewBag.FeatureDesription4
                     </p>
                 </div>
             </div>
@@ -140,46 +139,46 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="category-item ch-400">
-                    <img src="img/category-3.jpg" />
-                    <a class="category-name" href="">
+                    <img src="@ViewBag.CategoriesHome3" />
+                    @*<a class="category-name" href="">
                         <p>Some text goes here that describes the image</p>
-                    </a>
+                    </a>*@
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="category-item ch-250">
-                    <img src="img/category-4.jpg" />
-                    <a class="category-name" href="">
+                    <img src="@ViewBag.CategoriesHome4" />
+                    @*<a class="category-name" href="">
                         <p>Some text goes here that describes the image</p>
-                    </a>
+                    </a>*@
                 </div>
                 <div class="category-item ch-150">
-                    <img src="img/category-5.jpg" />
-                    <a class="category-name" href="">
+                    <img src="@ViewBag.CategoriesHome5" />
+                    @*<a class="category-name" href="">
                         <p>Some text goes here that describes the image</p>
-                    </a>
+                    </a>*@
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="category-item ch-150">
-                    <img src="img/category-6.jpg" />
-                    <a class="category-name" href="">
+                    <img src="@ViewBag.CategoriesHome6" />
+                    @*<a class="category-name" href="">
                         <p>Some text goes here that describes the image</p>
-                    </a>
+                    </a>*@
                 </div>
                 <div class="category-item ch-250">
-                    <img src="img/category-7.jpg" />
-                    <a class="category-name" href="">
+                    <img src="@ViewBag.CategoriesHome7" />
+                    @*<a class="category-name" href="">
                         <p>Some text goes here that describes the image</p>
-                    </a>
+                    </a>*@
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="category-item ch-400">
-                    <img src="img/category-8.jpg" />
-                    <a class="category-name" href="">
+                    <img src="@ViewBag.CategoriesHome8" />
+                    @*<a class="category-name" href="">
                         <p>Some text goes here that describes the image</p>
-                    </a>
+                    </a>*@
                 </div>
             </div>
         </div>
@@ -356,10 +355,10 @@
             <div class="col-md-6">
                 <div class="review-slider-item">
                     <div class="review-img">
-                        <img src="img/review-1.jpg" alt="Image">
+                        <img src="@ViewBag.CustomerImg1" alt="Image">
                     </div>
                     <div class="review-text">
-                        <h2>Customer Name</h2>
+                        <h2>@ViewBag.CustomerName1</h2>
                         <h3>Profession</h3>
                         <div class="ratting">
                             <i class="fa fa-star"></i>
@@ -369,7 +368,7 @@
                             <i class="fa fa-star"></i>
                         </div>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
+                            @ViewBag.CustomerDesription1
                         </p>
                     </div>
                 </div>
@@ -377,10 +376,10 @@
             <div class="col-md-6">
                 <div class="review-slider-item">
                     <div class="review-img">
-                        <img src="img/review-2.jpg" alt="Image">
+                        <img src="@ViewBag.CustomerImg2" alt="Image">
                     </div>
                     <div class="review-text">
-                        <h2>Customer Name</h2>
+                        <h2>@ViewBag.CustomerName2</h2>
                         <h3>Profession</h3>
                         <div class="ratting">
                             <i class="fa fa-star"></i>
@@ -390,7 +389,7 @@
                             <i class="fa fa-star"></i>
                         </div>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
+                            @ViewBag.CustomerDesription2
                         </p>
                     </div>
                 </div>
@@ -398,10 +397,10 @@
             <div class="col-md-6">
                 <div class="review-slider-item">
                     <div class="review-img">
-                        <img src="img/review-3.jpg" alt="Image">
+                        <img src="@ViewBag.CustomerImg3" alt="Image">
                     </div>
                     <div class="review-text">
-                        <h2>Customer Name</h2>
+                        <h2>@ViewBag.CustomerName3</h2>
                         <h3>Profession</h3>
                         <div class="ratting">
                             <i class="fa fa-star"></i>
@@ -411,7 +410,7 @@
                             <i class="fa fa-star"></i>
                         </div>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
+                            @ViewBag.CustomerDesription3
                         </p>
                     </div>
                 </div>

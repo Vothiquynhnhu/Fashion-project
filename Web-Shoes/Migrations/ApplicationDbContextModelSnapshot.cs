@@ -350,7 +350,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 11, 3, 4, 26, 33, 777, DateTimeKind.Local).AddTicks(6118),
+                            bill_DatetimeOrder = new DateTime(2021, 11, 3, 6, 22, 39, 40, DateTimeKind.Local).AddTicks(2920),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -374,7 +374,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "AFD66490-12F5-4EA7-BFF6-425624290D6D",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 11, 3, 4, 26, 33, 778, DateTimeKind.Local).AddTicks(5270),
+                            bill_DatetimeOrder = new DateTime(2021, 11, 3, 6, 22, 39, 41, DateTimeKind.Local).AddTicks(2542),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -516,7 +516,28 @@ namespace Web_Shoes.Migrations
                     b.Property<string>("CategoriesHomeName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CategoriesHomeUrl")
+                    b.Property<string>("CategoriesHomeUrl1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoriesHomeUrl2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoriesHomeUrl3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoriesHomeUrl4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoriesHomeUrl5")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoriesHomeUrl6")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoriesHomeUrl7")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoriesHomeUrl8")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CategoriesHomeId");
@@ -526,51 +547,16 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            CategoriesHomeId = "e5854b22-c67e-4f22-8949-a702a58fa7ec",
+                            CategoriesHomeId = "b82dc1f0-bea2-432e-99ee-2031f57b2c3e",
                             CategoriesHomeName = "CategoriesHome1",
-                            CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f"
-                        },
-                        new
-                        {
-                            CategoriesHomeId = "8405afd1-93c6-4602-aee0-aafa09b426c5",
-                            CategoriesHomeName = "CategoriesHome2",
-                            CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K"
-                        },
-                        new
-                        {
-                            CategoriesHomeId = "df7d22ad-acc5-4171-b9d6-d69a0173bb7a",
-                            CategoriesHomeName = "CategoriesHome3",
-                            CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1Gm-TZ2nqI5eUAU0O45cgeay38AS0OxiI"
-                        },
-                        new
-                        {
-                            CategoriesHomeId = "ff4c9a3b-a086-4faf-8596-ef7f7bec7a9d",
-                            CategoriesHomeName = "CategoriesHome4",
-                            CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1g4QK9WF2e9aXHpJCUXK0-1H6j6kC7r5L"
-                        },
-                        new
-                        {
-                            CategoriesHomeId = "85b4b206-84e3-4661-b549-a9dcce91ecac",
-                            CategoriesHomeName = "CategoriesHome5",
-                            CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=14ybZRAMDRY_OhMcCXXzVtjeyHhnaKn5l"
-                        },
-                        new
-                        {
-                            CategoriesHomeId = "de218d82-7c10-4cb9-9943-47aafe77fe33",
-                            CategoriesHomeName = "CategoriesHome6",
-                            CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1vOIH3t8uhGxNKF7w76kViqlmlQH1-6YU"
-                        },
-                        new
-                        {
-                            CategoriesHomeId = "1bbdb6c6-a9bb-4c44-977b-8a9eb2cc93fc",
-                            CategoriesHomeName = "CategoriesHome7",
-                            CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=18tu3dYEqUmKx5bJL_hjSN467GO3cbaQE"
-                        },
-                        new
-                        {
-                            CategoriesHomeId = "f72eb252-f41c-4150-8f23-60ccb93cab68",
-                            CategoriesHomeName = "CategoriesHome8",
-                            CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1EEMOiZF6E5sKIFGntEySd0SVvZmvFe78"
+                            CategoriesHomeUrl1 = "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f",
+                            CategoriesHomeUrl2 = "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K",
+                            CategoriesHomeUrl3 = "https://drive.google.com/uc?export=download&id=1Gm-TZ2nqI5eUAU0O45cgeay38AS0OxiI",
+                            CategoriesHomeUrl4 = "https://drive.google.com/uc?export=download&id=1g4QK9WF2e9aXHpJCUXK0-1H6j6kC7r5L",
+                            CategoriesHomeUrl5 = "https://drive.google.com/uc?export=download&id=14ybZRAMDRY_OhMcCXXzVtjeyHhnaKn5l",
+                            CategoriesHomeUrl6 = "https://drive.google.com/uc?export=download&id=1vOIH3t8uhGxNKF7w76kViqlmlQH1-6YU",
+                            CategoriesHomeUrl7 = "https://drive.google.com/uc?export=download&id=18tu3dYEqUmKx5bJL_hjSN467GO3cbaQE",
+                            CategoriesHomeUrl8 = "https://drive.google.com/uc?export=download&id=1EEMOiZF6E5sKIFGntEySd0SVvZmvFe78"
                         });
                 });
 
@@ -682,17 +668,77 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "9a78729c-8737-48cc-bb51-d494c640716a",
+                            couponId = "3d1a6506-011b-44e8-9ded-06e9b0ed96de",
                             couponAmount = 20,
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "f73c7a53-cc96-4ee1-92a5-6c48c09c7837",
+                            couponId = "62827f7a-2df0-42d0-851f-8e7e43e17f3f",
                             couponAmount = 25,
                             couponCode = "code50",
                             couponPrice = 50
+                        });
+                });
+
+            modelBuilder.Entity("Web_Shoes.Entity.CustomerHome", b =>
+                {
+                    b.Property<string>("CustomerHomeId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CustomerHomeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerHome_CDesription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerHome_CImg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerHome_CName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CustomerHome_CStar")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CustomerHome_CWork")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CustomerHomeId");
+
+                    b.ToTable("CustomerHome");
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerHomeId = "c60743fb-078b-4547-98bb-d7799cb4a646",
+                            CustomerHomeName = "FeatureHome1",
+                            CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem",
+                            CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=12BEbKPhMNT6Gl31Wgzo1XNA6kf5zCtYm",
+                            CustomerHome_CName = "Customer 1",
+                            CustomerHome_CStar = 5,
+                            CustomerHome_CWork = "Profession"
+                        },
+                        new
+                        {
+                            CustomerHomeId = "0a05118d-24b6-49e7-8fcc-327bc0ff415d",
+                            CustomerHomeName = "FeatureHome2",
+                            CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem",
+                            CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=12xlH3LvPKtXEUTRFdETM7SGvCnjU9S-c",
+                            CustomerHome_CName = "Customer 2",
+                            CustomerHome_CStar = 5,
+                            CustomerHome_CWork = "Profession"
+                        },
+                        new
+                        {
+                            CustomerHomeId = "fa00ee2a-d40e-4c63-958e-6825ceb2fe71",
+                            CustomerHomeName = "FeatureHome3",
+                            CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem",
+                            CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=1-VztC3V4O7HyIdetuemHMO61M5up94uD",
+                            CustomerHome_CName = "Customer 3",
+                            CustomerHome_CStar = 5,
+                            CustomerHome_CWork = "Profession"
                         });
                 });
 
@@ -733,6 +779,58 @@ namespace Web_Shoes.Migrations
                     b.ToTable("Device");
                 });
 
+            modelBuilder.Entity("Web_Shoes.Entity.FeatureHome", b =>
+                {
+                    b.Property<string>("FeatureHomeId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FeatureHomeDesription1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FeatureHomeDesription2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FeatureHomeDesription3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FeatureHomeDesription4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FeatureHomeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FeatureHomeTitle1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FeatureHomeTitle2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FeatureHomeTitle3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FeatureHomeTitle4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FeatureHomeId");
+
+                    b.ToTable("FeatureHome");
+
+                    b.HasData(
+                        new
+                        {
+                            FeatureHomeId = "8d8e744a-f535-4265-9868-152f8134b89a",
+                            FeatureHomeDesription1 = "Lorem ipsum dolor sit amet consectetur elit",
+                            FeatureHomeDesription2 = "Lorem ipsum dolor sit amet consectetur elit",
+                            FeatureHomeDesription3 = "Lorem ipsum dolor sit amet consectetur elit",
+                            FeatureHomeDesription4 = "Lorem ipsum dolor sit amet consectetur elit",
+                            FeatureHomeName = "FeatureHome1",
+                            FeatureHomeTitle1 = "Secure Payment",
+                            FeatureHomeTitle2 = "Worldwide Delivery",
+                            FeatureHomeTitle3 = "90 Days Return",
+                            FeatureHomeTitle4 = "24/7 Support"
+                        });
+                });
+
             modelBuilder.Entity("Web_Shoes.Entity.ProductInCart", b =>
                 {
                     b.Property<string>("pic_CartId")
@@ -764,7 +862,7 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 1,
-                            pic_Id = "e2993694-48dc-4b5a-954e-9a364772e5c9",
+                            pic_Id = "33c48124-552c-4376-886e-c426a73041a7",
                             pic_amount = 2,
                             pic_color = "blue",
                             pic_size = "7"
@@ -773,7 +871,7 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 2,
-                            pic_Id = "5a28722f-b407-406b-9f21-9656e8d6b5f2",
+                            pic_Id = "e8c5a235-642e-4712-a5ad-54aa698ab974",
                             pic_amount = 3,
                             pic_color = "blue",
                             pic_size = "7.5"
@@ -782,7 +880,7 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 3,
-                            pic_Id = "e9f59365-0f0e-42dc-86eb-e5ec0838d89a",
+                            pic_Id = "e52b0f20-fc0f-4b43-adc5-7711e6a8a80d",
                             pic_amount = 1,
                             pic_color = "blue",
                             pic_size = "8"
@@ -2996,7 +3094,19 @@ namespace Web_Shoes.Migrations
                     b.Property<string>("SliderName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SliderUrl")
+                    b.Property<string>("SliderUrl1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SliderUrl2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SliderUrl3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SliderUrl4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SliderUrl5")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SliderId");
@@ -3006,21 +3116,13 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            SliderId = "c9e5c61d-4ddd-44fc-bafc-c86b6ddc6196",
+                            SliderId = "c4c3c894-3ad2-47ec-b5ec-c6c090f981c7",
                             SliderName = "SliderHome1",
-                            SliderUrl = "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM"
-                        },
-                        new
-                        {
-                            SliderId = "4f1a1bee-0a70-499b-876a-ba567bff7ee0",
-                            SliderName = "SliderHome2",
-                            SliderUrl = "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv"
-                        },
-                        new
-                        {
-                            SliderId = "bd04b485-939d-481c-9a7c-9cb6cf7d0fba",
-                            SliderName = "SliderHome3",
-                            SliderUrl = "https://drive.google.com/uc?export=download&id=1q3-Sg09LDSshwDBe3WVOTlcx0QmP-0tT"
+                            SliderUrl1 = "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM",
+                            SliderUrl2 = "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv",
+                            SliderUrl3 = "https://drive.google.com/uc?export=download&id=1q3-Sg09LDSshwDBe3WVOTlcx0QmP-0tT",
+                            SliderUrl4 = "",
+                            SliderUrl5 = ""
                         });
                 });
 
@@ -3053,7 +3155,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "ba94cb11-4be6-477c-9e68-44ecd17d66f0",
+                            subReview_Id = "4e1dbd5f-dbcd-4b0b-8aa3-5973288b636f",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -3062,7 +3164,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "a52f291b-a434-48b4-8700-f0b5e156433d",
+                            subReview_Id = "84c92562-43c7-4674-9a9f-f4de0e11abe9",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -3071,7 +3173,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "a2a2103b-e4f8-4b27-b4f9-f10198f705fe",
+                            subReview_Id = "19785525-7796-4637-b8fe-3d3ff00d3919",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -3098,17 +3200,17 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "ba94cb11-4be6-477c-9e68-44ecd17d66f0"
+                            SRiR_SubReviewId = "4e1dbd5f-dbcd-4b0b-8aa3-5973288b636f"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "a52f291b-a434-48b4-8700-f0b5e156433d"
+                            SRiR_SubReviewId = "84c92562-43c7-4674-9a9f-f4de0e11abe9"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "a2a2103b-e4f8-4b27-b4f9-f10198f705fe"
+                            SRiR_SubReviewId = "19785525-7796-4637-b8fe-3d3ff00d3919"
                         });
                 });
 
@@ -3190,14 +3292,14 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "76567b4a-c370-498b-ae1f-0756fd3a3857",
+                            ConcurrencyStamp = "8e6265ed-7262-4a12-a62e-8d8031cac7e9",
                             Name = "staff",
                             Description = "Staff"
                         },
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "daf88a0c-3ec3-406b-9229-350b74f80370",
+                            ConcurrencyStamp = "4354f241-347e-4c9c-b955-6a3b3704674a",
                             Name = "admin",
                             Description = "admin"
                         });
@@ -3247,15 +3349,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "66973ae2-b56a-443c-a39a-3f73b99f625f",
+                            ConcurrencyStamp = "b81ded52-621b-49a9-8c0b-0e583b183ee7",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENDp2ue3iLfzvcSHked+XOVdYUtthJPHo0aeOl/nYMXQFpH2aXAD0OTt3Wi5rU2H3g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIS5Jpqm3m3n7pSM9kYxzva/x96vZHVB+2lG+tRcXNgNr3ZkIUi2pdnf7Z1gynUDYg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9257e872-4b62-4311-bdd3-f689427d4ffd",
+                            SecurityStamp = "bc8c48d9-3fec-4e02-8af3-6b0bc70e502f",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -3274,15 +3376,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "76788af5-7440-4141-be1c-7c44aaa0e799",
+                            ConcurrencyStamp = "9bad409e-05f9-487f-927d-f6766fb266c2",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEH4ni+L9RWie047tXd39cevC3rHB2gouzWq0qkYb9Yq+f7s7lUQHSOXxvCNSlWhnDA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECRZvNdFA+BfsAH9HaWq4YLN7bl8AJljdjgN77upRTDmFyr9cTB5pPM78a5NjjQOpQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4d36cfe4-f1f9-4169-b257-329c833a40c2",
+                            SecurityStamp = "6e4f90f1-43f5-4373-991d-bc6bd3e4068e",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
