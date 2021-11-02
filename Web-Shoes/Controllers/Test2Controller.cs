@@ -76,35 +76,35 @@ namespace Web_Shoes.Controllers
         //    }
 
 
-        //[HttpGet]
-        //public IActionResult Index()
-        //{
-        //    var cartId = HttpContext.Session.GetString(KeySession.cartIdSession);
-        //    var cartHome = HttpContext.Session.GetInt32(KeySession.cartHomeSession);
-        //    var userId = HttpContext.Session.GetString(KeySession.userIdSession);
-        //    var userName = HttpContext.Session.GetInt32(KeySession.userNameSession);
-        //    var deviceId = HttpContext.Session.GetString(KeySession.deviceIdSession);
-
-
-        //    ViewBag.cartId = cartId.ToString();
-        //    ViewBag.cartHome = cartHome.ToString();
-
-        //    ViewBag.deviceId = deviceId.ToString();
-        //    if (userId != null)
-        //    {
-        //        ViewBag.userId = userId.ToString();
-        //        ViewBag.userName = userName.ToString();
-        //    }
-
-        //    return View();
-        //}
-
-        //[HttpGet]
+        [HttpGet]
         public IActionResult Index()
         {
-            
+            var cartId = HttpContext.Session.GetString(KeySession.cartIdSession);
+            var cartHome = HttpContext.Session.GetInt32(KeySession.cartHomeSession);
+            var userId = HttpContext.Session.GetString(KeySession.userIdSession);
+            var userName = HttpContext.Session.GetInt32(KeySession.userNameSession);
+            var deviceId = HttpContext.Session.GetString(KeySession.deviceIdSession);
+
+
+            ViewBag.cartId = cartId.ToString();
+            ViewBag.cartHome = cartHome.ToString();
+
+            ViewBag.deviceId = deviceId.ToString();
+            if (userId != null)
+            {
+                ViewBag.userId = userId.ToString();
+                ViewBag.userName = userName.ToString();
+            }
 
             return View();
         }
+
+        ////[HttpGet]
+        //public IActionResult Index()
+        //{
+
+
+        //    return View();
+        //}
     }
 }

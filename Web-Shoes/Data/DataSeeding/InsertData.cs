@@ -58,7 +58,9 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD001"
+                   
 
 
                 },
@@ -101,7 +103,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD002"
 
                 },
 
@@ -143,7 +146,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD003"
 
                 },
 
@@ -185,7 +189,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD004"
 
                 },
 
@@ -227,7 +232,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD005"
 
                 },
 
@@ -269,7 +275,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD006"
 
                 },
 
@@ -311,7 +318,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD007"
 
                 },
 
@@ -353,7 +361,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD008"
 
                 },
 
@@ -395,7 +404,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD009"
 
                 },
 
@@ -437,7 +447,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD010"
 
                 },
 
@@ -479,7 +490,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD011"
 
                 },
 
@@ -521,7 +533,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD012"
 
                 },
 
@@ -563,7 +576,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD013"
 
                 },
 
@@ -605,7 +619,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD014"
 
                 },
 
@@ -647,7 +662,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD015"
 
                 },
 
@@ -692,7 +708,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD016"
 
                 },
 
@@ -734,7 +751,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD017"
 
                 },
 
@@ -776,7 +794,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD018"
 
                 },
 
@@ -818,7 +837,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD019"
 
                 },
 
@@ -860,7 +880,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD020"
 
                 },
 
@@ -902,7 +923,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD021"
 
                 },
 
@@ -944,7 +966,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD022"
 
                 },
 
@@ -986,7 +1009,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD023"
 
                 },
 
@@ -1028,7 +1052,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD024"
 
                 },
 
@@ -1070,7 +1095,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD025"
 
                 },
 
@@ -1112,7 +1138,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD026"
                 },
 
                 new Products()
@@ -1153,7 +1180,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD027"
 
                 },
 
@@ -1195,7 +1223,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD028"
 
                 },
 
@@ -1237,7 +1266,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD029"
 
                 },
 
@@ -1279,7 +1309,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD030"
 
                 },
 
@@ -1321,7 +1352,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD031"
 
                 },
 
@@ -1363,7 +1395,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD032"
 
                 },
 
@@ -1405,7 +1438,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD033"
 
                 },
 
@@ -1447,7 +1481,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD034"
 
                 },
 
@@ -1489,7 +1524,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD035"
 
                 },
 
@@ -1531,7 +1567,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD036"
 
                 },
 
@@ -1573,7 +1610,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD037"
 
                 },
 
@@ -1615,7 +1653,8 @@ namespace Web_Shoes.Data.DataSeeding
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
+                    pd_NameImg4 = "4",
+                    pd_Code = "PD038"
 
                 }
                 );
@@ -2285,13 +2324,15 @@ namespace Web_Shoes.Data.DataSeeding
                 {
                     couponId = Guid.NewGuid().ToString(),
                     couponCode ="code10",
-                    couponPrice = 10
+                    couponPrice = 10,
+                    couponAmount = 20
                 },
                 new Coupons()
                 {
                     couponId = Guid.NewGuid().ToString(),
                     couponCode = "code50",
-                    couponPrice = 50
+                    couponPrice = 50,
+                    couponAmount = 25
                 });
 
 

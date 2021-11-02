@@ -350,7 +350,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 11, 1, 8, 22, 54, 798, DateTimeKind.Local).AddTicks(9425),
+                            bill_DatetimeOrder = new DateTime(2021, 11, 2, 2, 6, 24, 705, DateTimeKind.Local).AddTicks(5981),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -374,7 +374,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "AFD66490-12F5-4EA7-BFF6-425624290D6D",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 11, 1, 8, 22, 54, 799, DateTimeKind.Local).AddTicks(8925),
+                            bill_DatetimeOrder = new DateTime(2021, 11, 2, 2, 6, 24, 706, DateTimeKind.Local).AddTicks(4873),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -400,6 +400,9 @@ namespace Web_Shoes.Migrations
                     b.Property<string>("cart_Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("cart_Coupon")
+                        .HasColumnType("int");
+
                     b.Property<int>("cart_Discount")
                         .HasColumnType("int");
 
@@ -416,12 +419,14 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             cart_Id = "72309286-ECBB-4D20-AD95-2819D31E3400",
+                            cart_Coupon = 0,
                             cart_Discount = 0,
                             cart_UserID = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff"
                         },
                         new
                         {
                             cart_Id = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
+                            cart_Coupon = 0,
                             cart_Discount = 0,
                             cart_UserID = "DE544998-A3CC-4E12-ABB4-0642E57BD222"
                         });
@@ -580,6 +585,9 @@ namespace Web_Shoes.Migrations
                     b.Property<string>("couponId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("couponAmount")
+                        .HasColumnType("int");
+
                     b.Property<string>("couponCode")
                         .HasColumnType("nvarchar(max)");
 
@@ -593,13 +601,15 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "c5957ff2-227b-4358-b81b-a7304c067ae8",
+                            couponId = "c3d76b1b-b602-473d-acab-26dae3167604",
+                            couponAmount = 20,
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "3a642632-af40-40de-958d-51dd4a300d97",
+                            couponId = "74ffa7ac-26f7-40f8-8f2b-2e417729a9c0",
+                            couponAmount = 25,
                             couponCode = "code50",
                             couponPrice = 50
                         });
@@ -673,7 +683,7 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 1,
-                            pic_Id = "b09ce5af-5587-413b-aca2-7b61cf6a36d1",
+                            pic_Id = "bebdcd4c-99b8-42d8-9f2c-49f80f5520d1",
                             pic_amount = 2,
                             pic_color = "blue",
                             pic_size = "7"
@@ -682,7 +692,7 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 2,
-                            pic_Id = "8fd3a2b6-d066-4c32-8f13-cae39521a219",
+                            pic_Id = "a2258b80-af3e-4a46-816b-603c5425f279",
                             pic_amount = 3,
                             pic_color = "blue",
                             pic_size = "7.5"
@@ -691,7 +701,7 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 3,
-                            pic_Id = "4ad63a28-0bf4-42d0-aa0f-794115e71fb0",
+                            pic_Id = "63c148b4-99fa-464d-a8fb-c7c59fc6c04b",
                             pic_amount = 1,
                             pic_color = "blue",
                             pic_size = "8"
@@ -756,6 +766,9 @@ namespace Web_Shoes.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("pd_Brand")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pd_Code")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("pd_Color")
@@ -878,6 +891,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 1,
                             pd_Brand = "Off White",
+                            pd_Code = "PD001",
                             pd_Color = "Black",
                             pd_Description = "black / purple / red ,cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1qGc4cXF4az9X2evToVj0x0Ceu2qmQYnN",
@@ -920,6 +934,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 2,
                             pd_Brand = "Off White",
+                            pd_Code = "PD002",
                             pd_Color = "Black",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1iViLlxnkxISB8wMdMjka0ILlfWmvple8",
@@ -962,6 +977,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 3,
                             pd_Brand = "Off White",
+                            pd_Code = "PD003",
                             pd_Color = "White/Blue",
                             pd_Description = "White, cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1EPqJakj7EBtmPHZO0gf_wo8HPgUa75Zf",
@@ -1004,6 +1020,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 4,
                             pd_Brand = "Andrea Martin",
+                            pd_Code = "PD004",
                             pd_Color = "Gray",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1rOilu5Z4w41A7tx3kkd9l5PSvPfMnfBT",
@@ -1046,6 +1063,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 5,
                             pd_Brand = "Burberry",
+                            pd_Code = "PD005",
                             pd_Color = "",
                             pd_Description = "- The shirt is made of breathable cotton fabric, good sweat absorption, bringing comfort to the wearer. Beautiful standard shirt form, delicate seams meticulous detail to satisfy even fastidious customers.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1QhQ9e5DmIcqaXPy0RBNrvIAMgbv_YWqs",
@@ -1088,6 +1106,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 6,
                             pd_Brand = "ADLV",
+                            pd_Code = "PD006",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1e_zKMaR3x86zIuTaEWYew7cyLeT-VWni",
@@ -1130,6 +1149,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 7,
                             pd_Brand = "Burberry",
+                            pd_Code = "PD007",
                             pd_Color = "",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1nD8Fl62ptV1LXUZpM3cW-rECv4cXMHEn",
@@ -1172,6 +1192,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 8,
                             pd_Brand = "eteft",
+                            pd_Code = "PD008",
                             pd_Color = "",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1RmcA-LwkzPlAdUMb-ZtvuY1j8lGzW3HU",
@@ -1214,6 +1235,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 9,
                             pd_Brand = "Thom Browne",
+                            pd_Code = "PD009",
                             pd_Color = "White",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1Ry38U-_ZzzGsnci5mqHObvi8tgoc6Trz",
@@ -1256,6 +1278,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 10,
                             pd_Brand = "Burberry",
+                            pd_Code = "PD010",
                             pd_Color = "",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1UUIDx-uORgXTIJsIytWO957naKtGAq3A",
@@ -1298,6 +1321,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 11,
                             pd_Brand = "Burberry",
+                            pd_Code = "PD011",
                             pd_Color = "",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1VjacENWRQeseioMaQFhcWdmOlvsIcPht",
@@ -1340,6 +1364,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 12,
                             pd_Brand = "eteft",
+                            pd_Code = "PD012",
                             pd_Color = "",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1ZKZYlg_rA6EZ7SdsVe4GbI0tP18uG67Z",
@@ -1382,6 +1407,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 13,
                             pd_Brand = "eteft",
+                            pd_Code = "PD013",
                             pd_Color = "",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1OUfVp1RZhpwhZAch5daeLszb0HzccbtJ",
@@ -1424,6 +1450,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 14,
                             pd_Brand = "Thom Browne",
+                            pd_Code = "PD014",
                             pd_Color = "White",
                             pd_Description = "Endless styling opportunities are in store with this Thom Browne shirt. Made from breathable cotton, this piece is both cool and comfortable. Talk about no trouble. Features a button-down collar, front button closure, open front pockets, curved hemline, front logo patch and tricolor stripe detail with buttons on both sleeves",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1MLh7rMo4ZLlvjGL9lVwptz1RflsvvFsn",
@@ -1466,6 +1493,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 15,
                             pd_Brand = "eteft",
+                            pd_Code = "PD015",
                             pd_Color = "",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1D3qVLRk7-M8PBVm2m0ZwOAgp4kKafvOD",
@@ -1508,6 +1536,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 16,
                             pd_Brand = "Moschino",
+                            pd_Code = "PD016",
                             pd_Color = "Black",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1WLz6y8DGD6FVXhV-bP_EdjwlnF1TXRUS",
@@ -1550,6 +1579,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 17,
                             pd_Brand = "Moschino",
+                            pd_Code = "PD017",
                             pd_Color = "",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1-QV_gSFzdfy-qRTPLgbWwTD2plYwteNk",
@@ -1592,6 +1622,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 18,
                             pd_Brand = "Moschino",
+                            pd_Code = "PD018",
                             pd_Color = "",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1BqGUuj-7G4MDgK-k38SML_wLuNmsxV4t",
@@ -1634,6 +1665,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 19,
                             pd_Brand = "Moschino",
+                            pd_Code = "PD019",
                             pd_Color = "White",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1OcAaWtM9osemCa3B4TWG2USDDVnjRM7X",
@@ -1676,6 +1708,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 20,
                             pd_Brand = "Moschino",
+                            pd_Code = "PD020",
                             pd_Color = "White",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1b4zWMxw2fSXDmTZsZfI5UGRW4ujKo1rN",
@@ -1718,6 +1751,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 21,
                             pd_Brand = "Moschino",
+                            pd_Code = "PD021",
                             pd_Color = "Black",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1oL6TkiejPN42yqbWEv8xN-Ckah67S0xW",
@@ -1760,6 +1794,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 22,
                             pd_Brand = "Supreme",
+                            pd_Code = "PD022",
                             pd_Color = "White",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1xi9IyKns4dFZD1Fyxpk4i0HkHdfkKU78",
@@ -1802,6 +1837,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 23,
                             pd_Brand = "Supreme",
+                            pd_Code = "PD023",
                             pd_Color = "Black",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1bDO25ILHq2cvHXn5S1fUzRhSejVCJ-8n",
@@ -1844,6 +1880,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 24,
                             pd_Brand = "eteft",
+                            pd_Code = "PD024",
                             pd_Color = "",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1WlhWQzqgCVnlI9XyNtRD8iJ0O-2Oa25L",
@@ -1886,6 +1923,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 25,
                             pd_Brand = "ADLV",
+                            pd_Code = "PD025",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1uBO0fPafsG1P5vmtwvgkOrcypX6H4rDY",
@@ -1928,6 +1966,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 26,
                             pd_Brand = "ADLV",
+                            pd_Code = "PD026",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1w8KaiMGTvWcxpJMfalYcFEN_yG6Awk-9",
@@ -1970,6 +2009,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 27,
                             pd_Brand = "ADLV",
+                            pd_Code = "PD027",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1c8sJrSezckX9Vm0p387ikGFsU1Tuv87r",
@@ -2012,6 +2052,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 28,
                             pd_Brand = "ADLV",
+                            pd_Code = "PD028",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1stJaTkCT3ZXMWE_Ph_d5TLf97pmMhIF6",
@@ -2054,6 +2095,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 29,
                             pd_Brand = "ADLV",
+                            pd_Code = "PD029",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1DcgjPlR0vCPGXVp_AZYZdaEobjRznKOu",
@@ -2096,6 +2138,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 30,
                             pd_Brand = "ADLV",
+                            pd_Code = "PD030",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1rLOrHjbc_a6lW5Q6MKx9uCNN6SJelkQf",
@@ -2138,6 +2181,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 31,
                             pd_Brand = "MCM",
+                            pd_Code = "PD031",
                             pd_Color = "Brown",
                             pd_Description = "",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1cus6PlFMcV6Qpye0-Ff0TLabYoWnJIht",
@@ -2180,6 +2224,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 32,
                             pd_Brand = "Prada",
+                            pd_Code = "PD032",
                             pd_Color = "Black",
                             pd_Description = "The Prada Cleo bag with sophisticated allure reinterprets an iconic design of the brand from the 1990's. Sleek curved lines emphasized by the particular construction rounded on the bottom and sides give this hobo bag a soft, light look. Brushed leather, a modern and versatile material that is distinctive in Prada collections, is ideal for creating always new combinations and contrasts. The enamel triangle logo decorates the silhouette.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1fhdHU_V5FYVQ7i5ZefEktABB5JqzL01H",
@@ -2222,6 +2267,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 33,
                             pd_Brand = "BURBERRY",
+                            pd_Code = "PD033",
                             pd_Color = "",
                             pd_Description = "An archive-inspired tote in canvas and topstitched leather, featuring a front pocket stamped with our Horseferry print. Carry by the reinforced top handles or detachable shoulder strap.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1FivY1-HqVnegDBV8kcv7wgdHnU4AkWem",
@@ -2264,6 +2310,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 34,
                             pd_Brand = "MCM",
+                            pd_Code = "PD034",
                             pd_Color = "Brown",
                             pd_Description = "Infused with the heritage emblem, the front pocket of the Patricia backpack is protected with the famous Laurel Buckle. The detachable leather strap allows you to turn the x-mini accessory into an elegant handbag or crossbody bag.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1TWAmegqZrDSIBfFP5m-g5F2_Rj3NsS9I",
@@ -2306,6 +2353,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 35,
                             pd_Brand = "Gucci",
+                            pd_Code = "PD035",
                             pd_Color = "White",
                             pd_Description = "Combine both style and practicality with this Gucci Fake logo bum bag. Constructed with an adjustable fabric buckle waistband, this compact has a zip compartment and is finished with the brand's signature imitation logo details embroidered on the front.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=12niwGccl8KfuoLkrvDEpsTZ34otlOLc-",
@@ -2348,6 +2396,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 36,
                             pd_Brand = "Burberry",
+                            pd_Code = "PD036",
                             pd_Color = "",
                             pd_Description = "What do your phone, your wallet, an old lipstick and some emergency snacks have in common? They all belong in this crossbody bag from Burberry - with a Horseferry print to the front and a spacious body, this bag fits all your essentials and more. We've got you covered. ",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=11wRP1ACgpE4kP1xD9ypWMnjQd1F6aTqX",
@@ -2390,6 +2439,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 37,
                             pd_Brand = "MARC JACOBS",
+                            pd_Code = "PD037",
                             pd_Color = "",
                             pd_Description = "Marc Jacobs’ iconic Snapshot bag has been reimagined with a vibrant tie-dye print and a matching cross-body strap. Crafted from saffiano leather, the compact style has two zipped sections and slip pockets to keep your daily essentials organised. Silver-tone metal hardware and co-ordinating ‘Double J’ hardware completes the bold style.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=1N4UQ_qU7D0jwof4cPG83XujEdGDh7s-p",
@@ -2432,6 +2482,7 @@ namespace Web_Shoes.Migrations
                         {
                             pd_Id = 38,
                             pd_Brand = "MARC JACOBS",
+                            pd_Code = "PD038",
                             pd_Color = "",
                             pd_Description = "Marc Jacobs’ iconic Snapshot bag has been reimagined with a vibrant tie-dye print and a matching cross-body strap. Crafted from saffiano leather, the compact style has two zipped sections and slip pockets to keep your daily essentials organised. Silver-tone metal hardware and co-ordinating ‘Double J’ hardware completes the bold style.",
                             pd_Img1 = "https://drive.google.com/uc?export=download&id=17Eq6odE_bU2_vEaSyLzxKmIzlSAvfXe2",
@@ -2885,7 +2936,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "10f066d8-f696-4dbf-a4e1-5bc7f57eb0f4",
+                            subReview_Id = "d9d27001-eccc-45e8-bfbb-d983bcc7e18f",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2894,7 +2945,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "9f128e1e-2193-498d-9615-f2714452d5ea",
+                            subReview_Id = "4a9f120a-93dc-4546-be2b-423c24303c3c",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2903,7 +2954,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "f78a8733-4e4a-4244-b80d-4a506d9561ef",
+                            subReview_Id = "eca2df4d-ade1-4d5c-b9da-b80e2ae88e3a",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2930,17 +2981,17 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "10f066d8-f696-4dbf-a4e1-5bc7f57eb0f4"
+                            SRiR_SubReviewId = "d9d27001-eccc-45e8-bfbb-d983bcc7e18f"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "9f128e1e-2193-498d-9615-f2714452d5ea"
+                            SRiR_SubReviewId = "4a9f120a-93dc-4546-be2b-423c24303c3c"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "f78a8733-4e4a-4244-b80d-4a506d9561ef"
+                            SRiR_SubReviewId = "eca2df4d-ade1-4d5c-b9da-b80e2ae88e3a"
                         });
                 });
 
@@ -3022,14 +3073,14 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "69b639f4-94aa-45cd-b0c6-dd9029a6ff5c",
+                            ConcurrencyStamp = "b8cb0fb8-eec7-4143-8658-a248ae9edabc",
                             Name = "staff",
                             Description = "Staff"
                         },
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "57525e1d-d48e-4335-9db8-cef7b31cb82e",
+                            ConcurrencyStamp = "7346f8c7-dd86-4b2c-98be-36342ea034b6",
                             Name = "admin",
                             Description = "admin"
                         });
@@ -3079,15 +3130,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e89b32cc-7d5d-4585-a04a-2e6e3f79bf30",
+                            ConcurrencyStamp = "46ed48d6-1f48-4b32-ba6b-274ba8a36f73",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJt3gB93q+mQ5DWNqJvykAdrQhT0z7zkn1XiUKABnQ9vaJYILxLEGlmG0gR3J90P3g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFrLtp4zazpRrx1J2Qr991Pdi8A2PcIO07acf16d0n5ll1eIafDGrrXsa6p28LjzrQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "dca0759a-05be-4fff-89c0-2c66156b4ae8",
+                            SecurityStamp = "5e799384-2fbf-422b-84f2-f1357298874f",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -3106,15 +3157,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a9a05d1e-f88d-4d22-bae9-dd2625973154",
+                            ConcurrencyStamp = "ae4685a2-f1c6-46a9-ad54-4f8f3a45a7e9",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIDaSBhxQph7P8vlWuXnJYf430ct6oVcvksh1Mc96/K9/8BAmSEPqDa7K7jeVEkukw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMZWkdlODwrv2J7RuWYzg3wQNglnnrlbl8BSrYWY9rBfzbz+WSqqSpZFLi6GRIWoWQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "82ebc0a6-3b88-420a-9cba-8e59e98f1d0a",
+                            SecurityStamp = "6971236a-487e-4e1b-be65-d06fe7b8021a",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),

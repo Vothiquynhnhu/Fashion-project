@@ -1,4 +1,13 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top">
+﻿@using Microsoft.AspNetCore.Http;
+@using Web_Shoes.Data;
+@using Web_Shoes.StatisFile;
+@using Microsoft.AspNetCore.Mvc;
+@{
+    string user = "aa";
+}
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="adjust-nav">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -6,16 +15,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @*<a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" />
+            <a class="navbar-brand" href="/">
+                <img src="https://e1.pngegg.com/pngimages/630/550/png-clipart-metrostation-black-home-icon-thumbnail.png" width="50px" />
+            </a>
 
-            </a>*@
+
 
         </div>
 
         <span class="logout-spn">
+            <span>Hi @user</span>
             <a href="#" style="color:red;">LOGOUT</a>
-
         </span>
     </div>
 </div>

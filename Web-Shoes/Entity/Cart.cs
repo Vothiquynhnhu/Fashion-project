@@ -14,5 +14,7 @@ namespace Web_Shoes.Entity
 
         public int cart_Discount { set; get; }
 
+        public int cart_Coupon { set; get; }
+
     }
 }
