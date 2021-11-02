@@ -65,5 +65,87 @@ namespace Web_Shoes.Controllers
                 throw;
             }
         }
+
+
+        [Route("/couponsmanagement/edit/{id:guid}")]
+        public IActionResult Edit(string id)
+        {
+            try
+            {
+                var editQuery = _context.Coupons.FirstOrDefault(a => a.couponId == id);
+
+                return View(editQuery);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        [HttpPost("/couponsmanagement/edit/{id:guid}")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Coupons coupon)
+        {
+            try
+            {
+                var editQuery = _context.Coupons.FirstOrDefault(a => a.couponId == coupon.couponId);
+                editQuery.couponCode = coupon.couponCode;
+                editQuery.couponPrice = coupon.couponPrice;
+                editQuery.couponAmount = coupon.couponAmount;
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+        [Route("/couponsmanagement/delete/{id:guid}")]
+        public IActionResult Delete(string id)
+        {
+            try
+            {
+
+                var editQuery = _context.Coupons.FirstOrDefault(a => a.couponId == id);
+
+                return View(editQuery);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        [HttpPost("/couponsmanagement/delete/{id:guid}")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(Coupons coupon)
+        {
+            try
+            {
+                var editQuery = _context.Coupons.FirstOrDefault(a => a.couponId == coupon.couponId);
+
+                _context.Coupons.Remove(editQuery);
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
     }
 }
