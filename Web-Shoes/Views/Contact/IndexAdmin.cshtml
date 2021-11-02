@@ -5,50 +5,97 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>IndexAdmin</h1>
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Users:</h2>
+            </div>
+        </div>
+  
+<hr />
+    <div class="row">
+        <div class="col-lg-12 ">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact_Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact_Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact_Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact_Website)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Website)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Contact_Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Contact_Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Contact_Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contact_Address)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contact_Phone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contact_Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contact_Website)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contact_Facebook)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contact_Twitter)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contact_Linkedin)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contact_Instagram)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contact_Youtube)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contact_Address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contact_Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contact_Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contact_Website)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contact_Facebook)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contact_Twitter)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contact_Linkedin)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contact_Instagram)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contact_Youtube)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Contact_Id">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+  
+</div>
+
+
+

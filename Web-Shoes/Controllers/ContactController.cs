@@ -24,12 +24,14 @@ namespace Web_Shoes.Controllers
         {
             var contact = _context.ContactSystem.FirstOrDefault(a => a.Contact_Id ==1);
 
+
+
             return View(contact);
         }
 
         [Route("/contactusersmanagement/create")]
         [HttpPost]
-        public async Task<ActionResult> create()
+        public async Task<ActionResult> Create()
         {
             try
             {

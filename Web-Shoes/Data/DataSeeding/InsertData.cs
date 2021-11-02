@@ -2407,8 +2407,85 @@ namespace Web_Shoes.Data.DataSeeding
                 });
 
 
-        }    
-                
-               
+            // Home -----------------------------------------------------------------------------------
+            // Table Slider-Home
+            builder.Entity<SliderHome>().HasData(
+                new SliderHome()
+                {
+                    SliderId = Guid.NewGuid().ToString(),
+                    SliderName = "SliderHome1",
+                    SliderUrl = "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM"
+                },
+
+                new SliderHome()
+                {
+                    SliderId = Guid.NewGuid().ToString(),
+                    SliderName = "SliderHome2",
+                    SliderUrl = "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv"
+                },
+
+                new SliderHome()
+                {
+                    SliderId = Guid.NewGuid().ToString(),
+                    SliderName = "SliderHome3",
+                    SliderUrl = "https://drive.google.com/uc?export=download&id=1q3-Sg09LDSshwDBe3WVOTlcx0QmP-0tT"
+                });
+
+
+            // Table Categories-Home
+
+            builder.Entity<CategoriesHome>().HasData(
+                new CategoriesHome()
+                {
+                    CategoriesHomeId = Guid.NewGuid().ToString(),
+                    CategoriesHomeName ="CategoriesHome1",
+                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f"
+                },
+                new CategoriesHome()
+                {
+                    CategoriesHomeId = Guid.NewGuid().ToString(),
+                    CategoriesHomeName = "CategoriesHome2",
+                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K"
+                },
+                new CategoriesHome()
+                {
+                    CategoriesHomeId = Guid.NewGuid().ToString(),
+                    CategoriesHomeName = "CategoriesHome3",
+                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1Gm-TZ2nqI5eUAU0O45cgeay38AS0OxiI"
+                },
+                new CategoriesHome()
+                {
+                    CategoriesHomeId = Guid.NewGuid().ToString(),
+                    CategoriesHomeName = "CategoriesHome4",
+                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1g4QK9WF2e9aXHpJCUXK0-1H6j6kC7r5L"
+                },
+                new CategoriesHome()
+                {
+                    CategoriesHomeId = Guid.NewGuid().ToString(),
+                    CategoriesHomeName = "CategoriesHome5",
+                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=14ybZRAMDRY_OhMcCXXzVtjeyHhnaKn5l"
+                },
+                new CategoriesHome()
+                {
+                    CategoriesHomeId = Guid.NewGuid().ToString(),
+                    CategoriesHomeName = "CategoriesHome6",
+                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1vOIH3t8uhGxNKF7w76kViqlmlQH1-6YU"
+                },
+                new CategoriesHome()
+                {
+                    CategoriesHomeId = Guid.NewGuid().ToString(),
+                    CategoriesHomeName = "CategoriesHome7",
+                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=18tu3dYEqUmKx5bJL_hjSN467GO3cbaQE"
+                },
+                new CategoriesHome()
+                {
+                    CategoriesHomeId = Guid.NewGuid().ToString(),
+                    CategoriesHomeName = "CategoriesHome8",
+                    CategoriesHomeUrl = "https://drive.google.com/uc?export=download&id=1EEMOiZF6E5sKIFGntEySd0SVvZmvFe78"
+                });
+
+        }
+
+
     }   
 }

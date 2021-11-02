@@ -12,5 +12,10 @@ namespace Web_Shoes.Entity
         public string Contact_Phone { set; get; }
         public string Contact_Email { set; get; }
         public string Contact_Website { set; get; }
+        public string Contact_Facebook { set; get; }
+        public string Contact_Twitter { set; get; }
+        public string Contact_Linkedin { set; get; }
+        public string Contact_Instagram { set; get; }
+        public string Contact_Youtube { set; get; }
     }
 }

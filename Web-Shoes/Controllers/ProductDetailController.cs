@@ -41,6 +41,10 @@ namespace Web_Shoes.Controllers
         [HttpGet("{id}")]
         public IActionResult Index(int id)
         {
+  
+
+            
+
             // cart 
             string countCart = HttpContext.Session.GetString(KeySession.cartHomeSession);
             ViewBag.cartCount = countCart;
@@ -60,6 +64,7 @@ namespace Web_Shoes.Controllers
             ViewBag.Rate = productDetailQuery.pd_Rate;
             ViewBag.ShortDescription = productDetailQuery.pd_ShortDescription;
             ViewBag.Description = productDetailQuery.pd_Description;
+            ViewBag.Code = productDetailQuery.pd_Code;
 
             var review = from a in _context.AppUser
                          join b in _context.Reviews on a.Id equals b.review_UserId

@@ -69,6 +69,8 @@ namespace Web_Shoes.Data
             builder.ApplyConfiguration(new SubReviewInReviewConfigurations());
             builder.ApplyConfiguration(new SubReviewConfigurations());
             builder.ApplyConfiguration(new SubscribersConfigurations());
+            builder.ApplyConfiguration(new SliderHomeConfigurations());
+            builder.ApplyConfiguration(new CategoriesHomeConfigurations());
 
 
 
@@ -118,6 +120,10 @@ namespace Web_Shoes.Data
         public DbSet<Web_Shoes.Models.UserInRoleModel> UserInRoleModel { get; set; }
 
         public DbSet<Subscribers> Subscribers { set; get; }
+
+        public DbSet<SliderHome> SliderHomes { set; get; }
+
+        public DbSet<CategoriesHome> CategoriesHomes { set; get; }
         //public DbSet<AppUserRole> AppUserRole { set; get; }
 
     }
