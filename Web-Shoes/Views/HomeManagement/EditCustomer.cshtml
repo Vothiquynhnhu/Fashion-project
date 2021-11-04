@@ -1,0 +1,79 @@
+﻿@model Web_Shoes.Entity.CustomerHome
+
+@{
+    ViewData["Title"] = "EditCustomer";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@
+
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Users:</h2>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-lg-12 ">
+
+                <h1>EditCustomer</h1>
+
+                <h4>CustomerHome</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-action="EditCustomer">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="CustomerHomeId" />
+                            <div class="form-group">
+                                <label asp-for="CustomerHomeName" class="control-label"></label>
+                                <input asp-for="CustomerHomeName" class="form-control" />
+                                <span asp-validation-for="CustomerHomeName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CustomerHome_CImg" class="control-label"></label>
+                                <input asp-for="CustomerHome_CImg" class="form-control" />
+                                <span asp-validation-for="CustomerHome_CImg" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CustomerHome_CName" class="control-label"></label>
+                                <input asp-for="CustomerHome_CName" class="form-control" />
+                                <span asp-validation-for="CustomerHome_CName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CustomerHome_CWork" class="control-label"></label>
+                                <input asp-for="CustomerHome_CWork" class="form-control" />
+                                <span asp-validation-for="CustomerHome_CWork" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CustomerHome_CStar" class="control-label"></label>
+                                <input asp-for="CustomerHome_CStar" class="form-control" />
+                                <span asp-validation-for="CustomerHome_CStar" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CustomerHome_CDesription" class="control-label"></label>
+                                <input asp-for="CustomerHome_CDesription" class="form-control" />
+                                <span asp-validation-for="CustomerHome_CDesription" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <a asp-action="Index">Back to List</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

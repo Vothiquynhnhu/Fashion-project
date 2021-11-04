@@ -45,6 +45,7 @@ namespace Web_Shoes.Controllers
                         ViewBag.CustomerStar1 = item.CustomerHome_CStar;
                         ViewBag.CustomerImg1 = item.CustomerHome_CImg;
                         ViewBag.CustomerDesription1 = item.CustomerHome_CDesription;
+                        ViewBag.CustomerWork1 = item.CustomerHome_CWork;
                         break;
                     case "FeatureHome2":
                         // code block
@@ -52,6 +53,7 @@ namespace Web_Shoes.Controllers
                         ViewBag.CustomerStar2 = item.CustomerHome_CStar;
                         ViewBag.CustomerImg2 = item.CustomerHome_CImg;
                         ViewBag.CustomerDesription2 = item.CustomerHome_CDesription;
+                        ViewBag.CustomerWork2 = item.CustomerHome_CWork;
                         break;
                     case "FeatureHome3":
                         // code block
@@ -59,6 +61,7 @@ namespace Web_Shoes.Controllers
                         ViewBag.CustomerStar3 = item.CustomerHome_CStar;
                         ViewBag.CustomerImg3 = item.CustomerHome_CImg;
                         ViewBag.CustomerDesription3 = item.CustomerHome_CDesription;
+                        ViewBag.CustomerWork3 = item.CustomerHome_CWork;
                         break;
                     default:
                         break;

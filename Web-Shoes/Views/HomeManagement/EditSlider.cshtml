@@ -1,0 +1,80 @@
+﻿@model Web_Shoes.Entity.SliderHome
+
+@{
+    ViewData["Title"] = "EditSlider";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@
+
+
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Users:</h2>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-lg-12 ">
+
+                <h1>EditSlider</h1>
+
+                <h4>SliderHome</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-action="EditSlider">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="SliderId" />
+                            <div class="form-group">
+                                <label asp-for="SliderName" class="control-label"></label>
+                                <input asp-for="SliderName" class="form-control" />
+                                <span asp-validation-for="SliderName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SliderUrl1" class="control-label"></label>
+                                <input asp-for="SliderUrl1" class="form-control" />
+                                <span asp-validation-for="SliderUrl1" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SliderUrl2" class="control-label"></label>
+                                <input asp-for="SliderUrl2" class="form-control" />
+                                <span asp-validation-for="SliderUrl2" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SliderUrl3" class="control-label"></label>
+                                <input asp-for="SliderUrl3" class="form-control" />
+                                <span asp-validation-for="SliderUrl3" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SliderUrl4" class="control-label"></label>
+                                <input asp-for="SliderUrl4" class="form-control" />
+                                <span asp-validation-for="SliderUrl4" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SliderUrl5" class="control-label"></label>
+                                <input asp-for="SliderUrl5" class="form-control" />
+                                <span asp-validation-for="SliderUrl5" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <a asp-action="Index">Back to List</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
