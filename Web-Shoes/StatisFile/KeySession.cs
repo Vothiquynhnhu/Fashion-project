@@ -9,7 +9,8 @@ namespace Web_Shoes.StatisFile
     {
         //Cart
         public static string cartHomeSession = "cart";
-        public static string cartIdSession = "cartId";
+        public static string cartIdSession = "cartId"; 
+        public static string messagerCart = "messagerCart";
 
 
         //User

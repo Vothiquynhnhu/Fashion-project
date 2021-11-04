@@ -22,7 +22,7 @@ namespace Web_Shoes.Controllers
         private readonly SignInManager<AppUser> _SignInManager;
         private readonly UserManager<AppUser> _UserManager;
 
-        private string messagerCart = "";
+        
 
         public CartController(ApplicationDbContext context, UserManager<AppUser> UserManager, SignInManager<AppUser> SignInManager)
         {
@@ -46,8 +46,15 @@ namespace Web_Shoes.Controllers
 
             int countCart = 0;
 
-            ViewBag.messagerCart = messagerCart;
-
+            if (HttpContext.Session.GetString(KeySession.messagerCart) != null)
+            {
+                ViewBag.messagerCart = HttpContext.Session.GetString(KeySession.messagerCart);
+            }
+            else
+            {
+                ViewBag.messagerCart = "";
+            }
+            
 
 
             // check cart 
@@ -265,6 +272,7 @@ namespace Web_Shoes.Controllers
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var userName = User.FindFirstValue(ClaimTypes.Name);
                 string codeCoupon = Request.Query["codecoupon"];
+                string messagerCart;
 
                 if (checkLogin)
                 {
@@ -277,13 +285,18 @@ namespace Web_Shoes.Controllers
                     {
                         
                         queryCartUser.cart_Discount = queryCoupon.couponPrice;
+                        
+
                         messagerCart = "";
+                        HttpContext.Session.SetString(KeySession.messagerCart, messagerCart);
+                       
 
                     }
                     else
                     {
                         queryCartUser.cart_Discount = 0;
                         messagerCart = "The number of discount codes has expired!";
+                        HttpContext.Session.SetString(KeySession.messagerCart, messagerCart);
                     }
                     _context.SaveChanges();
 
@@ -309,6 +322,7 @@ namespace Web_Shoes.Controllers
                     {
                         queryCartDevice.cartd_Discount = 0;
                         //The number of discount codes has expired
+
                         
                     }
                     _context.SaveChanges();
