@@ -11,6 +11,7 @@ namespace Web_Shoes.Entity
         public string couponCode { set; get; }
         public int couponPrice { set; get; }
         public int couponAmount { set; get; }
+        public int couponAmountUsed { set; get; }
 
 
     }

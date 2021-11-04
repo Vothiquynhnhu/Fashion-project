@@ -22,6 +22,8 @@ namespace Web_Shoes.Controllers
         private readonly SignInManager<AppUser> _SignInManager;
         private readonly UserManager<AppUser> _UserManager;
 
+        private string messagerCart = "";
+
         public CartController(ApplicationDbContext context, UserManager<AppUser> UserManager, SignInManager<AppUser> SignInManager)
         {
             _context = context;
@@ -43,6 +45,10 @@ namespace Web_Shoes.Controllers
 
 
             int countCart = 0;
+
+            ViewBag.messagerCart = messagerCart;
+
+
 
             // check cart 
             if (checkLogin)
@@ -267,15 +273,17 @@ namespace Web_Shoes.Controllers
 
                     var queryCoupon = _context.Coupons.FirstOrDefault(a => a.couponCode == codeCoupon);
                     var queryCartUser = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId);
-                    if (queryCoupon != null)
+                    if (queryCoupon != null && queryCoupon.couponAmountUsed <= queryCoupon.couponAmount)
                     {
                         
                         queryCartUser.cart_Discount = queryCoupon.couponPrice;
-                        
+                        messagerCart = "";
+
                     }
                     else
                     {
                         queryCartUser.cart_Discount = 0;
+                        messagerCart = "The number of discount codes has expired!";
                     }
                     _context.SaveChanges();
 
@@ -295,10 +303,13 @@ namespace Web_Shoes.Controllers
                         
                         queryCartDevice.cartd_Discount = queryCoupon.couponPrice;
                         
+                        
                     }
                     else
                     {
                         queryCartDevice.cartd_Discount = 0;
+                        //The number of discount codes has expired
+                        
                     }
                     _context.SaveChanges();
 

@@ -1770,13 +1770,17 @@ namespace Web_Shoes.Data.DataSeeding
                 new Cart()
                 {
                     cart_Id = IdCart1,
-                    cart_UserID = IdStaff
+                    cart_UserID = IdStaff,
+                    cart_Coupon = "code10",
+                    cart_Discount = 10
 
                 },
                 new Cart()
                 {
                     cart_Id = IdCart2,
-                    cart_UserID = IdAdmin
+                    cart_UserID = IdAdmin,
+                    cart_Coupon = "code50",
+                    cart_Discount = 50
 
                 });
 
@@ -2325,14 +2329,16 @@ namespace Web_Shoes.Data.DataSeeding
                     couponId = Guid.NewGuid().ToString(),
                     couponCode ="code10",
                     couponPrice = 10,
-                    couponAmount = 20
+                    couponAmount = 20,
+                    couponAmountUsed = 0
                 },
                 new Coupons()
                 {
                     couponId = Guid.NewGuid().ToString(),
                     couponCode = "code50",
                     couponPrice = 50,
-                    couponAmount = 25
+                    couponAmount = 25,
+                    couponAmountUsed = 0
                 });
 
 

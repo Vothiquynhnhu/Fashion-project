@@ -349,6 +349,13 @@ namespace Web_Shoes.Controllers
                 /// Add
                 _context.Bills.Add(bill);
 
+
+                // Reduce amount coupon
+                string presentNameCoupon = queryDiscount.cart_Coupon;
+
+                var couponQuery = _context.Coupons.FirstOrDefault(a => a.couponCode == presentNameCoupon);
+                couponQuery.couponAmountUsed++;
+
                 /// Remove
                 var CartQuery = _context.Cart.FirstOrDefault(x => x.cart_UserID == userId);
 

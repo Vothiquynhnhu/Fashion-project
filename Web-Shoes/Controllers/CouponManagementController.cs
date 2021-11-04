@@ -50,7 +50,8 @@ namespace Web_Shoes.Controllers
                     couponId = Guid.NewGuid().ToString(),
                     couponAmount = coupon.couponAmount,
                     couponCode = coupon.couponCode,
-                    couponPrice = coupon.couponPrice
+                    couponPrice = coupon.couponPrice,
+                    couponAmountUsed = coupon.couponAmountUsed
                 };
 
                 _context.Coupons.Add(CreateCoupon);
@@ -93,6 +94,7 @@ namespace Web_Shoes.Controllers
                 editQuery.couponCode = coupon.couponCode;
                 editQuery.couponPrice = coupon.couponPrice;
                 editQuery.couponAmount = coupon.couponAmount;
+                editQuery.couponAmountUsed = coupon.couponAmountUsed;
 
                 await _context.SaveChangesAsync();
 
