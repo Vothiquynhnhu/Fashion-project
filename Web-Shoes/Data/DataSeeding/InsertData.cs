@@ -1683,14 +1683,16 @@ namespace Web_Shoes.Data.DataSeeding
                 new AppRole()
                 {
                     Id = IdRoleStaff,
-                    Name ="staff",
-                    Description = "Staff"
+                    Name ="Staff",
+                    Description = "Staff",
+                    NormalizedName = "STAFF"
+
                 },
                 new AppRole()
                 {
                     Id = IdRoleAdmin,
-                    Name = "admin",
-                    Description = "admin",
+                    Name = "Admin",
+                    Description = "Admin",
                     NormalizedName = "ADMIN"
                 });
 

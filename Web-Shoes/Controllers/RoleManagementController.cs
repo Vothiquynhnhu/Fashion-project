@@ -16,10 +16,9 @@ namespace Web_Shoes.Controllers
 
         private readonly ApplicationDbContext _context;
 
-        private  RoleManager<AppRole> _roleManager;
+        private readonly RoleManager<AppRole> _roleManager;
 
-
-        public RoleManagementController(RoleManager<AppRole> roleManager, ApplicationDbContext context)
+        public RoleManagementController(ApplicationDbContext context, RoleManager<AppRole> roleManager)
         {
             _context = context;
             _roleManager = roleManager;
@@ -32,6 +31,7 @@ namespace Web_Shoes.Controllers
         {
 
             //var roleQuery = from a in _context.AppRole select a;
+
             var roleQuery = await _roleManager.Roles.ToListAsync();
             return View(roleQuery);
         }
@@ -40,11 +40,11 @@ namespace Web_Shoes.Controllers
        // GET: RoleManagementController/Details/5
        [Route("/rolemanagement/details/{id:guid?}")]
         [HttpGet]
-        public ActionResult Details(string id)
+        public async Task<ActionResult> Details(string id)
         {
-            var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
-           
+            //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
 
+            var roleQuery = await _roleManager.FindByIdAsync(id);
             return View(roleQuery);
         }
 
@@ -74,8 +74,7 @@ namespace Web_Shoes.Controllers
 
                 };
 
-
-                await _roleManager.CreateAsync(appRole);
+                var roleQuery = await _roleManager.CreateAsync(appRole);
 
                 //_context.AppRole.Add(appRole);
 
@@ -93,9 +92,11 @@ namespace Web_Shoes.Controllers
         // GET: RoleManagementController/Edit/5
         [Route("/rolemanagement/edit/{id:guid}")]
         [HttpGet]
-        public ActionResult Edit(string id)
+        public async Task<ActionResult> Edit(string id)
         {
-            var roleQuery = _context.AppRole.FirstOrDefault(x => x.Id == id);
+            //var roleQuery = _context.AppRole.FirstOrDefault(x => x.Id == id);
+
+            var roleQuery = await _roleManager.FindByIdAsync(id);
 
             return View(roleQuery);
         }
@@ -107,15 +108,17 @@ namespace Web_Shoes.Controllers
         {
             try
             {
-                //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
-                 var roleQuery = await _roleManager.FindByIdAsync(id);
 
-                roleQuery.Description = appRole.Description;
+                var roleQuery = await _roleManager.FindByIdAsync(id);
+                //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
+
+
+                
                 roleQuery.Name = appRole.Name;
                 roleQuery.NormalizedName = appRole.NormalizedName;
                 roleQuery.ConcurrencyStamp = appRole.ConcurrencyStamp;
 
-                await _roleManager.UpdateAsync(roleQuery);
+                var UpdateRole = await _roleManager.UpdateAsync(roleQuery);
 
                 //_context.SaveChanges();
 
@@ -133,7 +136,9 @@ namespace Web_Shoes.Controllers
         public async Task<ActionResult> Delete(string id)
         {
             //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
-            var roleQuery =  await _roleManager.FindByIdAsync(id);
+
+            var roleQuery = await _roleManager.FindByIdAsync(id);
+
 
             return View(roleQuery);
         }
@@ -141,17 +146,15 @@ namespace Web_Shoes.Controllers
         // POST: RoleManagementController/Delete/5
         [HttpPost("/rolemanagement/delete/{id:guid}")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Delete(string id, AppRole appRole)
+        public async Task<ActionResult> Delete(string id, IFormCollection collection)
         {
             try
             {
-                //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
                 var roleQuery = await _roleManager.FindByIdAsync(id);
-
-                
-                await _roleManager.DeleteAsync(roleQuery);
                 //_context.AppRole.Remove(roleQuery);
                 //_context.SaveChanges();
+                var roleQueryDelete = await _roleManager.DeleteAsync(roleQuery);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
