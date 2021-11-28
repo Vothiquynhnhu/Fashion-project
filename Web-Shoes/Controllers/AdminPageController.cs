@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace Web_Shoes.Controllers
 {
     public class AdminPageController : Controller
     {
-        [Route("admin")]
+        [Route("/admin")]
         public IActionResult Index()
         {
             return View();

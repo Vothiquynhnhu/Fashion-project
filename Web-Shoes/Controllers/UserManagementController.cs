@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,25 +13,33 @@ using Web_Shoes.Models;
 
 namespace Web_Shoes.Controllers
 {
+    
+    [Authorize(Roles = "admin")]
     public class UserManagementController : Controller
     {
-
+        
         private readonly ApplicationDbContext _context;
         //private readonly UserManager<AppUser> _userManager;
 
         public UsersModel usersModel;
-        public UserManagementController(ApplicationDbContext context)
+
+        private UserManager <AppUser> _userManager;
+        private RoleManager<AppRole> _roleManager;
+        public UserManagementController(ApplicationDbContext context, UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
         {
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
 
         [Route("/usermanagement")]
         [HttpGet]
         // GET: UserManagementController
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            var userQuery = from a in _context.AppUser select a;
+            //var userQuery = from a in _context.AppUser select a;
+            var userQuery = await _userManager.Users.ToListAsync();
 
 
             return View(userQuery);
@@ -38,12 +48,12 @@ namespace Web_Shoes.Controllers
         // GET: UserManagementController/Details/5
         [Route("/usermanagement/details/{id:guid}")]
         [HttpGet]
-        public ActionResult Details(string id)
+        public async Task<ActionResult> Details(string id)
         {
 
-            var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
+            //var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
 
-
+            var userQuery = await _userManager.FindByIdAsync(id);
 
             return View(userQuery);
         }
@@ -81,8 +91,10 @@ namespace Web_Shoes.Controllers
                     DoB = appUser.DoB
                 };
 
-                _context.AppUser.Add(CreateUser);
-                await _context.SaveChangesAsync();
+                var userQuery = await _userManager.CreateAsync(CreateUser);
+
+                //_context.AppUser.Add(CreateUser);
+                //await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));
             }
@@ -95,22 +107,27 @@ namespace Web_Shoes.Controllers
         // GET: UserManagementController/Edit/5
         [Route("/usermanagement/edit/{id:guid}")]
         [HttpGet]
-        public ActionResult Edit(string id)
+        public async Task<ActionResult> Edit(string id)
         {
 
-            var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
+            //var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
+
+            var userQuery = await _userManager.FindByIdAsync(id);
+
             return View(userQuery);
         }
 
         // POST: UserManagementController/Edit/5
         [HttpPost("/usermanagement/edit/{id:guid}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(string id, AppUser appUser)
+        public async Task<ActionResult> Edit(string id, AppUser appUser)
         {
             try
             {
 
-                var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
+                //var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
+
+                var userQuery = await _userManager.FindByIdAsync(id);
 
                 userQuery.UserName = appUser.UserName;
                 userQuery.FirstName = appUser.FirstName;
@@ -118,6 +135,7 @@ namespace Web_Shoes.Controllers
                 userQuery.Email = appUser.Email;
                 userQuery.DoB = appUser.DoB;
 
+                var userQueryUpdate = await _userManager.UpdateAsync(userQuery);
 
                 _context.SaveChanges();
 
@@ -132,10 +150,15 @@ namespace Web_Shoes.Controllers
         // GET: UserManagementController/Delete/5
         [Route("/usermanagement/delete/{id:guid}")]
         [HttpGet]
-        public ActionResult Delete(string id)
+        public async Task<ActionResult> Delete(string id)
         {
 
-            var userQuery = _context.Users.FirstOrDefault(x => x.Id == id);
+            //var userQuery = _context.Users.FirstOrDefault(x => x.Id == id);
+
+            var userQuery = await _userManager.FindByIdAsync(id);
+
+            
+
 
             return View(userQuery);
         }
@@ -143,18 +166,23 @@ namespace Web_Shoes.Controllers
         // POST: UserManagementController/Delete/5
         [HttpPost("/usermanagement/delete/{id:guid}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(string id, IFormCollection collection)
+        public async Task<ActionResult> Delete(string id, IFormCollection collection)
         {
             try
             {
 
-                var userQuery = _context.AppUser.FirstOrDefault(x => x.Id == id);
+                //var userQuery = _context.AppUser.FirstOrDefault(x => x.Id == id);
 
-                string aa = userQuery.LastName;
+                //string aa = userQuery.LastName;
 
 
-                _context.AppUser.Remove(userQuery);
-                _context.SaveChanges();
+                //_context.AppUser.Remove(userQuery);
+                //_context.SaveChanges();
+
+                var userQuery = await _userManager.FindByIdAsync(id);
+
+                var userQueryDelete = await _userManager.DeleteAsync(userQuery);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -169,15 +197,17 @@ namespace Web_Shoes.Controllers
         // GET: RoleManagementController/userinrole/5
         [Route("/usermanagement/userinrole/{id:guid}")]
         [HttpGet]
-        public ActionResult UserInRole(string id)
+        public async Task<ActionResult> UserInRole(string id)
         {
             //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
 
+            var userQuery = await _userManager.FindByIdAsync(id);
 
-            var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
+            //var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
 
-            var roleQuery = from a in _context.AppRole select a;
+            //var roleQuery = from a in _context.AppRole select a;
 
+            var roleQuery = await _roleManager.Roles.ToListAsync();
 
             ViewBag.Id = id;
             ViewBag.UserName = userQuery.UserName;
@@ -198,31 +228,67 @@ namespace Web_Shoes.Controllers
 
             try
             {
-                var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
+                //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
+
+                //var roleQuery = await _roleManager.FindByIdAsync(id);
+
+
 
                 string idUser = Request.Form["id_User"];
 
                 string RoleName = Request.Form["NameSelect"];
 
-                var roleQueryId = _context.AppRole.FirstOrDefault(a => a.Name == RoleName);
 
-                var createUserRole = new IdentityUserRole<string>
+
+                //var roleQueryId = _context.AppRole.FirstOrDefault(a => a.Name == RoleName);
+
+                //var roleQueryId = await _roleManager.FindByNameAsync(RoleName);
+
+                var userQuery = await _userManager.FindByIdAsync(idUser);
+
+                //var createUserRole = new IdentityUserRole<string>
+                //{
+                //    RoleId = roleQueryId.Id.ToString(),
+                //    UserId = idUser
+                //};
+
+                //_context.UserRoles.Add(createUserRole);
+
+                //await _context.SaveChangesAsync();
+
+                var CurrentUserRole = await _userManager.GetRolesAsync(userQuery);
+
+                string roleName = "";
+                if (CurrentUserRole.Count != 0)
                 {
-                    RoleId = roleQueryId.Id.ToString(),
-                    UserId = idUser
-                };
+                    roleName = CurrentUserRole[0];
+                    var removeUserRole = await _userManager.RemoveFromRoleAsync(userQuery, roleName);
+                    if (!removeUserRole.Succeeded)
+                    {
+                        return View();
+                    }
+                }
 
-                _context.UserRoles.Add(createUserRole);
+                
+                
 
-                await _context.SaveChangesAsync();
+                var createUserRole = await _userManager.AddToRoleAsync(userQuery, "admin1");
+
+
+                if (!createUserRole.Succeeded)
+                {
+                    
+                    return NotFound();
+                }
+
 
 
                 return RedirectToAction(nameof(Index));
             }
-            catch 
+            catch (Exception ex)
             {
 
-                return View();
+                return BadRequest("Error Occurred " + ex);
             }
         }
     }

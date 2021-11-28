@@ -1690,7 +1690,8 @@ namespace Web_Shoes.Data.DataSeeding
                 {
                     Id = IdRoleAdmin,
                     Name = "admin",
-                    Description = "admin"
+                    Description = "admin",
+                    NormalizedName = "ADMIN"
                 });
 
 
