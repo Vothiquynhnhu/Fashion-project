@@ -9,7 +9,7 @@ using Web_Fashion.Entity;
 
 namespace Web_Fashion.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Staff")]
     public class CouponManagementController : Controller
     {
         private readonly ApplicationDbContext _context;

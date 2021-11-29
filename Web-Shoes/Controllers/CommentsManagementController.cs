@@ -11,7 +11,7 @@ using Web_Fashion.Models;
 
 namespace Web_Fashion.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Staff")]
     public class CommentsManagementController : Controller
     {
         private readonly ApplicationDbContext _context;

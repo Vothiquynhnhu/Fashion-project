@@ -13,7 +13,7 @@ using Web_Fashion.Models;
 
 namespace Web_Fashion.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Staff")]
     public class SubscribersManagementController : Controller
     {
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Web_Fashion.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Staff")]
     public class AdminPageController : Controller
     {
         [Route("admin")]
