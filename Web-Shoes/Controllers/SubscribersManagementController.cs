@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NPOI.SS.Formula.Functions;
@@ -12,6 +13,7 @@ using Web_Shoes.Models;
 
 namespace Web_Shoes.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class SubscribersManagementController : Controller
     {
 

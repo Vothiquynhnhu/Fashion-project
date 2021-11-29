@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using Web_Shoes.Entity;
 
 namespace Web_Shoes.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class RoleManagementController : Controller
     {
 

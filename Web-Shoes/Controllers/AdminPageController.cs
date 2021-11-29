@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Web_Shoes.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminPageController : Controller
     {
-        [Route("/admin")]
+        [Route("admin")]
         public IActionResult Index()
         {
             return View();

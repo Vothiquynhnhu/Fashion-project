@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using Web_Shoes.Entity;
 
 namespace Web_Shoes.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CouponManagementController : Controller
     {
         private readonly ApplicationDbContext _context;

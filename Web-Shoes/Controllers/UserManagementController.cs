@@ -51,7 +51,7 @@ namespace Web_Shoes.Controllers
         public async Task<ActionResult> Details(string id)
         {
 
-            //var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
+ 
             var userQuery = await _userManager.FindByIdAsync(id);
 
 
@@ -92,10 +92,6 @@ namespace Web_Shoes.Controllers
                 };
 
                 var userQuery = await _userManager.CreateAsync(CreateUser);
-
-
-                //_context.AppUser.Add(CreateUser);
-                //await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));
             }

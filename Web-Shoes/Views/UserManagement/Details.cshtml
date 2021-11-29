@@ -40,6 +40,9 @@
                             @Html.DisplayFor(model => model.Email)
                         </dd>
                     </dl>
+
+                    <label> Role:</label>
+                    <input type="text"  value="@ViewBag.Role" readonly />
                 </div>
                 <div>
                     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |

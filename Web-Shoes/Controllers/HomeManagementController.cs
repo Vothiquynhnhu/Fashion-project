@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using Web_Shoes.Data;
 using Web_Shoes.Models;
 using Web_Shoes.Entity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Web_Shoes.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class HomeManagementController : Controller
     {
 
