@@ -19,12 +19,12 @@
                 <form asp-action="UserInRole" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
-                        <label class="control-label">@ViewBag.FirstName</label>
-                        <span class="text-danger">@ViewBag.FirstName</span>
+                        <label class="control-label">UserName:</label>
+                        <span class="text-danger">@ViewBag.UserName</span>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">@ViewBag.UserName</label>
-                        <span class="text-danger">@ViewBag.UserName</span>
+                        <label class="control-label">Email: </label>
+                        <span class="text-danger">@ViewBag.Email</span>
                     </div>
                     <input type="hidden" value="@ViewBag.Id" name="id_User" />
 
@@ -35,7 +35,6 @@
                             {
                                 <option value="@item.Name">@item.Name</option>
                             }
-
 
                         </select>
                     </div>

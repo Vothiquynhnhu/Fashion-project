@@ -41,8 +41,36 @@ namespace Web_Shoes.Controllers
             //var userQuery = from a in _context.AppUser select a;
             var userQuery = await _userManager.Users.ToListAsync();
 
+            
+            List<UserListModel> userListModel = new List<UserListModel>();
+            foreach (var item in userQuery)
+            {
 
-            return View(userQuery);
+                var roles = await _userManager.GetRolesAsync(item);
+                string role;
+                if (roles == null)
+                {
+                    role = "";
+                }
+                else
+                {
+                    role = roles[0].ToString();
+                }
+
+                var User = new UserListModel()
+                {
+                    User_Id = item.Id,
+                    User_FirstName = item.FirstName,
+                    User_LastName = item.LastName,
+                    User_UserName = item.UserName,
+                    User_Role = role,
+                    User_Email = item.Email
+                };
+                userListModel.Add(User);
+            }
+            
+
+            return View(userListModel);
         }
 
         // GET: UserManagementController/Details/5
@@ -54,8 +82,33 @@ namespace Web_Shoes.Controllers
  
             var userQuery = await _userManager.FindByIdAsync(id);
 
+            List<UserListModel> userListModel = new List<UserListModel>();
+            
 
-            return View(userQuery);
+            var roles = await _userManager.GetRolesAsync(userQuery);
+            string role;
+            if (roles == null)
+            {
+                role = "";
+            }
+            else
+            {
+                role = roles[0].ToString();
+            }
+
+            var User = new UserListModel()
+            {
+                User_Id = userQuery.Id,
+                User_FirstName = userQuery.FirstName,
+                User_LastName = userQuery.LastName,
+                User_UserName = userQuery.UserName,
+                User_Role = role,
+                User_Email = userQuery.Email
+            };
+            userListModel.Add(User);
+            
+
+            return View(userListModel[0]);
         }
 
         // GET: UserManagementController/Create
@@ -186,14 +239,10 @@ namespace Web_Shoes.Controllers
         [HttpGet]
         public async Task<ActionResult> UserInRole(string id)
         {
-            //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
-
-
-            //var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
+            
             var userQuery = await _userManager.FindByIdAsync(id);
 
-            //var roleQuery = from a in _context.AppRole select a;
-            var roleQuery = await _roleManager.FindByIdAsync(id);
+            var roleQuery = await _roleManager.Roles.ToListAsync();
 
 
             ViewBag.Id = id;
@@ -215,8 +264,6 @@ namespace Web_Shoes.Controllers
 
             try
             {
-                //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
-                
 
                 string idUser = Request.Form["id_User"];
 
