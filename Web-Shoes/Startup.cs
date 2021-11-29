@@ -14,7 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Web_Shoes.Data;
 using Web_Shoes.Entity;
-
+using Web_Shoes.Service.Mail;
 
 namespace Web_Shoes
 {
@@ -45,9 +45,6 @@ namespace Web_Shoes
             // Đăng ký SendMailService với kiểu Transient, mỗi lần gọi dịch
             // vụ ISendMailService một đới tượng SendMailService tạo ra (đã inject config)
             services.AddTransient<ISendMailService, SendMailService>();
-
-
-
 
             services.AddDistributedMemoryCache();           // Đăng ký dịch vụ lưu cache trong bộ nhớ (Session sẽ sử dụng nó)
             services.AddSession(cfg => {                    // Đăng ký dịch vụ Session
