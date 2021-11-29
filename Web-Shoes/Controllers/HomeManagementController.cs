@@ -4,12 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Web_Shoes.Data;
-using Web_Shoes.Models;
-using Web_Shoes.Entity;
+using Web_Fashion.Data;
+using Web_Fashion.Models;
+using Web_Fashion.Entity;
+using Microsoft.AspNetCore.Authorization;
 
-namespace Web_Shoes.Controllers
+namespace Web_Fashion.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class HomeManagementController : Controller
     {
 

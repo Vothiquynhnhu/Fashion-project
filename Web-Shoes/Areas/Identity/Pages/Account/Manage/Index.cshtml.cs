@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Web_Shoes.Entity;
+using Web_Fashion.Entity;
 
-namespace Web_Shoes.Areas.Identity.Pages.Account.Manage
+namespace Web_Fashion.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {

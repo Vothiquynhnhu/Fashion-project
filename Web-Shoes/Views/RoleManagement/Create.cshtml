@@ -1,4 +1,4 @@
-﻿@model Web_Shoes.Entity.AppRole
+﻿@model Web_Fashion.Entity.AppRole
 
 @{
     ViewData["Title"] = "Create";
@@ -23,27 +23,12 @@
                     <div class="col-md-4">
                         <form asp-action="Create" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <div class="form-group">
-                                <label asp-for="Description" class="control-label"></label>
-                                <input asp-for="Description" class="form-control" />
-                                <span asp-validation-for="Description" class="text-danger"></span>
-                            </div>
 
                             <div class="form-group">
                                 <label asp-for="Name" class="control-label"></label>
                                 <input asp-for="Name" class="form-control" />
                                 <span asp-validation-for="Name" class="text-danger"></span>
                             </div>
-                            @*<div class="form-group">
-                                <label asp-for="NormalizedName" class="control-label"></label>
-                                <input asp-for="NormalizedName" class="form-control" />
-                                <span asp-validation-for="NormalizedName" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="ConcurrencyStamp" class="control-label"></label>
-                                <input asp-for="ConcurrencyStamp" class="form-control" />
-                                <span asp-validation-for="ConcurrencyStamp" class="text-danger"></span>
-                            </div>*@
                             <div class="form-group">
                                 <input type="submit" value="Create" class="btn btn-primary" />
                             </div>

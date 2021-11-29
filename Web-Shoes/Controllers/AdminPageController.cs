@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web_Shoes.Controllers
+namespace Web_Fashion.Controllers
 {
+    [Authorize(Roles = "Admin,Staff")]
     public class AdminPageController : Controller
     {
-        [Route("/admin")]
+        [Route("admin")]
         public IActionResult Index()
         {
             return View();

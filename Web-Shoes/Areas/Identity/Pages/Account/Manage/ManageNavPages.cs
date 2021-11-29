@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Web_Shoes.Areas.Identity.Pages.Account.Manage
+namespace Web_Fashion.Areas.Identity.Pages.Account.Manage
 {
     public static class ManageNavPages
     {

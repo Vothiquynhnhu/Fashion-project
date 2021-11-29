@@ -12,11 +12,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Web_Shoes.Data;
-using Web_Shoes.Entity;
+using Web_Fashion.Data;
+using Web_Fashion.Entity;
+using Web_Fashion.Service.Mail;
 
-
-namespace Web_Shoes
+namespace Web_Fashion
 {
     public class Startup
     {
@@ -46,13 +46,10 @@ namespace Web_Shoes
             // vụ ISendMailService một đới tượng SendMailService tạo ra (đã inject config)
             services.AddTransient<ISendMailService, SendMailService>();
 
-
-            services.AddRazorPages();
-
             services.AddDistributedMemoryCache();           // Đăng ký dịch vụ lưu cache trong bộ nhớ (Session sẽ sử dụng nó)
             services.AddSession(cfg => {                    // Đăng ký dịch vụ Session
-                cfg.Cookie.Name = "fashion";             // Đặt tên Session - tên này sử dụng ở Browser (Cookie)
-                cfg.IdleTimeout = new TimeSpan(0, 50, 0);    // Thời gian tồn tại của Session
+                cfg.Cookie.Name = "Fashion";             // Đặt tên Session - tên này sử dụng ở Browser (Cookie)
+                cfg.IdleTimeout = new TimeSpan(0, 60, 0);    // Thời gian tồn tại của Session
                 
             });
 
@@ -61,13 +58,12 @@ namespace Web_Shoes
 
 
 
+            //options => options.SignIn.RequireConfirmedAccount = true
 
-
-            services.AddIdentity<AppUser, AppRole>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<AppUser, AppRole>()
                 .AddDefaultTokenProviders()
                 .AddDefaultUI()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-
 
             services.ConfigureApplicationCookie(options => {
                 // options.Cookie.HttpOnly = true;  
@@ -76,7 +72,6 @@ namespace Web_Shoes
                 options.LogoutPath = $"/logout/";
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
-
             services.AddControllersWithViews();
 
         }

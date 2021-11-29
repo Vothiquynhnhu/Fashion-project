@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web_Shoes.Controllers
+namespace Web_Fashion.Controllers
 {
     public class AddToWishlistController : Controller
     {

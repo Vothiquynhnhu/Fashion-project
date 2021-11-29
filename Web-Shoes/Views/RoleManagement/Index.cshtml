@@ -1,7 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
-@using Web_Shoes.Entity
-@inject RoleManager<AppRole> _roleManager
-
+﻿@model IEnumerable<Web_Fashion.Entity.AppRole>
 
 @{
     ViewData["Title"] = "Index";
@@ -24,25 +21,14 @@
 
                 <p>
                     <a asp-action="Create">Create New</a>
-
+                    
                 </p>
                 <table class="table">
                     <thead>
                         <tr>
                             <th>
-                                @*@Html.DisplayNameFor(model => model.Description)*@
-                                1
+                                @Html.DisplayNameFor(model => model.Name)
                             </th>
-                            <th>
-                                @*@Html.DisplayNameFor(model => model.Name)*@
-                                Name
-                            </th>
-                            @*<th>
-                                    @Html.DisplayNameFor(model => model.NormalizedName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ConcurrencyStamp)
-                                </th>*@
                             <th></th>
                         </tr>
                     </thead>
@@ -51,18 +37,8 @@
                         {
                             <tr>
                                 <td>
-                                    @*@Html.DisplayFor(modelItem => item.Description)*@
+                                    @Html.DisplayFor(modelItem => item.Name)
                                 </td>
-                                <td>
-                                    @*@Html.DisplayFor(modelItem => item.Name)*@
-                                    @item.Name
-                                </td>
-                                @*<td>
-                                        @Html.DisplayFor(modelItem => item.NormalizedName)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ConcurrencyStamp)
-                                    </td>*@
                                 <td>
                                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

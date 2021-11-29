@@ -7,29 +7,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Web_Shoes.Data;
-using Web_Shoes.Entity;
-using Web_Shoes.Models;
+using Web_Fashion.Data;
+using Web_Fashion.Entity;
+using Web_Fashion.Models;
 
-namespace Web_Shoes.Controllers
+namespace Web_Fashion.Controllers
 {
-    
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     public class UserManagementController : Controller
     {
-        
+
         private readonly ApplicationDbContext _context;
         //private readonly UserManager<AppUser> _userManager;
 
         public UsersModel usersModel;
 
-        private UserManager <AppUser> _userManager;
-        private RoleManager<AppRole> _roleManager;
-        public UserManagementController(ApplicationDbContext context, UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
+        private readonly RoleManager<AppRole> _roleManager;
+
+        private readonly UserManager<AppUser> _userManager;
+        public UserManagementController(ApplicationDbContext context, RoleManager<AppRole> roleManager, UserManager<AppUser> userManager)
         {
             _context = context;
-            _userManager = userManager;
             _roleManager = roleManager;
+            _userManager = userManager;
         }
 
 
@@ -41,8 +41,36 @@ namespace Web_Shoes.Controllers
             //var userQuery = from a in _context.AppUser select a;
             var userQuery = await _userManager.Users.ToListAsync();
 
+            
+            List<UserListModel> userListModel = new List<UserListModel>();
+            foreach (var item in userQuery)
+            {
 
-            return View(userQuery);
+                var roles = await _userManager.GetRolesAsync(item);
+                string role;
+                if (roles == null)
+                {
+                    role = "";
+                }
+                else
+                {
+                    role = roles[0].ToString();
+                }
+
+                var User = new UserListModel()
+                {
+                    User_Id = item.Id,
+                    User_FirstName = item.FirstName,
+                    User_LastName = item.LastName,
+                    User_UserName = item.UserName,
+                    User_Role = role,
+                    User_Email = item.Email
+                };
+                userListModel.Add(User);
+            }
+            
+
+            return View(userListModel);
         }
 
         // GET: UserManagementController/Details/5
@@ -51,11 +79,36 @@ namespace Web_Shoes.Controllers
         public async Task<ActionResult> Details(string id)
         {
 
-            //var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
-
+ 
             var userQuery = await _userManager.FindByIdAsync(id);
 
-            return View(userQuery);
+            List<UserListModel> userListModel = new List<UserListModel>();
+            
+
+            var roles = await _userManager.GetRolesAsync(userQuery);
+            string role;
+            if (roles == null)
+            {
+                role = "";
+            }
+            else
+            {
+                role = roles[0].ToString();
+            }
+
+            var User = new UserListModel()
+            {
+                User_Id = userQuery.Id,
+                User_FirstName = userQuery.FirstName,
+                User_LastName = userQuery.LastName,
+                User_UserName = userQuery.UserName,
+                User_Role = role,
+                User_Email = userQuery.Email
+            };
+            userListModel.Add(User);
+            
+
+            return View(userListModel[0]);
         }
 
         // GET: UserManagementController/Create
@@ -93,9 +146,6 @@ namespace Web_Shoes.Controllers
 
                 var userQuery = await _userManager.CreateAsync(CreateUser);
 
-                //_context.AppUser.Add(CreateUser);
-                //await _context.SaveChangesAsync();
-
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -111,9 +161,7 @@ namespace Web_Shoes.Controllers
         {
 
             //var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
-
             var userQuery = await _userManager.FindByIdAsync(id);
-
             return View(userQuery);
         }
 
@@ -126,7 +174,6 @@ namespace Web_Shoes.Controllers
             {
 
                 //var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
-
                 var userQuery = await _userManager.FindByIdAsync(id);
 
                 userQuery.UserName = appUser.UserName;
@@ -135,9 +182,8 @@ namespace Web_Shoes.Controllers
                 userQuery.Email = appUser.Email;
                 userQuery.DoB = appUser.DoB;
 
-                var userQueryUpdate = await _userManager.UpdateAsync(userQuery);
-
-                _context.SaveChanges();
+                var userQueryEdit = await _userManager.UpdateAsync(userQuery);
+                //_context.SaveChanges();
 
                 return RedirectToAction(nameof(Index));
             }
@@ -154,11 +200,7 @@ namespace Web_Shoes.Controllers
         {
 
             //var userQuery = _context.Users.FirstOrDefault(x => x.Id == id);
-
             var userQuery = await _userManager.FindByIdAsync(id);
-
-            
-
 
             return View(userQuery);
         }
@@ -172,17 +214,15 @@ namespace Web_Shoes.Controllers
             {
 
                 //var userQuery = _context.AppUser.FirstOrDefault(x => x.Id == id);
-
-                //string aa = userQuery.LastName;
-
-
-                //_context.AppUser.Remove(userQuery);
-                //_context.SaveChanges();
-
                 var userQuery = await _userManager.FindByIdAsync(id);
+
+                string aa = userQuery.LastName;
+
 
                 var userQueryDelete = await _userManager.DeleteAsync(userQuery);
 
+                //_context.AppUser.Remove(userQuery);
+                //_context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -199,15 +239,11 @@ namespace Web_Shoes.Controllers
         [HttpGet]
         public async Task<ActionResult> UserInRole(string id)
         {
-            //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
-
+            
             var userQuery = await _userManager.FindByIdAsync(id);
 
-            //var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
-
-            //var roleQuery = from a in _context.AppRole select a;
-
             var roleQuery = await _roleManager.Roles.ToListAsync();
+
 
             ViewBag.Id = id;
             ViewBag.UserName = userQuery.UserName;
@@ -228,67 +264,31 @@ namespace Web_Shoes.Controllers
 
             try
             {
-                //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
-
-                //var roleQuery = await _roleManager.FindByIdAsync(id);
-
-
 
                 string idUser = Request.Form["id_User"];
 
                 string RoleName = Request.Form["NameSelect"];
 
-
-
                 //var roleQueryId = _context.AppRole.FirstOrDefault(a => a.Name == RoleName);
-
-                //var roleQueryId = await _roleManager.FindByNameAsync(RoleName);
-
                 var userQuery = await _userManager.FindByIdAsync(idUser);
+                var roleQueryId = await _roleManager.FindByNameAsync(RoleName);
 
-                //var createUserRole = new IdentityUserRole<string>
-                //{
-                //    RoleId = roleQueryId.Id.ToString(),
-                //    UserId = idUser
-                //};
-
-                //_context.UserRoles.Add(createUserRole);
-
-                //await _context.SaveChangesAsync();
-
-                var CurrentUserRole = await _userManager.GetRolesAsync(userQuery);
-
-                string roleName = "";
-                if (CurrentUserRole.Count != 0)
+                var currentRole = await _userManager.GetRolesAsync(userQuery);
+                if (currentRole.Count >0)
                 {
-                    roleName = CurrentUserRole[0];
-                    var removeUserRole = await _userManager.RemoveFromRoleAsync(userQuery, roleName);
-                    if (!removeUserRole.Succeeded)
-                    {
-                        return View();
-                    }
+                    var userDelete = _userManager.RemoveFromRoleAsync(userQuery,currentRole[0].ToString());
                 }
 
-                
-                
-
-                var createUserRole = await _userManager.AddToRoleAsync(userQuery, "admin1");
-
-
-                if (!createUserRole.Succeeded)
-                {
-                    
-                    return NotFound();
-                }
+                var userQueryCreate = _userManager.AddToRoleAsync(userQuery,RoleName);
 
 
 
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception ex)
+            catch 
             {
 
-                return BadRequest("Error Occurred " + ex);
+                return View();
             }
         }
     }

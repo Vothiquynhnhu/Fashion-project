@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web_Shoes.Models
+namespace Web_Fashion.Models
 {
     public class ProductInCartModel
     {

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Web_Shoes.Data;
+using Web_Fashion.Data;
 
-namespace Web_Shoes.Migrations
+namespace Web_Fashion.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -239,7 +239,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("UserTokens");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.About", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.About", b =>
                 {
                     b.Property<int>("about_id")
                         .ValueGeneratedOnAdd()
@@ -269,7 +269,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Bills", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Bills", b =>
                 {
                     b.Property<string>("bill_Id")
                         .HasColumnType("nvarchar(450)");
@@ -346,7 +346,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 11, 28, 11, 48, 19, 238, DateTimeKind.Local).AddTicks(6421),
+                            bill_DatetimeOrder = new DateTime(2021, 11, 29, 23, 34, 29, 251, DateTimeKind.Local).AddTicks(3015),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -370,7 +370,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "AFD66490-12F5-4EA7-BFF6-425624290D6D",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 11, 28, 11, 48, 19, 239, DateTimeKind.Local).AddTicks(5469),
+                            bill_DatetimeOrder = new DateTime(2021, 11, 29, 23, 34, 29, 252, DateTimeKind.Local).AddTicks(4026),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -391,7 +391,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Cart", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Cart", b =>
                 {
                     b.Property<string>("cart_Id")
                         .HasColumnType("nvarchar(450)");
@@ -428,7 +428,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CartsDevice", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.CartsDevice", b =>
                 {
                     b.Property<string>("cartd_Id")
                         .HasColumnType("nvarchar(450)");
@@ -446,7 +446,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("CartsDevice");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Categories", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Categories", b =>
                 {
                     b.Property<int>("cg_Id")
                         .ValueGeneratedOnAdd()
@@ -504,7 +504,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CategoriesHome", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.CategoriesHome", b =>
                 {
                     b.Property<string>("CategoriesHomeId")
                         .HasColumnType("nvarchar(450)");
@@ -543,7 +543,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            CategoriesHomeId = "a4701d33-79fe-40be-8b57-a1172d00b41e",
+                            CategoriesHomeId = "cea7b9d2-1252-4878-9eb0-27037f6a8040",
                             CategoriesHomeName = "CategoriesHome1",
                             CategoriesHomeUrl1 = "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f",
                             CategoriesHomeUrl2 = "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K",
@@ -556,7 +556,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ContactSystem", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ContactSystem", b =>
                 {
                     b.Property<int>("Contact_Id")
                         .ValueGeneratedOnAdd()
@@ -605,7 +605,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ContactUsers", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ContactUsers", b =>
                 {
                     b.Property<int>("cu_Id")
                         .ValueGeneratedOnAdd()
@@ -643,7 +643,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Coupons", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Coupons", b =>
                 {
                     b.Property<string>("couponId")
                         .HasColumnType("nvarchar(450)");
@@ -664,21 +664,21 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "60524770-7386-4f38-aa48-874edbea39bb",
+                            couponId = "b699e03e-10a7-4bb7-8d2c-243b6de855fd",
                             couponAmount = 20,
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "478e023c-38c5-4afd-be45-d92e75d3f531",
+                            couponId = "f260204b-9129-4610-8c95-c4896628667f",
                             couponAmount = 25,
                             couponCode = "code50",
                             couponPrice = 50
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CustomerHome", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.CustomerHome", b =>
                 {
                     b.Property<string>("CustomerHomeId")
                         .HasColumnType("nvarchar(450)");
@@ -708,7 +708,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            CustomerHomeId = "0326156d-5f56-403c-bb83-0d42273daa7d",
+                            CustomerHomeId = "0d369b4b-5afb-4215-a57f-37319f6dd244",
                             CustomerHomeName = "FeatureHome1",
                             CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem",
                             CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=12BEbKPhMNT6Gl31Wgzo1XNA6kf5zCtYm",
@@ -718,7 +718,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            CustomerHomeId = "85694cfa-2db5-4870-ab64-cf53a6846f89",
+                            CustomerHomeId = "89ef6cc2-9beb-4593-b8e1-9cafa827ce43",
                             CustomerHomeName = "FeatureHome2",
                             CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem",
                             CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=12xlH3LvPKtXEUTRFdETM7SGvCnjU9S-c",
@@ -728,7 +728,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            CustomerHomeId = "9c065833-76f5-4609-86a0-87f12745f967",
+                            CustomerHomeId = "d2877b21-52b7-48b2-bd9d-481e2a0dd09d",
                             CustomerHomeName = "FeatureHome3",
                             CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem",
                             CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=1-VztC3V4O7HyIdetuemHMO61M5up94uD",
@@ -738,7 +738,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Device", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Device", b =>
                 {
                     b.Property<string>("deviceId")
                         .HasColumnType("nvarchar(450)");
@@ -775,7 +775,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("Device");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.FeatureHome", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.FeatureHome", b =>
                 {
                     b.Property<string>("FeatureHomeId")
                         .HasColumnType("nvarchar(450)");
@@ -814,7 +814,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            FeatureHomeId = "f8340b8a-502f-4dd9-9779-79629841e31d",
+                            FeatureHomeId = "7f6ccb48-93c3-4986-b619-cee76d4cdb55",
                             FeatureHomeDesription1 = "Lorem ipsum dolor sit amet consectetur elit",
                             FeatureHomeDesription2 = "Lorem ipsum dolor sit amet consectetur elit",
                             FeatureHomeDesription3 = "Lorem ipsum dolor sit amet consectetur elit",
@@ -827,7 +827,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCart", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInCart", b =>
                 {
                     b.Property<string>("pic_CartId")
                         .HasColumnType("nvarchar(450)");
@@ -858,7 +858,7 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 1,
-                            pic_Id = "db583aae-b416-4561-8e29-785df029e028",
+                            pic_Id = "740c97f2-2d1b-49aa-941b-bbdff6128cbb",
                             pic_amount = 2,
                             pic_color = "blue",
                             pic_size = "7"
@@ -867,7 +867,7 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 2,
-                            pic_Id = "ce0e035e-7473-47f1-9fb0-b2f9d7eb9a5e",
+                            pic_Id = "02fa9fb4-244f-4735-8ee1-4c1ba033b928",
                             pic_amount = 3,
                             pic_color = "blue",
                             pic_size = "7.5"
@@ -876,14 +876,14 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 3,
-                            pic_Id = "25b439ef-9fc3-470b-98dc-43dc30e6cb42",
+                            pic_Id = "82476a39-fb74-4c43-9d23-6edd9c01d216",
                             pic_amount = 1,
                             pic_color = "blue",
                             pic_size = "8"
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCartDevices", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInCartDevices", b =>
                 {
                     b.Property<string>("picd_CartId")
                         .HasColumnType("nvarchar(450)");
@@ -907,7 +907,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("ProductInCartDevices");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInWishlist", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInWishlist", b =>
                 {
                     b.Property<int>("piw_WishlistId")
                         .HasColumnType("int");
@@ -933,7 +933,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Products", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Products", b =>
                 {
                     b.Property<int>("pd_Id")
                         .ValueGeneratedOnAdd()
@@ -1069,9 +1069,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD001",
                             pd_Color = "Black",
                             pd_Description = "black / purple / red ,cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1qGc4cXF4az9X2evToVj0x0Ceu2qmQYnN",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1iViLlxnkxISB8wMdMjka0ILlfWmvple8",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1EPqJakj7EBtmPHZO0gf_wo8HPgUa75Zf",
+                            pd_Img1 = "./img/Product1-blue.png",
+                            pd_Img2 = "./img/Product1-brown.png",
+                            pd_Img3 = "./img/Product1-white.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1080,7 +1080,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
-                            pd_Price = 100,
+                            pd_Price = 80,
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1112,9 +1112,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD002",
                             pd_Color = "Black",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1iViLlxnkxISB8wMdMjka0ILlfWmvple8",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1UZzX_yVVgDsemltdOZvX_943pfU6cXoO",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1VLOsewsM_8-8m-Ko2ZvsvDaa01_DGlMX",
+                            pd_Img1 = "./img/Product2-black.jpg",
+                            pd_Img2 = "./img/Product2-gray.jpg",
+                            pd_Img3 = "./img/Product2-purple.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1123,7 +1123,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
-                            pd_Price = 100,
+                            pd_Price = 50,
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1155,9 +1155,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD003",
                             pd_Color = "White/Blue",
                             pd_Description = "White, cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1EPqJakj7EBtmPHZO0gf_wo8HPgUa75Zf",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1fkx0O2cIJ5DrL60l7EJu0QX-xISIVmNa",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1TRmzvuN91iCLO1SRXtVMxJwuRQmHnpij",
+                            pd_Img1 = "./img/Product3-black.jpg",
+                            pd_Img2 = "./img/Product3-blue.jpg",
+                            pd_Img3 = "./img/Product3-white.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1166,7 +1166,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
-                            pd_Price = 100,
+                            pd_Price = 40,
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1198,9 +1198,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD004",
                             pd_Color = "Gray",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1rOilu5Z4w41A7tx3kkd9l5PSvPfMnfBT",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1mc_eKkp4OscemgzZBGZcCFuEWznZS-pW",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1YnUToorFthY05S17uSQIRnXcUBiJLVH8",
+                            pd_Img1 = "./img/Product4-blue.jpg",
+                            pd_Img2 = "./img/Product4-cream.jpg",
+                            pd_Img3 = "./img/Product4-white.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1209,7 +1209,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
-                            pd_Price = 100,
+                            pd_Price = 90,
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1241,9 +1241,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD005",
                             pd_Color = "",
                             pd_Description = "- The shirt is made of breathable cotton fabric, good sweat absorption, bringing comfort to the wearer. Beautiful standard shirt form, delicate seams meticulous detail to satisfy even fastidious customers.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1QhQ9e5DmIcqaXPy0RBNrvIAMgbv_YWqs",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1JWK25M-KEkvqsxeuiNjFm4nlPEiHIoQ4",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1Q-KWkHbFDVa2MHEZOxmNiaBbu1IffhGv",
+                            pd_Img1 = "./img/Product5-black.jpg",
+                            pd_Img2 = "./img/Product5-blue.jpg",
+                            pd_Img3 = "./img/Product5-yellow.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1252,7 +1252,7 @@ namespace Web_Shoes.Migrations
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
-                            pd_Price = 100,
+                            pd_Price = 99,
                             pd_Rate = 5,
                             pd_ReducePrice = 10,
                             pd_ShortDescription = "",
@@ -1284,9 +1284,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD006",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1e_zKMaR3x86zIuTaEWYew7cyLeT-VWni",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=19u835hxFv_7E5ktACy9XfbPMxYifZ6G_",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1o4tsocSZxePog0y6NQg6aLCq-xDx5BYp",
+                            pd_Img1 = "./img/Product6-black.jpg",
+                            pd_Img2 = "./img/Product6-gray.jpg",
+                            pd_Img3 = "./img/Product6-white.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1327,9 +1327,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD007",
                             pd_Color = "",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1nD8Fl62ptV1LXUZpM3cW-rECv4cXMHEn",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1rURWs71KvJDQ81go7rA-m0N2U7iktBJt",
-                            pd_Img3 = "",
+                            pd_Img1 = "./img/Product7-blue.png",
+                            pd_Img2 = "./img/Product7-white.png",
+                            pd_Img3 = "./img/Product7-yellow.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1370,9 +1370,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD008",
                             pd_Color = "",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1RmcA-LwkzPlAdUMb-ZtvuY1j8lGzW3HU",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1a6tJReOu3wtzJ_1BSdlR3L6d-2KPske7",
-                            pd_Img3 = "",
+                            pd_Img1 = "./img/Product8-pink.jpg",
+                            pd_Img2 = "./img/Product8-white.jpg",
+                            pd_Img3 = "./img/Product8-yellow.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1413,9 +1413,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD009",
                             pd_Color = "White",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1Ry38U-_ZzzGsnci5mqHObvi8tgoc6Trz",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1R_a3f_050dqsgbQLz23FQxPfVForPLkc",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1J5Yim8sYRqELe9Imzj4mrun7uytnQm6R",
+                            pd_Img1 = "./img/Product9-black.png",
+                            pd_Img2 = "./img/Product9-blue.png",
+                            pd_Img3 = "./img/Product9-red.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1456,56 +1456,13 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD010",
                             pd_Color = "",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1UUIDx-uORgXTIJsIytWO957naKtGAq3A",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1QLfLZv4TN2ugOZM375L9ZIwNmkdUKiy5",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1uajOerRRnV9eB7BS0UnIVXcfuPnscZyg",
+                            pd_Img1 = "./img/Product10-blue.png",
+                            pd_Img2 = "./img/Product10-pink.jpg",
+                            pd_Img3 = "./img/Product10-white.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
                             pd_Name = "BURBERRY SHIRT",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 100,
-                            pd_Rate = 5,
-                            pd_ReducePrice = 10,
-                            pd_ShortDescription = "",
-                            pd_Size = "",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "Shirt",
-                            pd_Technologies = "1",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 11,
-                            pd_Brand = "Burberry",
-                            pd_Code = "PD011",
-                            pd_Color = "",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1VjacENWRQeseioMaQFhcWdmOlvsIcPht",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1tQlJGdeQceNTTaDzkAVKyycgylDhMio8",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=158cFi3wOuNmrPD5woibSuVT-YT_RCRpw",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1Sb1zUw0A3ZmvBJ_ZNkqpHpKrqYrnhk0M",
-                            pd_Material = "1",
-                            pd_MenuFacturer = "1",
-                            pd_Name = "BURBERRY SHIRT RED",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
@@ -1542,9 +1499,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD012",
                             pd_Color = "",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1ZKZYlg_rA6EZ7SdsVe4GbI0tP18uG67Z",
-                            pd_Img2 = "",
-                            pd_Img3 = "",
+                            pd_Img1 = "./img/Product12-black.jpg",
+                            pd_Img2 = "./img/Product12-red.jpg",
+                            pd_Img3 = "./img/Product12-yellow.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1585,9 +1542,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD013",
                             pd_Color = "",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1OUfVp1RZhpwhZAch5daeLszb0HzccbtJ",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1ahvRu6z7hwYYX1I10K3Rjx6kMyH2Vi9E",
-                            pd_Img3 = "",
+                            pd_Img1 = "./img/Product13-dark-blue.jpg",
+                            pd_Img2 = "./img/Product13-green.jpg",
+                            pd_Img3 = "./img/Product13-pink.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1628,9 +1585,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD014",
                             pd_Color = "White",
                             pd_Description = "Endless styling opportunities are in store with this Thom Browne shirt. Made from breathable cotton, this piece is both cool and comfortable. Talk about no trouble. Features a button-down collar, front button closure, open front pockets, curved hemline, front logo patch and tricolor stripe detail with buttons on both sleeves",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1MLh7rMo4ZLlvjGL9lVwptz1RflsvvFsn",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1rU7uI2Wu25u8LMSBkJ9oQLYyRwbCLPOn",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1LjscRUDgfVKmg0PDX5oTChoiNG0kukg3",
+                            pd_Img1 = "./img/Product14-black.jpg",
+                            pd_Img2 = "./img/Product14-white.jpg",
+                            pd_Img3 = "./img/Product14-yellow.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1671,9 +1628,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD015",
                             pd_Color = "",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1D3qVLRk7-M8PBVm2m0ZwOAgp4kKafvOD",
-                            pd_Img2 = "",
-                            pd_Img3 = "",
+                            pd_Img1 = "./img/Product15-gray.jpg",
+                            pd_Img2 = "./img/Product15-green.jpg",
+                            pd_Img3 = "./img/Product15-yellow.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1714,9 +1671,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD016",
                             pd_Color = "Black",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1WLz6y8DGD6FVXhV-bP_EdjwlnF1TXRUS",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1CcTPQpg8PlEyIX5iKI8kN4aHBsyl9FwU",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1bF29kqD_1ajfzX6kny82Q9SJw9rS8rt4",
+                            pd_Img1 = "./img/Product16-black.jpg",
+                            pd_Img2 = "./img/Product16-red.jpg",
+                            pd_Img3 = "./img/Product16-white.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1757,9 +1714,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD017",
                             pd_Color = "",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1-QV_gSFzdfy-qRTPLgbWwTD2plYwteNk",
-                            pd_Img2 = "",
-                            pd_Img3 = "",
+                            pd_Img1 = "./img/Product17-black.jpg",
+                            pd_Img2 = "./img/Product17-blue.jpg",
+                            pd_Img3 = "./img/Product17-gray.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1800,9 +1757,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD018",
                             pd_Color = "",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1BqGUuj-7G4MDgK-k38SML_wLuNmsxV4t",
-                            pd_Img2 = "",
-                            pd_Img3 = "",
+                            pd_Img1 = "./img/Product18-gray.jpg",
+                            pd_Img2 = "./img/Product18-pink.jpg",
+                            pd_Img3 = "./img/Product18-white.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1843,9 +1800,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD019",
                             pd_Color = "White",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1OcAaWtM9osemCa3B4TWG2USDDVnjRM7X",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1pjpGm7aE5kZ2pCaQDAGox00t9YK02uoc",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1mm5fCb2D1d9IJkSEQ_KId3e5K57T0bXO",
+                            pd_Img1 = "./img/Product19-blue.jpg",
+                            pd_Img2 = "./img/Product19-red.jpg",
+                            pd_Img3 = "./img/Product19-yellow.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1886,9 +1843,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD020",
                             pd_Color = "White",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1b4zWMxw2fSXDmTZsZfI5UGRW4ujKo1rN",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1JR9ts1KgrL0abi8u-3P60isz-alhrvo_",
-                            pd_Img3 = "",
+                            pd_Img1 = "./img/Product20-black.jpg",
+                            pd_Img2 = "./img/Product20-pink.jpg",
+                            pd_Img3 = "./img/Product20-white.jpg",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1929,9 +1886,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD021",
                             pd_Color = "Black",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1oL6TkiejPN42yqbWEv8xN-Ckah67S0xW",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1JdEfzri9AU-QBrlcVvVtA733KV95fo89",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=17OhvAH_HTfZFMvQYwolkdSwGS7To7s1f",
+                            pd_Img1 = "./img/Product21-blue.png",
+                            pd_Img2 = "./img/Product21-cream.png",
+                            pd_Img3 = "./img/Product21-gray.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1972,9 +1929,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD022",
                             pd_Color = "White",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1xi9IyKns4dFZD1Fyxpk4i0HkHdfkKU78",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1Ka9RyvnJxZRkeeDuM06N0MvfScwfDln8",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1IsdUB3ikPiRnKkZSKjdnG9vJS6zMESIX",
+                            pd_Img1 = "./img/Product22-blue.png",
+                            pd_Img2 = "./img/Product22-gray.png",
+                            pd_Img3 = "./img/Product22-green.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2015,9 +1972,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD023",
                             pd_Color = "Black",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1bDO25ILHq2cvHXn5S1fUzRhSejVCJ-8n",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1Jmco4XQmd82c7Lng1WJe66crfAYMOBjD",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1BEODWmyDSlBEnltTR4NLBJ3KXoW6RUvS",
+                            pd_Img1 = "./img/Product23-black.png",
+                            pd_Img2 = "./img/Product23-blue.png",
+                            pd_Img3 = "./img/Product23-redjpg.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2058,9 +2015,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD024",
                             pd_Color = "",
                             pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1WlhWQzqgCVnlI9XyNtRD8iJ0O-2Oa25L",
-                            pd_Img2 = "",
-                            pd_Img3 = "",
+                            pd_Img1 = "./img/Product24-black.png",
+                            pd_Img2 = "./img/Product24-blue.png",
+                            pd_Img3 = "./img/Product24-brown.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2101,10 +2058,10 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD025",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1uBO0fPafsG1P5vmtwvgkOrcypX6H4rDY",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1BlxKN-HjkTHzIQW8AwUpKCSGdf22cJXj",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1gxUlGv7LqXuQX9uyhmbL6DW3q9QkjEqv",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1izxagkrKqxpOMU7SsiGLi3agg8OvuQGX",
+                            pd_Img1 = "./img/Product25-black.png",
+                            pd_Img2 = "./img/Product25-blue.png",
+                            pd_Img3 = "./img/Product25-cream.png",
+                            pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
                             pd_Name = "ADLV BABY FACE SHORT SLEEVE T-SHIRT BLACK DONUTS 1",
@@ -2144,10 +2101,10 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD026",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1w8KaiMGTvWcxpJMfalYcFEN_yG6Awk-9",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1u0R9N991JjD80tnr8ASmRiZ8kt8_D2T_",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1yLUSschFEI0auLqrZ8qnCkO8L534TDAp",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1-E6bVLQEKaq2fkR2dd96v8mWtFq_tzfi",
+                            pd_Img1 = "./img/Product26-black.png",
+                            pd_Img2 = "./img/Product26-blue.png",
+                            pd_Img3 = "./img/Product26-cream.png",
+                            pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
                             pd_Name = "ADLV BABY FACE SHORT SLEEVE T-SHIRT BLACK ASTRONAUT",
@@ -2187,10 +2144,10 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD027",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1c8sJrSezckX9Vm0p387ikGFsU1Tuv87r",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1yMULMDGga8_c2lBh6j2KrMt9VN9N90hV",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1GUQbvk2Pa1eS3tKaxCuM_4Ow-hKPxE_w",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1GvhlYo8s5HMGZ0flnPnsVJ6ZRu4nEAkb",
+                            pd_Img1 = "./img/Product27-black.png",
+                            pd_Img2 = "./img/Product27-gray.png",
+                            pd_Img3 = "./img/Product27-purple.png",
+                            pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
                             pd_Name = "ADLV ASTRONAUT TRIO SHORT SLEEVE T-SHIRT - BLACK",
@@ -2230,10 +2187,10 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD028",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1stJaTkCT3ZXMWE_Ph_d5TLf97pmMhIF6",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1MyfOcOXt3aCd3Qv16_grwbVKYvKQf-ps",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1GJVPqfAWR-PiI_Eg5A01QxSfXYubq41F",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1mtlkFQFl32HILbTC5snWntWsOcTMiPji",
+                            pd_Img1 = "./img/Product28-black.png",
+                            pd_Img2 = "./img/Product28-gray.png",
+                            pd_Img3 = "./img/Product28-purple.png",
+                            pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
                             pd_Name = "ADLV RAINBOW CLOUD LOGO SHORT SLEEVE T-SHIRT BLACK",
@@ -2273,10 +2230,10 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD029",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1DcgjPlR0vCPGXVp_AZYZdaEobjRznKOu",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1NDYqoXAwGNqTZPfFjshzXhQ6SohCIMg4",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=11oUK_-D0E3voLuD37_t_PmqSGUCAL23h",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1eaUpzTFbUzs3BsTRbySKqxN1KiVhtgkT",
+                            pd_Img1 = "./img/Product29-blue.png",
+                            pd_Img2 = "./img/Product29-gray.png",
+                            pd_Img3 = "./img/Product29-green.png",
+                            pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
                             pd_Name = "ADLV TEDDY BEAR SHORT SLEEVE T-SHIRT BLACK",
@@ -2316,10 +2273,10 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD030",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1rLOrHjbc_a6lW5Q6MKx9uCNN6SJelkQf",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1GfDcGW2aeOjsGIUkojoeCxun4G_mVRZu",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1vcfWHY2hXs4rlG_OBcp2FkJrMi9jWL3r",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1eAjIfM9bS2tqUnouKq1sle1bGRsBZWpc",
+                            pd_Img1 = "./img/Product30-black.png",
+                            pd_Img2 = "./img/Product30-brown.png",
+                            pd_Img3 = "./img/Product30-brown.png",
+                            pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
                             pd_Name = "ADLV BABY FACE SHORT SLEEVE T-SHIRT BLACK RABBIT",
@@ -2351,354 +2308,10 @@ namespace Web_Shoes.Migrations
                             pd_Style = "",
                             pd_Technologies = "1",
                             pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 31,
-                            pd_Brand = "MCM",
-                            pd_Code = "PD031",
-                            pd_Color = "Brown",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1cus6PlFMcV6Qpye0-Ff0TLabYoWnJIht",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1SpXL_PswMgBR8YMhIYCnPp_wQ6LPdXAC",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1jtfRGI7aS0DA7nWQdyPmJvFz3tE52G4o",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1p-rhtAO9y8x54khE-S4xyrjCM9flxtwM",
-                            pd_Material = "1",
-                            pd_MenuFacturer = "1",
-                            pd_Name = "MCM BROWN CROSSBODY BAG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 100,
-                            pd_Rate = 5,
-                            pd_ReducePrice = 10,
-                            pd_ShortDescription = "",
-                            pd_Size = "",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "Crossbody bag",
-                            pd_Technologies = "1",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 32,
-                            pd_Brand = "Prada",
-                            pd_Code = "PD032",
-                            pd_Color = "Black",
-                            pd_Description = "The Prada Cleo bag with sophisticated allure reinterprets an iconic design of the brand from the 1990's. Sleek curved lines emphasized by the particular construction rounded on the bottom and sides give this hobo bag a soft, light look. Brushed leather, a modern and versatile material that is distinctive in Prada collections, is ideal for creating always new combinations and contrasts. The enamel triangle logo decorates the silhouette.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1fhdHU_V5FYVQ7i5ZefEktABB5JqzL01H",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=12bTJvLOAH-_rC0NhjZc1NU4S7sYiFJof",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1XtXVuJG4FIKd-0UU-J288yUQHH-cxMaO",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1-r_5xt9-sQSZYr78VfwhL9Tbqwemlg3J",
-                            pd_Material = "1",
-                            pd_MenuFacturer = "1",
-                            pd_Name = "Prada Cleo Brushed Leather Shoulder Bag",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 100,
-                            pd_Rate = 5,
-                            pd_ReducePrice = 10,
-                            pd_ShortDescription = "",
-                            pd_Size = "",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "Bag",
-                            pd_Technologies = "1",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 33,
-                            pd_Brand = "BURBERRY",
-                            pd_Code = "PD033",
-                            pd_Color = "",
-                            pd_Description = "An archive-inspired tote in canvas and topstitched leather, featuring a front pocket stamped with our Horseferry print. Carry by the reinforced top handles or detachable shoulder strap.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1FivY1-HqVnegDBV8kcv7wgdHnU4AkWem",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=19RsYsZymH7kMSH-71UzpleonRtyaiw_J",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1gUUl3WOTr_C5u5V0rcJdNCL6imqtbg45",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1YoUX47gEGBKEkuO9_ACjmdhF1rYvi0c9",
-                            pd_Material = "1",
-                            pd_MenuFacturer = "1",
-                            pd_Name = "BURBERRY MINI LOGO GRAPHIC CANVAS AND LEATHER POCKET BAG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 100,
-                            pd_Rate = 5,
-                            pd_ReducePrice = 10,
-                            pd_ShortDescription = "",
-                            pd_Size = "",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "",
-                            pd_Technologies = "1",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 34,
-                            pd_Brand = "MCM",
-                            pd_Code = "PD034",
-                            pd_Color = "Brown",
-                            pd_Description = "Infused with the heritage emblem, the front pocket of the Patricia backpack is protected with the famous Laurel Buckle. The detachable leather strap allows you to turn the x-mini accessory into an elegant handbag or crossbody bag.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1TWAmegqZrDSIBfFP5m-g5F2_Rj3NsS9I",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1FF5-HdgiPEqmYMpGGoO-C_MasTRqVLCi",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1S8oVliKLqeafD2QLbiRcKrrpf6kA5Hbx",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1zL07pOXYCk80y4n-wGIHqm6y7IsuGbhn",
-                            pd_Material = "1",
-                            pd_MenuFacturer = "1",
-                            pd_Name = "MCM MINI COGNAC PATRICIA VISETOS CROSSBODY | MWKBSPA01CO001",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 100,
-                            pd_Rate = 5,
-                            pd_ReducePrice = 10,
-                            pd_ShortDescription = "",
-                            pd_Size = "",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "Bag",
-                            pd_Technologies = "1",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 35,
-                            pd_Brand = "Gucci",
-                            pd_Code = "PD035",
-                            pd_Color = "White",
-                            pd_Description = "Combine both style and practicality with this Gucci Fake logo bum bag. Constructed with an adjustable fabric buckle waistband, this compact has a zip compartment and is finished with the brand's signature imitation logo details embroidered on the front.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=12niwGccl8KfuoLkrvDEpsTZ34otlOLc-",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1uqem4eQawaG2OGwvBHN20_gt3yMEniCR",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1rTroGFVd7WnKRuPVCy4dZrOsTSBMA1rI",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1Qtq4NUk_dtuEOO7zDfvU6RDmb_-1Si-y",
-                            pd_Material = "1",
-                            pd_MenuFacturer = "1",
-                            pd_Name = "GUCCI BELT BAG FAKE LOGO WHITE",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 100,
-                            pd_Rate = 5,
-                            pd_ReducePrice = 10,
-                            pd_ShortDescription = "",
-                            pd_Size = "",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "",
-                            pd_Technologies = "1",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 36,
-                            pd_Brand = "Burberry",
-                            pd_Code = "PD036",
-                            pd_Color = "",
-                            pd_Description = "What do your phone, your wallet, an old lipstick and some emergency snacks have in common? They all belong in this crossbody bag from Burberry - with a Horseferry print to the front and a spacious body, this bag fits all your essentials and more. We've got you covered. ",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=11wRP1ACgpE4kP1xD9ypWMnjQd1F6aTqX",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=14_iUyL97JjXYgWADSmlRs-J0VVvVWLL1",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1dAXTIpBYyksPxIi3bMlH8fTKYALTv6Sv",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1KzjLV_HAKknlRzCg3CHKb69aweVUorv5",
-                            pd_Material = "1",
-                            pd_MenuFacturer = "1",
-                            pd_Name = "BURBERRY BAG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 100,
-                            pd_Rate = 5,
-                            pd_ReducePrice = 10,
-                            pd_ShortDescription = "",
-                            pd_Size = "",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "Bag",
-                            pd_Technologies = "1",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 37,
-                            pd_Brand = "MARC JACOBS",
-                            pd_Code = "PD037",
-                            pd_Color = "",
-                            pd_Description = "Marc Jacobs’ iconic Snapshot bag has been reimagined with a vibrant tie-dye print and a matching cross-body strap. Crafted from saffiano leather, the compact style has two zipped sections and slip pockets to keep your daily essentials organised. Silver-tone metal hardware and co-ordinating ‘Double J’ hardware completes the bold style.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=1N4UQ_qU7D0jwof4cPG83XujEdGDh7s-p",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1gZFceh7UvwzamS0f-T997J00rvjnDCC_",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1rxWh70yUyRl4W-1GahDplUxO50FOaWk5",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1s0noMO6Z2IFL8jN7JfEgw54pBAqavXjn",
-                            pd_Material = "1",
-                            pd_MenuFacturer = "1",
-                            pd_Name = "Marc Jacobs Tie Dye Snapshot Cross Body Bag - Pink Multi",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 100,
-                            pd_Rate = 5,
-                            pd_ReducePrice = 10,
-                            pd_ShortDescription = "",
-                            pd_Size = "",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "Bag",
-                            pd_Technologies = "1",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 38,
-                            pd_Brand = "MARC JACOBS",
-                            pd_Code = "PD038",
-                            pd_Color = "",
-                            pd_Description = "Marc Jacobs’ iconic Snapshot bag has been reimagined with a vibrant tie-dye print and a matching cross-body strap. Crafted from saffiano leather, the compact style has two zipped sections and slip pockets to keep your daily essentials organised. Silver-tone metal hardware and co-ordinating ‘Double J’ hardware completes the bold style.",
-                            pd_Img1 = "https://drive.google.com/uc?export=download&id=17Eq6odE_bU2_vEaSyLzxKmIzlSAvfXe2",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1v1RAixoCfJhNItZBYDLVCypdKY5qbhd0",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1jycki4ONFJrzcgEuBUX6O3ZR_jIVJ9P8",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1F56uErxN3w3BK51w4xe-aODnio_dna3l",
-                            pd_Material = "1",
-                            pd_MenuFacturer = "1",
-                            pd_Name = "Marc Jacobs Tie Dye Snapshot Cross Body Bag - Blue Multi",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 100,
-                            pd_Rate = 5,
-                            pd_ReducePrice = 10,
-                            pd_ShortDescription = "",
-                            pd_Size = "",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "Bag",
-                            pd_Technologies = "1",
-                            pd_WaitForConfirmation = false
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductsInCategories", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductsInCategories", b =>
                 {
                     b.Property<int>("pic_productId")
                         .HasColumnType("int");
@@ -2713,6 +2326,51 @@ namespace Web_Shoes.Migrations
                     b.ToTable("ProductsInCategories");
 
                     b.HasData(
+                        new
+                        {
+                            pic_productId = 12,
+                            pic_CategoriesId = 1
+                        },
+                        new
+                        {
+                            pic_productId = 13,
+                            pic_CategoriesId = 1
+                        },
+                        new
+                        {
+                            pic_productId = 14,
+                            pic_CategoriesId = 1
+                        },
+                        new
+                        {
+                            pic_productId = 15,
+                            pic_CategoriesId = 1
+                        },
+                        new
+                        {
+                            pic_productId = 16,
+                            pic_CategoriesId = 1
+                        },
+                        new
+                        {
+                            pic_productId = 17,
+                            pic_CategoriesId = 1
+                        },
+                        new
+                        {
+                            pic_productId = 18,
+                            pic_CategoriesId = 1
+                        },
+                        new
+                        {
+                            pic_productId = 19,
+                            pic_CategoriesId = 1
+                        },
+                        new
+                        {
+                            pic_productId = 20,
+                            pic_CategoriesId = 1
+                        },
                         new
                         {
                             pic_productId = 1,
@@ -2765,212 +2423,57 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            pic_productId = 11,
-                            pic_CategoriesId = 2
-                        },
-                        new
-                        {
-                            pic_productId = 12,
-                            pic_CategoriesId = 2
-                        },
-                        new
-                        {
-                            pic_productId = 13,
-                            pic_CategoriesId = 2
-                        },
-                        new
-                        {
-                            pic_productId = 14,
-                            pic_CategoriesId = 2
-                        },
-                        new
-                        {
-                            pic_productId = 15,
-                            pic_CategoriesId = 2
-                        },
-                        new
-                        {
-                            pic_productId = 16,
-                            pic_CategoriesId = 1
-                        },
-                        new
-                        {
-                            pic_productId = 17,
-                            pic_CategoriesId = 1
-                        },
-                        new
-                        {
-                            pic_productId = 18,
-                            pic_CategoriesId = 1
-                        },
-                        new
-                        {
-                            pic_productId = 19,
-                            pic_CategoriesId = 1
-                        },
-                        new
-                        {
-                            pic_productId = 20,
-                            pic_CategoriesId = 1
-                        },
-                        new
-                        {
                             pic_productId = 21,
-                            pic_CategoriesId = 1
+                            pic_CategoriesId = 5
                         },
                         new
                         {
                             pic_productId = 22,
-                            pic_CategoriesId = 1
+                            pic_CategoriesId = 5
                         },
                         new
                         {
                             pic_productId = 23,
-                            pic_CategoriesId = 1
+                            pic_CategoriesId = 5
                         },
                         new
                         {
                             pic_productId = 24,
-                            pic_CategoriesId = 1
+                            pic_CategoriesId = 5
                         },
                         new
                         {
                             pic_productId = 25,
-                            pic_CategoriesId = 1
+                            pic_CategoriesId = 5
                         },
                         new
                         {
                             pic_productId = 26,
-                            pic_CategoriesId = 1
+                            pic_CategoriesId = 5
                         },
                         new
                         {
                             pic_productId = 27,
-                            pic_CategoriesId = 1
+                            pic_CategoriesId = 5
+                        },
+                        new
+                        {
+                            pic_productId = 28,
+                            pic_CategoriesId = 5
                         },
                         new
                         {
                             pic_productId = 29,
-                            pic_CategoriesId = 1
+                            pic_CategoriesId = 5
                         },
                         new
                         {
                             pic_productId = 30,
-                            pic_CategoriesId = 1
-                        },
-                        new
-                        {
-                            pic_productId = 31,
                             pic_CategoriesId = 5
-                        },
-                        new
-                        {
-                            pic_productId = 32,
-                            pic_CategoriesId = 5
-                        },
-                        new
-                        {
-                            pic_productId = 33,
-                            pic_CategoriesId = 5
-                        },
-                        new
-                        {
-                            pic_productId = 34,
-                            pic_CategoriesId = 5
-                        },
-                        new
-                        {
-                            pic_productId = 35,
-                            pic_CategoriesId = 5
-                        },
-                        new
-                        {
-                            pic_productId = 36,
-                            pic_CategoriesId = 5
-                        },
-                        new
-                        {
-                            pic_productId = 37,
-                            pic_CategoriesId = 5
-                        },
-                        new
-                        {
-                            pic_productId = 38,
-                            pic_CategoriesId = 5
-                        },
-                        new
-                        {
-                            pic_productId = 3,
-                            pic_CategoriesId = 3
-                        },
-                        new
-                        {
-                            pic_productId = 31,
-                            pic_CategoriesId = 3
-                        },
-                        new
-                        {
-                            pic_productId = 32,
-                            pic_CategoriesId = 3
-                        },
-                        new
-                        {
-                            pic_productId = 24,
-                            pic_CategoriesId = 3
-                        },
-                        new
-                        {
-                            pic_productId = 34,
-                            pic_CategoriesId = 4
-                        },
-                        new
-                        {
-                            pic_productId = 29,
-                            pic_CategoriesId = 3
-                        },
-                        new
-                        {
-                            pic_productId = 26,
-                            pic_CategoriesId = 3
-                        },
-                        new
-                        {
-                            pic_productId = 12,
-                            pic_CategoriesId = 3
-                        },
-                        new
-                        {
-                            pic_productId = 13,
-                            pic_CategoriesId = 4
-                        },
-                        new
-                        {
-                            pic_productId = 16,
-                            pic_CategoriesId = 4
-                        },
-                        new
-                        {
-                            pic_productId = 6,
-                            pic_CategoriesId = 4
-                        },
-                        new
-                        {
-                            pic_productId = 29,
-                            pic_CategoriesId = 4
-                        },
-                        new
-                        {
-                            pic_productId = 19,
-                            pic_CategoriesId = 3
-                        },
-                        new
-                        {
-                            pic_productId = 37,
-                            pic_CategoriesId = 4
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ReviewInproduct", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ReviewInproduct", b =>
                 {
                     b.Property<int>("rip_ProductId")
                         .HasColumnType("int");
@@ -3002,7 +2505,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Reviews", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Reviews", b =>
                 {
                     b.Property<string>("review_id")
                         .HasColumnType("nvarchar(450)");
@@ -3058,7 +2561,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Shipping", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Shipping", b =>
                 {
                     b.Property<string>("ship_Id")
                         .HasColumnType("nvarchar(450)");
@@ -3082,7 +2585,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SliderHome", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SliderHome", b =>
                 {
                     b.Property<string>("SliderId")
                         .HasColumnType("nvarchar(450)");
@@ -3112,7 +2615,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            SliderId = "97a20f27-7db0-4d4b-b6b6-b82547fc9e4a",
+                            SliderId = "5152c95f-65ac-4ed4-b8ec-3baa5abe06c9",
                             SliderName = "SliderHome1",
                             SliderUrl1 = "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM",
                             SliderUrl2 = "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv",
@@ -3122,7 +2625,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReview", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SubReview", b =>
                 {
                     b.Property<string>("subReview_Id")
                         .HasColumnType("nvarchar(450)");
@@ -3151,7 +2654,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "7b57466b-5fe6-407f-a910-87ec3310e7b8",
+                            subReview_Id = "8f944b30-f8eb-40cb-ba2f-bec8d917f98e",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -3160,7 +2663,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "f9319a44-2869-4711-bd4b-c8d395c27b14",
+                            subReview_Id = "483c0df7-cf07-4e90-8f27-57bf12a09ec1",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -3169,7 +2672,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "e231e30b-0fdd-416a-8557-f84eae0d6cbe",
+                            subReview_Id = "cc28e410-250d-437d-b011-02c2cf030617",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -3178,7 +2681,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReviewInReview", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SubReviewInReview", b =>
                 {
                     b.Property<string>("SRiR_ReviewId")
                         .HasColumnType("nvarchar(450)");
@@ -3196,21 +2699,21 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "7b57466b-5fe6-407f-a910-87ec3310e7b8"
+                            SRiR_SubReviewId = "8f944b30-f8eb-40cb-ba2f-bec8d917f98e"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "f9319a44-2869-4711-bd4b-c8d395c27b14"
+                            SRiR_SubReviewId = "483c0df7-cf07-4e90-8f27-57bf12a09ec1"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "e231e30b-0fdd-416a-8557-f84eae0d6cbe"
+                            SRiR_SubReviewId = "cc28e410-250d-437d-b011-02c2cf030617"
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Subscribers", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Subscribers", b =>
                 {
                     b.Property<string>("Subs_Id")
                         .HasColumnType("nvarchar(450)");
@@ -3226,7 +2729,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("Subsriber");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Wishlists", b =>
                 {
                     b.Property<int>("wl_Id")
                         .ValueGeneratedOnAdd()
@@ -3250,7 +2753,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Models.UserInRoleModel", b =>
+            modelBuilder.Entity("Web_Fashion.Models.UserInRoleModel", b =>
                 {
                     b.Property<string>("id")
                         .HasColumnType("nvarchar(450)");
@@ -3275,7 +2778,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("UserInRoleModel");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.AppRole", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.AppRole", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityRole");
 
@@ -3288,21 +2791,22 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "01e73786-1b33-4a72-b4b1-c78b2b264fac",
-                            Name = "staff",
+                            ConcurrencyStamp = "014b36f2-4179-47fb-b675-8263de58a8fa",
+                            Name = "Staff",
+                            NormalizedName = "STAFF",
                             Description = "Staff"
                         },
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "f078330b-3d19-4b00-881c-5cbd899d19f3",
-                            Name = "admin",
+                            ConcurrencyStamp = "a022c0a6-a896-4f48-9098-64e76fcc674a",
+                            Name = "Admin",
                             NormalizedName = "ADMIN",
-                            Description = "admin"
+                            Description = "Admin"
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.AppUser", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.AppUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -3346,15 +2850,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f17dab9e-7fbf-427d-852b-3e57d7c94dd3",
+                            ConcurrencyStamp = "13bc45b7-26bd-4730-917a-da2b22a25954",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIem2GkUxwNnid9jj1zeERTwoxh/VZXoPzNlGwea7V6i8n5gCvmVZMiB8fc4zkTiVw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDzI0R7e+Ym6B2iWbIgwxz/GGNmejCW7jelQN/TY5k0TKoqNf5BRvzaolGcfEvDkwg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a355b6be-b38d-4b45-be51-034614f707a7",
+                            SecurityStamp = "1f0cbd52-b820-4557-af3e-f21d97a4fdf1",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -3373,15 +2877,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "db45755d-4535-46c8-9672-cbb64a5cc021",
+                            ConcurrencyStamp = "0a21d752-6c0e-438b-a75c-d7b637b42feb",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJu1BiGI4/VoI9Qo/waoz4iBK8Q7aOru2+M1uloxWHdLEQJITqVu/Jb4YFGLS1bPeA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBNKw1fxsfNb7zkJeveXsBNA3YdO6HzYnIFTNQop77ZSXYRHPJ8ItX3CxK+FC8J0vA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f69734b4-30cf-496f-a3ba-7d50a1cd1caf",
+                            SecurityStamp = "88a20c00-0d72-4a83-9d89-2402055a4e99",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -3441,42 +2945,42 @@ namespace Web_Shoes.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Bills", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Bills", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserB")
+                    b.HasOne("Web_Fashion.Entity.AppUser", "AppUserB")
                         .WithMany("BillsAU")
                         .HasForeignKey("bill_UserId");
 
                     b.Navigation("AppUserB");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Cart", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Cart", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserC")
+                    b.HasOne("Web_Fashion.Entity.AppUser", "AppUserC")
                         .WithMany("CartU")
                         .HasForeignKey("cart_UserID");
 
                     b.Navigation("AppUserC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CartsDevice", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.CartsDevice", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Device", "DeviceCD")
+                    b.HasOne("Web_Fashion.Entity.Device", "DeviceCD")
                         .WithMany("CartsDeviceD")
                         .HasForeignKey("cartd_DeviceId");
 
                     b.Navigation("DeviceCD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCart", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInCart", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Cart", "CartPICart")
+                    b.HasOne("Web_Fashion.Entity.Cart", "CartPICart")
                         .WithMany("ProductInCartC")
                         .HasForeignKey("pic_CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPICart")
+                    b.HasOne("Web_Fashion.Entity.Products", "ProductsPICart")
                         .WithMany("ProductInCartP")
                         .HasForeignKey("pic_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3487,15 +2991,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ProductsPICart");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCartDevices", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInCartDevices", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.CartsDevice", "CartsDevicePICD")
+                    b.HasOne("Web_Fashion.Entity.CartsDevice", "CartsDevicePICD")
                         .WithMany("ProductInCartDevicesCD")
                         .HasForeignKey("picd_CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPICD")
+                    b.HasOne("Web_Fashion.Entity.Products", "ProductsPICD")
                         .WithMany("ProductInCartDevicesP")
                         .HasForeignKey("picd_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3506,15 +3010,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ProductsPICD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInWishlist", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInWishlist", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPIW")
+                    b.HasOne("Web_Fashion.Entity.Products", "ProductsPIW")
                         .WithMany("ProductInWishlistP")
                         .HasForeignKey("piw_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Wishlists", "WishlistsPIW")
+                    b.HasOne("Web_Fashion.Entity.Wishlists", "WishlistsPIW")
                         .WithMany("ProductInWishlistW")
                         .HasForeignKey("piw_WishlistId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3525,15 +3029,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("WishlistsPIW");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductsInCategories", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductsInCategories", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Categories", "CategoriesPIC")
+                    b.HasOne("Web_Fashion.Entity.Categories", "CategoriesPIC")
                         .WithMany("ProductsInCategoriesC")
                         .HasForeignKey("pic_CategoriesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPIC")
+                    b.HasOne("Web_Fashion.Entity.Products", "ProductsPIC")
                         .WithMany("ProductsInCategoriesP")
                         .HasForeignKey("pic_productId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3544,15 +3048,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ProductsPIC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ReviewInproduct", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ReviewInproduct", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsRIP")
+                    b.HasOne("Web_Fashion.Entity.Products", "ProductsRIP")
                         .WithMany("ReviewInproductP")
                         .HasForeignKey("rip_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Reviews", "ReviewsRIP")
+                    b.HasOne("Web_Fashion.Entity.Reviews", "ReviewsRIP")
                         .WithMany("ReviewInproductR")
                         .HasForeignKey("rip_ReviewId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3563,33 +3067,33 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ReviewsRIP");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Reviews", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Reviews", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserR")
+                    b.HasOne("Web_Fashion.Entity.AppUser", "AppUserR")
                         .WithMany("ReviewsU")
                         .HasForeignKey("review_UserId");
 
                     b.Navigation("AppUserR");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReview", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SubReview", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserSR")
+                    b.HasOne("Web_Fashion.Entity.AppUser", "AppUserSR")
                         .WithMany("SubReviewSR")
                         .HasForeignKey("subReview_UserId");
 
                     b.Navigation("AppUserSR");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReviewInReview", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SubReviewInReview", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Reviews", "Reviews")
+                    b.HasOne("Web_Fashion.Entity.Reviews", "Reviews")
                         .WithMany("SubReviewInReview")
                         .HasForeignKey("SRiR_ReviewId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.SubReview", "SubReview")
+                    b.HasOne("Web_Fashion.Entity.SubReview", "SubReview")
                         .WithMany("SubReviewInReview")
                         .HasForeignKey("SRiR_SubReviewId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3600,36 +3104,36 @@ namespace Web_Shoes.Migrations
                     b.Navigation("SubReview");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Wishlists", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "UserW")
+                    b.HasOne("Web_Fashion.Entity.AppUser", "UserW")
                         .WithMany("WishlistsU")
                         .HasForeignKey("wl_UserId");
 
                     b.Navigation("UserW");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Cart", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Cart", b =>
                 {
                     b.Navigation("ProductInCartC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CartsDevice", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.CartsDevice", b =>
                 {
                     b.Navigation("ProductInCartDevicesCD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Categories", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Categories", b =>
                 {
                     b.Navigation("ProductsInCategoriesC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Device", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Device", b =>
                 {
                     b.Navigation("CartsDeviceD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Products", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Products", b =>
                 {
                     b.Navigation("ProductInCartDevicesP");
 
@@ -3642,24 +3146,24 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ReviewInproductP");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Reviews", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Reviews", b =>
                 {
                     b.Navigation("ReviewInproductR");
 
                     b.Navigation("SubReviewInReview");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReview", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SubReview", b =>
                 {
                     b.Navigation("SubReviewInReview");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Wishlists", b =>
                 {
                     b.Navigation("ProductInWishlistW");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.AppUser", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.AppUser", b =>
                 {
                     b.Navigation("BillsAU");
 

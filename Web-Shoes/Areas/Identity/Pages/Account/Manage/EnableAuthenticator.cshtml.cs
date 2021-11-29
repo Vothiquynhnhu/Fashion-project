@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace Web_Shoes.Areas.Identity.Pages.Account.Manage
+namespace Web_Fashion.Areas.Identity.Pages.Account.Manage
 {
     public class EnableAuthenticatorModel : PageModel
     {
@@ -148,7 +148,7 @@ namespace Web_Shoes.Areas.Identity.Pages.Account.Manage
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("Web_Shoes"),
+                _urlEncoder.Encode("Web_Fashion"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

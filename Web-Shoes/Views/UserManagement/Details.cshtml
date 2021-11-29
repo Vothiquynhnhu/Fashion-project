@@ -1,4 +1,4 @@
-﻿@model Web_Shoes.Entity.AppUser
+﻿@model Web_Fashion.Models.UserListModel
 
 @{
     ViewData["Title"] = "Details";
@@ -7,12 +7,7 @@
 
 <div id="page-wrapper">
     <div id="page-inner">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>Users:</h2>
-            </div>
-        </div>
-        <!-- /. ROW  -->
+
         <hr />
         <div class="row">
             <div class="col-lg-12 ">
@@ -22,27 +17,35 @@
                     <hr />
                     <dl class="row">
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.FirstName)
+                            @Html.DisplayNameFor(model => model.User_FirstName)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.FirstName)
+                            @Html.DisplayFor(model => model.User_FirstName)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.UserName)
+                            @Html.DisplayNameFor(model => model.User_UserName)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.UserName)
+                            @Html.DisplayFor(model => model.User_UserName)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Email)
+                            @Html.DisplayNameFor(model => model.User_Email)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Email)
+                            @Html.DisplayFor(model => model.User_Email)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.User_Role)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.User_Role)
                         </dd>
                     </dl>
+
+                    
                 </div>
                 <div>
-                    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                    <a asp-action="Edit" asp-route-id="@Model.User_Id">Edit</a> |
                     <a asp-action="Index">Back to List</a>
                 </div>
             </div>

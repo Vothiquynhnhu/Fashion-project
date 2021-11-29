@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace Web_Shoes.Entity
+namespace Web_Fashion.Entity
 {
     public class AppUser :IdentityUser
     {

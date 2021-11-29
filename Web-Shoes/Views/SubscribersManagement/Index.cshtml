@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Web_Shoes.Entity.Subscribers>
+﻿@model IEnumerable<Web_Fashion.Entity.Subscribers>
 
 @{
     ViewData["Title"] = "Index";
@@ -22,9 +22,6 @@
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.Subs_Id)
-                        </th>
-                        <th>
                             @Html.DisplayNameFor(model => model.Subs_Mail)
                         </th>
                         <th>
@@ -37,9 +34,6 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Subs_Id)
-                            </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Subs_Mail)
                             </td>
