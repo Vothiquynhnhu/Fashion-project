@@ -746,7 +746,7 @@ namespace Web_Shoes.Migrations
             migrationBuilder.InsertData(
                 table: "CategoriesHome",
                 columns: new[] { "CategoriesHomeId", "CategoriesHomeName", "CategoriesHomeUrl1", "CategoriesHomeUrl2", "CategoriesHomeUrl3", "CategoriesHomeUrl4", "CategoriesHomeUrl5", "CategoriesHomeUrl6", "CategoriesHomeUrl7", "CategoriesHomeUrl8" },
-                values: new object[] { "41cbeaad-7691-4e4b-bcf5-c8b426e8868a", "CategoriesHome1", "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f", "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K", "https://drive.google.com/uc?export=download&id=1Gm-TZ2nqI5eUAU0O45cgeay38AS0OxiI", "https://drive.google.com/uc?export=download&id=1g4QK9WF2e9aXHpJCUXK0-1H6j6kC7r5L", "https://drive.google.com/uc?export=download&id=14ybZRAMDRY_OhMcCXXzVtjeyHhnaKn5l", "https://drive.google.com/uc?export=download&id=1vOIH3t8uhGxNKF7w76kViqlmlQH1-6YU", "https://drive.google.com/uc?export=download&id=18tu3dYEqUmKx5bJL_hjSN467GO3cbaQE", "https://drive.google.com/uc?export=download&id=1EEMOiZF6E5sKIFGntEySd0SVvZmvFe78" });
+                values: new object[] { "deba13ed-e15a-4334-bf66-54fb6d41c9d0", "CategoriesHome1", "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f", "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K", "https://drive.google.com/uc?export=download&id=1Gm-TZ2nqI5eUAU0O45cgeay38AS0OxiI", "https://drive.google.com/uc?export=download&id=1g4QK9WF2e9aXHpJCUXK0-1H6j6kC7r5L", "https://drive.google.com/uc?export=download&id=14ybZRAMDRY_OhMcCXXzVtjeyHhnaKn5l", "https://drive.google.com/uc?export=download&id=1vOIH3t8uhGxNKF7w76kViqlmlQH1-6YU", "https://drive.google.com/uc?export=download&id=18tu3dYEqUmKx5bJL_hjSN467GO3cbaQE", "https://drive.google.com/uc?export=download&id=1EEMOiZF6E5sKIFGntEySd0SVvZmvFe78" });
 
             migrationBuilder.InsertData(
                 table: "ContactSystems",
@@ -763,8 +763,8 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "couponId", "couponAmount", "couponCode", "couponPrice" },
                 values: new object[,]
                 {
-                    { "c671ef43-ad41-4fcc-aed3-8e5be401878e", 25, "code50", 50 },
-                    { "0eda7abf-756c-4038-9f12-e1aeb64f2bd7", 20, "code10", 10 }
+                    { "8172dc54-f1aa-48fc-af1d-593c4e8c15b3", 25, "code50", 50 },
+                    { "dc078470-a71a-4302-933b-5bcfd6482e27", 20, "code10", 10 }
                 });
 
             migrationBuilder.InsertData(
@@ -772,48 +772,48 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "CustomerHomeId", "CustomerHomeName", "CustomerHome_CDesription", "CustomerHome_CImg", "CustomerHome_CName", "CustomerHome_CStar", "CustomerHome_CWork" },
                 values: new object[,]
                 {
-                    { "a3f8be43-48a8-4a4d-b764-911dcbc915a7", "FeatureHome2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem", "https://drive.google.com/uc?export=download&id=12xlH3LvPKtXEUTRFdETM7SGvCnjU9S-c", "Customer 2", 5, "Profession" },
-                    { "48ab7e7d-0df7-427d-bde3-7bdff15c3a5d", "FeatureHome1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem", "https://drive.google.com/uc?export=download&id=12BEbKPhMNT6Gl31Wgzo1XNA6kf5zCtYm", "Customer 1", 5, "Profession" },
-                    { "5b0f6b6d-1241-4422-95ac-f51c41a61f95", "FeatureHome3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem", "https://drive.google.com/uc?export=download&id=1-VztC3V4O7HyIdetuemHMO61M5up94uD", "Customer 3", 5, "Profession" }
+                    { "2c4f9023-e39b-43d3-ac44-2a1389343064", "FeatureHome3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem", "https://drive.google.com/uc?export=download&id=1-VztC3V4O7HyIdetuemHMO61M5up94uD", "Customer 3", 5, "Profession" },
+                    { "8136059d-205d-44a5-ba23-7597402cf97a", "FeatureHome2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem", "https://drive.google.com/uc?export=download&id=12xlH3LvPKtXEUTRFdETM7SGvCnjU9S-c", "Customer 2", 5, "Profession" },
+                    { "c3c58cd7-547a-474c-aec4-7d658fed72ec", "FeatureHome1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem", "https://drive.google.com/uc?export=download&id=12BEbKPhMNT6Gl31Wgzo1XNA6kf5zCtYm", "Customer 1", 5, "Profession" }
                 });
 
             migrationBuilder.InsertData(
                 table: "FeatureHome",
                 columns: new[] { "FeatureHomeId", "FeatureHomeDesription1", "FeatureHomeDesription2", "FeatureHomeDesription3", "FeatureHomeDesription4", "FeatureHomeName", "FeatureHomeTitle1", "FeatureHomeTitle2", "FeatureHomeTitle3", "FeatureHomeTitle4" },
-                values: new object[] { "0ff5c6a1-4d07-4fc2-a329-660739153632", "Lorem ipsum dolor sit amet consectetur elit", "Lorem ipsum dolor sit amet consectetur elit", "Lorem ipsum dolor sit amet consectetur elit", "Lorem ipsum dolor sit amet consectetur elit", "FeatureHome1", "Secure Payment", "Worldwide Delivery", "90 Days Return", "24/7 Support" });
+                values: new object[] { "fadc3f14-bd23-4714-9c47-9947de699e3d", "Lorem ipsum dolor sit amet consectetur elit", "Lorem ipsum dolor sit amet consectetur elit", "Lorem ipsum dolor sit amet consectetur elit", "Lorem ipsum dolor sit amet consectetur elit", "FeatureHome1", "Secure Payment", "Worldwide Delivery", "90 Days Return", "24/7 Support" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "pd_Id", "pd_Brand", "pd_Code", "pd_Color", "pd_Description", "pd_Img1", "pd_Img2", "pd_Img3", "pd_Img4", "pd_Material", "pd_MenuFacturer", "pd_Name", "pd_NameImg1", "pd_NameImg2", "pd_NameImg3", "pd_NameImg4", "pd_Price", "pd_Rate", "pd_ReducePrice", "pd_ShortDescription", "pd_Size", "pd_Size10", "pd_Size10_5", "pd_Size11", "pd_Size11_5", "pd_Size12", "pd_Size12_5", "pd_Size13", "pd_Size13_5", "pd_Size14", "pd_Size14_5", "pd_Size7", "pd_Size7_5", "pd_Size8", "pd_Size8_5", "pd_Size9", "pd_Size9_5", "pd_Style", "pd_Technologies", "pd_WaitForConfirmation" },
                 values: new object[,]
                 {
-                    { 36, "Burberry", "PD036", "", "What do your phone, your wallet, an old lipstick and some emergency snacks have in common? They all belong in this crossbody bag from Burberry - with a Horseferry print to the front and a spacious body, this bag fits all your essentials and more. We've got you covered. ", "https://drive.google.com/uc?export=download&id=11wRP1ACgpE4kP1xD9ypWMnjQd1F6aTqX", "https://drive.google.com/uc?export=download&id=14_iUyL97JjXYgWADSmlRs-J0VVvVWLL1", "https://drive.google.com/uc?export=download&id=1dAXTIpBYyksPxIi3bMlH8fTKYALTv6Sv", "https://drive.google.com/uc?export=download&id=1KzjLV_HAKknlRzCg3CHKb69aweVUorv5", "1", "1", "BURBERRY BAG", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Bag", "1", false },
-                    { 20, "Moschino", "PD020", "White", "", "https://drive.google.com/uc?export=download&id=1b4zWMxw2fSXDmTZsZfI5UGRW4ujKo1rN", "https://drive.google.com/uc?export=download&id=1JR9ts1KgrL0abi8u-3P60isz-alhrvo_", "", "", "1", "1", "MOSCHINO T-SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
-                    { 21, "Moschino", "PD021", "Black", "", "https://drive.google.com/uc?export=download&id=1oL6TkiejPN42yqbWEv8xN-Ckah67S0xW", "https://drive.google.com/uc?export=download&id=1JdEfzri9AU-QBrlcVvVtA733KV95fo89", "https://drive.google.com/uc?export=download&id=17OhvAH_HTfZFMvQYwolkdSwGS7To7s1f", "", "1", "1", "MOSCHINO T-SHIRT COUTURE", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
-                    { 22, "Supreme", "PD022", "White", "", "https://drive.google.com/uc?export=download&id=1xi9IyKns4dFZD1Fyxpk4i0HkHdfkKU78", "https://drive.google.com/uc?export=download&id=1Ka9RyvnJxZRkeeDuM06N0MvfScwfDln8", "https://drive.google.com/uc?export=download&id=1IsdUB3ikPiRnKkZSKjdnG9vJS6zMESIX", "", "1", "1", "SUPREME SPIRAL T-SHIRT - WHITE", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
-                    { 23, "Supreme", "PD023", "Black", "", "https://drive.google.com/uc?export=download&id=1bDO25ILHq2cvHXn5S1fUzRhSejVCJ-8n", "https://drive.google.com/uc?export=download&id=1Jmco4XQmd82c7Lng1WJe66crfAYMOBjD", "https://drive.google.com/uc?export=download&id=1BEODWmyDSlBEnltTR4NLBJ3KXoW6RUvS", "", "1", "1", "SUPREME SPIRAL T-SHIRT - BLACK", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
-                    { 24, "eteft", "PD024", "", "", "https://drive.google.com/uc?export=download&id=1WlhWQzqgCVnlI9XyNtRD8iJ0O-2Oa25L", "", "", "", "1", "1", "SUPREME CROSS BOX LOGO T-SHIRT - NAVY", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 25, "ADLV", "PD025", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "https://drive.google.com/uc?export=download&id=1uBO0fPafsG1P5vmtwvgkOrcypX6H4rDY", "https://drive.google.com/uc?export=download&id=1BlxKN-HjkTHzIQW8AwUpKCSGdf22cJXj", "https://drive.google.com/uc?export=download&id=1gxUlGv7LqXuQX9uyhmbL6DW3q9QkjEqv", "https://drive.google.com/uc?export=download&id=1izxagkrKqxpOMU7SsiGLi3agg8OvuQGX", "1", "1", "ADLV BABY FACE SHORT SLEEVE T-SHIRT BLACK DONUTS 1", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 26, "ADLV", "PD026", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "https://drive.google.com/uc?export=download&id=1w8KaiMGTvWcxpJMfalYcFEN_yG6Awk-9", "https://drive.google.com/uc?export=download&id=1u0R9N991JjD80tnr8ASmRiZ8kt8_D2T_", "https://drive.google.com/uc?export=download&id=1yLUSschFEI0auLqrZ8qnCkO8L534TDAp", "https://drive.google.com/uc?export=download&id=1-E6bVLQEKaq2fkR2dd96v8mWtFq_tzfi", "1", "1", "ADLV BABY FACE SHORT SLEEVE T-SHIRT BLACK ASTRONAUT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 27, "ADLV", "PD027", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "https://drive.google.com/uc?export=download&id=1c8sJrSezckX9Vm0p387ikGFsU1Tuv87r", "https://drive.google.com/uc?export=download&id=1yMULMDGga8_c2lBh6j2KrMt9VN9N90hV", "https://drive.google.com/uc?export=download&id=1GUQbvk2Pa1eS3tKaxCuM_4Ow-hKPxE_w", "https://drive.google.com/uc?export=download&id=1GvhlYo8s5HMGZ0flnPnsVJ6ZRu4nEAkb", "1", "1", "ADLV ASTRONAUT TRIO SHORT SLEEVE T-SHIRT - BLACK", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 28, "ADLV", "PD028", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "https://drive.google.com/uc?export=download&id=1stJaTkCT3ZXMWE_Ph_d5TLf97pmMhIF6", "https://drive.google.com/uc?export=download&id=1MyfOcOXt3aCd3Qv16_grwbVKYvKQf-ps", "https://drive.google.com/uc?export=download&id=1GJVPqfAWR-PiI_Eg5A01QxSfXYubq41F", "https://drive.google.com/uc?export=download&id=1mtlkFQFl32HILbTC5snWntWsOcTMiPji", "1", "1", "ADLV RAINBOW CLOUD LOGO SHORT SLEEVE T-SHIRT BLACK", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 29, "ADLV", "PD029", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "https://drive.google.com/uc?export=download&id=1DcgjPlR0vCPGXVp_AZYZdaEobjRznKOu", "https://drive.google.com/uc?export=download&id=1NDYqoXAwGNqTZPfFjshzXhQ6SohCIMg4", "https://drive.google.com/uc?export=download&id=11oUK_-D0E3voLuD37_t_PmqSGUCAL23h", "https://drive.google.com/uc?export=download&id=1eaUpzTFbUzs3BsTRbySKqxN1KiVhtgkT", "1", "1", "ADLV TEDDY BEAR SHORT SLEEVE T-SHIRT BLACK", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 30, "ADLV", "PD030", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "https://drive.google.com/uc?export=download&id=1rLOrHjbc_a6lW5Q6MKx9uCNN6SJelkQf", "https://drive.google.com/uc?export=download&id=1GfDcGW2aeOjsGIUkojoeCxun4G_mVRZu", "https://drive.google.com/uc?export=download&id=1vcfWHY2hXs4rlG_OBcp2FkJrMi9jWL3r", "https://drive.google.com/uc?export=download&id=1eAjIfM9bS2tqUnouKq1sle1bGRsBZWpc", "1", "1", "ADLV BABY FACE SHORT SLEEVE T-SHIRT BLACK RABBIT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 31, "MCM", "PD031", "Brown", "", "https://drive.google.com/uc?export=download&id=1cus6PlFMcV6Qpye0-Ff0TLabYoWnJIht", "https://drive.google.com/uc?export=download&id=1SpXL_PswMgBR8YMhIYCnPp_wQ6LPdXAC", "https://drive.google.com/uc?export=download&id=1jtfRGI7aS0DA7nWQdyPmJvFz3tE52G4o", "https://drive.google.com/uc?export=download&id=1p-rhtAO9y8x54khE-S4xyrjCM9flxtwM", "1", "1", "MCM BROWN CROSSBODY BAG", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Crossbody bag", "1", false },
-                    { 32, "Prada", "PD032", "Black", "The Prada Cleo bag with sophisticated allure reinterprets an iconic design of the brand from the 1990's. Sleek curved lines emphasized by the particular construction rounded on the bottom and sides give this hobo bag a soft, light look. Brushed leather, a modern and versatile material that is distinctive in Prada collections, is ideal for creating always new combinations and contrasts. The enamel triangle logo decorates the silhouette.", "https://drive.google.com/uc?export=download&id=1fhdHU_V5FYVQ7i5ZefEktABB5JqzL01H", "https://drive.google.com/uc?export=download&id=12bTJvLOAH-_rC0NhjZc1NU4S7sYiFJof", "https://drive.google.com/uc?export=download&id=1XtXVuJG4FIKd-0UU-J288yUQHH-cxMaO", "https://drive.google.com/uc?export=download&id=1-r_5xt9-sQSZYr78VfwhL9Tbqwemlg3J", "1", "1", "Prada Cleo Brushed Leather Shoulder Bag", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Bag", "1", false },
-                    { 33, "BURBERRY", "PD033", "", "An archive-inspired tote in canvas and topstitched leather, featuring a front pocket stamped with our Horseferry print. Carry by the reinforced top handles or detachable shoulder strap.", "https://drive.google.com/uc?export=download&id=1FivY1-HqVnegDBV8kcv7wgdHnU4AkWem", "https://drive.google.com/uc?export=download&id=19RsYsZymH7kMSH-71UzpleonRtyaiw_J", "https://drive.google.com/uc?export=download&id=1gUUl3WOTr_C5u5V0rcJdNCL6imqtbg45", "https://drive.google.com/uc?export=download&id=1YoUX47gEGBKEkuO9_ACjmdhF1rYvi0c9", "1", "1", "BURBERRY MINI LOGO GRAPHIC CANVAS AND LEATHER POCKET BAG", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 34, "MCM", "PD034", "Brown", "Infused with the heritage emblem, the front pocket of the Patricia backpack is protected with the famous Laurel Buckle. The detachable leather strap allows you to turn the x-mini accessory into an elegant handbag or crossbody bag.", "https://drive.google.com/uc?export=download&id=1TWAmegqZrDSIBfFP5m-g5F2_Rj3NsS9I", "https://drive.google.com/uc?export=download&id=1FF5-HdgiPEqmYMpGGoO-C_MasTRqVLCi", "https://drive.google.com/uc?export=download&id=1S8oVliKLqeafD2QLbiRcKrrpf6kA5Hbx", "https://drive.google.com/uc?export=download&id=1zL07pOXYCk80y4n-wGIHqm6y7IsuGbhn", "1", "1", "MCM MINI COGNAC PATRICIA VISETOS CROSSBODY | MWKBSPA01CO001", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Bag", "1", false },
-                    { 19, "Moschino", "PD019", "White", "", "https://drive.google.com/uc?export=download&id=1OcAaWtM9osemCa3B4TWG2USDDVnjRM7X", "https://drive.google.com/uc?export=download&id=1pjpGm7aE5kZ2pCaQDAGox00t9YK02uoc", "https://drive.google.com/uc?export=download&id=1mm5fCb2D1d9IJkSEQ_KId3e5K57T0bXO", "", "1", "1", "MOSCHINO T-SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
-                    { 38, "MARC JACOBS", "PD038", "", "Marc Jacobs’ iconic Snapshot bag has been reimagined with a vibrant tie-dye print and a matching cross-body strap. Crafted from saffiano leather, the compact style has two zipped sections and slip pockets to keep your daily essentials organised. Silver-tone metal hardware and co-ordinating ‘Double J’ hardware completes the bold style.", "https://drive.google.com/uc?export=download&id=17Eq6odE_bU2_vEaSyLzxKmIzlSAvfXe2", "https://drive.google.com/uc?export=download&id=1v1RAixoCfJhNItZBYDLVCypdKY5qbhd0", "https://drive.google.com/uc?export=download&id=1jycki4ONFJrzcgEuBUX6O3ZR_jIVJ9P8", "https://drive.google.com/uc?export=download&id=1F56uErxN3w3BK51w4xe-aODnio_dna3l", "1", "1", "Marc Jacobs Tie Dye Snapshot Cross Body Bag - Blue Multi", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Bag", "1", false },
-                    { 37, "MARC JACOBS", "PD037", "", "Marc Jacobs’ iconic Snapshot bag has been reimagined with a vibrant tie-dye print and a matching cross-body strap. Crafted from saffiano leather, the compact style has two zipped sections and slip pockets to keep your daily essentials organised. Silver-tone metal hardware and co-ordinating ‘Double J’ hardware completes the bold style.", "https://drive.google.com/uc?export=download&id=1N4UQ_qU7D0jwof4cPG83XujEdGDh7s-p", "https://drive.google.com/uc?export=download&id=1gZFceh7UvwzamS0f-T997J00rvjnDCC_", "https://drive.google.com/uc?export=download&id=1rxWh70yUyRl4W-1GahDplUxO50FOaWk5", "https://drive.google.com/uc?export=download&id=1s0noMO6Z2IFL8jN7JfEgw54pBAqavXjn", "1", "1", "Marc Jacobs Tie Dye Snapshot Cross Body Bag - Pink Multi", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Bag", "1", false },
-                    { 35, "Gucci", "PD035", "White", "Combine both style and practicality with this Gucci Fake logo bum bag. Constructed with an adjustable fabric buckle waistband, this compact has a zip compartment and is finished with the brand's signature imitation logo details embroidered on the front.", "https://drive.google.com/uc?export=download&id=12niwGccl8KfuoLkrvDEpsTZ34otlOLc-", "https://drive.google.com/uc?export=download&id=1uqem4eQawaG2OGwvBHN20_gt3yMEniCR", "https://drive.google.com/uc?export=download&id=1rTroGFVd7WnKRuPVCy4dZrOsTSBMA1rI", "https://drive.google.com/uc?export=download&id=1Qtq4NUk_dtuEOO7zDfvU6RDmb_-1Si-y", "1", "1", "GUCCI BELT BAG FAKE LOGO WHITE", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 18, "Moschino", "PD018", "", "", "https://drive.google.com/uc?export=download&id=1BqGUuj-7G4MDgK-k38SML_wLuNmsxV4t", "", "", "", "1", "1", "MOSCHINO TEE DOLLARS", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 11, "Burberry", "PD011", "", "", "https://drive.google.com/uc?export=download&id=1VjacENWRQeseioMaQFhcWdmOlvsIcPht", "https://drive.google.com/uc?export=download&id=1tQlJGdeQceNTTaDzkAVKyycgylDhMio8", "https://drive.google.com/uc?export=download&id=158cFi3wOuNmrPD5woibSuVT-YT_RCRpw", "https://drive.google.com/uc?export=download&id=1Sb1zUw0A3ZmvBJ_ZNkqpHpKrqYrnhk0M", "1", "1", "BURBERRY SHIRT RED", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
-                    { 16, "Moschino", "PD016", "Black", "", "https://drive.google.com/uc?export=download&id=1WLz6y8DGD6FVXhV-bP_EdjwlnF1TXRUS", "https://drive.google.com/uc?export=download&id=1CcTPQpg8PlEyIX5iKI8kN4aHBsyl9FwU", "https://drive.google.com/uc?export=download&id=1bF29kqD_1ajfzX6kny82Q9SJw9rS8rt4", "", "1", "1", "MOSCHINO T-SHIRT GOLD LOGO WITH PIG", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
-                    { 1, "Off White", "PD001", "Black", "black / purple / red ,cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border", "https://drive.google.com/uc?export=download&id=1qGc4cXF4az9X2evToVj0x0Ceu2qmQYnN", "https://drive.google.com/uc?export=download&id=1iViLlxnkxISB8wMdMjka0ILlfWmvple8", "https://drive.google.com/uc?export=download&id=1EPqJakj7EBtmPHZO0gf_wo8HPgUa75Zf", "", "1", "1", "OFF-WHITE ARROWS PRINT COTTON SLIM T-SHIRT - BLACK/PURPLE/RED", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 2, "Off White", "PD002", "Black", "", "https://drive.google.com/uc?export=download&id=1iViLlxnkxISB8wMdMjka0ILlfWmvple8", "https://drive.google.com/uc?export=download&id=1UZzX_yVVgDsemltdOZvX_943pfU6cXoO", "https://drive.google.com/uc?export=download&id=1VLOsewsM_8-8m-Ko2ZvsvDaa01_DGlMX", "", "1", "1", "OFF-WHITE ARROWS PRINT SHORT-SLEEVE T-SHIRT - BLACK/GREY SS21", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 3, "Off White", "PD003", "White/Blue", "White, cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border", "https://drive.google.com/uc?export=download&id=1EPqJakj7EBtmPHZO0gf_wo8HPgUa75Zf", "https://drive.google.com/uc?export=download&id=1fkx0O2cIJ5DrL60l7EJu0QX-xISIVmNa", "https://drive.google.com/uc?export=download&id=1TRmzvuN91iCLO1SRXtVMxJwuRQmHnpij", "", "1", "1", "OFF-WHITE ARROWS PRINT SHORT-SLEEVE T-SHIRT - WHITE/BLUE SS21", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 4, "Andrea Martin", "PD004", "Gray", "", "https://drive.google.com/uc?export=download&id=1rOilu5Z4w41A7tx3kkd9l5PSvPfMnfBT", "https://drive.google.com/uc?export=download&id=1mc_eKkp4OscemgzZBGZcCFuEWznZS-pW", "https://drive.google.com/uc?export=download&id=1YnUToorFthY05S17uSQIRnXcUBiJLVH8", "", "1", "1", "ANDREA MARTIN Grey Astronaut Mesh Shirt", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Slim 3-layer mesh top", "1", false }
+                    { 28, "ADLV", "PD028", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "./img/Product28-black.jpg", "./img/Product28-gray.jpg", "./img/Product28-purple.jpg", "", "1", "1", "ADLV RAINBOW CLOUD LOGO SHORT SLEEVE T-SHIRT BLACK", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 17, "Moschino", "PD017", "", "", "./img/Product17-black.jpg", "./img/Product17-blue.jpg", "./img/Product17-gray.jpg", "", "1", "1", "MOSCHINO TEE WARRIOR", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 18, "Moschino", "PD018", "", "", "./img/Product18-gray.jpg", "./img/Product18-pink.jpg", "./img/Product18-white.jpg", "", "1", "1", "MOSCHINO TEE DOLLARS", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 19, "Moschino", "PD019", "White", "", "./img/Product19-blue.jpg", "./img/Product19-red.jpg", "./img/Product19-yellow.jpg", "", "1", "1", "MOSCHINO T-SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
+                    { 20, "Moschino", "PD020", "White", "", "./img/Product20-black.jpg", "./img/Product20-pink.jpg", "./img/Product20-white.jpg", "", "1", "1", "MOSCHINO T-SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
+                    { 21, "Moschino", "PD021", "Black", "", "./img/Product21-blue.jpg", "./img/Product21-cream.jpg", "./img/Product21-gray.jpg", "", "1", "1", "MOSCHINO T-SHIRT COUTURE", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
+                    { 22, "Supreme", "PD022", "White", "", "./img/Product22-blue.jpg", "./img/Product22-gray.jpg", "./img/Product22-green.jpg", "", "1", "1", "SUPREME SPIRAL T-SHIRT - WHITE", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
+                    { 23, "Supreme", "PD023", "Black", "", "./img/Product23-black.jpg", "./img/Product23-blue.jpg", "./img/Product23-redjpg.jpg", "", "1", "1", "SUPREME SPIRAL T-SHIRT - BLACK", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
+                    { 24, "eteft", "PD024", "", "", "./img/Product24-black.jpg", "./img/Product24-blue.jpg", "./img/Product24-brown.jpg", "", "1", "1", "SUPREME CROSS BOX LOGO T-SHIRT - NAVY", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 25, "ADLV", "PD025", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "./img/Product25-black.jpg", "./img/Product25-blue.jpg", "./img/Product25-cream.jpg", "", "1", "1", "ADLV BABY FACE SHORT SLEEVE T-SHIRT BLACK DONUTS 1", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 26, "ADLV", "PD026", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "./img/Product26-black.jpg", "./img/Product26-blue.jpg", "./img/Product26-cream.jpg", "", "1", "1", "ADLV BABY FACE SHORT SLEEVE T-SHIRT BLACK ASTRONAUT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 30, "ADLV", "PD030", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "./img/Product30-black.jpg", "./img/Product30-brown.jpg", "./img/Product30-brown.jpg", "", "1", "1", "ADLV BABY FACE SHORT SLEEVE T-SHIRT BLACK RABBIT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 29, "ADLV", "PD029", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "./img/Product29-blue.jpg", "./img/Product29-gray.jpg", "./img/Product29-green.jpg", "", "1", "1", "ADLV TEDDY BEAR SHORT SLEEVE T-SHIRT BLACK", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 16, "Moschino", "PD016", "Black", "", "./img/Product16-black.jpg", "./img/Product16-red.jpg", "./img/Product16-white.jpg", "", "1", "1", "MOSCHINO T-SHIRT GOLD LOGO WITH PIG", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "T-shirt", "1", false },
+                    { 27, "ADLV", "PD027", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "./img/Product27-black.jpg", "./img/Product27-gray.jpg", "./img/Product27-purple.jpg", "", "1", "1", "ADLV ASTRONAUT TRIO SHORT SLEEVE T-SHIRT - BLACK", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 15, "eteft", "PD015", "", "", "./img/Product15-gray.jpg", "./img/Product15-green.jpg", "./img/Product15-yellow.jpg", "", "1", "1", "GUCCI GG STRETCH COTTON POLO - DARK GREEN", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 6, "ADLV", "PD006", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "./img/Product6-black.jpg", "./img/Product6-gray.jpg", "./img/Product6-white.jpg", "", "1", "1", "ADLV SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 13, "eteft", "PD013", "", "", "./img/Product13-dark-blue.jpg", "./img/Product13-green.jpg", "./img/Product13-pink.jpg", "", "1", "1", "BURBERRY SHIRT LIGHT BROWN", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 1, "Off White", "PD001", "Black", "black / purple / red ,cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border", "./img/Product1-blue.png", "./img/Product1-brown.png", "./img/Product1-white.png", "", "1", "1", "OFF-WHITE ARROWS PRINT COTTON SLIM T-SHIRT - BLACK/PURPLE/RED", "1", "2", "3", "4", 80, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 2, "Off White", "PD002", "Black", "", "./img/Product2-black.jpg", "./img/Product2-gray.jpg", "./img/Product2-purple.jpg", "", "1", "1", "OFF-WHITE ARROWS PRINT SHORT-SLEEVE T-SHIRT - BLACK/GREY SS21", "1", "2", "3", "4", 50, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 3, "Off White", "PD003", "White/Blue", "White, cotton, signature arrow pattern, logo print on chest, round neck, short sleeves, straight border", "./img/Product3-black.jpg", "./img/Product3-blue.jpg", "./img/Product3-white.jpg", "", "1", "1", "OFF-WHITE ARROWS PRINT SHORT-SLEEVE T-SHIRT - WHITE/BLUE SS21", "1", "2", "3", "4", 40, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 14, "Thom Browne", "PD014", "White", "Endless styling opportunities are in store with this Thom Browne shirt. Made from breathable cotton, this piece is both cool and comfortable. Talk about no trouble. Features a button-down collar, front button closure, open front pockets, curved hemline, front logo patch and tricolor stripe detail with buttons on both sleeves", "./img/Product14-black.jpg", "./img/Product14-white.jpg", "./img/Product14-yellow.jpg", "", "1", "1", "THOM BROWNE WHITE SHORT SLEEVE SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
+                    { 5, "Burberry", "PD005", "", "- The shirt is made of breathable cotton fabric, good sweat absorption, bringing comfort to the wearer. Beautiful standard shirt form, delicate seams meticulous detail to satisfy even fastidious customers.", "./img/Product5-black.jpg", "./img/Product5-blue.jpg", "./img/Product5-yellow.jpg", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 99, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
+                    { 4, "Andrea Martin", "PD004", "Gray", "", "./img/Product4-blue.jpg", "./img/Product4-cream.jpg", "./img/Product4-white.jpg", "", "1", "1", "ANDREA MARTIN Grey Astronaut Mesh Shirt", "1", "2", "3", "4", 90, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Slim 3-layer mesh top", "1", false },
+                    { 7, "Burberry", "PD007", "", "", "./img/Product7-blue.png", "./img/Product7-white.png", "./img/Product7-yellow.png", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
+                    { 8, "eteft", "PD008", "", "", "./img/Product8-pink.jpg", "./img/Product8-white.jpg", "./img/Product8-yellow.jpg", "", "1", "1", "BURBERRY MONOGRAM MOTIF STRETCH COTTON POPLIN SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
+                    { 9, "Thom Browne", "PD009", "White", "", "./img/Product9-black.png", "./img/Product9-blue.png", "./img/Product9-red.png", "", "1", "1", "THOM BROWN SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false }
                 });
 
             migrationBuilder.InsertData(
@@ -821,17 +821,8 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "pd_Id", "pd_Brand", "pd_Code", "pd_Color", "pd_Description", "pd_Img1", "pd_Img2", "pd_Img3", "pd_Img4", "pd_Material", "pd_MenuFacturer", "pd_Name", "pd_NameImg1", "pd_NameImg2", "pd_NameImg3", "pd_NameImg4", "pd_Price", "pd_Rate", "pd_ReducePrice", "pd_ShortDescription", "pd_Size", "pd_Size10", "pd_Size10_5", "pd_Size11", "pd_Size11_5", "pd_Size12", "pd_Size12_5", "pd_Size13", "pd_Size13_5", "pd_Size14", "pd_Size14_5", "pd_Size7", "pd_Size7_5", "pd_Size8", "pd_Size8_5", "pd_Size9", "pd_Size9_5", "pd_Style", "pd_Technologies", "pd_WaitForConfirmation" },
                 values: new object[,]
                 {
-                    { 5, "Burberry", "PD005", "", "- The shirt is made of breathable cotton fabric, good sweat absorption, bringing comfort to the wearer. Beautiful standard shirt form, delicate seams meticulous detail to satisfy even fastidious customers.", "https://drive.google.com/uc?export=download&id=1QhQ9e5DmIcqaXPy0RBNrvIAMgbv_YWqs", "https://drive.google.com/uc?export=download&id=1JWK25M-KEkvqsxeuiNjFm4nlPEiHIoQ4", "https://drive.google.com/uc?export=download&id=1Q-KWkHbFDVa2MHEZOxmNiaBbu1IffhGv", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
-                    { 17, "Moschino", "PD017", "", "", "https://drive.google.com/uc?export=download&id=1-QV_gSFzdfy-qRTPLgbWwTD2plYwteNk", "", "", "", "1", "1", "MOSCHINO TEE WARRIOR", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 7, "Burberry", "PD007", "", "", "https://drive.google.com/uc?export=download&id=1nD8Fl62ptV1LXUZpM3cW-rECv4cXMHEn", "https://drive.google.com/uc?export=download&id=1rURWs71KvJDQ81go7rA-m0N2U7iktBJt", "", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
-                    { 6, "ADLV", "PD006", "", "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.", "https://drive.google.com/uc?export=download&id=1e_zKMaR3x86zIuTaEWYew7cyLeT-VWni", "https://drive.google.com/uc?export=download&id=19u835hxFv_7E5ktACy9XfbPMxYifZ6G_", "https://drive.google.com/uc?export=download&id=1o4tsocSZxePog0y6NQg6aLCq-xDx5BYp", "", "1", "1", "ADLV SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 9, "Thom Browne", "PD009", "White", "", "https://drive.google.com/uc?export=download&id=1Ry38U-_ZzzGsnci5mqHObvi8tgoc6Trz", "https://drive.google.com/uc?export=download&id=1R_a3f_050dqsgbQLz23FQxPfVForPLkc", "https://drive.google.com/uc?export=download&id=1J5Yim8sYRqELe9Imzj4mrun7uytnQm6R", "", "1", "1", "THOM BROWN SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
-                    { 10, "Burberry", "PD010", "", "", "https://drive.google.com/uc?export=download&id=1UUIDx-uORgXTIJsIytWO957naKtGAq3A", "https://drive.google.com/uc?export=download&id=1QLfLZv4TN2ugOZM375L9ZIwNmkdUKiy5", "https://drive.google.com/uc?export=download&id=1uajOerRRnV9eB7BS0UnIVXcfuPnscZyg", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
-                    { 12, "eteft", "PD012", "", "", "https://drive.google.com/uc?export=download&id=1ZKZYlg_rA6EZ7SdsVe4GbI0tP18uG67Z", "", "", "", "1", "1", "BURBERRY SHIRT LIGHT BROWN", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 13, "eteft", "PD013", "", "", "https://drive.google.com/uc?export=download&id=1OUfVp1RZhpwhZAch5daeLszb0HzccbtJ", "https://drive.google.com/uc?export=download&id=1ahvRu6z7hwYYX1I10K3Rjx6kMyH2Vi9E", "", "", "1", "1", "BURBERRY SHIRT LIGHT BROWN", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 14, "Thom Browne", "PD014", "White", "Endless styling opportunities are in store with this Thom Browne shirt. Made from breathable cotton, this piece is both cool and comfortable. Talk about no trouble. Features a button-down collar, front button closure, open front pockets, curved hemline, front logo patch and tricolor stripe detail with buttons on both sleeves", "https://drive.google.com/uc?export=download&id=1MLh7rMo4ZLlvjGL9lVwptz1RflsvvFsn", "https://drive.google.com/uc?export=download&id=1rU7uI2Wu25u8LMSBkJ9oQLYyRwbCLPOn", "https://drive.google.com/uc?export=download&id=1LjscRUDgfVKmg0PDX5oTChoiNG0kukg3", "", "1", "1", "THOM BROWNE WHITE SHORT SLEEVE SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
-                    { 15, "eteft", "PD015", "", "", "https://drive.google.com/uc?export=download&id=1D3qVLRk7-M8PBVm2m0ZwOAgp4kKafvOD", "", "", "", "1", "1", "GUCCI GG STRETCH COTTON POLO - DARK GREEN", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false },
-                    { 8, "eteft", "PD008", "", "", "https://drive.google.com/uc?export=download&id=1RmcA-LwkzPlAdUMb-ZtvuY1j8lGzW3HU", "https://drive.google.com/uc?export=download&id=1a6tJReOu3wtzJ_1BSdlR3L6d-2KPske7", "", "", "1", "1", "BURBERRY MONOGRAM MOTIF STRETCH COTTON POPLIN SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false }
+                    { 10, "Burberry", "PD010", "", "", "./img/Product10-blue.png", "./img/Product10-pink.jpg", "./img/Product10-white.jpg", "", "1", "1", "BURBERRY SHIRT", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "Shirt", "1", false },
+                    { 12, "eteft", "PD012", "", "", "./img/Product12-black.jpg", "./img/Product12-red.jpg", "./img/Product12-yellow.jpg", "", "1", "1", "BURBERRY SHIRT LIGHT BROWN", "1", "2", "3", "4", 100, 5, 10, "", "", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "", "1", false }
                 });
 
             migrationBuilder.InsertData(
@@ -839,8 +830,8 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Discriminator", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "360E601E-92F2-4F08-832B-604A21293258", "86f78e14-2d90-4fa1-a2b0-dfa490a3d669", "Admin", "AppRole", "Admin", "ADMIN" },
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "0d00e71a-5043-4b69-9d8b-fc956d619765", "Staff", "AppRole", "Staff", "STAFF" }
+                    { "360E601E-92F2-4F08-832B-604A21293258", "f7951bb0-f5df-42d2-9785-fbe222f8871e", "Admin", "AppRole", "Admin", "ADMIN" },
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "75d7b870-efdf-4bd6-8860-8c39f810e41e", "Staff", "AppRole", "Staff", "STAFF" }
                 });
 
             migrationBuilder.InsertData(
@@ -851,15 +842,15 @@ namespace Web_Shoes.Migrations
             migrationBuilder.InsertData(
                 table: "SliderHome",
                 columns: new[] { "SliderId", "SliderName", "SliderUrl1", "SliderUrl2", "SliderUrl3", "SliderUrl4", "SliderUrl5" },
-                values: new object[] { "36069277-f768-4ef4-a23f-0084b181bd36", "SliderHome1", "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM", "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv", "https://drive.google.com/uc?export=download&id=1q3-Sg09LDSshwDBe3WVOTlcx0QmP-0tT", "", "" });
+                values: new object[] { "cba329e3-e5c1-474d-aa56-dd8fd1e9e6eb", "SliderHome1", "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM", "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv", "https://drive.google.com/uc?export=download&id=1q3-Sg09LDSshwDBe3WVOTlcx0QmP-0tT", "", "" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "DoB", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "bill_Address1", "bill_Address2", "bill_City", "bill_CompanyName", "bill_Country", "bill_PhoneNumber", "bill_PostalCode", "bill_State" },
                 values: new object[,]
                 {
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "94463592-4aa4-4987-a457-816d39d190cc", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAEDWlNpraVoBrAsc6NGGAx9vN6C8DMhIVYZxyDTRmdryVdgi0n4cvqAoe3hmG99UL0g==", null, false, "26b8e335-b794-4d85-98b7-f3f86cf620ef", false, "Staff", null, null, null, null, null, null, null, null },
-                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "4be1bf27-0358-496e-aaa4-9d9387e662eb", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAECaB1GrIaeYFQgWYgHteV9HUgOlblXcRsI6rhJYlFn0gUBgMhhcvcPLM5v3Oap4GNA==", null, false, "f9e47e41-9686-41f2-b389-15d0183e502b", false, "Admin", "HCM 1", "HCM 2", "HCM", "0123456789", "Viet Nam", "0112223344", "700000", "700000" }
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "4982084d-0c72-446f-8f9f-aaa3716f43f6", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAEDv20s8QLXuhg+OSdbCeuIBRNFGvH7TWpdsk6Az5jx1eVY0OSPesYvKhZlzaGnqdgQ==", null, false, "06c8c2b1-9f56-4a57-b512-649ee9057260", false, "Staff", null, null, null, null, null, null, null, null },
+                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "59710bec-865d-4497-98b4-e7837c4ac324", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEJMvfbIpI5JQ5yQRDIRYr7Ha/csg+YUfSfkUWXpX3Katj5dUlUB9LVOtTgoUFVAGHw==", null, false, "fdfdb45d-7a3b-4381-acab-57e636de1990", false, "Admin", "HCM 1", "HCM 2", "HCM", "0123456789", "Viet Nam", "0112223344", "700000", "700000" }
                 });
 
             migrationBuilder.InsertData(
@@ -867,8 +858,8 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "bill_Id", "bill_Cancelled", "bill_Confirmation", "bill_DatetimeOrder", "bill_Delivered", "bill_Delivering", "bill_Discount", "bill_HideStatus", "bill_Note", "bill_PaidTotal", "bill_PaymentMethod", "bill_ProductColorlist", "bill_ProductIdlist", "bill_ProductNamelist", "bill_ProductPricelist", "bill_ProductSizelist", "bill_Quantity", "bill_Shipping", "bill_UserId", "bill_WaitForConfirmation", "bill_WaitPickup" },
                 values: new object[,]
                 {
-                    { "AFD66490-12F5-4EA7-BFF6-425624290D6D", false, true, new DateTime(2021, 11, 28, 13, 4, 3, 832, DateTimeKind.Local).AddTicks(4822), false, false, 0, false, "", 2100, "Check Payment", "Blue|Red|Black|Green", "5|6|7|8", "product 5|product 6| product 7| product 8", "550|450|350|640", "7|8|9|14", "1|1|2|2", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false },
-                    { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2021, 11, 28, 13, 4, 3, 830, DateTimeKind.Local).AddTicks(9045), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green", "1|2|3|4", "product 1|product 2| product 3| product 4", "550|450|350|640", "7|8|9|14", "1|1|2|1", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false }
+                    { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2021, 11, 29, 22, 24, 0, 10, DateTimeKind.Local).AddTicks(6671), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green", "1|2|3|4", "product 1|product 2| product 3| product 4", "550|450|350|640", "7|8|9|14", "1|1|2|1", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false },
+                    { "AFD66490-12F5-4EA7-BFF6-425624290D6D", false, true, new DateTime(2021, 11, 29, 22, 24, 0, 11, DateTimeKind.Local).AddTicks(7712), false, false, 0, false, "", 2100, "Check Payment", "Blue|Red|Black|Green", "5|6|7|8", "product 5|product 6| product 7| product 8", "550|450|350|640", "7|8|9|14", "1|1|2|2", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false }
                 });
 
             migrationBuilder.InsertData(
@@ -885,64 +876,35 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "pic_CategoriesId", "pic_productId" },
                 values: new object[,]
                 {
-                    { 3, 26 },
-                    { 1, 26 },
-                    { 1, 25 },
-                    { 3, 24 },
-                    { 1, 24 },
-                    { 1, 23 },
-                    { 2, 15 },
-                    { 1, 22 },
-                    { 1, 21 },
-                    { 1, 20 },
-                    { 3, 19 },
-                    { 1, 19 },
-                    { 1, 27 },
-                    { 1, 29 },
-                    { 4, 29 },
-                    { 1, 18 },
-                    { 1, 30 },
-                    { 5, 31 },
-                    { 3, 31 },
-                    { 5, 32 },
-                    { 3, 32 },
-                    { 5, 33 },
-                    { 5, 34 },
-                    { 4, 34 },
-                    { 5, 35 },
-                    { 5, 36 },
-                    { 5, 37 },
-                    { 3, 29 },
-                    { 1, 17 },
-                    { 5, 38 },
+                    { 2, 8 },
+                    { 1, 14 },
+                    { 1, 15 },
                     { 1, 16 },
-                    { 2, 1 },
-                    { 2, 2 },
-                    { 2, 3 },
-                    { 3, 3 },
-                    { 2, 4 },
-                    { 4, 16 },
-                    { 2, 6 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "ProductsInCategories",
-                columns: new[] { "pic_CategoriesId", "pic_productId" },
-                values: new object[,]
-                {
-                    { 4, 6 },
-                    { 2, 7 },
-                    { 2, 5 },
+                    { 1, 17 },
+                    { 1, 18 },
+                    { 1, 19 },
+                    { 1, 20 },
+                    { 5, 23 },
+                    { 5, 22 },
+                    { 1, 13 },
+                    { 5, 24 },
+                    { 5, 25 },
+                    { 5, 26 },
+                    { 5, 27 },
+                    { 5, 28 },
+                    { 5, 21 },
+                    { 1, 12 },
+                    { 5, 30 },
                     { 2, 9 },
-                    { 2, 10 },
-                    { 2, 11 },
-                    { 2, 12 },
-                    { 3, 12 },
-                    { 2, 13 },
-                    { 4, 13 },
-                    { 2, 14 },
-                    { 4, 37 },
-                    { 2, 8 }
+                    { 5, 29 },
+                    { 2, 7 },
+                    { 2, 6 },
+                    { 2, 5 },
+                    { 2, 4 },
+                    { 2, 3 },
+                    { 2, 2 },
+                    { 2, 1 },
+                    { 2, 10 }
                 });
 
             migrationBuilder.InsertData(
@@ -960,9 +922,9 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "subReview_Id", "subReview_Commnet", "subReview_DateCommnet", "subReview_HideStatus", "subReview_UserId", "subreview_SubReviewType" },
                 values: new object[,]
                 {
-                    { "6737a09e-e4f1-44b5-8254-769960d8854a", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" },
-                    { "3623bd90-008e-42ba-a332-69ce4c4c851c", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
-                    { "a87037cd-97f3-46df-94ee-3e1f613d3c7e", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" }
+                    { "595a8b95-9450-4d11-99f8-973e766c223d", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" },
+                    { "3791f8ad-c3fc-49b6-bafb-317ff4131121", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
+                    { "d7ed30dc-6a12-46ac-a375-b110568c0be1", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" }
                 });
 
             migrationBuilder.InsertData(
@@ -984,9 +946,9 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "pic_CartId", "pic_Id", "pic_ProductId", "pic_amount", "pic_color", "pic_size" },
                 values: new object[,]
                 {
-                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "f98a845a-0386-4033-b357-f710a306aca0", 1, 2, "blue", "7" },
-                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "dfe601d3-02e1-4841-983f-6833ea4d9e1e", 2, 3, "blue", "7.5" },
-                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "ebd8a931-4315-49a8-b550-70af321170a6", 3, 1, "blue", "8" }
+                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "03f6b352-e17e-4625-8b60-47a464975a5d", 1, 2, "blue", "7" },
+                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "3b19b450-44ea-4f2c-bcdf-4163ca41806f", 2, 3, "blue", "7.5" },
+                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", "195a1e09-4e54-4a67-aca1-6e3449ce3f58", 3, 1, "blue", "8" }
                 });
 
             migrationBuilder.InsertData(
@@ -1009,9 +971,9 @@ namespace Web_Shoes.Migrations
                 columns: new[] { "SRiR_ReviewId", "SRiR_SubReviewId" },
                 values: new object[,]
                 {
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "a87037cd-97f3-46df-94ee-3e1f613d3c7e" },
-                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "3623bd90-008e-42ba-a332-69ce4c4c851c" },
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "6737a09e-e4f1-44b5-8254-769960d8854a" }
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "d7ed30dc-6a12-46ac-a375-b110568c0be1" },
+                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "3791f8ad-c3fc-49b6-bafb-317ff4131121" },
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "595a8b95-9450-4d11-99f8-973e766c223d" }
                 });
 
             migrationBuilder.CreateIndex(

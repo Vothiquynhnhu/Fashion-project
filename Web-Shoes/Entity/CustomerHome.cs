@@ -16,13 +16,13 @@ namespace Web_Shoes.Entity
         [DisplayName("Img")]
         public string CustomerHome_CImg { set; get; }
 
-        [DisplayName("CName")]
+        [DisplayName("Name")]
         public string CustomerHome_CName { set; get; }
 
         [DisplayName("Work")]
         public string CustomerHome_CWork { set; get; }
 
-        [DisplayName("CStar")]
+        [DisplayName("Star")]
         public int CustomerHome_CStar { set; get; }
 
         [DisplayName("Description")]

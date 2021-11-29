@@ -11,13 +11,13 @@ namespace Web_Shoes.Models
         
         public string User_Id { get; set; }
 
-        [DisplayName("UserName")]
+        [DisplayName("User Name")]
         public string User_UserName { get; set; }
 
-        [DisplayName("FirstName")]
+        [DisplayName("First Name")]
         public string User_FirstName { get; set; }
 
-        [DisplayName("LastName")]
+        [DisplayName("Last Name")]
         public string User_LastName { get; set; }
 
         [DisplayName("Email")]
