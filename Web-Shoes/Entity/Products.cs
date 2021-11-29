@@ -33,14 +33,29 @@ namespace Web_Shoes.Entity
         [DisplayName("Code Product")]
         public string pd_Code { set; get; }
 
+        [DisplayName("NameImg1")]
         public string pd_NameImg1 { set; get; }
+
+        [DisplayName("NameImg2")]
         public string pd_NameImg2 { set; get; }
+
+        [DisplayName("NameImg3")]
         public string pd_NameImg3 { set; get; }
+
+        [DisplayName("NameImg4")]
         public string pd_NameImg4 { set; get; }
+
+        [DisplayName("Img1")]
         public string pd_Img1 { set; get; }
+
+        [DisplayName("Img2")]
         public string pd_Img2 { set; get; }
 
+        [DisplayName("Img3")]
+
         public string pd_Img3 { set; get; }
+
+        [DisplayName("Img4")]
         public string pd_Img4 { set; get; }
 
 
@@ -48,9 +63,10 @@ namespace Web_Shoes.Entity
         [DisplayName("Rate")]
         public int pd_Rate { set; get; }
 
-
+        [DisplayName("MenuFacturer")]
         public string pd_MenuFacturer { set; get; }
 
+        [DisplayName("ShortDescription")]
         public string pd_ShortDescription { set; get; }
 
         public string pd_Size { set; get; }
@@ -72,14 +88,19 @@ namespace Web_Shoes.Entity
         public bool pd_Size14_5 { set; get; }
 
 
+        [DisplayName("Brand")]
         public string pd_Brand { set; get; }
 
+        [DisplayName("Style")]
         public string pd_Style { set; get; }
 
+        [DisplayName("Color")]
         public string pd_Color { set; get; }
 
+        [DisplayName("Material")]
         public string pd_Material { set; get; }
 
+        [DisplayName("Technologies")]
         public string pd_Technologies { set; get; }
 
         public bool pd_WaitForConfirmation { set; get; }
