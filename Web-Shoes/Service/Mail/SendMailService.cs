@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MimeKit;
 
-namespace Web_Shoes.Service.Mail { 
+namespace Web_Fashion.Service.Mail { 
     public class SendMailService : ISendMailService {
         private readonly MailSettings mailSettings;
 

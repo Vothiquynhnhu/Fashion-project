@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web_Shoes.Service
+namespace Web_Fashion.Service
 {
     public class PaginatedList<T> : List<T>
     {

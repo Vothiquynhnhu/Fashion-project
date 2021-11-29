@@ -13,10 +13,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using Web_Shoes.Entity;
-using Web_Shoes.Service.Mail;
+using Web_Fashion.Entity;
+using Web_Fashion.Service.Mail;
 
-namespace Web_Shoes.Areas.Identity.Pages.Account
+namespace Web_Fashion.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class RegisterModel : PageModel

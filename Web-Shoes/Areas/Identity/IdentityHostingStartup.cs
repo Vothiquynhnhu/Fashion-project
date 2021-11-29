@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Web_Shoes.Data;
+using Web_Fashion.Data;
 
-[assembly: HostingStartup(typeof(Web_Shoes.Areas.Identity.IdentityHostingStartup))]
-namespace Web_Shoes.Areas.Identity
+[assembly: HostingStartup(typeof(Web_Fashion.Areas.Identity.IdentityHostingStartup))]
+namespace Web_Fashion.Areas.Identity
 {
     public class IdentityHostingStartup : IHostingStartup
     {

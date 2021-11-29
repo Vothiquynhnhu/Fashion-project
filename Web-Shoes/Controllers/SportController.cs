@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Web_Shoes.Data;
+using Web_Fashion.Data;
 
-namespace Web_Shoes.Controllers
+namespace Web_Fashion.Controllers
 {
     public class SportController : Controller
     {

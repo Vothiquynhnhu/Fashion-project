@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web_Shoes.StatisFile
+namespace Web_Fashion.StatisFile
 {
     public static class Fontend_client
     {

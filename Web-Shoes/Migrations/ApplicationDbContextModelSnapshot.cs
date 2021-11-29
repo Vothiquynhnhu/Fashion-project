@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Web_Shoes.Data;
+using Web_Fashion.Data;
 
-namespace Web_Shoes.Migrations
+namespace Web_Fashion.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -239,7 +239,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("UserTokens");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.About", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.About", b =>
                 {
                     b.Property<int>("about_id")
                         .ValueGeneratedOnAdd()
@@ -269,7 +269,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Bills", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Bills", b =>
                 {
                     b.Property<string>("bill_Id")
                         .HasColumnType("nvarchar(450)");
@@ -346,7 +346,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 11, 29, 22, 24, 0, 10, DateTimeKind.Local).AddTicks(6671),
+                            bill_DatetimeOrder = new DateTime(2021, 11, 29, 23, 34, 29, 251, DateTimeKind.Local).AddTicks(3015),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -370,7 +370,7 @@ namespace Web_Shoes.Migrations
                             bill_Id = "AFD66490-12F5-4EA7-BFF6-425624290D6D",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2021, 11, 29, 22, 24, 0, 11, DateTimeKind.Local).AddTicks(7712),
+                            bill_DatetimeOrder = new DateTime(2021, 11, 29, 23, 34, 29, 252, DateTimeKind.Local).AddTicks(4026),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -391,7 +391,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Cart", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Cart", b =>
                 {
                     b.Property<string>("cart_Id")
                         .HasColumnType("nvarchar(450)");
@@ -428,7 +428,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CartsDevice", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.CartsDevice", b =>
                 {
                     b.Property<string>("cartd_Id")
                         .HasColumnType("nvarchar(450)");
@@ -446,7 +446,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("CartsDevice");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Categories", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Categories", b =>
                 {
                     b.Property<int>("cg_Id")
                         .ValueGeneratedOnAdd()
@@ -504,7 +504,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CategoriesHome", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.CategoriesHome", b =>
                 {
                     b.Property<string>("CategoriesHomeId")
                         .HasColumnType("nvarchar(450)");
@@ -543,7 +543,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            CategoriesHomeId = "deba13ed-e15a-4334-bf66-54fb6d41c9d0",
+                            CategoriesHomeId = "cea7b9d2-1252-4878-9eb0-27037f6a8040",
                             CategoriesHomeName = "CategoriesHome1",
                             CategoriesHomeUrl1 = "https://drive.google.com/uc?export=download&id=1VYldlvs2ROaTJPsE2eIkMXktOBbLHy9f",
                             CategoriesHomeUrl2 = "https://drive.google.com/uc?export=download&id=1j0uME7aL_KXY1df6AN0p8psngFdiX73K",
@@ -556,7 +556,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ContactSystem", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ContactSystem", b =>
                 {
                     b.Property<int>("Contact_Id")
                         .ValueGeneratedOnAdd()
@@ -605,7 +605,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ContactUsers", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ContactUsers", b =>
                 {
                     b.Property<int>("cu_Id")
                         .ValueGeneratedOnAdd()
@@ -643,7 +643,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Coupons", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Coupons", b =>
                 {
                     b.Property<string>("couponId")
                         .HasColumnType("nvarchar(450)");
@@ -664,21 +664,21 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "dc078470-a71a-4302-933b-5bcfd6482e27",
+                            couponId = "b699e03e-10a7-4bb7-8d2c-243b6de855fd",
                             couponAmount = 20,
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "8172dc54-f1aa-48fc-af1d-593c4e8c15b3",
+                            couponId = "f260204b-9129-4610-8c95-c4896628667f",
                             couponAmount = 25,
                             couponCode = "code50",
                             couponPrice = 50
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CustomerHome", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.CustomerHome", b =>
                 {
                     b.Property<string>("CustomerHomeId")
                         .HasColumnType("nvarchar(450)");
@@ -708,7 +708,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            CustomerHomeId = "c3c58cd7-547a-474c-aec4-7d658fed72ec",
+                            CustomerHomeId = "0d369b4b-5afb-4215-a57f-37319f6dd244",
                             CustomerHomeName = "FeatureHome1",
                             CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem",
                             CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=12BEbKPhMNT6Gl31Wgzo1XNA6kf5zCtYm",
@@ -718,7 +718,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            CustomerHomeId = "8136059d-205d-44a5-ba23-7597402cf97a",
+                            CustomerHomeId = "89ef6cc2-9beb-4593-b8e1-9cafa827ce43",
                             CustomerHomeName = "FeatureHome2",
                             CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem",
                             CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=12xlH3LvPKtXEUTRFdETM7SGvCnjU9S-c",
@@ -728,7 +728,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            CustomerHomeId = "2c4f9023-e39b-43d3-ac44-2a1389343064",
+                            CustomerHomeId = "d2877b21-52b7-48b2-bd9d-481e2a0dd09d",
                             CustomerHomeName = "FeatureHome3",
                             CustomerHome_CDesription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem",
                             CustomerHome_CImg = "https://drive.google.com/uc?export=download&id=1-VztC3V4O7HyIdetuemHMO61M5up94uD",
@@ -738,7 +738,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Device", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Device", b =>
                 {
                     b.Property<string>("deviceId")
                         .HasColumnType("nvarchar(450)");
@@ -775,7 +775,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("Device");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.FeatureHome", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.FeatureHome", b =>
                 {
                     b.Property<string>("FeatureHomeId")
                         .HasColumnType("nvarchar(450)");
@@ -814,7 +814,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            FeatureHomeId = "fadc3f14-bd23-4714-9c47-9947de699e3d",
+                            FeatureHomeId = "7f6ccb48-93c3-4986-b619-cee76d4cdb55",
                             FeatureHomeDesription1 = "Lorem ipsum dolor sit amet consectetur elit",
                             FeatureHomeDesription2 = "Lorem ipsum dolor sit amet consectetur elit",
                             FeatureHomeDesription3 = "Lorem ipsum dolor sit amet consectetur elit",
@@ -827,7 +827,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCart", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInCart", b =>
                 {
                     b.Property<string>("pic_CartId")
                         .HasColumnType("nvarchar(450)");
@@ -858,7 +858,7 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 1,
-                            pic_Id = "03f6b352-e17e-4625-8b60-47a464975a5d",
+                            pic_Id = "740c97f2-2d1b-49aa-941b-bbdff6128cbb",
                             pic_amount = 2,
                             pic_color = "blue",
                             pic_size = "7"
@@ -867,7 +867,7 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 2,
-                            pic_Id = "3b19b450-44ea-4f2c-bcdf-4163ca41806f",
+                            pic_Id = "02fa9fb4-244f-4735-8ee1-4c1ba033b928",
                             pic_amount = 3,
                             pic_color = "blue",
                             pic_size = "7.5"
@@ -876,14 +876,14 @@ namespace Web_Shoes.Migrations
                         {
                             pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
                             pic_ProductId = 3,
-                            pic_Id = "195a1e09-4e54-4a67-aca1-6e3449ce3f58",
+                            pic_Id = "82476a39-fb74-4c43-9d23-6edd9c01d216",
                             pic_amount = 1,
                             pic_color = "blue",
                             pic_size = "8"
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCartDevices", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInCartDevices", b =>
                 {
                     b.Property<string>("picd_CartId")
                         .HasColumnType("nvarchar(450)");
@@ -907,7 +907,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("ProductInCartDevices");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInWishlist", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInWishlist", b =>
                 {
                     b.Property<int>("piw_WishlistId")
                         .HasColumnType("int");
@@ -933,7 +933,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Products", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Products", b =>
                 {
                     b.Property<int>("pd_Id")
                         .ValueGeneratedOnAdd()
@@ -1886,9 +1886,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD021",
                             pd_Color = "Black",
                             pd_Description = "",
-                            pd_Img1 = "./img/Product21-blue.jpg",
-                            pd_Img2 = "./img/Product21-cream.jpg",
-                            pd_Img3 = "./img/Product21-gray.jpg",
+                            pd_Img1 = "./img/Product21-blue.png",
+                            pd_Img2 = "./img/Product21-cream.png",
+                            pd_Img3 = "./img/Product21-gray.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1929,9 +1929,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD022",
                             pd_Color = "White",
                             pd_Description = "",
-                            pd_Img1 = "./img/Product22-blue.jpg",
-                            pd_Img2 = "./img/Product22-gray.jpg",
-                            pd_Img3 = "./img/Product22-green.jpg",
+                            pd_Img1 = "./img/Product22-blue.png",
+                            pd_Img2 = "./img/Product22-gray.png",
+                            pd_Img3 = "./img/Product22-green.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -1972,9 +1972,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD023",
                             pd_Color = "Black",
                             pd_Description = "",
-                            pd_Img1 = "./img/Product23-black.jpg",
-                            pd_Img2 = "./img/Product23-blue.jpg",
-                            pd_Img3 = "./img/Product23-redjpg.jpg",
+                            pd_Img1 = "./img/Product23-black.png",
+                            pd_Img2 = "./img/Product23-blue.png",
+                            pd_Img3 = "./img/Product23-redjpg.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2015,9 +2015,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD024",
                             pd_Color = "",
                             pd_Description = "",
-                            pd_Img1 = "./img/Product24-black.jpg",
-                            pd_Img2 = "./img/Product24-blue.jpg",
-                            pd_Img3 = "./img/Product24-brown.jpg",
+                            pd_Img1 = "./img/Product24-black.png",
+                            pd_Img2 = "./img/Product24-blue.png",
+                            pd_Img3 = "./img/Product24-brown.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2058,9 +2058,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD025",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "./img/Product25-black.jpg",
-                            pd_Img2 = "./img/Product25-blue.jpg",
-                            pd_Img3 = "./img/Product25-cream.jpg",
+                            pd_Img1 = "./img/Product25-black.png",
+                            pd_Img2 = "./img/Product25-blue.png",
+                            pd_Img3 = "./img/Product25-cream.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2101,9 +2101,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD026",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "./img/Product26-black.jpg",
-                            pd_Img2 = "./img/Product26-blue.jpg",
-                            pd_Img3 = "./img/Product26-cream.jpg",
+                            pd_Img1 = "./img/Product26-black.png",
+                            pd_Img2 = "./img/Product26-blue.png",
+                            pd_Img3 = "./img/Product26-cream.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2144,9 +2144,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD027",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "./img/Product27-black.jpg",
-                            pd_Img2 = "./img/Product27-gray.jpg",
-                            pd_Img3 = "./img/Product27-purple.jpg",
+                            pd_Img1 = "./img/Product27-black.png",
+                            pd_Img2 = "./img/Product27-gray.png",
+                            pd_Img3 = "./img/Product27-purple.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2187,9 +2187,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD028",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "./img/Product28-black.jpg",
-                            pd_Img2 = "./img/Product28-gray.jpg",
-                            pd_Img3 = "./img/Product28-purple.jpg",
+                            pd_Img1 = "./img/Product28-black.png",
+                            pd_Img2 = "./img/Product28-gray.png",
+                            pd_Img3 = "./img/Product28-purple.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2230,9 +2230,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD029",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "./img/Product29-blue.jpg",
-                            pd_Img2 = "./img/Product29-gray.jpg",
-                            pd_Img3 = "./img/Product29-green.jpg",
+                            pd_Img1 = "./img/Product29-blue.png",
+                            pd_Img2 = "./img/Product29-gray.png",
+                            pd_Img3 = "./img/Product29-green.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2273,9 +2273,9 @@ namespace Web_Shoes.Migrations
                             pd_Code = "PD030",
                             pd_Color = "",
                             pd_Description = "First born in 2017, ACMÉ DE LA VIE (ADLV) with market understanding and modern designs, in line with the common tastes of urban citizens, has quickly become one of Korea's leading local streetwear brands today.",
-                            pd_Img1 = "./img/Product30-black.jpg",
-                            pd_Img2 = "./img/Product30-brown.jpg",
-                            pd_Img3 = "./img/Product30-brown.jpg",
+                            pd_Img1 = "./img/Product30-black.png",
+                            pd_Img2 = "./img/Product30-brown.png",
+                            pd_Img3 = "./img/Product30-brown.png",
                             pd_Img4 = "",
                             pd_Material = "1",
                             pd_MenuFacturer = "1",
@@ -2311,7 +2311,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductsInCategories", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductsInCategories", b =>
                 {
                     b.Property<int>("pic_productId")
                         .HasColumnType("int");
@@ -2473,7 +2473,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ReviewInproduct", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ReviewInproduct", b =>
                 {
                     b.Property<int>("rip_ProductId")
                         .HasColumnType("int");
@@ -2505,7 +2505,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Reviews", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Reviews", b =>
                 {
                     b.Property<string>("review_id")
                         .HasColumnType("nvarchar(450)");
@@ -2561,7 +2561,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Shipping", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Shipping", b =>
                 {
                     b.Property<string>("ship_Id")
                         .HasColumnType("nvarchar(450)");
@@ -2585,7 +2585,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SliderHome", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SliderHome", b =>
                 {
                     b.Property<string>("SliderId")
                         .HasColumnType("nvarchar(450)");
@@ -2615,7 +2615,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            SliderId = "cba329e3-e5c1-474d-aa56-dd8fd1e9e6eb",
+                            SliderId = "5152c95f-65ac-4ed4-b8ec-3baa5abe06c9",
                             SliderName = "SliderHome1",
                             SliderUrl1 = "https://drive.google.com/uc?export=download&id=1z9XgREv00FGoCR7zke-NzoNnIBiQYqvM",
                             SliderUrl2 = "https://drive.google.com/uc?export=download&id=15xcKBMdxJeQMTLaQjHh9KbT6ZlKGsaZv",
@@ -2625,7 +2625,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReview", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SubReview", b =>
                 {
                     b.Property<string>("subReview_Id")
                         .HasColumnType("nvarchar(450)");
@@ -2654,7 +2654,7 @@ namespace Web_Shoes.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "d7ed30dc-6a12-46ac-a375-b110568c0be1",
+                            subReview_Id = "8f944b30-f8eb-40cb-ba2f-bec8d917f98e",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2663,7 +2663,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "595a8b95-9450-4d11-99f8-973e766c223d",
+                            subReview_Id = "483c0df7-cf07-4e90-8f27-57bf12a09ec1",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2672,7 +2672,7 @@ namespace Web_Shoes.Migrations
                         },
                         new
                         {
-                            subReview_Id = "3791f8ad-c3fc-49b6-bafb-317ff4131121",
+                            subReview_Id = "cc28e410-250d-437d-b011-02c2cf030617",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2681,7 +2681,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReviewInReview", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SubReviewInReview", b =>
                 {
                     b.Property<string>("SRiR_ReviewId")
                         .HasColumnType("nvarchar(450)");
@@ -2699,21 +2699,21 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "d7ed30dc-6a12-46ac-a375-b110568c0be1"
+                            SRiR_SubReviewId = "8f944b30-f8eb-40cb-ba2f-bec8d917f98e"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "595a8b95-9450-4d11-99f8-973e766c223d"
+                            SRiR_SubReviewId = "483c0df7-cf07-4e90-8f27-57bf12a09ec1"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "3791f8ad-c3fc-49b6-bafb-317ff4131121"
+                            SRiR_SubReviewId = "cc28e410-250d-437d-b011-02c2cf030617"
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Subscribers", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Subscribers", b =>
                 {
                     b.Property<string>("Subs_Id")
                         .HasColumnType("nvarchar(450)");
@@ -2729,7 +2729,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("Subsriber");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Wishlists", b =>
                 {
                     b.Property<int>("wl_Id")
                         .ValueGeneratedOnAdd()
@@ -2753,7 +2753,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Models.UserInRoleModel", b =>
+            modelBuilder.Entity("Web_Fashion.Models.UserInRoleModel", b =>
                 {
                     b.Property<string>("id")
                         .HasColumnType("nvarchar(450)");
@@ -2778,7 +2778,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("UserInRoleModel");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.AppRole", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.AppRole", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityRole");
 
@@ -2791,7 +2791,7 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "75d7b870-efdf-4bd6-8860-8c39f810e41e",
+                            ConcurrencyStamp = "014b36f2-4179-47fb-b675-8263de58a8fa",
                             Name = "Staff",
                             NormalizedName = "STAFF",
                             Description = "Staff"
@@ -2799,14 +2799,14 @@ namespace Web_Shoes.Migrations
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "f7951bb0-f5df-42d2-9785-fbe222f8871e",
+                            ConcurrencyStamp = "a022c0a6-a896-4f48-9098-64e76fcc674a",
                             Name = "Admin",
                             NormalizedName = "ADMIN",
                             Description = "Admin"
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.AppUser", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.AppUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -2850,15 +2850,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "59710bec-865d-4497-98b4-e7837c4ac324",
+                            ConcurrencyStamp = "13bc45b7-26bd-4730-917a-da2b22a25954",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJMvfbIpI5JQ5yQRDIRYr7Ha/csg+YUfSfkUWXpX3Katj5dUlUB9LVOtTgoUFVAGHw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDzI0R7e+Ym6B2iWbIgwxz/GGNmejCW7jelQN/TY5k0TKoqNf5BRvzaolGcfEvDkwg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "fdfdb45d-7a3b-4381-acab-57e636de1990",
+                            SecurityStamp = "1f0cbd52-b820-4557-af3e-f21d97a4fdf1",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -2877,15 +2877,15 @@ namespace Web_Shoes.Migrations
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4982084d-0c72-446f-8f9f-aaa3716f43f6",
+                            ConcurrencyStamp = "0a21d752-6c0e-438b-a75c-d7b637b42feb",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDv20s8QLXuhg+OSdbCeuIBRNFGvH7TWpdsk6Az5jx1eVY0OSPesYvKhZlzaGnqdgQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBNKw1fxsfNb7zkJeveXsBNA3YdO6HzYnIFTNQop77ZSXYRHPJ8ItX3CxK+FC8J0vA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "06c8c2b1-9f56-4a57-b512-649ee9057260",
+                            SecurityStamp = "88a20c00-0d72-4a83-9d89-2402055a4e99",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -2945,42 +2945,42 @@ namespace Web_Shoes.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Bills", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Bills", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserB")
+                    b.HasOne("Web_Fashion.Entity.AppUser", "AppUserB")
                         .WithMany("BillsAU")
                         .HasForeignKey("bill_UserId");
 
                     b.Navigation("AppUserB");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Cart", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Cart", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserC")
+                    b.HasOne("Web_Fashion.Entity.AppUser", "AppUserC")
                         .WithMany("CartU")
                         .HasForeignKey("cart_UserID");
 
                     b.Navigation("AppUserC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CartsDevice", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.CartsDevice", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Device", "DeviceCD")
+                    b.HasOne("Web_Fashion.Entity.Device", "DeviceCD")
                         .WithMany("CartsDeviceD")
                         .HasForeignKey("cartd_DeviceId");
 
                     b.Navigation("DeviceCD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCart", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInCart", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Cart", "CartPICart")
+                    b.HasOne("Web_Fashion.Entity.Cart", "CartPICart")
                         .WithMany("ProductInCartC")
                         .HasForeignKey("pic_CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPICart")
+                    b.HasOne("Web_Fashion.Entity.Products", "ProductsPICart")
                         .WithMany("ProductInCartP")
                         .HasForeignKey("pic_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2991,15 +2991,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ProductsPICart");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCartDevices", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInCartDevices", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.CartsDevice", "CartsDevicePICD")
+                    b.HasOne("Web_Fashion.Entity.CartsDevice", "CartsDevicePICD")
                         .WithMany("ProductInCartDevicesCD")
                         .HasForeignKey("picd_CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPICD")
+                    b.HasOne("Web_Fashion.Entity.Products", "ProductsPICD")
                         .WithMany("ProductInCartDevicesP")
                         .HasForeignKey("picd_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3010,15 +3010,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ProductsPICD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInWishlist", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductInWishlist", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPIW")
+                    b.HasOne("Web_Fashion.Entity.Products", "ProductsPIW")
                         .WithMany("ProductInWishlistP")
                         .HasForeignKey("piw_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Wishlists", "WishlistsPIW")
+                    b.HasOne("Web_Fashion.Entity.Wishlists", "WishlistsPIW")
                         .WithMany("ProductInWishlistW")
                         .HasForeignKey("piw_WishlistId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3029,15 +3029,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("WishlistsPIW");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductsInCategories", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ProductsInCategories", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Categories", "CategoriesPIC")
+                    b.HasOne("Web_Fashion.Entity.Categories", "CategoriesPIC")
                         .WithMany("ProductsInCategoriesC")
                         .HasForeignKey("pic_CategoriesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPIC")
+                    b.HasOne("Web_Fashion.Entity.Products", "ProductsPIC")
                         .WithMany("ProductsInCategoriesP")
                         .HasForeignKey("pic_productId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3048,15 +3048,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ProductsPIC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ReviewInproduct", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.ReviewInproduct", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsRIP")
+                    b.HasOne("Web_Fashion.Entity.Products", "ProductsRIP")
                         .WithMany("ReviewInproductP")
                         .HasForeignKey("rip_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Reviews", "ReviewsRIP")
+                    b.HasOne("Web_Fashion.Entity.Reviews", "ReviewsRIP")
                         .WithMany("ReviewInproductR")
                         .HasForeignKey("rip_ReviewId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3067,33 +3067,33 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ReviewsRIP");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Reviews", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Reviews", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserR")
+                    b.HasOne("Web_Fashion.Entity.AppUser", "AppUserR")
                         .WithMany("ReviewsU")
                         .HasForeignKey("review_UserId");
 
                     b.Navigation("AppUserR");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReview", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SubReview", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserSR")
+                    b.HasOne("Web_Fashion.Entity.AppUser", "AppUserSR")
                         .WithMany("SubReviewSR")
                         .HasForeignKey("subReview_UserId");
 
                     b.Navigation("AppUserSR");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReviewInReview", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SubReviewInReview", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Reviews", "Reviews")
+                    b.HasOne("Web_Fashion.Entity.Reviews", "Reviews")
                         .WithMany("SubReviewInReview")
                         .HasForeignKey("SRiR_ReviewId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.SubReview", "SubReview")
+                    b.HasOne("Web_Fashion.Entity.SubReview", "SubReview")
                         .WithMany("SubReviewInReview")
                         .HasForeignKey("SRiR_SubReviewId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3104,36 +3104,36 @@ namespace Web_Shoes.Migrations
                     b.Navigation("SubReview");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Wishlists", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "UserW")
+                    b.HasOne("Web_Fashion.Entity.AppUser", "UserW")
                         .WithMany("WishlistsU")
                         .HasForeignKey("wl_UserId");
 
                     b.Navigation("UserW");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Cart", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Cart", b =>
                 {
                     b.Navigation("ProductInCartC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CartsDevice", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.CartsDevice", b =>
                 {
                     b.Navigation("ProductInCartDevicesCD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Categories", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Categories", b =>
                 {
                     b.Navigation("ProductsInCategoriesC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Device", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Device", b =>
                 {
                     b.Navigation("CartsDeviceD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Products", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Products", b =>
                 {
                     b.Navigation("ProductInCartDevicesP");
 
@@ -3146,24 +3146,24 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ReviewInproductP");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Reviews", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Reviews", b =>
                 {
                     b.Navigation("ReviewInproductR");
 
                     b.Navigation("SubReviewInReview");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReview", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.SubReview", b =>
                 {
                     b.Navigation("SubReviewInReview");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.Wishlists", b =>
                 {
                     b.Navigation("ProductInWishlistW");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.AppUser", b =>
+            modelBuilder.Entity("Web_Fashion.Entity.AppUser", b =>
                 {
                     b.Navigation("BillsAU");
 

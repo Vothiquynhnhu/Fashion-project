@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web_Shoes
+namespace Web_Fashion
 {
     public class Program
     {

@@ -7,12 +7,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Web_Shoes.Data;
-using Web_Shoes.Entity;
-using Web_Shoes.Models;
-using Web_Shoes.StatisFile;
+using Web_Fashion.Data;
+using Web_Fashion.Entity;
+using Web_Fashion.Models;
+using Web_Fashion.StatisFile;
 
-namespace Web_Shoes.Controllers
+namespace Web_Fashion.Controllers
 {
     public class HomeController : Controller
     {

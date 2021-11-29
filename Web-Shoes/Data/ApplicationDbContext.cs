@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Web_Shoes.Configurations;
-using Web_Shoes.Data.DataSeeding;
-using Web_Shoes.Entity;
-using Web_Shoes.Models;
+using Web_Fashion.Configurations;
+using Web_Fashion.Data.DataSeeding;
+using Web_Fashion.Entity;
+using Web_Fashion.Models;
 
-namespace Web_Shoes.Data
+namespace Web_Fashion.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -106,7 +106,7 @@ namespace Web_Shoes.Data
 
         public DbSet<SubReviewInReview> SubReviewInReview { set; get; }
 
-        public DbSet<Web_Shoes.Models.UserInRoleModel> UserInRoleModel { get; set; }
+        public DbSet<Web_Fashion.Models.UserInRoleModel> UserInRoleModel { get; set; }
 
         public DbSet<Subscribers> Subscribers { set; get; }
 

@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web_Shoes.Entity
+namespace Web_Fashion.Entity
 {
     public class Coupons
     {
